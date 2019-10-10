@@ -1,0 +1,91 @@
+/*
+
+    Palette de couleur :
+
+        - white
+        - black
+
+        - gris clair : #72799036
+        - gris medium : #0000005e
+        - gris foncé : #000000b3
+
+        - red : #ed4632
+        - green
+
+*/
+
+
+/*--------------- - - -  Début du code CSS - - - ---------------*/
+
+
+
+/*------------------------------------------------------------ - - 
+----------- - - -  Eléments principaux de la page - - - ----------
+- - ------------------------------------------------------------*/
+
+* /* Sélectionne tous les éléments de la page */
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    overflow-x: hidden;
+}
+
+#blocPage /* Toute la page HTML */
+{
+    padding: 0;
+    background-color: white;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.ancre
+{
+    position: relative;
+    top: -120px; 
+}
+
+
+
+/*---------------------------------------------------------- - - 
+----------- - - -  Header - Barre de Navigation - - - ----------
+- - ----------------------------------------------------------*/
+
+p
+    {
+        margin: 15% 15% 9% 8%;
+        font-family: 'robotomedium', sans-serif;
+        font-size: 20px;
+        color: #56575d;
+    }
+
+ul
+    {
+        margin: 3% 30% 2% 15%;
+        font-family: 'robotomedium', sans-serif;
+        font-size: 20px;
+        color: #8998f1;
+        list-style: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
