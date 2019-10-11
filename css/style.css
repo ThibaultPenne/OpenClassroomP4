@@ -2,15 +2,7 @@
 
     Palette de couleur :
 
-        - whitejkhjk
-        - black
 
-        - gris clair : #72799036
-        - gris medium : #0000005e
-        - gris foncé : #000000b3
-
-        - red : #ed4632
-        - green
 
 */
 
@@ -50,11 +42,179 @@ body
 
 
 
-/*---------------------------------------------------------- - - 
------------ - - -  Header - Barre de Navigation - - - ----------
-- - ----------------------------------------------------------*/
+/*------------------------------------ - - 
+----------- - - -  Navbar - - - ----------
+- - ------------------------------------*/
 
-p
+#nav /* Navbar */
+    {
+        padding: .5rem 8rem;
+    }
+
+    #nav img /* Icon */
+        {
+            width: 30px;
+            height: 30px;
+        }
+
+    .mr-auto, .mx-auto /* Container ul du Menu */
+        {
+            margin-left: 60%;
+        }
+
+
+
+
+/*--------------------------------------- - - 
+----------- - - -  Le Slider - - - ----------
+- - ---------------------------------------*/
+
+#slider /* Section */
+    {
+        height: auto;
+        width: 100%;
+    }
+
+    #slideshow /* Slider */
+        {
+            position: relative;
+            display: flex; /* Je place les figures de gauche à droite dans ce contenair */ 
+            width: 200%; /* Contient 2 figures qui font 100% de l'écran chacune */
+            animation: 18s glissement infinite;
+        }
+        @keyframes glissement
+            {   
+                /* De 0% à 36% : l'animation montre 100% de la figure de gauche */
+                /* De 36% à 46% : vitesse de G vers D */ 
+                /* De 46% à 72% : l'animation montre 100% de la figure de droite */
+                /* De 72% à 88% : vitesse de D vers G */ 
+
+                0%, 10%, 12%, 22%, 24%, 34%, 36%, 88%, 90% {left: 0%} /* Image de gauche (88% note le retour) */
+                46%, 48%, 58%, 60%, 70%, 72% {left: -100%} /* Image de droite (on déplace la figure de gauche à 100% sur la gauche) */  
+
+                /* Les % entre les valeurs dites plus haut fluidifient l'animation */     
+            }
+
+        #slideshow figure /* Slides */
+            {
+                width: 100%;
+            }
+            #slideshow .slideshowImg /* Images sur Slides */
+                {
+                    width: 100%;
+                }
+            #slideshow figcaption /* Textes sur Slides */
+                {
+                    position: absolute;
+                    top: 15%;
+                    margin-left: 12%;
+                    width: 23%;
+                }
+                
+
+
+
+/*------------------------------------------ - - 
+----------- - - -  Transition 1 - - - ----------
+- - ------------------------------------------*/
+
+#transition1
+    {
+        background: black;
+        width: 100%;
+        height: 170px;
+        position: relative;
+        box-shadow: 0px 45px 97px -105px white;
+        z-index: 99;
+    }
+
+
+/*------------------------------------------- - - 
+----------- - - -  La Biographie - - - ----------
+- - -------------------------------------------*/
+
+#bio
+    {
+        background: grey;
+        width: 100%;
+        position: relative;
+    }
+
+    #bioContenair 
+        {
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+        #bioContenair h2
+            {
+                text-align: center;
+                font-size: 45px;
+            }
+
+        #bioPart1
+            {
+                padding-top: 3%;
+                padding-bottom: 3%;
+            }
+            #bioPart1 img
+                {
+                    background: black;
+                    width: 100%;
+                    height: 125px;
+                    z-index: 20;
+                }
+            #bioPart1 p
+                {
+                    background: blue;
+                    width: 300px;
+                    text-align: center;
+                    margin-left: 74%;
+                    margin-top: -4%;
+                    z-index: 10000;
+                }
+
+/*------------------------------------------ - - 
+----------- - - -  Transition 2 - - - ----------
+- - ------------------------------------------*/
+
+#transition2
+    {
+        background: black;
+        width: 100%;
+        height: 170px;
+        position: relative;
+        box-shadow: 0px 45px 97px -105px white;
+        z-index: 99;
+    }
+
+/*------------------------------------------------------------- - - 
+----------- - - -  L'Apercu des derniers chapitres - - - ----------
+- - -------------------------------------------------------------*/
+
+#apercuChapitres
+    {
+        background: white;
+        width: 100%;
+        position: relative;
+    }
+
+    #apercuContenair 
+        {
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+
+/*------------------------------------------- - - 
+----------- - - -  Des Tests Php - - - ----------
+- - -------------------------------------------*/
+
+
+#testPhp
+    {
+        display: none;
+    }
+
+/*p
     {
         margin: 15% 15% 9% 8%;
         font-family: 'robotomedium', sans-serif;
@@ -70,10 +230,23 @@ ul
         color: #8998f1;
         list-style: none;
     }
+*/
 
 
+/*----------------------------------------------- - - 
+----------- - - -  Le Footer Contact - - - ----------
+- - -----------------------------------------------*/
 
-
+#theEnd
+    {
+        position: relative;
+        margin: auto;
+        width: 100%;
+        height: 300px;
+        background-color: #121217;
+        color: white;
+        padding-bottom: 6%;
+    }
 
 
 
