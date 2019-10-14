@@ -26,11 +26,10 @@
 
 
         <!-- Barre de Navigation -->
-        <header>
+        <header id="navBar">
 
-            <nav id="nav" class="navbar navbar-expand-lg navbar-dark bg-dark">
-              <a class="navbar-brand" href="#">
-                <img src="images/signature.png" class="d-inline-block align-top" alt="">
+            <nav id="nav" class="navbar navbar-expand-lg navbar-dark">
+              <a id="navTitre" class="navbar-brand" href="#">
                 Lecture innovante d'un nouveau roman
               </a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,14 +47,11 @@
                   <li class="nav-item">
                     <a class="nav-link" href="chapitres.html">Chapitres</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                  </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Admin
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div id="menuDown" class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="admin.html">Connexion</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Déconnexion</a>
@@ -101,7 +97,7 @@
                             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
-                         <h4>Plus qu'à lire...</h4>
+                         <h4>A présent, vous n'avez plus qu'à ...</h4>
                         <button id="goChapitres">Plonger dans l'histoire</button>
                     </figcaption>
                 </figure>
@@ -125,49 +121,40 @@
         <section id="bio">
 
             <div id="bioContenair" class="container">
+                <hr>
                 <h2>Jean Forteroche</h2>
                 <div id="bioPart1">
-                    <h3>About</h3>
-                    <img src="">
+                    <h3>A propos</h3>
+                    <img src="images/jean1.png">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua.  
+                      Portrait original de l'acteur, l'auteur, l'aventurier, le passionné... mais avant tout de l'homme derrière l'histoire.  
                     </p>
                 </div>
 
-                <div id="bioPart2">
-                    <img src="">
-                    <h4>A propos</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
+                <div id="bioPart2" class="row">
+                    <div id="bio2Text" class="col-xs-12 col-lg-7">
+                        <h4>SON HISTOIRE</h4>
+                        <h6>Jeunesse et formation</h6>
+                        <p>
+                            Jean Forteroche est le second fils d'un couple d'avocats, il grandit à Santurce, un quartier de San Juan de Porto Rico. Sa mère meurt d'une hépatite alors qu'il est âgé de 9 ans, et sa famille déménage trois ans plus tard à Mercersburg dans la campagne de Pennsylvanie. À l'âge de 13 ans, Jean est inscrit dans une pension préparant aux meilleures écoles. Son père veut faire de lui un avocat. Il suit les conseils de son père et part étudier à l'université de Californie à San Diego, mais il abandonne rapidement pour entrer à la célèbre Square Acting School de New York.
+                        </p>
+                        <h6>Acteur</h6>
+                        <p>
+                            Il débute avec de petits rôles dans plusieurs séries dont Deux flics à Miami en 1987. Il obtient un peu plus tard ses premiers petits rôles au cinéma entre autres dans Permis de tuer (1989) en devenant le plus jeune adversaire de James Bond.<br>
+                            La consécration arrive avec son interprétation de Che Guevara dans le diptyque Che, rôle pour lequel il est récompensé par le prix d'interprétation masculine du Festival de Cannes 2008.
+                        </p>
+                        <h6>Auteur</h6>
+                        <p>
+                            L'an 2000 est un véritable tournant pour l'auteur. Après avoir sorti un premier roman, Skidamarink, Jean Forteroche survit miraculeusement à un grave accident de voiture. Cet événement marquant lui fait soudainement prendre conscience que la mort peut arriver à tout moment. Ressentant un vif besoin d'écrire sur l'urgence de vivre, il commence à se documenter sur les cas d'expérience de mort imminente. C'est ainsi qu'il donne naissance en 2004 à son premier grand succès, "Et après".
+                        </p>
+                        <h6>Explorateur</h6>
+                        <p>
+                            Jean est aussi un aventurier. Il explore le monde en quête d'inspiration et cette fois ci, vous pourrez suivre son aventure en Alaska tout au long des parutions des chapitres que composeront son roman.
+                        </p>
+                    </div>
+                    <div id="bio2Img" class="col-lg-5">
+                        <img src="images/jean2.png" class="img-responsive center-block">
+                    </div>
                 </div>
             </div>
         </section>
@@ -187,26 +174,31 @@
         <section id="apercuChapitres">
 
             <div id="apercuContenair" class="container">
-                <h3>les derniers chapitres</h3>
-
-                <div id="barreBack">
-                    <div class="previewChap">
-                        <img src="">
-                        <h4>Chapitre 1</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="previewChap">
-                        <img src="">
-                        <h4>Chapitre 2</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="previewChap">
-                        <img src="">
-                        <h4>Chapitre 3</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.</p>
+                <hr>
+                <h2>Les derniers chapitres</h2>
+                <div id="apercuPart1">
+                    <img src="images/lastChapter.png">
+                </div>
+                <div id="apercuPart2">
+                    <div id="barreBack" class="row justify-content-md-center">
+                        <div class="col-xs-12 col-md-3 previewChap">
+                            <div class="chapNbr">Chapitre 1</div>
+                            <h4>Titre du chapitre 1</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="col-xs-12 col-md-3 previewChap">
+                            <div class="chapNbr">Chapitre 2</div>
+                            <h4>Titre du chapitre 2</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="col-xs-12 col-md-3 previewChap">
+                            <div class="chapNbr">Chapitre 3</div>
+                            <h4>Titre du chapitre 3</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -236,7 +228,9 @@
 
         <!-- Footer Contact -->
         <footer id="theEnd">
-
+            <div id="theEndContenair" class="container">
+                <p>Billet simple pour l'Alaska - JEAN FORTEROCHE - COPYRIGHT © 2019</p>
+            </div>
         </footer> <!-- Fin du footer Contact -->
 
   
@@ -259,6 +253,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+
+    <!-- Mes fichiers JS -->
 
       
     </body>
