@@ -46,22 +46,49 @@ body
 ----------- - - -  Navbar - - - ----------
 - - ------------------------------------*/
 
-#nav /* Navbar */
+#navBar
     {
-        padding: .5rem 8rem;
+        position: fixed;
+        width: 100%;
+        z-index: 100000;
     }
 
-    #nav img /* Icon */
+    #nav /* Id re-créer en JS */
         {
-            width: 30px;
-            height: 30px;
+            box-shadow: 0px 3px 20px -3px black;
+            padding: .5rem 8rem;
+            background-color: #121217f2!important;
         }
 
-    .mr-auto, .mx-auto /* Container ul du Menu */
-        {
-            margin-left: 60%;
-        }
+        #navTitre
+            {
+                font-family: 'walkway_oblique_ultraboldRg', sans-serif;
+                font-size: 20px;
+                color: #d8d8d8;
+                letter-spacing: 1px;
+                margin-left: 8%;
+            }
 
+        .mr-auto, .mx-auto /* Container ul du Menu */
+            {
+                margin-left: 60%;
+            }
+
+        #menuDown
+            {
+                border: none;
+                background-color: #121217;
+                margin: 8% 0 0;
+            }
+            #menuDown a
+                {
+                    color: grey;
+                }
+                #menuDown a:hover
+                    {
+                        color: white;
+                        background-color: #121217;
+                    }
 
 
 
@@ -98,6 +125,7 @@ body
         #slideshow figure /* Slides */
             {
                 width: 100%;
+                margin: 0;
             }
             #slideshow .slideshowImg /* Images sur Slides */
                 {
@@ -107,9 +135,72 @@ body
                 {
                     position: absolute;
                     top: 15%;
-                    margin-left: 12%;
-                    width: 23%;
+                    margin: auto;
+                    width: 50%;
                 }
+                #slideshow figcaption h2
+                    {
+                        text-align: center;
+                        font-size: 50px;
+                        color: white;
+                        margin-top: 1%;
+                        font-family: 'robotomedium', sans-serif;
+                        letter-spacing: 5px;
+                    }
+                #slideshow figcaption p
+                    {
+                        text-align: center;
+                        font-size: 17px;
+                        color: black;
+                        font-family: 'walkway_oblique_boldregular', sans-serif;
+                        letter-spacing: 4px;
+                    }
+
+                #slide2 figcaption p
+                    {
+                        letter-spacing: 2px;
+                        width: 50%;
+                        margin: auto;
+                        background: #000000c7;
+                        color: #c7c7c7;
+                        padding: 1%;
+                        border: 5px solid white;
+                        border-radius: 20px;
+                        margin-top: 2%;
+                    }
+                #slide2 figcaption h4
+                    {
+                        font-family: 'robotoregular', sans-serif;
+                        font-style: italic;
+                        font-size: 21px;
+                        color: white;
+                        width: 50%;
+                        margin: auto;
+                        text-align: center;
+                        margin-top: 2%;
+                    }
+                #slide2 figcaption button
+                    {
+                        font-family: 'robotomedium', sans-serif;
+                        font-size: 17px;
+                        background: #3d92bb;
+                        color: white;
+                        width: 12%;
+                        margin: auto;
+                        margin-top: 1%;
+                        display: block;
+                        padding: 0.5%;
+                        border: 3px solid white;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        box-shadow: 14px 14px 20px -18px black;
+                        transition: all 0.3s ease-out;
+                    }
+                    #slide2 figcaption button:hover
+                        {
+                            background: #000000c7;
+                            box-shadow: -14px 14px 20px -18px black;
+                        }
                 
 
 
@@ -120,11 +211,11 @@ body
 
 #transition1
     {
-        background: black;
+        background: #121217;
         width: 100%;
-        height: 170px;
+        height: 100px;
         position: relative;
-        box-shadow: 0px 45px 97px -105px white;
+        box-shadow: 0px 33px 50px -48px white;
         z-index: 99;
     }
 
@@ -135,7 +226,7 @@ body
 
 #bio
     {
-        background: grey;
+        background: #17171a;
         width: 100%;
         position: relative;
     }
@@ -145,33 +236,111 @@ body
             padding-top: 5%;
             padding-bottom: 5%;
         }
+        #bioContenair hr
+            {
+                border: 0.5px solid white;
+                width: 10%;
+                text-align: center;
+                margin: auto;
+            }
         #bioContenair h2
             {
                 text-align: center;
-                font-size: 45px;
+                font-size: 41px;
+                color: white;
+                margin-top: 1%;
+                font-family: 'robotomedium', sans-serif;
+                letter-spacing: 5px;
             }
 
         #bioPart1
             {
-                padding-top: 3%;
+                padding-top: 11%;
                 padding-bottom: 3%;
             }
+            #bioPart1 h3
+                {
+                    font-size: 109px;
+                    color: white;
+                    position: absolute;
+                    margin-left: 2%;
+                    margin-top: -4%;
+                }
             #bioPart1 img
                 {
-                    background: black;
+                    background: #121217;
                     width: 100%;
-                    height: 125px;
                     z-index: 20;
+                    border-radius: 4px;
+                    opacity: 0.65;
+                    box-shadow: 14px 14px 20px 0px black;
                 }
             #bioPart1 p
                 {
-                    background: blue;
-                    width: 300px;
+                    background: #121217;
+                    width: 279px;
                     text-align: center;
-                    margin-left: 74%;
-                    margin-top: -4%;
-                    z-index: 10000;
+                    z-index: 99;
+                    color: #ecebeb;
+                    position: absolute;
+                    padding: 1%;
+                    margin-top: -3%;
+                    margin-left: 46%;
+                    border-radius: 4px;
                 }
+
+        #bioPart2
+            {
+                margin-top: 5%;
+                padding: 3%;
+            }
+
+            #bio2Text
+                {
+                    background: #121217;
+                    padding: 7%;
+                    border-radius: 4px;
+                }
+                #bio2Text h4
+                    {
+                        font-family: 'robotobold', sans-serif;
+                        font-size: 30px;
+                        color: #3d92bb;  
+                    }
+                #bio2Text h6
+                    {
+                        font-family: 'walkway_oblique_ultraboldRg', sans-serif;
+                        font-size: 22px;
+                        color: white;
+                        margin-left: 5px;
+                        letter-spacing: 4px;
+                    }
+                #bio2Text p
+                    {
+                        font-family: 'robotoregular', sans-serif;
+                        font-size: 16px;
+                        color: #c7c7c7;
+                        margin-left: 10px;
+                        line-height: 22px; 
+                    }
+            #bio2Img
+                {
+                    text-align: center;
+                }
+                #bio2Img img
+                    {
+                        width: 100%;    
+                        border-radius: 4px;
+                        box-shadow: 14px 14px 20px 0px black;
+                    }
+                    @media (max-width: 992px) 
+                        {
+                            #bio2Img img
+                                {
+                                    width: 60%;
+                                    margin-top: 5%;    
+                                } 
+                        }
 
 /*------------------------------------------ - - 
 ----------- - - -  Transition 2 - - - ----------
@@ -179,11 +348,11 @@ body
 
 #transition2
     {
-        background: black;
+        background: #121217;
         width: 100%;
-        height: 170px;
+        height: 100px;
         position: relative;
-        box-shadow: 0px 45px 97px -105px white;
+        box-shadow: 0px -13px 31px -37px white;
         z-index: 99;
     }
 
@@ -196,6 +365,7 @@ body
         background: white;
         width: 100%;
         position: relative;
+        padding-bottom: 3%;
     }
 
     #apercuContenair 
@@ -203,6 +373,107 @@ body
             padding-top: 5%;
             padding-bottom: 5%;
         }
+
+        #apercuContenair hr
+            {
+                border: 0.5px solid #7d7d7d;
+                width: 10%;
+                text-align: center;
+                margin: auto;
+            }
+        #apercuContenair h2
+                {
+                    text-align: center;
+                    font-size: 41px;
+                    color: #7d7d7d;
+                    margin-top: 1%;
+                    font-family: 'robotomedium', sans-serif;
+                    letter-spacing: 5px;
+                }
+
+        #apercuPart1
+            {
+                padding-top: 5%;
+            }
+            #apercuPart1 img
+                {
+                    background: #121217;
+                    width: 100%;
+                    border-radius: 4px;
+                    opacity: 0.85;
+                    box-shadow: 14px 14px 20px -18px black;
+                }
+            
+
+        #apercuPart2
+            {
+                
+            }
+            #barreBack
+                {
+                    margin-top: -6%;
+                }
+                .previewChap
+                    {
+                        text-align: center;
+                        box-shadow: 14px 14px 20px -18px black;
+                        border-radius: 5px;
+                        margin-left: 1%;
+                        margin-right: 1%;
+                        margin-top: 2%;
+                        margin-top: 2%;
+                        background-color: white;
+                        transition: all 0.3s ease-out;
+                    }
+                    .previewChap:hover
+                        {
+                            box-shadow: -14px 14px 20px -18px black;
+                            background-color: #17171a;
+                        }
+                        .previewChap:hover h4
+                            {
+                                color: white;
+                            }
+                        .previewChap:hover .chapNbr
+                            {
+                                box-shadow: -6px 6px 13px -11px white;
+                            }
+
+                    .chapNbr
+                        {
+                            background: #3d92bb;
+                            width: 50%;
+                            margin: auto;
+                            padding: 3%;
+                            color: white;
+                            cursor: pointer;
+                            margin-bottom: 5%;
+                            margin-top: 5%;
+                            border-radius: 5px;
+                            box-shadow: 8px 8px 13px -11px black;
+                            transition: all 0.3s ease-out;
+                        }
+                        .chapNbr:hover
+                            {
+                                background: white;
+                                color: #3d92bb;
+                            }
+
+                        .previewChap h4
+                            {
+                                font-family: 'walkway_oblique_blackregular', sans-serif;
+                                font-size: 20px;
+                                color: #121217;
+                                letter-spacing: 2px;
+                                transition: all 0.3s ease-out;
+                            }
+                        .previewChap p
+                            {
+                                font-family: 'robotoregular', sans-serif;
+                                font-size: 16px;
+                                color: #c7c7c7;
+                            }
+                    
 
 /*------------------------------------------- - - 
 ----------- - - -  Des Tests Php - - - ----------
@@ -239,17 +510,19 @@ ul
 
 #theEnd
     {
-        position: relative;
-        margin: auto;
-        width: 100%;
-        height: 300px;
-        background-color: #121217;
-        color: white;
-        padding-bottom: 6%;
+        background-color: black;
     }
-
-
-
+    #theEndContenair
+        {
+            text-align: center;
+            padding: 1.3% 1% 1% 1%;
+        }
+        #theEndContenair p
+            {
+                font-family: 'robotoregular', sans-serif;
+                font-size: 15px;
+                color: white; 
+            }
 
 
 
