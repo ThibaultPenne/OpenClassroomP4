@@ -29,36 +29,49 @@
         <header id="navBar">
 
             <nav id="nav" class="navbar navbar-expand-lg navbar-dark">
-              <a id="navTitre" class="navbar-brand" href="#">
-                Lecture innovante d'un nouveau roman
-              </a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+                <a id="navTitre" class="navbar-brand" href="#">
+                    Lecture innovante d'un nouveau roman
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Bio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="chapitres.html">Chapitres</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Admin
-                    </a>
-                    <div id="menuDown" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="admin.html">Connexion</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Déconnexion</a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="@">
+                                Home<span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Bio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="chapitres.php">Chapitres</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Admin
+                            </a>                    
+                            <form id="menuDropDownNav" class="dropdown-menu p-3">
+                                <div class="form-group">
+                                    <label for="exampleDropdownFormEmail2">Adresse Email</label>
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com" name="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleDropdownFormPassword2">Mot de passe</label>
+                                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password" name="password">
+                                </div>
+                                <input type="button" class="btn btn-primary mb-2" name="valider" value="Se connecter" onclick="window.location.href='admin.html'" />
+                            </form>           
+                        </li>
+                            <!-- Implanter une condition PHP pour rediriger l'admin vers la page d'admin si il rentre les bonnes informations de connexion -->
+
+                    </ul>
+                </div>
+
             </nav>
 
         </header>
