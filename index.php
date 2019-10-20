@@ -64,7 +64,7 @@
                                     <label for="exampleDropdownFormPassword2">Mot de passe</label>
                                     <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password" name="password">
                                 </div>
-                                <input type="button" class="btn btn-primary mb-2" name="valider" value="Se connecter" onclick="window.location.href='admin.html'" />
+                                <input type="button" class="btn btn-primary mb-2" name="valider" value="Se connecter" onclick="window.location.href='admin.php'" />
                             </form>           
                         </li>
                             <!-- Implanter une condition PHP pour rediriger l'admin vers la page d'admin si il rentre les bonnes informations de connexion -->
