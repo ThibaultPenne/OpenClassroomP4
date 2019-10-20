@@ -1,6 +1,6 @@
-Projet scolaire
+Mon histoire polaire :
 
-Ecole : OpenClassrooms
-Auteur : Thibault Penne
-Projet : n°4
-url : ...
+un projet réalisé par Thibault Penne.
+
+
+http://monhistoirepolaire.fr/
