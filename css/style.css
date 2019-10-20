@@ -11,6 +11,12 @@
 
 
 
+
+/*------------------------------------------------------------------------------ - - 
+--------------------------------  Page = index.php  --------------------------------
+- - ------------------------------------------------------------------------------*/
+
+
 /*------------------------------------------------------------ - - 
 ----------- - - -  Eléments principaux de la page - - - ----------
 - - ------------------------------------------------------------*/
@@ -514,23 +520,46 @@ ul
     #theEndContenair
         {
             text-align: center;
-            padding: 1.3% 1% 1% 1%;
+            padding: 1.8% 1% 1% 1%;
         }
         #theEndContenair p
             {
                 font-family: 'robotoregular', sans-serif;
-                font-size: 15px;
+                font-size: 14px;
                 color: white; 
             }
 
 
 
 
+/* -------------------------------------------------------------------------------- */
+/* ------------------------------- Fin de index.php ------------------------------- */
+/* -------------------------------------------------------------------------------- */
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------------------------------------------------- - - 
+--------------------------------  Page = chapitres.php  --------------------------------
+- - ----------------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------ - - 
+----------- - - -  Eléments principaux de la page - - - ----------
+- - ------------------------------------------------------------*/
 
 
 
@@ -785,6 +814,9 @@ ul
 
 
 
+/* -------------------------------------------------------------------------------- */
+/* ----------------------------- Fin de chapitres.php ----------------------------- */
+/* -------------------------------------------------------------------------------- */
 
 
 
@@ -796,6 +828,877 @@ ul
 
 
 
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------ - - 
+--------------------------------  Page = admin.php  --------------------------------
+- - ------------------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------ - - 
+----------- - - -  Eléments principaux de la page - - - ----------
+- - ------------------------------------------------------------*/
+
+.wrapper 
+{
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar
+{
+    position: fixed;
+    height: 100%;
+}
+
+#content 
+{
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+    margin-left: 190px;
+}
+
+#content.active
+{
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+    margin-left: 100px;
+}
+
+/*-------------------------------------------- - - 
+-------------- - - -  SideBar  - - - -------------
+- - --------------------------------------------*/
+
+#sidebar 
+    {
+        min-width: 190px;
+        max-width: 190px;
+        background: #3d92bb;
+        color: #fff;
+        transition: all 0.3s;
+    }
+
+.fa-laugh-wink 
+    {
+        transform: rotate(-15deg);
+    }
+
+#sidebar .sidebar-header 
+    {
+        padding: 20px;
+        background: #317798;
+    }
+
+#sidebar .sidebar-header strong  
+    {
+        display: none;
+        font-size: 1.8em;
+    }
+
+#sidebar ul.components 
+    {
+        padding: 0;
+        border-top: 25px solid #234656;
+        border-bottom: 25px solid #234656;
+    }
+
+    #sidebar .components  strong {
+        display: block;
+    }
+    #sidebar .components  span {
+        display: none;
+    }
+
+    #sidebar.active .components  strong {
+        display: none;
+    }
+    #sidebar.active .components  span {
+        display: block;
+    }
+
+
+a[data-toggle="collapse"] 
+    {
+        position: relative;
+    }
+
+#adminDropdown i, #blogDropdown i
+    {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+
+#sidebar ul li a 
+    {
+        padding: 10px;
+        font-size: 17px;
+        display: block;
+        text-align: left;
+        color: #fff;
+        background: #317798;
+    }
+    #sidebar ul li a:hover
+        {
+            text-decoration: none;
+            letter-spacing: 0.8px;
+        }
+
+#sidebar #homeSubmenu li a, #sidebar #pageSubmenu li a 
+    {
+        background: #234656d1;
+        text-align: center;
+        color: #e0e0e0;
+    }
+    #sidebar #homeSubmenu li a:hover, #sidebar #pageSubmenu li a:hover
+        {
+            background: #2395b9;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+#iconSmileAdmin
+    {
+        font-size: 44px;
+        margin-bottom: 2%;
+    }
+
+
+
+#reduireBtnContenair 
+    {
+        text-align: center;
+        margin-top: 90px;
+    }
+
+    #reduireBtnContenair button
+        {
+            background-color: #3d92bb;
+            color: white;
+            border: none;
+            padding: 6%;
+            box-shadow: 5px 5px 10px -5px black;
+            transition: all 0.3s ease-out;
+        }
+        #reduireBtnContenair button:hover
+        {
+            background-color: #234656;
+            box-shadow: -5px 5px 10px -5px black;
+        }
+
+        #sidebar #reduireBtnContenair  span {
+            display: block;
+            padding: 6px;
+        }
+        #sidebar #reduireBtnContenair  span i{
+            margin-right: 8px;
+                font-size: 17px;
+        }
+        #sidebar #reduireBtnContenair  strong {
+            display: none;
+        }
+
+
+        #sidebar.active #reduireBtnContenair  span {
+            display: none;
+        }
+        #sidebar.active #reduireBtnContenair  strong {
+            display: block;
+        }
+        #sidebar.active #reduireBtnContenair  strong i{
+                font-size: 30px;
+                    padding: 10px;
+        }
+
+
+
+
+
+
+
+    #sidebar.active 
+        {
+            min-width: 100px;
+            max-width: 100px;
+            text-align: center;
+        }
+
+    #sidebar .sidebar-header strong 
+        {
+            display: none;
+        }
+
+    #sidebar.active .sidebar-header h3 
+        {
+            display: none;
+        }
+
+    #sidebar.active .sidebar-header strong 
+        {
+            display: block;
+        }
+
+    #sidebar ul li a 
+        {
+            text-align: left;
+        }
+
+    #sidebar.active ul li a 
+        {
+            padding: 20px 10px;
+            text-align: center;
+            font-size: 0.75em;
+        }
+
+    #sidebar.active ul li a i 
+        {
+            margin-right:  0;
+            display: block;
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+    #sidebar.active ul ul a 
+        {
+            padding: 10px !important;
+        }
+
+    #sidebar.active .dropdown-toggle::after 
+        {
+            display: none;
+        }
+
+
+        /* -------------------- Responsive -------------------- */
+
+
+        @media (max-width: 768px) 
+            {
+                #sidebar.active 
+                    {
+                        min-width: 80px;
+                        max-width: 80px;
+                        text-align: center;
+                        margin-left: -80px !important;
+                    }
+
+                #content.active
+                    {
+                        width: 100%;
+                        min-height: 100vh;
+                        transition: all 0.3s;
+                        margin-left: 0px;
+                    }
+
+                #sidebar 
+                    {
+                        margin-left: 0; 
+                    }
+
+                #sidebar .sidebar-header strong 
+                    {
+                        display: none;
+                    }
+                #sidebar.active .sidebar-header h3 
+                    {
+                        display: none;
+                    }
+                #sidebar.active .sidebar-header strong 
+                    {
+                        display: block;
+                    }
+
+                #sidebar.active ul li a 
+                    {
+                        padding: 20px 10px;
+                        font-size: 0.85em;
+                    }
+
+                #sidebar.active ul li a i 
+                    {
+                        margin-right:  0;
+                        display: block;
+                        font-size: 1.8em;
+                        margin-bottom: 5px;
+                    }
+
+                #sidebar.active ul ul a 
+                    {
+                        padding: 10px !important;
+                    }
+
+                .dropdown-toggle::after 
+                    {
+                        top: auto;
+                        bottom: 10px;
+                        right: 50%;
+                        -webkit-transform: translateX(50%);
+                        -ms-transform: translateX(50%);
+                        transform: translateX(50%);
+                    }
+            }
+
+
+/*------------------------------------------- - - 
+-------------- - - -  NavBar  - - - -------------
+- - -------------------------------------------*/
+
+#navBarAdmin 
+    {
+        background-color: #121217;
+    }
+
+#navBarAdmin img
+    {
+        margin-left: 28px;
+    }
+
+#navBarAdmin #decoLink
+    {
+        margin-right: 5px;
+    }
+    #navBarAdmin #decoLink:hover
+        {
+            letter-spacing: 0.2px;
+            color: white;
+            font-weight: bold;
+        }
+
+#navBarAdmin button, #navBarAdmin ul
+    {
+        margin-left: auto;
+        margin-right: 3%;
+    }
+
+#navbarSupportedContent
+    {
+        padding: 0.2%;
+    }
+
+/*---------------------------------------------------- - - 
+-------------- - - -  Tableau de Bord  - - - -------------
+- - ----------------------------------------------------*/
+
+#content .card-header
+    {
+        background-color: #28779c;
+    }
+#content .card-header h6
+    {
+        font-family: 'robotomedium', sans-serif;
+        font-size: 17px;
+        color: white!important;
+        letter-spacing: 0.7px;
+    }
+
+
+#dashBoard
+    {
+        background: #3b4652;
+    }
+
+    #dashboardTitle
+        {
+            padding-top: 2%;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #dashboardTitle h1
+            {
+                color: white;
+                font-family: 'robotomedium', sans-serif;
+                font-size: 30px;
+            }
+
+#bienvenueCol .card
+    {
+        border: none;
+        border-radius: 5px;
+        box-shadow: 10px 10px 13px -13px black!important;
+        transition: all 0.3s ease-out;
+    }
+    #bienvenueCol .card:hover
+        {
+            box-shadow: -10px 10px 13px -13px black!important;
+        }
+
+    #bienvenueCol .img-fluid
+        {
+            width: 19.1rem;
+        }
+    #bienvenueCol p
+        {
+            color: #80848c;
+        }
+
+
+/*-------------------------------------------------- - - 
+-------------- - - -  Statistique 1  - - - -------------
+- - --------------------------------------------------*/
+
+/* 1ère colonne = Dashboard Image */
+
+/* 2e colonne = Avancée des tâches */
+
+#tachesCol .card
+    {
+        border: none;
+        border-radius: 5px;
+        box-shadow: 10px 10px 13px -13px black!important;
+        transition: all 0.3s ease-out;
+    }
+    #tachesCol .card:hover
+        {
+            box-shadow: -10px 10px 13px -13px black!important;
+        }
+
+#tachesCol .card-body
+    {
+        background-color: #1d2125;
+        color: white;
+        border-radius: 0 0 5px 5px;
+    }
+    #tachesCol .card-body h4
+        {
+            color: lightgrey;
+            font-size: 12.8px;
+        }
+    #tachesCol .card-body span
+        {
+            color: white;
+        }
+
+    .chaps-progress .progress-bar
+        {
+            background-color: #38acff!important;
+        }
+    .comms-progress .progress-bar
+        {
+            background-color: #f782cd!important;
+        }
+
+/*-------------------------------------------------- - - 
+-------------- - - -  Statistique 2  - - - -------------
+- - --------------------------------------------------*/
+
+/* General */
+#card1, #card2, #card3, #card4
+    {
+        margin-bottom: 5%;
+        box-shadow: 10px 10px 13px -13px black!important;
+        transition: all 0.3s ease-out;
+    }
+    #card1:hover, #card2:hover, #card3:hover, #card4:hover
+        {
+            box-shadow: -10px 10px 13px -13px black!important;
+        }
+
+
+    #card1 .row, #card2 .row, #card3 .row, #card4 .row
+        {
+            align-items: center;
+        }
+
+#color1, #color2, #color3, #color4, #color5, #color6
+    {
+        margin-bottom: 5%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 14.5px;
+        border-radius: 8px;
+        box-shadow: 10px 10px 13px -13px black!important;
+        transition: all 0.3s ease-out;
+    }
+    #color1:hover, #color2:hover, #color3:hover, #color4:hover, #color5:hover, #color6:hover
+        {
+            box-shadow: -10px 10px 13px -13px black!important;
+        }
+
+    #color1, #color4
+        {
+            background-color: #1caf42!important;
+            color: white!important;
+        }
+     #color3, #color6
+        {
+            background-color: #e43030!important;
+            color: white!important;
+        }
+
+    #color2, #color5
+        {
+            background-color: #1d2125!important;
+            color: #f5c749!important;
+        }
+        #color2
+            {
+                border-left: 5px solid #38acff!important;
+            }
+        #color5
+            {
+                border-left: 5px solid #f782cd!important;
+            }
+
+    .color-card .small-txt
+        {
+            font-size: 11px;
+            color: #d6d6d6;
+            font-weight: normal;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+    
+
+
+    /* 1ère Principale colonne = Les stats */
+
+        /* 1ère row = Les Stats Visiteurs */
+        #visite1, #visite2, #visite3
+            {
+                background-color: white;
+                border-radius: 7px;
+                box-shadow: 10px 10px 13px -13px black!important;
+                transition: all 0.3s ease-out;
+            }
+            #visite1:hover, #visite2:hover, #visite3:hover
+                {
+                    box-shadow: -10px 10px 13px -13px black!important;
+                }
+
+            .visite-txt
+                {
+                    font-weight: bold;
+                    color: #3d92bb!important;
+                }
+            .visite-nbr
+                {
+                    font-weight: bold;
+                    color: #ff5e5e;
+                    font-size: 25px;
+                }
+            #visite1 i,  #visite2 i,  #visite3 i
+                {
+                    color: grey;
+                    font-size: 32px;
+                }
+
+            #visite1 .row, #visite2 .row, #visite3 .row
+                {
+                    align-items: center;
+                }
+                
+
+        /* 2ème row = Les Stats Chap / Com */
+        #row2Stats i
+            {
+                font-size: 45px;
+                color: white;
+            }
+
+            /* Colonne 1 = Chapitres */
+
+                /* Card 1 = stat */
+                #card1
+                    {
+                        background: #17171a;
+                        color: #38acff!important;
+                        text-align: center;
+                        border-left: 5px solid #38acff!important;
+                        border-radius: 7px;
+                        letter-spacing: 0.7px;
+                    }
+                    #card1Txt
+                        {
+                            font-size: 16.5px;
+                            font-weight: bold;
+                        }
+
+                /* Card 2 = % */
+                #card2
+                    {
+                        background: #17171a;
+                        border-left: 5px solid #38acff!important;
+                        border-radius: 7px;
+                    }
+                    #card2Txt
+                        {
+                            color: #38acff!important;
+                            text-align: center;
+                            padding-bottom: 7px;
+                            font-size: 15.5px;
+                            font-weight: bold;
+                            letter-spacing: 0.5px;
+                        }
+                    #card2Nbr
+                        {
+                            color: white!important;
+                            font-size: 20px;
+                            font-weight: bold;
+                            letter-spacing: 0.5px;
+                            align-items: center;
+                        }
+                        #card2Nbr .progress-bar
+                            {
+                                background-color: #38acff!important;
+                            }
+
+                /* Color 1 = Validé */
+
+                /* Color 2 = En cours */
+
+                /* Color 3 = Supprimé */
+
+            /* Colonne 2 = Commentaires */
+
+                /* Card 3 = stat */
+                #card3
+                    {
+                        background: #17171a;
+                        color: #f782cd!important;
+                        text-align: center;
+                        border-left: 5px solid #f782cd;
+                        border-radius: 7px;
+                        letter-spacing: 0.7px;
+                    }
+                    #card3Txt
+                        {
+                            font-size: 16.5px;
+                            font-weight: bold;
+                        }
+
+                /* Card 4 = % */
+                #card4
+                    {
+                        background: #17171a;
+                        border-left: 5px solid #f782cd;
+                        border-radius: 7px;
+                    }
+                    #card4Txt
+                        {
+                            color: #f782cd!important;
+                            text-align: center;
+                            padding-bottom: 7px;
+                            font-size: 15.5px;
+                            font-weight: bold;
+                            letter-spacing: 0.5px;
+                        }
+                    #card4Nbr
+                        {
+                            color: white!important;
+                            font-size: 20px;
+                            font-weight: bold;
+                            letter-spacing: 0.5px;
+                            align-items: center;
+                        }
+                        #card4Nbr .progress-bar
+                            {
+                                background-color: #f782cd!important;
+                            }
+
+                /* Color 4 = Validé */
+
+                /* Color 5 = En cours */
+
+                /* Color 6 = Supprimé */
+
+
+    /* 2ème Principale colonne = Les résumés */
+    .col-resume-contenair
+        {
+            box-shadow: 10px 10px 13px -13px black!important;
+            transition: all 0.3s ease-out;
+        }  
+        .col-resume-contenair:hover
+            {
+                box-shadow: -10px 10px 13px -13px black!important;
+            }    
+
+    #col2Resumes .card
+        {
+            border: none;
+            border-radius: 5px;
+        }    
+
+        #col2Resumes .card-header i
+            {
+                margin-right: 7px;
+                font-size: 20px;
+            }
+
+        #col2Resumes .card-body
+            {
+                background-color: #1d2125;
+                border-radius: 0 0 5px 5px;
+            }
+
+
+        /* Les 3 derniers chapitres publiés */ /* Les 3 derniers commentaires en attente */
+        .table 
+            {
+                width: 100%;
+                border: 2px solid white;
+                padding: 1%;
+                text-align: center;
+                background-color: white;
+                border: none;
+                border-radius: 2px;
+                box-shadow: 5px 5px 10px -5px black;
+                transition: all 0.3s ease-out;
+            }
+            .table:hover
+                {
+                    box-shadow: -5px 5px 10px -5px black;
+                }
+
+                .trHead
+                    {
+                        background-color: #244d5d;
+                        color: white;
+                    }
+
+            tr, th, td
+                {
+                    
+                } 
+                tr
+                    {
+                        
+                    } 
+                    
+                th
+                    {
+                        border-top: none;
+                    } 
+                td
+                    {
+                        
+                        color: #454d55;
+                    } 
+
+                /* table tbody tr:nth-of-type(odd) */ /* = lignes impaires d'un tableau */
+
+                table tbody .tabGroup1
+                    {
+                        background-color: #093042;
+                        transition: all 0.3s ease-out;
+                    }
+                    .tabGroup1 td, .tabGroup1 th
+                        {
+                            color: #d0d0d0;
+                            border-top: none;
+                            transition: all 0.3s ease-out;
+                        }
+
+                table tbody .tabGroup2
+                    {
+                        background-color: #21445d;
+                        transition: all 0.3s ease-out;
+                    }
+                    .tabGroup2 td, .tabGroup2 th
+                        {
+                            color: #d0d0d0;
+                            border-top: none;
+                            transition: all 0.3s ease-out;
+                        }
+
+                        .tabGroup1:hover, .tabGroup2:hover 
+                            {
+                                background-color: #2395b9;
+                            } 
+                            .tabGroup1:hover td, .tabGroup2:hover td
+                                {
+                                    color: white;
+                                } 
+
+
+
+                #table1 td, #table1 td, #table1 th, #table2 td, #table2 td, #table2 th
+                    {
+                        border: none
+                    }
+                #table1 th, #table2 th
+                    {
+                        font-size: 16px;
+                    }
+                #table1 td, #table1 td, #table2 td, #table2 td
+                    {
+                        font-size: 15px;
+                    }
+
+                #chapBtn, #comBtn
+                    {
+                        margin: auto;
+                        text-align: center;
+                        margin-top: 5%;
+                    }
+                    #chapBtn button, #comBtn button
+                        {
+                            background-color: #3d92bb;
+                            color: white;
+                            border: none;
+                            padding: 1.5%;
+                            box-shadow: 5px 5px 10px -5px black;
+                            transition: all 0.3s ease-out;
+                            margin-bottom: 1%;
+                            font-size: 15px;
+                        }
+                        #chapBtn button:hover, #comBtn button:hover
+                            {
+                                background-color: #234656;
+                                color: white;
+                                box-shadow: -5px 5px 10px -5px black;
+                            }
+
+                .sizeTH1
+                    {
+                        width: 25%;
+                    }
+                .sizeTH2
+                    {
+                        width: 50%;
+                    }
+                .sizeTH1
+                    {
+                        width: 25%;
+                    }
+
+        
+
+
+
+
+/*------------------------------------------- - - 
+-------------- - - -  Footer  - - - -------------
+- - -------------------------------------------*/
+
+/* Fait sur la page index.php */
+
+
+
+/* -------------------------------------------------------------------------------- */
+/* ------------------------------- Fin de admin.php ------------------------------- */
+/* -------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+/*--------------- - - -  Fin du code CSS - - - ---------------*/
 
 
 
