@@ -668,6 +668,11 @@ ul
             margin-left: 10px;
             line-height: 22px; 
         }
+    #chapitre1 img
+        {
+            margin: auto;
+            display: block;
+        }
 
 
 #lesCommentaires
@@ -864,6 +869,7 @@ ul
     min-height: 100vh;
     transition: all 0.3s;
     margin-left: 190px;
+    background-color: #3b435d;
 }
 
 #content.active
@@ -872,6 +878,7 @@ ul
     min-height: 100vh;
     transition: all 0.3s;
     margin-left: 100px;
+    background-color: #3b435d;
 }
 
 /*-------------------------------------------- - - 
@@ -1162,15 +1169,14 @@ a[data-toggle="collapse"]
         margin-left: 28px;
     }
 
-#navBarAdmin #decoLink
+#navBarAdmin .nav-link
     {
         margin-right: 5px;
+        transition: all 0.15s ease-out;
     }
-    #navBarAdmin #decoLink:hover
+    #navBarAdmin .nav-link:hover
         {
-            letter-spacing: 0.2px;
             color: white;
-            font-weight: bold;
         }
 
 #navBarAdmin button, #navBarAdmin ul
@@ -1179,10 +1185,70 @@ a[data-toggle="collapse"]
         margin-right: 3%;
     }
 
+
 #navbarSupportedContent
     {
         padding: 0.2%;
     }
+
+
+
+    @media (max-width: 991px) 
+        {
+            #navBarAdmin button, #navBarAdmin ul
+                {
+                    margin: auto;
+                    width: 70%;
+                    flex-direction: row;
+                    text-align: center;
+                    margin-top: 0.5%;
+                    margin-bottom: 0.5%;
+                }
+                .nav-item 
+                    {
+                        width: 50%;
+                        margin-top: 1%;
+                    }
+                .nav-item img
+                    {
+                        display: none;
+                    }
+                #decoLinkLi, #homeLinkLi
+                    {
+                        width: 100%;
+                    }
+        }
+    @media (max-width: 768px) 
+        {
+            #navBarAdmin 
+                {
+                    position: fixed;
+                    width: 100%;
+                    top: 0;
+                    z-index: 9999999;
+                }
+
+            #navBarAdmin button, #navBarAdmin ul
+                {
+                    margin: auto;
+                    width: 90%;
+                    flex-direction: row;
+                    text-align: center;
+                    margin-top: 0.5%;
+                    margin-bottom: 0.5%;
+                }
+                .nav-item 
+                    {
+                        width: 100%;
+                        margin-top: 1%;
+                    }
+                .nav-item img
+                    {
+                        display: none;
+                    }
+        }
+    
+
 
 /*---------------------------------------------------- - - 
 -------------- - - -  Tableau de Bord  - - - -------------
@@ -1208,15 +1274,19 @@ a[data-toggle="collapse"]
 
     #dashboardTitle
         {
-            padding-top: 2%;
-            align-items: center;
-            justify-content: space-between;
+            text-align: center;
         }
         #dashboardTitle h1
             {
                 color: white;
                 font-family: 'robotomedium', sans-serif;
                 font-size: 30px;
+            }
+        #dashboardTitle p
+            {
+                font-family: 'robotoregular', sans-serif;
+                font-size: 18px;
+                color: #9fa4b7;
             }
 
 #bienvenueCol .card
@@ -1271,15 +1341,16 @@ a[data-toggle="collapse"]
         {
             color: lightgrey;
             font-size: 12.8px;
+            font-weight: bold;
         }
     #tachesCol .card-body span
         {
             color: white;
         }
 
-    .chaps-progress .progress-bar
+    .visites-progress .progress-bar
         {
-            background-color: #38acff!important;
+            background-color: #3d92bb!important;
         }
     .comms-progress .progress-bar
         {
@@ -1689,6 +1760,310 @@ a[data-toggle="collapse"]
 /* ------------------------------- Fin de admin.php ------------------------------- */
 /* -------------------------------------------------------------------------------- */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------- - - 
+--------------------------------  Page = chapsAdminVue.php  --------------------------------
+- - --------------------------------------------------------------------------------------*/
+
+/* */
+#tablesAdminContenair
+    {
+        background-color: #212529;
+        border-radius: 10px;
+    }
+    #tablesAdminContenair .menu-traitement
+        {
+            text-align: center;
+            display: block;
+        }
+        #tablesAdminContenair .menu-traitement button, #tablesAdminContenair .menu-traitement a
+            {
+                width: 150px;
+            }
+        #newChapBtn
+            {
+                margin: auto;
+                cursor: pointer;
+                background-color: #3d92bb;
+                color: white;
+                border: none;
+                padding: 1%;
+                font-family: 'robotomedium', sans-serif;
+                font-size: 15px;
+                border-radius: 5px;
+                text-decoration: none;
+                box-shadow: 5px 5px 10px -5px black;
+                transition: all 0.3s ease-out;
+            }
+            #newChapBtn:hover
+                {
+                    background-color: #212529;
+                    box-shadow: 5px 5px 10px -5px black;
+                }
+
+        #tablesAdminContenair .tables-admin-btns
+            {
+                color: white;
+                border: none;
+                box-shadow: 5px 5px 10px -5px black;
+                transition: all 0.3s ease-out;
+                margin-bottom: 1%;
+                font-family: 'robotomedium', sans-serif;
+                font-size: 15px;
+                cursor: pointer;
+                padding: 1%;
+                border-radius: 5px;
+            }
+            #tablesAdminContenair .tables-admin-btns:hover
+                {
+                    color: white;
+                    box-shadow: -5px 5px 10px -5px black;
+                }
+
+        #tablesAdminContenair .colapse-forms
+            {
+                margin-top: 3%;
+            }
+
+
+
+#table01 td, #table01 td, #table01 th, #table02 td, #table02 td, #table02 th, #table03 td, #table03 td, #table03 th
+    {
+        border: none
+    }
+
+    #table01 .input-group-append, #table02 .input-group-append, #table03 .input-group-append 
+        {
+            margin: auto;
+        }
+
+#table01 button, #table02 button, #table03 button
+    {
+            background-color: #3d92bb;
+            color: white;
+            transition: all 0.3s ease-out;
+    }
+    #table01 tr:hover button, #table02 tr:hover button, #table03 tr:hover button
+        {
+            background-color: #093042;
+        }
+
+#table01 button:after, #table02 button:after, #table03 button:after
+    {
+        display: none;
+    }
+
+
+
+
+
+
+/* */
+.fermer-btn
+    {
+        margin: auto;
+        text-align: center;
+        margin-top: 3%;
+    }
+    .fermer-btn button
+        {
+            background-color: #3d92bb;
+            color: white;
+            border: none;
+            padding: 1%;
+            box-shadow: 5px 5px 10px -5px black;
+            transition: all 0.3s ease-out;
+            margin-bottom: 1%;
+            font-size: 15px;
+        }
+        .fermer-btn button:hover
+            {
+                background-color: #234656;
+                color: white;
+                box-shadow: -5px 5px 10px -5px black;
+            }
+
+        /* ------------------------- */
+
+        @media (max-width: 991px) 
+            {
+                #chapsAdminContenair .menu-traitement button, #chapsAdminContenair .menu-traitement a
+                    {
+                        width: 35%;
+                    }
+            }
+
+        @media (max-width: 768px) 
+            {
+                #chapsAdminContenair .menu-traitement button, #chapsAdminContenair .menu-traitement a
+                    {
+                        width: 80%;
+                    }
+            }
+    
+
+
+/*-------------------------------------------------------------------------------------- - - 
+--------------------------------  Fin de chapsAdminVue.php  --------------------------------
+- - --------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------- - - 
+--------------------------------  Page = comsAdminVue.php  --------------------------------
+- - --------------------------------------------------------------------------------------*/
+
+/* */
+table .demos
+    {
+        background: black;
+    }
+
+tr .card
+    {
+        border: none;
+        background: #17171a;
+        color: #b5b5b5;
+        padding: 2%;
+        width: 70%;
+        margin: auto;
+    }
+    
+#content .dropdown-item:hover
+    {
+        background-color: #3d92bb;
+        color: white;
+        transition: all 0.3s ease-out;
+    }
+
+.tabGroups
+    {
+        cursor: pointer;
+    }
+
+#table001 td, #table001 td, #table001 th, #table002 td, #table002 td, #table002 th, #table003 td, #table003 td, #table003 th
+    {
+        border: none
+    }
+
+    #table001 .input-group-append, #table002 .input-group-append, #table003 .input-group-append 
+        {
+            margin: auto;
+        }
+
+#table001 button, #table002 button, #table003 button
+    {
+            background-color: #3d92bb;
+            color: white;
+            transition: all 0.3s ease-out;
+    }
+    #table001 tr:hover button, #table002 tr:hover button, #table003 tr:hover button
+        {
+            background-color: #093042;
+        }
+
+#table001 button:after, #table002 button:after, #table003 button:after
+    {
+        display: none;
+    }
+
+
+/*-------------------------------------------------------------------------------------- - - 
+--------------------------------  Fin de comsAdminVue.php  --------------------------------
+- - --------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------- - - 
+--------------------------------  Page = newChapAdminVue.php  --------------------------------
+- - --------------------------------------------------------------------------------------*/
+
+
+#newDashBoard
+    {
+        background: #3b4652;
+        padding-bottom: 12%;
+    }
+
+#menuTiny 
+    {
+        background: #17171a!important;
+        color: #b5b5b5;
+        border-radius: 5px;
+        margin-top: -5%;
+        padding: 15%;
+        box-shadow: 8px 8px 23px -8px black;
+        transition: all 0.3s ease-out;
+    }
+    #menuTiny:hover
+        {
+            box-shadow: -8px 8px 23px -8px black;
+        }
+
+
+
+
+        /* --------- Responsive --------- */
+
+        @media (max-width: 1500px) 
+            {
+                #menuTiny 
+                    {
+                        margin-top: -7%;
+                    }
+            }
+
+            
+
+/*-------------------------------------------------------------------------------------- - - 
+--------------------------------  Fin de newChapAdminVue.php  --------------------------------
+- - --------------------------------------------------------------------------------------*/
 
 
 
