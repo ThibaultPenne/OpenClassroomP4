@@ -23,12 +23,10 @@
                     <a href="adminVue.php">Home</a>           
                 </li>
                 <li>
-                    <a href="chapsAdminVue.php">Chapitres</a>
-                    
+                    <a href="chapsAdminVue.php">Chapitres</a>               
                 </li>
                 <li>
-                    <a href="comsAdminVue.php">Commentaires</a>
-                    
+                    <a href="comsAdminVue.php">Commentaires</a>               
                 </li>
             </ul>
         </li>
@@ -38,8 +36,9 @@
                 Blog
             </a>
             <ul class="collapse list-unstyled" id="pageSubmenu">
-                <li> <a href="../frontend/indexVue.php">Accueil</a></li>
+                <li> <a href="../../index.php">Accueil</a></li>
                 <li><a href="../frontend/chapitresVue.php">Chapitres</a></li>
+                <li><a href="../frontend/contactView.php">Contact</a></li>
             </ul>
         </li>
     </ul>

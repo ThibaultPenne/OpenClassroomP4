@@ -59,7 +59,7 @@
                                 <a id="comLink" class="nav-link" href="comsAdminVue.php"><i class="fab fa-speakap mr-2"></i>Commentaires</a>
                             </li>
                             <li id="decoLinkLi" class="nav-item">
-                                <a id="decoLink" class="nav-link" href="../frontend/indexVue.php">Déconnection</a>
+                                <a id="decoLink" class="nav-link" href="../../index.php">Déconnection</a>
                             </li>
                             <li class="nav-item d-xs-none d-lg-block">
                                 <img src="../../public/images/miniEye.png" alt="..." class="rounded-pill">
@@ -87,48 +87,43 @@
                         <p class="col-6 m-auto pb-5">
                             L'imagination vient en créant.
                         </p>
+                        <!-- ---------- Le Formulaire Nouveau Chapitre ---------- -->
+                        <form id="newChapForm" class="col-6 m-auto">
+                            <div class="form-group">
+                                <label id="labelTitreChap" for="inputAddress">Titre du chapitre</label>
+                                <input type="text" class="form-control" id="inputTitreChap" placeholder="Le titre de votre chapitre...">
+                            </div>
+                            <div id="champDL" class="input-group mb-3">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="inputfileDL">
+                                    <label class="custom-file-label" for="inputfileDL" aria-describedby="inputGroupFileAddon02">Télécharger une image</label>
+                                </div>
+                            </div>
+                        </form>
                     </div>
 
                     <!-- ---------- Création du nouveau Chapitre ---------- -->
 
                     <!-- 1 seule row -->
-                    <div class="row">
+                    <div class="row mt-3">
 
                         <!-- Le Contenair du WYSIWYG  -->
                         <div id="tablesAdminContenair" class="col-sm-12 col-md-11 col-lg-10 col-xl-8 pt-4 m-auto">
 
-                            <!-- ------------- Menu WYSIWYG -------------- -->
+                            <!-- ------------- Menu WYSIWYG + Texte -------------- -->
 
-                            <div class="card col-sm-12 col-md-11 col-lg-11 col-xl-11 m-auto">
-                                <div id="menuTiny" class="card-header">
-                                    Ici se trouvera tous les compasants de l'interface WYSIWYG basée sur TinyMCE
-                                </div>
+                            <div class="card col-sm-12 col-md-11 col-lg-11 col-xl-11 m-auto">  
                                 <div class="card-body">
                                     <p class="card-text">
+                                        Ici se trouveront tous les composants de l'interface WYSIWYG basée sur TinyMCE
                                         <br>
-                                        Ici se trouvera le texte et l'image qui composeront le contenu du nouveau chapitre :
-                                        <br><br>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        <br><br>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        <br><br>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        <br><br>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                            <div class="input-group-prepend">
+                                            </div>
+                                            <textarea id="newChapTextArea" class="form-control" aria-label="With textarea"></textarea>
+                                            </div>
+                                        </div>
                                     </p>
                                 </div>
                             </div>

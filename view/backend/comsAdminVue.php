@@ -59,7 +59,7 @@
                                 <a id="comLink" class="nav-link" href="comsAdminVue.php"><i class="fab fa-speakap mr-2"></i>Commentaires</a>
                             </li>
                             <li id="decoLinkLi" class="nav-item">
-                                <a id="decoLink" class="nav-link" href="../frontend/indexVue.php">Déconnection</a>
+                                <a id="decoLink" class="nav-link" href="../../index.php">Déconnection</a>
                             </li>
                             <li class="nav-item d-xs-none d-lg-block">
                                 <img src="../../public/images/miniEye.png" alt="..." class="rounded-pill">
@@ -125,7 +125,7 @@
                                                 <th scope="col">Pseudo</th>
                                                 <th scope="col">Date</th>
                                                 <th scope="col">Heure</th>
-                                                <th scope="col">Remonté par</th>
+                                                <th scope="col">Signalé</th>
                                                 <th scope="col">Traitements</th>
                                             </tr>
                                         </thead>
@@ -148,7 +148,8 @@
                                                             </button>
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item" href="#">Valider</a>
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                         
@@ -181,7 +182,8 @@
                                                             </button>
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item" href="#">Valider</a>
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -213,7 +215,8 @@
                                                             </button>
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item" href="#">Valider</a>
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -245,7 +248,8 @@
                                                             </button>
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item" href="#">Valider</a>
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -284,7 +288,7 @@
                                                 <th scope="col">Pseudo</th>
                                                 <th scope="col">Date</th>
                                                 <th scope="col">Heure</th>
-                                                <th scope="col">Remonté par</th>
+                                                <th scope="col">Signalé</th>
                                                 <th scope="col">Traitement</th>
                                             </tr>
                                         </thead>
@@ -306,7 +310,8 @@
                                                                 <i class="fas fa-arrow-alt-circle-down"></i>
                                                             </button>
                                                             <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -337,7 +342,8 @@
                                                                 <i class="fas fa-arrow-alt-circle-down"></i>
                                                             </button>
                                                             <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -368,7 +374,8 @@
                                                                 <i class="fas fa-arrow-alt-circle-down"></i>
                                                             </button>
                                                             <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -399,7 +406,8 @@
                                                                 <i class="fas fa-arrow-alt-circle-down"></i>
                                                             </button>
                                                             <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                         
@@ -431,7 +439,8 @@
                                                                 <i class="fas fa-arrow-alt-circle-down"></i>
                                                             </button>
                                                             <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -462,7 +471,8 @@
                                                                 <i class="fas fa-arrow-alt-circle-down"></i>
                                                             </button>
                                                             <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                         
@@ -494,7 +504,8 @@
                                                                 <i class="fas fa-arrow-alt-circle-down"></i>
                                                             </button>
                                                             <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -525,7 +536,8 @@
                                                                 <i class="fas fa-arrow-alt-circle-down"></i>
                                                             </button>
                                                             <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                         
@@ -557,7 +569,8 @@
                                                                 <i class="fas fa-arrow-alt-circle-down"></i>
                                                             </button>
                                                             <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -589,7 +602,8 @@
                                                                 <i class="fas fa-arrow-alt-circle-down"></i>
                                                             </button>
                                                             <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                         
@@ -621,7 +635,8 @@
                                                                 <i class="fas fa-arrow-alt-circle-down"></i>
                                                             </button>
                                                             <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -652,7 +667,8 @@
                                                                 <i class="fas fa-arrow-alt-circle-down"></i>
                                                             </button>
                                                             <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -683,6 +699,7 @@
                             <div class="collapse colapse-forms" id="collapseCorbeille">
                                 <div class="card-body">
                                     <span class="badge badge-danger mb-2">Commentaires supprimés</span>
+                                    <span id="deleteAllBtn" type="button" class="badge badge-danger ml-4 mb-2">X Vider tout le tableau</span>
                                     <table id="table003" class="table">
                                         <thead>
                                             <tr class="trHead">
@@ -691,7 +708,7 @@
                                                 <th scope="col">Pseudo</th>
                                                 <th scope="col">Date</th>
                                                 <th scope="col">Heure</th>
-                                                <th scope="col">Remonté par</th>
+                                                <th scope="col">Signalé</th>
                                                 <th scope="col">Traitement</th>
                                             </tr>
                                         </thead>
@@ -714,6 +731,7 @@
                                                             </button>
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item" href="#">Restaurer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                         
@@ -746,6 +764,7 @@
                                                             </button>
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item" href="#">Restaurer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                         
@@ -778,6 +797,7 @@
                                                             </button>
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item" href="#">Restaurer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -809,6 +829,7 @@
                                                             </button>
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item" href="#">Restaurer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>

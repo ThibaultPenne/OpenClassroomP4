@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -40,17 +41,18 @@
                     <ul class="navbar-nav mr-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="indexVue.php">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="indexVue.php">Bio</a>
+                            <a class="nav-link" href="../../index.php">Accueil</a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="chapitresVue.php">
                                 Chapitres<span class="sr-only">(current)</span>
                             </a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="contactView.php">
+                                Contact
+                            </a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Admin
@@ -181,13 +183,14 @@
                 <div class="commentaires">
                     <div class="row justify-content-between">
                         <div class="col-5">
-                            <h4>de Inozuka</h4>
+                            <h4>de Inozuka</h4>      
                         </div>
                         <div class="col-4">
                             <h5>le 06/09/2019 à 19h30</h5>
                         </div>
                     </div>
                     <p>Super merci !</p>
+                    <span id="signerComBtn" type="button" class="badge mb-2">Signaler le commentaire</span>
                 </div>
                 <div class="commentaires">
                     <div class="row justify-content-between">
@@ -199,6 +202,7 @@
                         </div>
                     </div>
                     <p>Hehehe ce roman s'annone incroyable ! Super idée !</p>
+                    <span id="signerComBtn" type="button" class="badge mb-2">Signaler le commentaire</span>
                 </div>
                 <div class="commentaires">
                     <div class="row justify-content-between">
@@ -210,34 +214,33 @@
                         </div>
                     </div>
                     <p>Je pense que l'image n'aide pas forcément à l'immersion mais bon. Super chapitre, merci !</p>
+                    <span id="signerComBtn" type="button" class="badge mb-2">Signaler le commentaire</span>
                 </div>
             </div>
 
-            <div id="writeAComment" class="container">
+            <form id="contenairForm" class="col-xs-12 col-md-11 col-lg-8 m-auto">
+
                 <h4>Ajouter un commentaire</h4>
-                <form class="was-validated">
-                    <div class="col-md-4">
-                        <label class="commentLabel" for="validationServer01">Votre Pseudo</label>
-                        <input type="text" class="form-control is-valid" id="validationServer01" value="8NINE" required>
-                        <div class="feedMessage valid-feedback">
-                            Ohh joli !
+
+                <div class="form-group">
+                    <label for="inputAddress">Votre Pseudo</label>
+                    <input type="text" class="form-control is-valid" id="validationServer01" value="8NINE" required>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Votre message</span>
                         </div>
+                        <textarea class="form-control is-invalid" id="commentTextarea" placeholder="Un message est requis" rows="5" required></textarea>
                     </div>
-                    <div class="col-md-8">
-                        <label class="commentLabel" for="validationTextarea">Votre Message</label>
-                        <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Un message est requis" rows="5" required></textarea>
-                        <div class="feedMessage invalid-feedback">
-                            S'il vous plait, soyez respectueux.
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <button id="commentFormBtn" class="btn btn-primary" type="submit">
-                            Soumettre le commentaire
-                        </button>
-                    </div>
-                </form>
-                
-            </div>
+                </div>
+
+                <div id="btnContenair" class="container">
+                    <button type="submit" class="btn mt-3">Soumettre le commentaire</button>
+                </div>
+
+            </form>
 
         </section>
 

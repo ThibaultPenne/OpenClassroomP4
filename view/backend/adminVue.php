@@ -27,7 +27,7 @@
         <!-- ------------------------ La SideBar ---------------------------- -->
 
 
-        <?php include("sidebar.php"); ?>
+        <?php require("sidebar.php"); ?>
 
 
 
@@ -59,7 +59,7 @@
                                 <a id="comLink" class="nav-link" href="comsAdminVue.php"><i class="fab fa-speakap mr-2"></i>Commentaires</a>
                             </li>
                             <li id="decoLinkLi" class="nav-item">
-                                <a id="decoLink" class="nav-link" href="../frontend/indexVue.php">Déconnection</a>
+                                <a id="decoLink" class="nav-link" href="../../index.php">Déconnection</a>
                             </li>
                             <li class="nav-item d-xs-none d-lg-block">
                                 <img src="../../public/images/miniEye.png" alt="..." class="rounded-pill">

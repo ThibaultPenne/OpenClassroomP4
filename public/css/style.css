@@ -43,7 +43,7 @@ body
 .ancre
 {
     position: relative;
-    top: -120px; 
+    top: -50px; 
 }
 
 
@@ -747,72 +747,74 @@ ul
                     width: 96%;
                 }
 
-    #writeAComment 
+    #signerComBtn 
         {
-            background: #33333e;
-            width: 42%;
-            margin: auto;
-            padding: 1.5% 2% 3% 2%;
-            border-radius: 20px;
+            color: white;
+            background: #2f6171!important;
+            -webkit-appearance: initial;
+            transition: all 0.3s ease-out;
+        }
+        #signerComBtn:hover
+            {
+                color: white;
+                background: #dc3545!important;
+            }
+
+    #contenairForm
+        {
+            background: #2b3035;
+            color: white;
+            padding: 3% 3% 5% 3%;
+            border-radius: 8px;
             box-shadow: 15px 15px 37px -8px black;
             transition: all 0.3s ease-out;
         }
-        #writeAComment:hover
+        #contenairForm:hover
             {
                 box-shadow: -15px 15px 37px -8px black;
             }
-        #writeAComment h4
+
+    #contenairForm h4
+        {
+            font-family: 'robotomedium', sans-serif;
+            font-size: 25px;
+            letter-spacing: 1px;
+            margin-bottom: 3%;
+        }
+    #contenairForm label
+        {
+            color: #afa9a9;
+            font-family: 'robotoregular', sans-serif;
+            font-size: 16px;
+            font-style: italic;
+        }
+    #commentTextarea
+        {
+            min-height: 100px;
+        }
+    #btnContenair
+        {
+            text-align: center;
+        }
+        #contenairForm button
             {
-                font-family: 'robotomedium', sans-serif;
-                font-size: 24px;
+                background: #3d92bb;
                 color: white;
-                text-align: center;
-                margin-top: 1%;  
-                letter-spacing: 2px;
-                margin-bottom: 3%;
-                
+                font-family: 'robotomedium', sans-serif;
+                font-size: 15px;
+                box-shadow: 15px 15px 37px -8px black;
+                transition: all 0.3s ease-out;
             }
-        #writeAComment form
-            {
-                
-            }
-            #writeAComment .commentLabel
+            #contenairForm button:hover
                 {
-                    font-family: 'robotoregular', sans-serif;
-                    font-size: 15.5px;
-                    color: #c7c7c7;
-                    margin-top: 1.5%;
-                    margin-bottom: 0.7%;
+                    background: white;
+                    color: #3d92bb;
                 }
-            #writeAComment input, #writeAComment textarea
-                {
-                    font-family: 'robotoregular', sans-serif;
-                    font-size: 16px;
-                    color: #5f5f5f;
-                    border-width: 2.5px;
-                }
-            #writeAComment .feedMessage 
-                {
-                    font-family: 'robotomedium', sans-serif;
-                    font-size: 14px;
-                    margin-left: 1.5%;
-                }
-            #writeAComment #commentFormBtn
-                {
-                    margin-top: 8%;
-                    font-family: 'robotomedium', sans-serif;
-                    font-size: 17px;
-                    background-color: #3d92bb;
-                    border: 3px solid white;
-                    border-radius: 5px;
-                    transition: all 0.3s ease-out;
-                }
-                #writeAComment #commentFormBtn:hover
-                    {
-                        color: #3d92bb;
-                        background-color: white;
-                        border-color: #3d92bb;
-                    }
+
+    #commentTextarea
+        {
+
+        }
 
 
 
@@ -822,6 +824,61 @@ ul
 /* -------------------------------------------------------------------------------- */
 /* ----------------------------- Fin de chapitres.php ----------------------------- */
 /* -------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------ - - 
+--------------------------------  Page = contactView.php  --------------------------------
+- - ------------------------------------------------------------------------------------*/
+
+
+#contactFormContainer
+    {
+        background: #ececec;
+        padding-top: 8%;
+        padding-bottom: 12%;
+    }
+
+#contactTitre
+    {
+        position: absolute;
+        top: 19%;
+        font-size: 50px;
+        color: white;
+        font-family: 'robotothin_italic', sans-serif;
+        letter-spacing: 3px;
+        text-align: center;
+    }
+
+#contactTextarea
+    {
+        min-height: 250px;
+    }
+
+
+
+/* ---------------------------------------------------------------------------------- */
+/* ----------------------------- Fin de contactView.php ----------------------------- */
+/* ---------------------------------------------------------------------------------- */
+
 
 
 
@@ -1873,7 +1930,18 @@ a[data-toggle="collapse"]
     }
 
 
-
+#deleteAllBtn 
+    {
+        color: white;
+        background: #dc3545!important;
+        -webkit-appearance: initial;
+        transition: all 0.3s ease-out;
+    }
+    #deleteAllBtn:hover
+        {
+            color: #dc3545;
+            background: white!important;
+        }
 
 
 
@@ -2031,23 +2099,59 @@ tr .card
         padding-bottom: 12%;
     }
 
-#menuTiny 
+#newChapForm 
     {
-        background: #17171a!important;
-        color: #b5b5b5;
-        border-radius: 5px;
-        margin-top: -5%;
-        padding: 15%;
-        box-shadow: 8px 8px 23px -8px black;
+        background: #1d2125;
+        color: white;
+        text-align: left;
+        padding: 2% 3% 2% 3%;
+        border-radius: 8px;
+        box-shadow: 5px 5px 23px -8px black;
         transition: all 0.3s ease-out;
     }
-    #menuTiny:hover
+    #newChapForm:hover
         {
-            box-shadow: -8px 8px 23px -8px black;
+            box-shadow: -5px 5px 23px -8px black;
         }
 
+#tablesAdminContenair
+    {
+        box-shadow: 5px 5px 23px -8px black;
+        transition: all 0.3s ease-out;
+    }
+    #tablesAdminContenair:hover
+        {
+            box-shadow: -5px 5px 23px -8px black;
+        }
 
+#labelTitreChap
+    {
+        font-family: 'robotomedium', sans-serif;
+        font-size: 16px;
+        color: #afa9a9;
+        letter-spacing: 0.8px;
+        font-style: italic;
+    }
 
+#champDL label, #inputTitreChap
+    {
+        font-family: 'robotoregular', sans-serif;
+        font-size: 15px;
+    }
+    #champDL label
+        {
+            
+        }
+
+#champDL label::after
+    {
+        content: "Choisir";
+    }
+
+#newChapTextArea
+    {
+        min-height: 400px;
+    }
 
         /* --------- Responsive --------- */
 

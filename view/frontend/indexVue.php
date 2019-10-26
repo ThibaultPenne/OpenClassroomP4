@@ -7,8 +7,8 @@
         <title>Projet 4</title> <!-- Onglet -->
 
         <!-- Mon CSS -->
-        <link rel="stylesheet" href="../../public/css/fonts.css"/> <!-- Polices -->
-        <link rel="stylesheet" href="../../public/css/style.css"/> <!-- Main CSS -->   
+        <link rel="stylesheet" href="public/css/fonts.css"/> <!-- Polices -->
+        <link rel="stylesheet" href="public/css/style.css"/> <!-- Main CSS -->   
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -40,17 +40,18 @@
                     <ul class="navbar-nav mr-auto">
 
                         <li class="nav-item active">
-                            <a class="nav-link" href="indexVue.php">
+                            <a class="nav-link" href="index.php">
                                 Accueil<span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Bio</a>
+                            <a class="nav-link" href="view/frontend/chapitresVue.php">Chapitres</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="chapitresVue.php">Chapitres</a>
+                            <a class="nav-link" href="view/frontend/contactView.php">
+                                Contact
+                            </a>
                         </li>
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Admin
@@ -64,7 +65,7 @@
                                     <label for="exampleDropdownFormPassword2">Mot de passe</label>
                                     <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password" name="password">
                                 </div>
-                                <input type="button" class="btn btn-primary mb-2" name="valider" value="Se connecter" onclick="window.location.href='../backend/adminVue.php'" />
+                                <input type="button" class="btn btn-primary mb-2" name="valider" value="Se connecter" onclick="window.location.href='view/backend/adminVue.php'" />
                             </form>           
                         </li>
                             <!-- Implanter une condition PHP pour rediriger l'admin vers la page d'admin si il rentre les bonnes informations de connexion -->
@@ -88,7 +89,7 @@
 
                 <!-- ---------    Slide 1 - Introduction    ----------- -->
                 <figure id="slide1" class="mySlides">
-                    <img class="slideshowImg" src="../../public/images/slide1.png" alt= "...">
+                    <img class="slideshowImg" src="public/images/slide1.png" alt= "...">
                     <figcaption>
                         <h2>Billet simple pour l'Alaska</h2>
                         <p>
@@ -99,7 +100,7 @@
 
                 <!-- ---------    Slide 2 - Le Projet    ----------- -->
                 <figure id="slide2" class="mySlides">
-                    <img class="slideshowImg" src="../../public/images/slide2.png" alt= "...">
+                    <img class="slideshowImg" src="public/images/slide2.png" alt= "...">
                     <figcaption>
                         <h2>Le Projet</h2>
                         <p>
@@ -111,7 +112,7 @@
                             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
                          <h4>A présent, vous n'avez plus qu'à ...</h4>
-                        <button id="goChapitres" onclick="window.location.href='chapitresVue.php'">Plonger dans l'histoire</button>
+                        <button id="goChapitres" onclick="window.location.href='view/frontend/chapitresVue.php'">Plonger dans l'histoire</button>
                     </figcaption>
                 </figure>
 
@@ -138,7 +139,7 @@
                 <h2>Jean Forteroche</h2>
                 <div id="bioPart1">
                     <h3>A propos</h3>
-                    <img src="../../public/images/jean1.png">
+                    <img src="public/images/jean1.png">
                     <p>
                       Portrait original de l'acteur, l'auteur, l'aventurier, le passionné... mais avant tout de l'homme derrière l'histoire.  
                     </p>
@@ -166,7 +167,7 @@
                         </p>
                     </div>
                     <div id="bio2Img" class="col-lg-5">
-                        <img src="../../public/images/jean2.png" class="img-responsive center-block">
+                        <img src="public/images/jean2.png" class="img-responsive center-block">
                     </div>
                 </div>
             </div>
@@ -190,7 +191,7 @@
                 <hr>
                 <h2>Les derniers chapitres</h2>
                 <div id="apercuPart1">
-                    <img src="../../public/images/lastChapter.png">
+                    <img src="public/images/lastChapter.png">
                 </div>
                 <div id="apercuPart2">
                     <div id="barreBack" class="row justify-content-md-center">

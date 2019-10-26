@@ -59,7 +59,7 @@
                                 <a id="comLink" class="nav-link" href="comsAdminVue.php"><i class="fab fa-speakap mr-2"></i>Commentaires</a>
                             </li>
                             <li id="decoLinkLi" class="nav-item">
-                                <a id="decoLink" class="nav-link" href="../frontend/indexVue.php">Déconnection</a>
+                                <a id="decoLink" class="nav-link" href="../../index.php">Déconnection</a>
                             </li>
                             <li class="nav-item d-xs-none d-lg-block">
                                 <img src="../../public/images/miniEye.png" alt="..." class="rounded-pill">
@@ -128,7 +128,7 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Chapitre</th>
                                                 <th scope="col">Titre</th>
-                                                <th scope="col">Date</th>
+                                                <th scope="col">Date de création</th>
                                                 <th scope="col">Traitements</th>
                                             </tr>
                                         </thead>
@@ -139,8 +139,8 @@
                                             <tr id="ch06" class="tabGroup1">
                                                 <th scope="row">ch06</th>
                                                 <td>Chapitre 6</td>  
-                                                <td>Titre du chapitre 6</td>
-                                                <td>11/09/19</td>
+                                                <td>Un fluide glacé</td>
+                                                <td>18/10/19</td>
                                                 <td>
                                                     <div class="input-group">
                                                         <div class="input-group-append">
@@ -151,6 +151,7 @@
                                                                 <a class="dropdown-item" href="#">Publier</a>
                                                                 <a class="dropdown-item" href="#">Modifier</a>
                                                                 <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -179,7 +180,7 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Chapitre</th>
                                                 <th scope="col">Titre</th>
-                                                <th scope="col">Date</th>
+                                                <th scope="col">Date de publication</th>
                                                 <th scope="col">Traitements</th>
                                             </tr>
                                         </thead>
@@ -190,8 +191,8 @@
                                             <tr id="ch05" class="tabGroup1">
                                                 <th scope="row">ch05</th>
                                                 <td>Chapitre 5</td>   
-                                                <td>Titre du chapitre 5</td>
-                                                <td>05/09/19</td>
+                                                <td>Une image occultante</td>
+                                                <td>04/10/19</td>
                                                 <td>
                                                     <div class="input-group">
                                                         <div class="input-group-append">
@@ -201,7 +202,8 @@
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item" href="#">Lire</a>
                                                                 <a class="dropdown-item" href="#">Modifier</a>
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -213,8 +215,8 @@
                                             <tr id="ch04" class="tabGroup2">
                                                 <th scope="row">ch04</th>
                                                 <td>Chapitre 4</td>  
-                                                <td>Titre du chapitre 4</td>
-                                                <td>11/09/19</td>
+                                                <td>Envolée charnelle</td>
+                                                <td>27/09/19</td>
                                                 <td>
                                                     <div class="input-group">
                                                         <div class="input-group-append">
@@ -224,7 +226,8 @@
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item" href="#">Lire</a>
                                                                 <a class="dropdown-item" href="#">Modifier</a>
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -236,8 +239,8 @@
                                             <tr id="ch03" class="tabGroup1">
                                                 <th scope="row">ch03</th>
                                                 <td>Chapitre 3</td>   
-                                                <td>Titre du chapitre 3</td>
-                                                <td>05/09/19</td>
+                                                <td>Question de bon sens</td>
+                                                <td>20/09/19</td>
                                                 <td>
                                                     <div class="input-group">
                                                         <div class="input-group-append">
@@ -247,7 +250,8 @@
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item" href="#">Lire</a>
                                                                 <a class="dropdown-item" href="#">Modifier</a>
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -259,8 +263,8 @@
                                             <tr id="ch02" class="tabGroup2">
                                                 <th scope="row">ch02</th>
                                                 <td>Chapitre 2</td>  
-                                                <td>Titre du chapitre 2</td>
-                                                <td>11/09/19</td>
+                                                <td>Mouvement brusque</td>
+                                                <td>13/09/19</td>
                                                 <td>
                                                     <div class="input-group">
                                                         <div class="input-group-append">
@@ -270,7 +274,8 @@
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item" href="#">Lire</a>
                                                                 <a class="dropdown-item" href="#">Modifier</a>
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -282,8 +287,8 @@
                                             <tr id="ch01" class="tabGroup1">
                                                 <th scope="row">ch01</th>
                                                 <td>Chapitre 1</td>   
-                                                <td>Titre du chapitre 1</td>
-                                                <td>05/09/19</td>
+                                                <td>Deux ans plus tard…</td>
+                                                <td>06/09/19</td>
                                                 <td>
                                                     <div class="input-group">
                                                         <div class="input-group-append">
@@ -293,7 +298,8 @@
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item" href="#">Lire</a>
                                                                 <a class="dropdown-item" href="#">Modifier</a>
-                                                                <a class="dropdown-item" href="#">Supprimer</a>
+                                                                <a class="dropdown-item" href="#">Supprimer du Blog</a>
+                                                                <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -316,13 +322,14 @@
                             <div class="collapse colapse-forms" id="collapseCorbeille">
                                 <div class="card-body">
                                     <span class="badge badge-danger mb-2">Chapitres supprimés</span>
+                                    <span id="deleteAllBtn" type="button" class="badge badge-danger ml-4 mb-2">X Vider tout le tableau</span>
                                     <table id="table03" class="table">
                                         <thead>
                                             <tr class="trHead">
                                                 <th scope="col">#</th>
                                                 <th scope="col">Chapitre</th>
                                                 <th scope="col">Titre</th>
-                                                <th scope="col">Date</th>
+                                                <th scope="col">Date de création</th>
                                                 <th scope="col">Traitements</th>
                                             </tr>
                                         </thead>
