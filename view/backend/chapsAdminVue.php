@@ -50,7 +50,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav">
                             <li id="homeLinkLi" class="nav-item">
-                                <a id="chapLink" class="nav-link" href="adminVue.php"><i class="fas fa-home mr-2"></i>Home</a>
+                                <a id="homeLink" class="nav-link" href="adminVue.php"><i class="fas fa-home mr-2"></i>Home</a>
                             </li>
                             <li class="nav-item active">
                                 <a id="chapLink" class="nav-link" href="chapsAdminVue.php"><i class="fas fa-copy mr-2"></i>Chapitres</a>
@@ -84,7 +84,7 @@
 
                     <div id="dashboardTitle" class="py-5 m-auto">
                         <h1 class="">Le traitement des chapitres</h1>
-                        <p class="col-6 m-auto pb-5">
+                        <p class="col-md-8 col-lg-6 m-auto pb-5">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -126,7 +126,7 @@
                                         <thead>
                                             <tr class="trHead">
                                                 <th scope="col">#</th>
-                                                <th scope="col">Chapitre</th>
+                                                <th class="colByeBye" scope="col">Chapitre</th>
                                                 <th scope="col">Titre</th>
                                                 <th scope="col">Date de création</th>
                                                 <th scope="col">Traitements</th>
@@ -138,7 +138,7 @@
 
                                             <tr id="ch06" class="tabGroup1">
                                                 <th scope="row">ch06</th>
-                                                <td>Chapitre 6</td>  
+                                                <td class="colByeBye">6</td>  
                                                 <td>Un fluide glacé</td>
                                                 <td>18/10/19</td>
                                                 <td>
@@ -178,7 +178,7 @@
                                         <thead>
                                             <tr class="trHead">
                                                 <th scope="col">#</th>
-                                                <th scope="col">Chapitre</th>
+                                                <th class="colByeBye" scope="col">Chapitre</th>
                                                 <th scope="col">Titre</th>
                                                 <th scope="col">Date de publication</th>
                                                 <th scope="col">Traitements</th>
@@ -190,7 +190,7 @@
 
                                             <tr id="ch05" class="tabGroup1">
                                                 <th scope="row">ch05</th>
-                                                <td>Chapitre 5</td>   
+                                                <td class="colByeBye">5</td>   
                                                 <td>Une image occultante</td>
                                                 <td>04/10/19</td>
                                                 <td>
@@ -214,7 +214,7 @@
 
                                             <tr id="ch04" class="tabGroup2">
                                                 <th scope="row">ch04</th>
-                                                <td>Chapitre 4</td>  
+                                                <td class="colByeBye">4</td>  
                                                 <td>Envolée charnelle</td>
                                                 <td>27/09/19</td>
                                                 <td>
@@ -238,7 +238,7 @@
 
                                             <tr id="ch03" class="tabGroup1">
                                                 <th scope="row">ch03</th>
-                                                <td>Chapitre 3</td>   
+                                                <td class="colByeBye">3</td>   
                                                 <td>Question de bon sens</td>
                                                 <td>20/09/19</td>
                                                 <td>
@@ -262,7 +262,7 @@
 
                                             <tr id="ch02" class="tabGroup2">
                                                 <th scope="row">ch02</th>
-                                                <td>Chapitre 2</td>  
+                                                <td class="colByeBye">2</td>  
                                                 <td>Mouvement brusque</td>
                                                 <td>13/09/19</td>
                                                 <td>
@@ -286,7 +286,7 @@
 
                                             <tr id="ch01" class="tabGroup1">
                                                 <th scope="row">ch01</th>
-                                                <td>Chapitre 1</td>   
+                                                <td class="colByeBye">1</td>   
                                                 <td>Deux ans plus tard…</td>
                                                 <td>06/09/19</td>
                                                 <td>
@@ -322,12 +322,12 @@
                             <div class="collapse colapse-forms" id="collapseCorbeille">
                                 <div class="card-body">
                                     <span class="badge badge-danger mb-2">Chapitres supprimés</span>
-                                    <span id="deleteAllBtn" type="button" class="badge badge-danger ml-4 mb-2">X Vider tout le tableau</span>
+                                    <span id="deleteAllBtn" type="button" class="badge badge-danger ml-3 mb-2">Vider tout le tableau</span>
                                     <table id="table03" class="table">
                                         <thead>
                                             <tr class="trHead">
                                                 <th scope="col">#</th>
-                                                <th scope="col">Chapitre</th>
+                                                <th class="colByeBye" scope="col">Chapitre</th>
                                                 <th scope="col">Titre</th>
                                                 <th scope="col">Date de création</th>
                                                 <th scope="col">Traitements</th>
@@ -398,7 +398,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
 
     <!-- Mes fichiers JS -->
-    <script src="../../public/js/admin.js"></script>  
+    <script src="../../public/js/sidebar.js"></script>  
 
 
 

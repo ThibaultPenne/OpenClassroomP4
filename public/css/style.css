@@ -59,42 +59,128 @@ body
         z-index: 100000;
     }
 
-    #nav /* Id re-créer en JS */
+    #nav 
         {
             box-shadow: 0px 3px 20px -3px black;
-            padding: .5rem 8rem;
-            background-color: #121217f2!important;
+            min-height: 72px;
+            padding: 1.5% 8% 1.5% 8%;
+            background-color: #121217!important;
         }
 
         #navTitre
             {
-                font-family: 'walkway_oblique_ultraboldRg', sans-serif;
-                font-size: 20px;
+                font-family: 'robotolight', sans-serif;
+                font-size: 18px;
                 color: #d8d8d8;
                 letter-spacing: 1px;
-                margin-left: 8%;
             }
 
-        .mr-auto, .mx-auto /* Container ul du Menu */
+        #navBar ul 
             {
-                margin-left: 60%;
+                margin-left: auto;
             }
+            #navBar ul a
+                {
+                    font-family: 'robotoregular', sans-serif;
+                    font-size: 17px;
+                }
 
         #menuDropDownNav
             {
                 border: none;
-                margin: 10% -252px 0;
-                    width: 330px;
+                margin: 25px -252px 0;
+                width: 330px;
             }
-            #menuDropDownNav a
+            #menuDropDownNav #connexionBtn
+                {
+                    font-family: 'robotomedium', sans-serif;
+                    background-color: #3d92bb;
+                    color: white;
+                    box-shadow: 6px 6px 20px -8px black;
+                    transition: all 0.3s ease-out;
+                }
+                #menuDropDownNav #connexionBtn:hover
+                    {
+                        box-shadow: -6px 6px 20px -8px black;
+                        background-color: white;
+                        color: #3d92bb;
+                    }
+            #menuDropDownNav label
+                {
+                    font-family: 'robotoregular', sans-serif;
+                    font-size: 17px;
+                    color: #6e8e9a;
+                }
+
+        
+
+
+    @media (max-width: 991px) 
+        {
+            #nav
+                {
+                    padding: 2%;
+                }
+            #navTitre
                 {
                     
                 }
-                #menuDropDownNav a:hover
-                    {
-                        
-                    }
+            #navBar li 
+                {
+                    width: 100%;
+                    margin-top: 1%;
+                    text-align: right;
+                }
+            #menuDropDownNav 
+                {
+                    border: none;
+                    margin: 1% 31% 0px;
+                }
+            #navbarSupportedContent 
+                {
+                    padding: 2.2%;
+                    background: #1d2125;
+                    margin-top: 11px;
+                }
+            
+        }
 
+    @media (max-width: 512px) 
+        {
+            #navTitre
+                {
+                    display: none;
+                }
+            #navBar ul a
+                {
+                    font-family: 'robotoregular', sans-serif;
+                    font-size: 16px;
+                    margin-top: -2%;
+                }
+
+            #navBar button
+                {
+                    margin: auto;
+                }
+            #navBar li 
+                {
+                    text-align: center;
+                }
+            #menuDropDownNav 
+                {
+                    border: none;
+                    margin: 0%;
+                    width: initial;
+                }
+                #menuDropDownNav label
+                    {
+                        font-size: 15px;
+                    }
+                #menuDropDownNav input
+                    {
+                        font-size: 15px;
+                    }
+        }
 
 
 /*--------------------------------------- - - 
@@ -105,6 +191,7 @@ body
     {
         height: auto;
         width: 100%;
+        margin-top: 72px;
     }
 
     #slideshow /* Slider */
@@ -146,38 +233,39 @@ body
                 #slideshow figcaption h2
                     {
                         text-align: center;
-                        font-size: 50px;
+                        font-size: 45px;
                         color: white;
                         margin-top: 1%;
                         font-family: 'robotomedium', sans-serif;
-                        letter-spacing: 5px;
+                        letter-spacing: 3px;
                     }
                 #slideshow figcaption p
                     {
                         text-align: center;
                         font-size: 17px;
                         color: black;
-                        font-family: 'walkway_oblique_boldregular', sans-serif;
-                        letter-spacing: 4px;
+                        font-family: 'robotolight', sans-serif;
+                        font-style: italic;
+                        letter-spacing: 3px;
                     }
 
                 #slide2 figcaption p
                     {
-                        letter-spacing: 2px;
+                        letter-spacing: 1px;
                         width: 50%;
                         margin: auto;
                         background: #000000c7;
                         color: #c7c7c7;
                         padding: 1%;
-                        border: 5px solid white;
-                        border-radius: 20px;
+                        border: none;
+                        border-radius: 15px;
                         margin-top: 2%;
                     }
                 #slide2 figcaption h4
                     {
                         font-family: 'robotoregular', sans-serif;
                         font-style: italic;
-                        font-size: 21px;
+                        font-size: 16px;
                         color: white;
                         width: 50%;
                         margin: auto;
@@ -190,12 +278,11 @@ body
                         font-size: 17px;
                         background: #3d92bb;
                         color: white;
-                        width: 12%;
                         margin: auto;
                         margin-top: 1%;
                         display: block;
-                        padding: 0.5%;
-                        border: 3px solid white;
+                        padding: 1%;
+                        border: none;
                         border-radius: 5px;
                         cursor: pointer;
                         box-shadow: 14px 14px 20px -18px black;
@@ -203,10 +290,66 @@ body
                     }
                     #slide2 figcaption button:hover
                         {
-                            background: #000000c7;
+                            background: white;
+                            color: #3d92bb;
                             box-shadow: -14px 14px 20px -18px black;
                         }
                 
+
+        @media (max-width: 1150px)
+            {
+                #slideshow figcaption
+                    {
+                        top: 11%;
+                    }
+                #slide2 figcaption p
+                    {
+                        width: 80%;
+                    }
+            }
+        @media (max-width: 850px)
+            {
+                #slideshow figcaption h2
+                    {
+                        font-size: 35px;
+                    }
+                #slideshow figcaption p
+                    {
+                        font-size: 15px;
+                    }
+            }
+        @media (max-width: 550px)
+            {
+                #slideshow figcaption
+                    {
+                        top: 2%;
+                    }
+                #slideshow figcaption h2
+                    {
+                        font-size: 27px;
+                        margin-bottom: 3px;
+                    }
+                #slideshow figcaption p
+                    {
+                        font-size: 12.5px;
+                        letter-spacing: 2px;
+                    }
+                #slide2 figcaption p
+                    {
+                        width: 95%;
+                        line-height: 15px;
+                        margin-top: 1%;
+                    }
+                #slide2 figcaption h4
+                    {
+                        font-size: 14px;
+                        width: 100%;
+                    }
+                #slide2 figcaption button
+                    {
+                        font-size: 15px;
+                    }
+            }
 
 
 
@@ -223,6 +366,27 @@ body
         box-shadow: 0px 33px 50px -48px white;
         z-index: 99;
     }
+    @media (max-width: 991px)
+        {
+            #transition1
+                {
+                    height: 90px;
+                }
+        }
+    @media (max-width: 767px)
+        {
+            #transition1
+                {
+                    height: 80px;
+                }
+        }
+    @media (max-width: 550px)
+        {
+            #transition1
+                {
+                    height: 70px;
+                }
+        }
 
 
 /*------------------------------------------- - - 
@@ -255,8 +419,15 @@ body
                 color: white;
                 margin-top: 1%;
                 font-family: 'robotomedium', sans-serif;
-                letter-spacing: 5px;
+                letter-spacing: 1px;
             }
+            @media (max-width: 550px)
+                {
+                    #bioContenair h2
+                        {
+                            font-size: 30px;
+                        }
+                }
 
         #bioPart1
             {
@@ -265,12 +436,52 @@ body
             }
             #bioPart1 h3
                 {
-                    font-size: 109px;
+                    font-size: 97px;
                     color: white;
                     position: absolute;
                     margin-left: 2%;
-                    margin-top: -4%;
+                    top: 11%;
                 }
+                @media (max-width: 1300px)
+                    {
+                        #bioPart1 h3
+                            {
+                                font-size: 89px;
+                            }
+                    }
+                @media (max-width: 1199px)
+                    {
+                        #bioPart1 h3
+                            {
+                                font-size: 89px;
+                                top: 9%;
+                            }
+                    }
+                @media (max-width: 991px)
+                    {
+                        #bioPart1 h3
+                            {
+                                font-size: 80px;
+                                top: 6%;
+                            }
+                    }
+                @media (max-width: 767px)
+                    {
+                        #bioPart1 h3
+                            {
+                                font-size: 60px;
+                                top: 5.5%;
+                            }
+                    }
+                @media (max-width: 550px)
+                    {
+                        #bioPart1 h3
+                            {
+                                font-size: 42px;
+                                top: 4.3%;
+                            }
+                    }
+
             #bioPart1 img
                 {
                     background: #121217;
@@ -287,12 +498,19 @@ body
                     text-align: center;
                     z-index: 99;
                     color: #ecebeb;
-                    position: absolute;
-                    padding: 1%;
-                    margin-top: -3%;
-                    margin-left: 46%;
+                    margin-left: auto;
+                    padding: 2%;
+                    margin-top: -1.5%;
                     border-radius: 4px;
                 }
+                @media (max-width: 550px)
+                    {
+                        #bioPart1 p
+                            {
+                                font-size: 15px;
+                                margin-top: -1%;
+                            }
+                    }
 
         #bioPart2
             {
@@ -314,11 +532,12 @@ body
                     }
                 #bio2Text h6
                     {
-                        font-family: 'walkway_oblique_ultraboldRg', sans-serif;
+                        font-family: 'robotolight', sans-serif;
+                        font-style: italic;
                         font-size: 22px;
                         color: white;
                         margin-left: 5px;
-                        letter-spacing: 4px;
+                        letter-spacing: 2px;
                     }
                 #bio2Text p
                     {
@@ -328,6 +547,22 @@ body
                         margin-left: 10px;
                         line-height: 22px; 
                     }
+                    @media (max-width: 550px)
+                        {
+                            #bio2Text h4
+                                {
+                                    font-size: 25px;
+                                }
+                            #bio2Text h6
+                                {
+                                    font-size: 18px;
+                                }
+                            #bio2Text p
+                                {
+                                    font-size: 15px;
+                                }
+                        }
+
             #bio2Img
                 {
                     text-align: center;
@@ -360,6 +595,27 @@ body
         box-shadow: 0px -13px 31px -37px white;
         z-index: 99;
     }
+    @media (max-width: 991px)
+        {
+            #transition2
+                {
+                    height: 90px;
+                }
+        }
+    @media (max-width: 767px)
+        {
+            #transition2
+                {
+                    height: 80px;
+                }
+        }
+    @media (max-width: 550px)
+        {
+            #transition2
+                {
+                    height: 70px;
+                }
+        }
 
 /*------------------------------------------------------------- - - 
 ----------- - - -  L'Apercu des derniers chapitres - - - ----------
@@ -393,8 +649,15 @@ body
                     color: #7d7d7d;
                     margin-top: 1%;
                     font-family: 'robotomedium', sans-serif;
-                    letter-spacing: 5px;
+                    letter-spacing: 1px;
                 }
+                 @media (max-width: 550px)
+                    {
+                        #apercuContenair h2
+                            {
+                                font-size: 30px;
+                            }
+                    }
 
         #apercuPart1
             {
@@ -426,7 +689,6 @@ body
                         margin-left: 1%;
                         margin-right: 1%;
                         margin-top: 2%;
-                        margin-top: 2%;
                         background-color: white;
                         transition: all 0.3s ease-out;
                     }
@@ -446,10 +708,12 @@ body
 
                     .chapNbr
                         {
+                            font-size: 17px;
+                            font-family: 'robotomedium', sans-serif;
                             background: #3d92bb;
                             width: 50%;
                             margin: auto;
-                            padding: 3%;
+                            padding: 2%;
                             color: white;
                             cursor: pointer;
                             margin-bottom: 5%;
@@ -466,9 +730,10 @@ body
 
                         .previewChap h4
                             {
-                                font-family: 'walkway_oblique_blackregular', sans-serif;
+                                font-family: 'robotoregular', sans-serif;
+                                font-style: italic;
                                 font-size: 20px;
-                                color: #121217;
+                                color: #5b5b65;
                                 letter-spacing: 2px;
                                 transition: all 0.3s ease-out;
                             }
@@ -479,6 +744,31 @@ body
                                 color: #c7c7c7;
                             }
                     
+                        @media (max-width: 767px)
+                            {
+                                .previewChap
+                                    {
+                                        margin-left: 10%;
+                                        margin-right: 10%;
+                                        margin-top: 3%;
+                                    }
+                            }
+                        @media (max-width: 550px)
+                            {
+                                .chapNbr
+                                    {
+                                        font-size: 15px;
+                                    }
+                              
+                                    .previewChap h4
+                                        {
+                                            font-size: 17px;
+                                        }
+                                    .previewChap p
+                                        {
+                                            font-size: 15px;
+                                        }
+                            }
 
 /*------------------------------------------- - - 
 ----------- - - -  Des Tests Php - - - ----------
@@ -520,14 +810,36 @@ ul
     #theEndContenair
         {
             text-align: center;
-            padding: 1.8% 1% 1% 1%;
+            padding: 2% 1% 1% 1%;
         }
         #theEndContenair p
             {
                 font-family: 'robotoregular', sans-serif;
-                font-size: 14px;
+                font-size: 13.5px;
                 color: white; 
             }
+            @media (max-width: 767px)
+                {
+                    #theEndContenair
+                        {
+                            padding: 2.8% 1% 1% 1%;
+                        }
+                    #theEndContenair p
+                        {
+                            font-size: 12.5px;
+                        }
+                }
+            @media (max-width: 550px)
+                {
+                    #theEndContenair
+                        {
+                            padding: 3.8% 1% 1% 1%;
+                        }
+                    #theEndContenair p
+                        {
+                            font-size: 11px;
+                        }
+                }
 
 
 
@@ -570,7 +882,7 @@ ul
 
 #introImgContenair
     {
-
+        margin-top: 72px;
     }
     #introImg
         {
@@ -580,26 +892,44 @@ ul
     #introImgContenair h2
         {
             position: absolute;
-            top: 33%;
-            left: 13%;
-            font-size: 50px;
+            top: 255px;
+            padding-left: 5%;
+            text-align: left;
+            font-size: 44px;
             color: white;
-            font-family: 'robotothin_italic', sans-serif;
-            letter-spacing: 5px;
+            font-family: 'robotothin', sans-serif;
+            font-style: italic;
+            letter-spacing: 3px;
         }
+        @media (max-width: 991px)
+            {
+                #introImgContenair h2
+                    {
+                        font-size: 40px;
+                    }
+            }
+        @media (max-width: 767px)
+            {
+                #introImgContenair h2
+                    {
+                        font-size: 32px;
+                        top: 200px;
+                    }
+            }
+        @media (max-width: 550px)
+            {
+                #introImgContenair h2
+                    {
+                        font-size: 22px;
+                        top: 130px;
+                    }
+            }
+
+    /* Le bouton sélécteur de chapitres */
     #chapitresSelectorContenair
         {
-            background: #3d92bb;
-            width: 25%;
-            margin: auto;
             margin-top: 5%;
             display: block;
-            padding: 0.5%;
-            border: 3px solid white;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 14px 14px 20px -18px black;
-            transition: all 0.3s ease-out;
         }
         #chapitresSelector
             {
@@ -607,18 +937,66 @@ ul
                 font-size: 17px;
                 background: #3d92bb;
                 color: white;
-                width: 100%;
+                margin: auto;
+                margin-top: 1%;
                 display: block;
-                padding: 0.5%;
+                padding: 1%;
                 border: none;
+                border-radius: 5px;
                 cursor: pointer;
+                box-shadow: 14px 14px 20px -18px black;
+                transition: all 0.3s ease-out;
             }
-        #chapitresSelectorContenair .dropdown-menu .show
+            #chapitresSelector:hover
+                {
+                    background: white;
+                    color: #3d92bb;
+                    box-shadow: -14px 14px 20px -18px black;
+                }
+        #bio .dropdown-menu
             {
-                top: 3px;
-                width: 95%;
+                top: -3px!important;
+                width: 20.35%;
+                text-align: center;
+            }
+        #bio .dropdown-item:hover 
+            {
+                background-color: #3d92bb;
+                color: white;
+                transition: all 0.3s ease-out;
             }
 
+            @media (max-width: 767px)
+                {
+                    #chapitresSelector
+                        {
+                            padding: 2%;
+                        }
+                }
+            @media (max-width: 550px)
+                {
+                    #introImgContenair h2
+                        {
+                            font-size: 22px;
+                            top: 130px;
+                        }
+                    #chapitresSelector
+                        {
+                            padding: 2%;
+                            font-size: 15px;
+                        }
+                    #bio .dropdown-item
+                        {
+                            font-size: 15px;
+                        }
+                }
+
+
+
+    /* Les chapitres */
+
+
+    /* Chapitre 1 */
 
 #chapitre1
     {
@@ -637,23 +1015,24 @@ ul
     #chapitre1 h4
         {
             font-family: 'robotobold', sans-serif;
-            font-size: 25px;
+            font-size: 20px;
             color: #3d92bb; 
             text-align: center; 
         }
     #chapitre1 h6
         {
-            font-family: 'walkway_oblique_ultraboldRg', sans-serif;
+            font-family: 'robotolight', sans-serif;
+            font-style: italic;
             font-size: 22px;
             color: #6d6565;
             margin-left: 5px;
-            letter-spacing: 4px;
-            text-align: center; 
+            letter-spacing: 2px;
+            text-align: center;
         }
     #chapitre1 hr
         {
-            border: 0.5px solid darkslategrey;
-            width: 20%;
+            border: 0.5px solid #6d6565;
+            width: 13%;
             text-align: center;
             margin: auto;
             margin-top: 3%;
@@ -663,7 +1042,7 @@ ul
         {
             font-family: 'robotoregular', sans-serif;
             font-size: 16px;
-            color: #989898;
+            color: #909194;
             margin-top: 3%;
             margin-left: 10px;
             line-height: 22px; 
@@ -672,106 +1051,153 @@ ul
         {
             margin: auto;
             display: block;
+            width: 80%;
         }
 
+        @media (max-width: 550px)
+            {
+                #chapitre1 h4
+                    {
+                        font-size: 15px;
+                    }
+                #chapitre1 h6
+                    {
+                        font-size: 18px;
+                    }
+                #chapitre1 p
+                    {
+                        font-size: 15px;
+                    }
+            }
 
-#lesCommentaires
-    {
-        background: white;
-        width: 100%;
-        position: relative;
-        padding-bottom: 10%;
-    }
 
-    #commentairesContainer 
+
+    /* Les commentaires */
+
+    #lesCommentaires
         {
-            padding-top: 5%;
-            padding-bottom: 3%;
+            background: #ececec;
+            width: 100%;
+            position: relative;
+            padding-bottom: 10%;
         }
 
-        #commentairesContainer hr
+        #commentairesContainer 
             {
-                border: 0.5px solid #7d7d7d;
-                width: 10%;
-                text-align: center;
-                margin: auto;
-            }
-        #commentairesContainer h2
-            {
-                text-align: center;
-                font-size: 41px;
-                color: #7d7d7d;
-                margin-top: 1%;
-                font-family: 'robotomedium', sans-serif;
-                letter-spacing: 5px;
-                margin-bottom: 5%;
+                padding-top: 5%;
+                padding-bottom: 3%;
             }
 
-        .commentaires 
-            {
-                background: #17171a;
-                margin-top: 5%;
-                color: white;
-                border-radius: 5px;
-                width: 64%;
-                margin: auto;
-                padding: 2%;
-                margin-bottom: 2%;
-                box-shadow: 8px 8px 23px -8px black;
-                transition: all 0.3s ease-out;
-            }
-            .commentaires:hover
+            #commentairesContainer hr
                 {
-                    box-shadow: -8px 8px 23px -8px black;
+                    border: 0.5px solid #7d7d7d;
+                    width: 10%;
+                    text-align: center;
+                    margin: auto;
                 }
-            .commentaires h4
+            #commentairesContainer h2
                 {
+                    text-align: center;
+                    font-size: 41px;
+                    color: #7d7d7d;
+                    margin-top: 1%;
                     font-family: 'robotomedium', sans-serif;
-                    font-size: 19px;
-                    color: #3d92bb;
-                }
-            .commentaires h5
-                {
-                    font-family: 'robotoregular', sans-serif;
-                    font-style: italic;
-                    font-size: 15px;
-                    color: white;
-                    text-align: right;
-                }
-            .commentaires p
-                {
-                    font-family: 'robotoregular', sans-serif;
-                    font-size: 15px;
-                    color: #b5b5b5;
-                    margin-left: 2%;
-                    width: 96%;
+                    letter-spacing: 1px;
+                    margin-bottom: 5%;
                 }
 
-    #signerComBtn 
+            .commentaires 
+                {
+                    background: #17171a;
+                    margin-top: 5%;
+                    color: white;
+                    border-radius: 5px;
+                    margin: auto;
+                    padding: 2%;
+                    margin-bottom: 2%;
+                    box-shadow: 8px 8px 23px -8px black;
+                    transition: all 0.3s ease-out;
+                }
+                .commentaires:hover
+                    {
+                        box-shadow: -8px 8px 23px -8px black;
+                    }
+                .commentaires h4
+                    {
+                        font-family: 'robotomedium', sans-serif;
+                        font-size: 19px;
+                        color: #3d92bb;
+                    }
+                .commentaires h5
+                    {
+                        font-family: 'robotoregular', sans-serif;
+                        font-style: italic;
+                        font-size: 14px;
+                        color: white;
+                        text-align: right;
+                    }
+                .commentaires p
+                    {
+                        font-family: 'robotoregular', sans-serif;
+                        font-size: 15px;
+                        color: #b5b5b5;
+                        margin-left: 2%;
+                        width: 96%;
+                    }
+                #signerComBtn 
+                    {
+                        color: white;
+                        background: #2f6171!important;
+                        -webkit-appearance: initial;
+                        transition: all 0.3s ease-out;
+                    }
+                    #signerComBtn:hover
+                        {
+                            color: white;
+                            background: #dc3545!important;
+                        }
+
+            @media (max-width: 575px)
+                {
+                    #commentairesContainer h2
+                        {
+                            font-size: 30px;
+                        }
+                    .commentaires h4
+                        {
+                            font-size: 16px;
+                        }
+                    .commentaires h5
+                        {
+                            font-size: 13px;
+                        }
+                    .commentaires p
+                        {
+                            font-size: 14px;
+                        }
+                }
+
+
+
+    /* Le formulaire */
+
+    #formulaireRow
         {
-            color: white;
-            background: #2f6171!important;
-            -webkit-appearance: initial;
-            transition: all 0.3s ease-out;
+
         }
-        #signerComBtn:hover
-            {
-                color: white;
-                background: #dc3545!important;
-            }
 
     #contenairForm
         {
             background: #2b3035;
             color: white;
-            padding: 3% 3% 5% 3%;
+            padding: 3% 3% 3% 3%;
             border-radius: 8px;
-            box-shadow: 15px 15px 37px -8px black;
+            box-shadow: 10px 10px 37px -8px black;
             transition: all 0.3s ease-out;
         }
         #contenairForm:hover
             {
-                box-shadow: -15px 15px 37px -8px black;
+                box-shadow: -10px 10px 37px -8px black;
             }
 
     #contenairForm h4
@@ -795,6 +1221,7 @@ ul
     #btnContenair
         {
             text-align: center;
+            border: none;
         }
         #contenairForm button
             {
@@ -802,20 +1229,76 @@ ul
                 color: white;
                 font-family: 'robotomedium', sans-serif;
                 font-size: 15px;
+                margin-top: 2%;
                 box-shadow: 15px 15px 37px -8px black;
                 transition: all 0.3s ease-out;
             }
             #contenairForm button:hover
                 {
                     background: white;
+                    box-shadow: -15px 15px 37px -8px black;
                     color: #3d92bb;
                 }
 
-    #commentTextarea
+    #contenairForm input, #commentTextarea
         {
-
+            font-family: 'robotoregular', sans-serif;
+            font-size: 16px;
+            border-width: 2.3px;
         }
 
+    #contenairForm .input-group-text 
+        {
+            font-family: 'robotoregular', sans-serif;
+            font-size: 15px;
+            font-style: italic;
+            background-color: #8b8f96;
+            color: white;
+            border: none;
+        }
+
+    #contenairForm .form-group
+        {
+            position: relative;
+        }
+    #contenairForm .invalid-tooltip, #contenairForm .valid-tooltip 
+        {
+            position: relative;
+            text-align: center;
+        }
+
+        @media (max-width: 575px)
+            {
+                #contenairForm
+                    {
+                        padding: 5% 5% 5% 5%;
+                    }
+                #contenairForm .input-group-prepend
+                    {
+                        display: none;
+                    }
+                #contenairForm h4
+                    {
+                        font-size: 20px;
+                    }
+                #contenairForm label
+                    {
+                        font-size: 15px;
+                    }
+                #contenairForm input, #commentTextarea
+                    {
+                        font-size: 15px;
+                    }
+                #contenairForm button
+                    {
+                        margin-top: 1%;
+                        font-size: 14px;
+                    }
+                #contenairForm .invalid-tooltip, #contenairForm .valid-tooltip 
+                    {
+                        font-size: 13px;
+                    }
+            }
 
 
 
@@ -856,21 +1339,50 @@ ul
         padding-top: 8%;
         padding-bottom: 12%;
     }
+#introImgContenair2
+    {
+        margin-top: 72px;
+    }
 
 #contactTitre
     {
         position: absolute;
         top: 19%;
-        font-size: 50px;
+        font-size: 45px;
         color: white;
-        font-family: 'robotothin_italic', sans-serif;
+        font-family: 'robotomedium', sans-serif;
         letter-spacing: 3px;
         text-align: center;
     }
+    @media (max-width: 991px)
+        {
+            #contactTitre
+                {
+                    font-size: 39px;
+                    top: 15%;
+                }
+        }
+    @media (max-width: 767px)
+        {
+            #contactTitre
+                {
+                    font-size: 31px;
+                    top: 12%;
+                }
+        }
+    @media (max-width: 550px)
+        {
+            #contactTitre
+                {
+                    font-size: 21px;
+                    top: 16%;
+                }
+        }
 
 #contactTextarea
     {
         min-height: 250px;
+        border-width: 2.3px;
     }
 
 
@@ -1004,6 +1516,7 @@ a[data-toggle="collapse"]
 
 #sidebar ul li a 
     {
+        font-family: 'robotoregular', sans-serif;
         padding: 10px;
         font-size: 17px;
         display: block;
@@ -1121,11 +1634,12 @@ a[data-toggle="collapse"]
             padding: 20px 10px;
             text-align: center;
             font-size: 0.75em;
+            letter-spacing: 0.4px;
         }
 
     #sidebar.active ul li a i 
         {
-            margin-right:  0;
+            margin-right: 0;
             display: block;
             font-size: 1.8em;
             margin-bottom: 5px;
@@ -1224,10 +1738,13 @@ a[data-toggle="collapse"]
 #navBarAdmin img
     {
         margin-left: 28px;
+        margin-top: 5px;
     }
 
 #navBarAdmin .nav-link
     {
+        font-family: 'robotoregular', sans-serif;
+        font-size: 17px;
         margin-right: 5px;
         transition: all 0.15s ease-out;
     }
@@ -1240,12 +1757,6 @@ a[data-toggle="collapse"]
     {
         margin-left: auto;
         margin-right: 3%;
-    }
-
-
-#navbarSupportedContent
-    {
-        padding: 0.2%;
     }
 
 
@@ -1283,6 +1794,7 @@ a[data-toggle="collapse"]
                     width: 100%;
                     top: 0;
                     z-index: 9999999;
+                    min-height: 58px;
                 }
 
             #navBarAdmin button, #navBarAdmin ul
@@ -1304,7 +1816,14 @@ a[data-toggle="collapse"]
                         display: none;
                     }
         }
-    
+    @media (max-width: 512px)
+        {
+            #navBarAdmin .nav-link
+                {
+                    font-size: 16px;
+                    margin-top: -2%;
+                }
+        }
 
 
 /*---------------------------------------------------- - - 
@@ -1365,6 +1884,32 @@ a[data-toggle="collapse"]
     #bienvenueCol p
         {
             color: #80848c;
+            font-family: 'robotoregular', sans-serif;
+            font-size: 16px;
+        }
+
+
+        @media (max-width: 768px) 
+        {
+            #dashBoard
+                {
+                    margin-top: 58px;
+                }
+        }
+        @media (max-width: 512px)
+        {
+            #dashboardTitle h1
+                {
+                    font-size: 25px;
+                }
+            #content .card-header h6
+                {
+                    font-size: 15px;
+                }
+            #bienvenueCol p
+                {
+                    font-size: 15px;
+                }
         }
 
 
@@ -1800,7 +2345,17 @@ a[data-toggle="collapse"]
                         width: 25%;
                     }
 
-        
+        @media (max-width: 512px)
+            {
+                #table1 th, #table2 th
+                    {
+                        font-size: 13px;
+                    }
+                #table1 td, #table1 td, #table2 td, #table2 td
+                    {
+                        font-size: 13px;
+                    }
+            }
 
 
 
@@ -1874,7 +2429,7 @@ a[data-toggle="collapse"]
             #newChapBtn:hover
                 {
                     background-color: #212529;
-                    box-shadow: 5px 5px 10px -5px black;
+                    box-shadow: -5px 5px 10px -5px black;
                 }
 
         #tablesAdminContenair .tables-admin-btns
@@ -1905,7 +2460,10 @@ a[data-toggle="collapse"]
 
 #table01 td, #table01 td, #table01 th, #table02 td, #table02 td, #table02 th, #table03 td, #table03 td, #table03 th
     {
-        border: none
+        border: none;
+        font-family: 'robotoregular', sans-serif;
+        font-size: 17px;
+        vertical-align: middle;
     }
 
     #table01 .input-group-append, #table02 .input-group-append, #table03 .input-group-append 
@@ -1970,13 +2528,26 @@ a[data-toggle="collapse"]
                 box-shadow: -5px 5px 10px -5px black;
             }
 
+
+
+
         /* ------------------------- */
+
+
 
         @media (max-width: 991px) 
             {
                 #chapsAdminContenair .menu-traitement button, #chapsAdminContenair .menu-traitement a
                     {
                         width: 35%;
+                    }
+                #newChapBtn
+                    {
+                        padding: 1.5%;
+                    }
+                #table01 td, #table01 td, #table01 th, #table02 td, #table02 td, #table02 th, #table03 td, #table03 td, #table03 th
+                    {
+                        font-size: 15px;
                     }
             }
 
@@ -1985,6 +2556,48 @@ a[data-toggle="collapse"]
                 #chapsAdminContenair .menu-traitement button, #chapsAdminContenair .menu-traitement a
                     {
                         width: 80%;
+                    }
+                
+            }
+        @media (max-width: 550px)
+            {
+                #dashboardTitle p 
+                    {
+                        font-size: 15px;
+                    }
+                #newChapBtn
+                    {
+                        padding: 2.5%;
+                        font-size: 14px;
+                    }
+                #tablesAdminContenair .tables-admin-btns
+                    {
+                        font-size: 14px;
+                        padding: 2%;
+                        margin-right: 0.5rem!important;
+                        margin-left: 0.5rem!important;
+                    }
+                #tablesAdminContenair .menu-traitement button, #tablesAdminContenair .menu-traitement a 
+                    {
+                        width: initial;
+                    }
+                #table01 td, #table01 td, #table01 th, #table02 td, #table02 td, #table02 th, #table03 td, #table03 td, #table03 th
+                    {
+                        font-size: 13px;
+                    }
+                #tablesAdminContenair .colapse-forms 
+                    {
+                        margin-left: -5%;
+                        margin-right: -5%;
+                    }
+                .colByeBye
+                    {
+                        display: none;
+                    }
+                .fermer-btn button
+                    {
+                        font-size: 14px;
+                        padding: 3%;
                     }
             }
     
@@ -2025,13 +2638,23 @@ tr .card
         width: 70%;
         margin: auto;
     }
-    
-#content .dropdown-item:hover
+
+#content .dropdown-item
     {
-        background-color: #3d92bb;
-        color: white;
+        font-family: 'robotoregular', sans-serif;
+        font-size: 15px;
+        color: #898c92;
         transition: all 0.3s ease-out;
-    }
+    }   
+    #content .dropdown-item:hover
+        {
+            background-color: #3d92bb;
+            color: white;
+        }
+    #content .dropdown-menu
+        {
+            margin: 0px -217px 0;
+        }
 
 .tabGroups
     {
@@ -2040,7 +2663,10 @@ tr .card
 
 #table001 td, #table001 td, #table001 th, #table002 td, #table002 td, #table002 th, #table003 td, #table003 td, #table003 th
     {
-        border: none
+        border: none;
+        font-family: 'robotoregular', sans-serif;
+        font-size: 17px;
+        vertical-align: middle;
     }
 
     #table001 .input-group-append, #table002 .input-group-append, #table003 .input-group-append 
@@ -2063,6 +2689,61 @@ tr .card
     {
         display: none;
     }
+
+
+
+        @media (max-width: 991px) 
+            {
+                #table001 td, #table001 td, #table001 th, #table002 td, #table002 td, #table002 th, #table003 td, #table003 td, #table003 th
+                    {
+                        font-size: 15px;
+                    }
+                #tablesComsPage #tablesAdminContenair .colapse-forms 
+                    {
+                        margin-left: -3%;
+                        margin-right: -3%;
+                    }
+            }
+
+        @media (max-width: 768px) 
+            {       
+                #tablesComsPage #tablesAdminContenair .colapse-forms 
+                    {
+                        margin-left: -4%;
+                        margin-right: -4%;
+                    }
+                .table td, .table th 
+                    {
+                        padding: 7.5px!important;
+                    }
+                .colByeBye2
+                    {
+                        display: none;
+                    }
+            }
+        @media (max-width: 550px)
+            {
+                #content .dropdown-item
+                    {
+                        font-size: 14px;
+                        margin-top: -3px;
+                    }   
+                #content .dropdown-menu
+                    {
+                        margin: 0px -205px 0;
+                    }
+                #table001 td, #table001 td, #table001 th, #table002 td, #table002 td, #table002 th, #table003 td, #table003 td, #table003 th
+                    {
+                        font-size: 13px;
+                    }
+                .colByeBye3
+                    {
+                        display: none;
+                    }
+            }
+
+
+    
 
 
 /*-------------------------------------------------------------------------------------- - - 
@@ -2153,13 +2834,55 @@ tr .card
         min-height: 400px;
     }
 
+
         /* --------- Responsive --------- */
+
 
         @media (max-width: 1500px) 
             {
                 #menuTiny 
                     {
                         margin-top: -7%;
+                    }
+            }
+
+        @media (max-width: 767px)
+            {
+                #newDashBoard 
+                    {
+                        margin-top: 58px;
+                    }
+            }
+
+        @media (max-width: 550px)
+            {
+                #newDashBoard #dashboardTitle h1
+                    {
+                        font-size: 25px;
+                    }
+                #labelTitreChap
+                    {
+                        font-size: 15px;
+                    }
+                #champDL label, #inputTitreChap
+                    {
+                        font-size: 14px;
+                    }
+                #tablesAdminContenair 
+                    {
+                        padding: 2%;
+                    }
+                #newDashBoard .card
+                    {
+                        padding: 0;
+                    }
+                #newDashBoard .card-body
+                    {
+                        padding: 1%;
+                    }
+                #newDashBoard .card-body p, #newChapTextArea
+                    {
+                        font-size: 15px;
                     }
             }
 

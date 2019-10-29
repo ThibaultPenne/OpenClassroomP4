@@ -30,50 +30,46 @@
         <header id="navBar">
 
             <nav id="nav" class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+
                 <a id="navTitre" class="navbar-brand" href="#">
                     Lecture innovante d'un nouveau roman
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <button class="btn btn-dark d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i> 
+                    </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="nav navbar-nav">
 
                         <li class="nav-item">
                             <a class="nav-link" href="../../index.php">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="chapitresVue.php">
-                                Chapitres<span class="sr-only">(current)</span>
-                            </a>
+                            <a class="nav-link" href="chapitresVue.php">Chapitres</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="contactView.php">
-                                Contact
-                            </a>
+                            <a class="nav-link" href="contactView.php">Contact</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Admin
-                            </a>                    
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>                    
                             <form id="menuDropDownNav" class="dropdown-menu p-3">
                                 <div class="form-group">
                                     <label for="exampleDropdownFormEmail2">Adresse Email</label>
-                                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com" name="email">
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@exemple.com" name="email">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleDropdownFormPassword2">Mot de passe</label>
-                                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password" name="password">
+                                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="********" name="password">
                                 </div>
-                                <input type="button" class="btn btn-primary mb-2" name="valider" value="Se connecter" onclick="window.location.href='../backend/adminVue.php'" />
+                                <input id="connexionBtn" type="button" class="btn mb-2" name="valider" value="Se connecter" onclick="window.location.href='../backend/adminVue.php'" />
                             </form>           
                         </li>
                             <!-- Implanter une condition PHP pour rediriger l'admin vers la page d'admin si il rentre les bonnes informations de connexion -->
 
                     </ul>
                 </div>
-
+            </div>
             </nav>
 
         </header>
@@ -102,46 +98,45 @@
 
 
         <section id="contactFormContainer" class="container">
-            <form id="contenairForm" class="col-xs-12 col-md-11 col-lg-8 m-auto">
+            <form id="contenairForm" class="col-xs-12 col-md-11 col-lg-8 m-auto needs-validation" novalidate>
 
                 <h4>Formulaire de contact</h4>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputNom">Nom</label>
-                        <input type="name" class="form-control" id="inputNom" placeholder="Nom">
+                        <input type="name" class="form-control" id="inputNom" placeholder="Nom" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPrenom">Prénom</label>
-                        <input type="name" class="form-control" id="inputPrenom" placeholder="Prénom">
+                        <input type="name" class="form-control" id="inputPrenom" placeholder="Prénom" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="inputAddress">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" placeholder="exemple@exemple.com">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="exemple@exemple.com" required>
                 </div>
 
                 <div class="form-group">
                     <label for="inputAddress2">Titre du message</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Auteur, chapitre, avis personnel, etc...">
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Auteur, chapitre, avis personnel, etc..." required>
                 </div>
 
                 <div class="form-group">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Votre message</span>
-                        </div>
-                        <textarea id="contactTextarea" class="form-control" aria-label="With textarea"></textarea>
-                    </div>
+                    <label for="contactTextarea">Votre message</label>
+                    <textarea id="contactTextarea" class="form-control" aria-label="With textarea" required></textarea>
                 </div>
 
                 <div class="form-group">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <input class="form-check-input" type="checkbox" id="gridCheck" required>
                         <label class="form-check-label" for="gridCheck">
                             Je consens au traitement de mes données personnelles par Jean Forteroche, dans le but de recevoir une réponse par e-mail (selon le RGPD).
                         </label>
+                        <div class="invalid-tooltip">
+                            Pour recevoir une réponse, il faut cocher cette case.
+                        </div>
                     </div>
                 </div>
                 <div id="btnContenair" class="container">
@@ -190,7 +185,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
 
-      
+    <!-- Mes fichiers JS -->
+    <script src="../../public/js/formValid.js"></script> 
+     
     </body>
  </html>    
 

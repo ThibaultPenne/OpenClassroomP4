@@ -30,50 +30,46 @@
         <header id="navBar">
 
             <nav id="nav" class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+
                 <a id="navTitre" class="navbar-brand" href="#">
                     Lecture innovante d'un nouveau roman
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <button class="btn btn-dark d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i> 
+                    </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="nav navbar-nav">
 
                         <li class="nav-item">
                             <a class="nav-link" href="../../index.php">Accueil</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="chapitresVue.php">
-                                Chapitres<span class="sr-only">(current)</span>
-                            </a>
+                            <a class="nav-link" href="chapitresVue.php">Chapitres</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contactView.php">
-                                Contact
-                            </a>
+                            <a class="nav-link" href="contactView.php">Contact</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Admin
-                            </a>                    
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>                    
                             <form id="menuDropDownNav" class="dropdown-menu p-3">
                                 <div class="form-group">
                                     <label for="exampleDropdownFormEmail2">Adresse Email</label>
-                                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com" name="email">
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@exemple.com" name="email">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleDropdownFormPassword2">Mot de passe</label>
-                                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password" name="password">
+                                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="********" name="password">
                                 </div>
-                                <input type="button" class="btn btn-primary mb-2" name="valider" value="Se connecter" onclick="window.location.href='../backend/adminVue.php'" />
+                                <input id="connexionBtn" type="button" class="btn mb-2" name="valider" value="Se connecter" onclick="window.location.href='../backend/adminVue.php'" />
                             </form>           
                         </li>
                             <!-- Implanter une condition PHP pour rediriger l'admin vers la page d'admin si il rentre les bonnes informations de connexion -->
 
                     </ul>
                 </div>
-
+            </div>
             </nav>
 
         </header>
@@ -85,7 +81,7 @@
 
         <section id="introImgContenair" class="" >
             <img id="introImg" src="../../public/images/chapitresImg.png" alt= "...">
-            <h2>Il était une fois...</h2>
+            <h2 class="container-fluid">Il était une fois...</h2>
         </section>
 
 
@@ -106,6 +102,7 @@
             <div id="bioContenair" class="container">
                 <hr>
                 <h2>Les chapitres</h2>
+
                 <div id="chapitresSelectorContenair" class="btn-group">
                     <button id="chapitresSelector" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Séléctionner un chapitre
@@ -114,17 +111,18 @@
                         <a class="dropdown-item" href="#">Chapitre 1</a>
                         <a class="dropdown-item" href="#">Chapitre 2</a>
                         <a class="dropdown-item" href="#">Chapitre 3</a>
+                        <a class="dropdown-item" href="#">Chapitre 4</a>
+                        <a class="dropdown-item" href="#">Chapitre 5</a>
                     </div>
                 </div>
 
                 <div id="bioPart2" class="row">
                     <div id="chapitre1" class="col-xs-12 col-lg-10">
-                        <h4>Chapitre 1</h4>
-                        <h6>Titre du chapitre 1</h6>
+                        <h4>CHAPITRE 1</h4>
+                        <h6>Deux ans plus tard…</h6>
                         <hr>
                         <div class="chapContent">
                             <p>
-                                Deux ans plus tard… <br>
                                 La journée avait été catastrophique, même avant que son passé ne décide de se réveiller et de lui cracher à la figure.
                                 En proie à un conflit d’émotions contradictoires, l’agent infiltré Reid Graham vit Lara Jordan faire son entrée au bras d’un cadre d’entreprise à l’allure stricte, dont le costume devait coûter deux fois son salaire gouvernemental mensuel.
                                 De tous les restaurants du pays, il avait fallu qu’elle vienne dans celui-ci, songea-t‑il. Et ce soir, par-dessus le marché !<br>
@@ -175,72 +173,101 @@
          <!-- ------------------ Les commentaires  ---------------- -->
 
 
-        <section id="lesCommentaires">
+        <section id="lesCommentaires" class="container">
 
+            <!-- Partie 1 : Les commentaires -->
             <div id="commentairesContainer" class="container">
+
                 <hr>
                 <h2>Les commentaires</h2>
-                <div class="commentaires">
-                    <div class="row justify-content-between">
-                        <div class="col-5">
-                            <h4>de Inozuka</h4>      
+
+                <!-- Les commentaires - row -->
+                <div class="row">
+
+                    <!-- Commentaire 1 -->
+                    <div class="col-md-10 col-xl-7 commentaires">
+                        <div class="row justify-content-between">
+                            <div class="col-5">
+                                <h4>de Inozuka</h4>      
+                            </div>
+                            <div class="col-4">
+                                <h5>le 06/09/2019 à 19h30</h5>
+                            </div>
                         </div>
-                        <div class="col-4">
-                            <h5>le 06/09/2019 à 19h30</h5>
+                        <p>Super merci !</p>
+                        <span id="signerComBtn" type="button" class="badge mb-2">Signaler le commentaire</span>
+                    </div>
+
+                    <!-- Commentaire 2 -->
+                    <div class="col-md-10 col-xl-7 commentaires">
+                        <div class="row justify-content-between">
+                            <div class="col-5">
+                                <h4>de Itachi</h4>
+                            </div>
+                            <div class="col-4">
+                                <h5>le 07/09/2019 à 12h30</h5>
+                            </div>
+                        </div>
+                        <p>Hehehe ce roman s'annone incroyable ! Super idée !</p>
+                        <span id="signerComBtn" type="button" class="badge mb-2">Signaler le commentaire</span>
+                    </div>
+
+                    <!-- Commentaire 3 -->
+                    <div class="col-md-10 col-xl-7 commentaires">
+                        <div class="row justify-content-between">
+                            <div class="col-5">
+                                <h4>de Senku</h4>
+                            </div>
+                            <div class="col-4">
+                                <h5>le 11/09/2019 à 21h21</h5>
+                            </div>
+                        </div>
+                        <p>Je pense que l'image n'aide pas forcément à l'immersion mais bon. Super chapitre, merci !</p>
+                        <span id="signerComBtn" type="button" class="badge mb-2">Signaler le commentaire</span>
+                    </div>
+
+                </div> <!-- Fin des commentaires - row -->
+
+            </div> <!-- Fin de Partie 1 : Les commentaires -->
+
+            <!-- ----------------------------------------- -->
+
+            <!-- Partie 2 : Le formulaire -->
+
+            <!-- Le formulaire - row -->
+            <div class="container">
+
+                <form id="contenairForm" class="col-sm-12 col-md-9 col-lg-9 col-xl-6 m-auto needs-validation" novalidate>
+                    <h4>Ajouter un commentaire</h4>
+
+                    <div class="form-group">
+                        <label for="inputPseudo">Votre Pseudo</label>
+                        <input type="text" class="form-control" id="inputPseudo" placeholder="8NINE, Blanche Neige, Musashi Miyamoto etc..." required>
+                        <div class="valid-tooltip">
+                            Oh ça à l'air pas mal !
+                        </div>
+                        <div class="invalid-tooltip">
+                            Oups ! Un oubli ?
                         </div>
                     </div>
-                    <p>Super merci !</p>
-                    <span id="signerComBtn" type="button" class="badge mb-2">Signaler le commentaire</span>
-                </div>
-                <div class="commentaires">
-                    <div class="row justify-content-between">
-                        <div class="col-5">
-                            <h4>de Itachi</h4>
+
+                    <div class="form-group">
+                        <label for="commentTextarea">Votre message</label>
+                        <textarea class="form-control" id="commentTextarea" placeholder="Un message est requis" rows="5" required></textarea>
+                        <div class="valid-tooltip">
+                            J'y répond dès que possible !
                         </div>
-                        <div class="col-4">
-                            <h5>le 07/09/2019 à 12h30</h5>
-                        </div>
-                    </div>
-                    <p>Hehehe ce roman s'annone incroyable ! Super idée !</p>
-                    <span id="signerComBtn" type="button" class="badge mb-2">Signaler le commentaire</span>
-                </div>
-                <div class="commentaires">
-                    <div class="row justify-content-between">
-                        <div class="col-5">
-                            <h4>de Senku</h4>
-                        </div>
-                        <div class="col-4">
-                            <h5>le 11/09/2019 à 21h21</h5>
+                        <div class="invalid-tooltip">
+                            Aucun message ?
                         </div>
                     </div>
-                    <p>Je pense que l'image n'aide pas forcément à l'immersion mais bon. Super chapitre, merci !</p>
-                    <span id="signerComBtn" type="button" class="badge mb-2">Signaler le commentaire</span>
-                </div>
+                    <div id="btnContenair" class="container">
+                        <button type="submit" class="btn">Soumettre le commentaire</button>
+                    </div>
+
+                </form> <!-- Fin de Partie 2 : Le formulaire -->
+
             </div>
-
-            <form id="contenairForm" class="col-xs-12 col-md-11 col-lg-8 m-auto">
-
-                <h4>Ajouter un commentaire</h4>
-
-                <div class="form-group">
-                    <label for="inputAddress">Votre Pseudo</label>
-                    <input type="text" class="form-control is-valid" id="validationServer01" value="8NINE" required>
-                </div>
-
-                <div class="form-group">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Votre message</span>
-                        </div>
-                        <textarea class="form-control is-invalid" id="commentTextarea" placeholder="Un message est requis" rows="5" required></textarea>
-                    </div>
-                </div>
-
-                <div id="btnContenair" class="container">
-                    <button type="submit" class="btn mt-3">Soumettre le commentaire</button>
-                </div>
-
-            </form>
 
         </section>
 
@@ -275,7 +302,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
 
-      
+    <!-- Mes fichiers JS -->
+    <script src="../../public/js/formValid.js"></script> 
+
     </body>
  </html>    
 

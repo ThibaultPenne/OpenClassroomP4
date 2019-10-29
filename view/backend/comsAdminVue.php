@@ -50,7 +50,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav">
                             <li id="homeLinkLi" class="nav-item">
-                                <a id="chapLink" class="nav-link" href="adminVue.php"><i class="fas fa-home mr-2"></i>Home</a>
+                                <a id="homeLink" class="nav-link" href="adminVue.php"><i class="fas fa-home mr-2"></i>Home</a>
                             </li>
                             <li class="nav-item">
                                 <a id="chapLink" class="nav-link" href="chapsAdminVue.php"><i class="fas fa-copy mr-2"></i>Chapitres</a>
@@ -84,7 +84,7 @@
 
                     <div id="dashboardTitle" class="py-5 m-auto">
                         <h1 class="">Le traitement des commentaires</h1>
-                        <p class="col-6 m-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        <p class="col-md-8 col-lg-6 m-auto pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                         consequat. </p>
@@ -93,10 +93,10 @@
                     <!-- ---------- Les 3 Tableaux ---------- -->
 
                     <!-- 1 seule row -->
-                    <div class="row">
+                    <div id="tablesComsPage" class="row">
 
                         <!-- Le Contenair des 3 Tableaux -->
-                        <div id="tablesAdminContenair" class="col-sm-12 col-md-10 col-lg-9 mb-4 p-3 m-auto">
+                        <div id="tablesAdminContenair" class="col-sm-12 col-md-11 col-lg-9 mb-4 p-3 m-auto">
 
                             <!-- ------------- Menu des Tableaux -------------- -->
 
@@ -121,10 +121,10 @@
                                         <thead>
                                             <tr class="trHead">
                                                 <th scope="col">#</th>
-                                                <th scope="col">Chapitre #</th>
-                                                <th scope="col">Pseudo</th>
+                                                <th scope="col">Chapitre</th>
+                                                <th class="colByeBye3" scope="col">Pseudo</th>
                                                 <th scope="col">Date</th>
-                                                <th scope="col">Heure</th>
+                                                <th class="colByeBye2" scope="col">Heure</th>
                                                 <th scope="col">Signalé</th>
                                                 <th scope="col">Traitements</th>
                                             </tr>
@@ -135,10 +135,10 @@
 
                                             <tr id="co20" class="tabGroup1 tabGroups" data-toggle="collapse" data-target="#demo20" data-parent="#table001">
                                                 <th scope="row">co20</th>    
-                                                <td>ch05</td>
-                                                <td>Senku</td>
+                                                <td>5</td>
+                                                <td class="colByeBye3">Senku</td>
                                                 <td>05/10/19</td>
-                                                <td>15:10</td>
+                                                <td class="colByeBye2" class="colByeBye">15:10</td>
                                                 <td>Auto</td>
                                                 <td>
                                                     <div class="input-group">
@@ -169,10 +169,10 @@
 
                                             <tr id="co19" class="tabGroup2 tabGroups" data-toggle="collapse" data-target="#demo19" data-parent="#table001">
                                                 <th scope="row">co19</th>
-                                                <td>ch05</td>
-                                                <td>Byakuya</td>
+                                                <td>5</td>
+                                                <td class="colByeBye3">Byakuya</td>
                                                 <td>05/10/19</td>
-                                                <td>10:30</td>
+                                                <td class="colByeBye2">10:30</td>
                                                 <td>Auto</td>
                                                 <td>
                                                     <div class="input-group">
@@ -202,10 +202,10 @@
 
                                             <tr id="co18" class="tabGroup1 tabGroups" data-toggle="collapse" data-target="#demo18" data-parent="#table001">
                                                 <th scope="row">co18</th>    
-                                                <td>ch05</td>
-                                                <td>Senku</td>
+                                                <td>5</td>
+                                                <td class="colByeBye3">Senku</td>
                                                 <td>04/10/19</td>
-                                                <td>20:32</td>
+                                                <td class="colByeBye2">20:32</td>
                                                 <td>Auto</td>
                                                 <td>
                                                     <div class="input-group">
@@ -235,10 +235,10 @@
 
                                             <tr id="co17" class="tabGroup2 tabGroups" data-toggle="collapse" data-target="#demo17" data-parent="#table001">
                                                 <th scope="row">co17</th>
-                                                <td>ch05</td>
-                                                <td>Kevin</td>
+                                                <td>5</td>
+                                                <td class="colByeBye3">Kevin</td>
                                                 <td>04/10/19</td>
-                                                <td>19:13</td>
+                                                <td class="colByeBye2">19:13</td>
                                                 <td>Visiteur</td>
                                                 <td>
                                                     <div class="input-group">
@@ -285,9 +285,9 @@
                                             <tr class="trHead">
                                                 <th scope="col">#</th>
                                                 <th scope="col">Chapitre #</th>
-                                                <th scope="col">Pseudo</th>
+                                                <th class="colByeBye3" scope="col">Pseudo</th>
                                                 <th scope="col">Date</th>
-                                                <th scope="col">Heure</th>
+                                                <th class="colByeBye2" scope="col">Heure</th>
                                                 <th scope="col">Signalé</th>
                                                 <th scope="col">Traitement</th>
                                             </tr>
@@ -299,9 +299,9 @@
                                             <tr id="co15" class="tabGroup1 tabGroups" data-toggle="collapse" data-target="#demo15" data-parent="#table001">
                                                 <th scope="row">co15</th>
                                                 <td>ch04</td>
-                                                <td>Asta</td>
+                                                <td class="colByeBye3">Asta</td>
                                                 <td>28/09/19</td>
-                                                <td>19:10</td>
+                                                <td class="colByeBye2">19:10</td>
                                                 <td>Auto</td>
                                                 <td>
                                                     <div class="input-group">
@@ -331,9 +331,9 @@
                                             <tr id="co14" class="tabGroup2 tabGroups" data-toggle="collapse" data-target="#demo14" data-parent="#table001">
                                                 <th scope="row">co14</th>    
                                                 <td>ch04</td>
-                                                <td>Petit nuage</td>
+                                                <td class="colByeBye3">Petit nuage</td>
                                                 <td>27/09/19</td>
-                                                <td>22:45</td>
+                                                <td class="colByeBye2">22:45</td>
                                                 <td>Auto</td>
                                                 <td>
                                                     <div class="input-group">
@@ -363,9 +363,9 @@
                                             <tr id="co13" class="tabGroup1 tabGroups" data-toggle="collapse" data-target="#demo13" data-parent="#table001">
                                                 <th scope="row">co13</th>
                                                 <td>ch04</td>
-                                                <td>Senku</td>
+                                                <td class="colByeBye3">Senku</td>
                                                 <td>27/09/19</td>
-                                                <td>18:39</td>
+                                                <td class="colByeBye2">18:39</td>
                                                 <td>Auto</td>
                                                 <td>
                                                     <div class="input-group">
@@ -395,9 +395,9 @@
                                             <tr id="co11" class="tabGroup2 tabGroups" data-toggle="collapse" data-target="#demo11" data-parent="#table001">
                                                 <th scope="row">co11</th>    
                                                 <td>ch03</td>
-                                                <td>Bruce Lee</td>
+                                                <td class="colByeBye3">Bruce Lee</td>
                                                 <td>23/09/19</td>
-                                                <td>20:33</td>
+                                                <td class="colByeBye2">20:33</td>
                                                 <td>Auto</td>
                                                 <td>
                                                     <div class="input-group">
@@ -428,9 +428,9 @@
                                             <tr id="co10" class="tabGroup1 tabGroups" data-toggle="collapse" data-target="#demo10" data-parent="#table001">
                                                 <th scope="row">co10</th>
                                                 <td>ch03</td>
-                                                <td>Aaliyah</td>
+                                                <td class="colByeBye3">Aaliyah</td>
                                                 <td>21/09/19</td>
-                                                <td>09:30</td>
+                                                <td class="colByeBye2">09:30</td>
                                                 <td>Auto</td>
                                                 <td>
                                                     <div class="input-group">
@@ -460,9 +460,9 @@
                                             <tr id="co09" class="tabGroup2 tabGroups" data-toggle="collapse" data-target="#demo09" data-parent="#table001">
                                                 <th scope="row">co09</th>    
                                                 <td>ch03</td>
-                                                <td>Senku</td>
+                                                <td class="colByeBye3">Senku</td>
                                                 <td>20/09/19</td>
-                                                <td>18:30</td>
+                                                <td class="colByeBye2">18:30</td>
                                                 <td>Auto</td>
                                                 <td>
                                                     <div class="input-group">
@@ -493,9 +493,9 @@
                                             <tr id="co07" class="tabGroup1 tabGroups" data-toggle="collapse" data-target="#demo07" data-parent="#table001">
                                                 <th scope="row">co07</th>
                                                 <td>ch02</td>
-                                                <td>Yoshimitsu</td>
+                                                <td class="colByeBye3">Yoshimitsu</td>
                                                 <td>18/09/19</td>
-                                                <td>11:55</td>
+                                                <td class="colByeBye2">11:55</td>
                                                 <td>Auto</td>
                                                 <td>
                                                     <div class="input-group">
@@ -525,9 +525,9 @@
                                             <tr id="co06" class="tabGroup2 tabGroups" data-toggle="collapse" data-target="#demo06" data-parent="#table001">
                                                 <th scope="row">co06</th>    
                                                 <td>ch02</td>
-                                                <td>Yozuria</td>
+                                                <td class="colByeBye3">Yozuria</td>
                                                 <td>15/09/19</td>
-                                                <td>20:30</td>
+                                                <td class="colByeBye2">20:30</td>
                                                 <td>Auto</td>
                                                 <td>
                                                     <div class="input-group">
@@ -558,9 +558,9 @@
                                             <tr id="co05" class="tabGroup1 tabGroups" data-toggle="collapse" data-target="#demo05" data-parent="#table001">
                                                 <th scope="row">co05</th>
                                                 <td>ch02</td>
-                                                <td>Senku</td>
+                                                <td class="colByeBye3">Senku</td>
                                                 <td>13/09/19</td>
-                                                <td>18:05</td>
+                                                <td class="colByeBye2">18:05</td>
                                                 <td>Auto</td>
                                                 <td>
                                                     <div class="input-group">
@@ -591,9 +591,9 @@
                                             <tr id="co03" class="tabGroup2 tabGroups" data-toggle="collapse" data-target="#demo03" data-parent="#table001">
                                                 <th scope="row">co03</th>    
                                                 <td>ch01</td>
-                                                <td>Senku</td>
+                                                <td class="colByeBye3">Senku</td>
                                                 <td>11/09/19</td>
-                                                <td>21:21</td>
+                                                <td class="colByeBye2">21:21</td>
                                                 <td>Auto</td>
                                                 <td>
                                                     <div class="input-group">
@@ -624,9 +624,9 @@
                                             <tr id="co02" class="tabGroup1 tabGroups" data-toggle="collapse" data-target="#demo02" data-parent="#table001">
                                                 <th scope="row">co02</th>
                                                 <td>ch01</td>
-                                                <td>Itachi</td>
+                                                <td class="colByeBye3">Itachi</td>
                                                 <td>07/09/19</td>
-                                                <td>12:30</td>
+                                                <td class="colByeBye2">12:30</td>
                                                 <td>Auto</td>
                                                 <td>
                                                     <div class="input-group">
@@ -656,9 +656,9 @@
                                             <tr id="co01" class="tabGroup2 tabGroups" data-toggle="collapse" data-target="#demo01" data-parent="#table001">
                                                 <th scope="row">co01</th>    
                                                 <td>ch01</td>
-                                                <td>Inozuka</td>
+                                                <td class="colByeBye3">Inozuka</td>
                                                 <td>06/09/19</td>
-                                                <td>19:30</td>
+                                                <td class="colByeBye2">19:30</td>
                                                 <td>Auto</td>
                                                 <td>
                                                     <div class="input-group">
@@ -699,15 +699,15 @@
                             <div class="collapse colapse-forms" id="collapseCorbeille">
                                 <div class="card-body">
                                     <span class="badge badge-danger mb-2">Commentaires supprimés</span>
-                                    <span id="deleteAllBtn" type="button" class="badge badge-danger ml-4 mb-2">X Vider tout le tableau</span>
+                                    <span id="deleteAllBtn" type="button" class="badge badge-danger ml-3 mb-2">Vider tout le tableau</span>
                                     <table id="table003" class="table">
                                         <thead>
                                             <tr class="trHead">
                                                 <th scope="col">#</th>
                                                 <th scope="col">Chapitre #</th>
-                                                <th scope="col">Pseudo</th>
+                                                <th class="colByeBye3" scope="col">Pseudo</th>
                                                 <th scope="col">Date</th>
-                                                <th scope="col">Heure</th>
+                                                <th class="colByeBye2" scope="col">Heure</th>
                                                 <th scope="col">Signalé</th>
                                                 <th scope="col">Traitement</th>
                                             </tr>
@@ -719,9 +719,9 @@
                                             <tr id="co16" class="tabGroup1 tabGroups" data-toggle="collapse" data-target="#demo16" data-parent="#table001">
                                                 <th scope="row">co16</th>    
                                                 <td>ch04</td>
-                                                <td>Gros Fessier</td>
+                                                <td class="colByeBye3">Gros Fessier</td>
                                                 <td>29/09/19</td>
-                                                <td>02:20</td>
+                                                <td class="colByeBye2">02:20</td>
                                                 <td>Auto</td>
                                                 <td>
                                                     <div class="input-group">
@@ -752,9 +752,9 @@
                                             <tr id="co12" class="tabGroup2 tabGroups" data-toggle="collapse" data-target="#demo12" data-parent="#table001">
                                                 <th scope="row">co12</th>    
                                                 <td>ch03</td>
-                                                <td>Red Head</td>
+                                                <td class="colByeBye3">Red Head</td>
                                                 <td>24/09/19</td>
-                                                <td>22:14</td>
+                                                <td class="colByeBye2">22:14</td>
                                                 <td>Visiteur</td>
                                                 <td>
                                                     <div class="input-group">
@@ -785,9 +785,9 @@
                                             <tr id="co08" class="tabGroup1 tabGroups" data-toggle="collapse" data-target="#demo08" data-parent="#table001">
                                                 <th scope="row">co08</th>
                                                 <td>ch02</td>
-                                                <td>Hitler</td>
+                                                <td class="colByeBye3">Hitler</td>
                                                 <td>15/09/19</td>
-                                                <td>23:22</td>
+                                                <td class="colByeBye2">23:22</td>
                                                 <td>Visiteur</td>
                                                 <td>
                                                     <div class="input-group">
@@ -817,9 +817,9 @@
                                             <tr id="co04" class="tabGroup2 tabGroups" data-toggle="collapse" data-target="#demo04" data-parent="#table001">
                                                 <th scope="row">co04</th>    
                                                 <td>ch01</td>
-                                                <td>Eegfzg</td>
+                                                <td class="colByeBye3">Eegfzg</td>
                                                 <td>10/09/19</td>
-                                                <td>02:30</td>
+                                                <td class="colByeBye2">02:30</td>
                                                 <td>Auto</td>
                                                 <td>
                                                     <div class="input-group">
@@ -908,7 +908,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
 
     <!-- Mes fichiers JS -->
-    <script src="../../public/js/admin.js"></script>   
+    <script src="../../public/js/sidebar.js"></script>   
 
 
 

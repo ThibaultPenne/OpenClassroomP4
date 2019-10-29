@@ -29,50 +29,46 @@
         <header id="navBar">
 
             <nav id="nav" class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+
                 <a id="navTitre" class="navbar-brand" href="#">
                     Lecture innovante d'un nouveau roman
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <button class="btn btn-dark d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i> 
+                    </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="nav navbar-nav">
 
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.php">
-                                Accueil<span class="sr-only">(current)</span>
-                            </a>
+                            <a class="nav-link" href="index.php">Accueil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="view/frontend/chapitresVue.php">Chapitres</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="view/frontend/contactView.php">
-                                Contact
-                            </a>
+                            <a class="nav-link" href="view/frontend/contactView.php">Contact</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Admin
-                            </a>                    
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>                    
                             <form id="menuDropDownNav" class="dropdown-menu p-3">
                                 <div class="form-group">
                                     <label for="exampleDropdownFormEmail2">Adresse Email</label>
-                                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com" name="email">
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@exemple.com" name="email">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleDropdownFormPassword2">Mot de passe</label>
-                                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password" name="password">
+                                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="********" name="password">
                                 </div>
-                                <input type="button" class="btn btn-primary mb-2" name="valider" value="Se connecter" onclick="window.location.href='view/backend/adminVue.php'" />
+                                <input id="connexionBtn" type="button" class="btn mb-2" name="valider" value="Se connecter" onclick="window.location.href='view/backend/adminVue.php'" />
                             </form>           
                         </li>
                             <!-- Implanter une condition PHP pour rediriger l'admin vers la page d'admin si il rentre les bonnes informations de connexion -->
 
                     </ul>
                 </div>
-
+            </div>
             </nav>
 
         </header>
@@ -104,12 +100,7 @@
                     <figcaption>
                         <h2>Le Projet</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            Jean Forteroche travaille actuellement sur un nouveau roman, "Billet simple pour l'Alaska". Il souhaite innover en le publiant sous formes de chapitres en ligne ici même.
                         </p>
                          <h4>A présent, vous n'avez plus qu'à ...</h4>
                         <button id="goChapitres" onclick="window.location.href='view/frontend/chapitresVue.php'">Plonger dans l'histoire</button>

@@ -50,7 +50,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav">
                             <li id="homeLinkLi" class="nav-item">
-                                <a id="chapLink" class="nav-link" href="adminVue.php"><i class="fas fa-home mr-2"></i>Home</a>
+                                <a id="homeLink" class="nav-link" href="adminVue.php"><i class="fas fa-home mr-2"></i>Home</a>
                             </li>
                             <li class="nav-item">
                                 <a id="chapLink" class="nav-link" href="chapsAdminVue.php"><i class="fas fa-copy mr-2"></i>Chapitres</a>
@@ -84,11 +84,11 @@
 
                     <div id="dashboardTitle" class="pt-5 pb-3 m-auto">
                         <h1 class="">Ecriture d'un nouveau chapitre</h1>
-                        <p class="col-6 m-auto pb-5">
+                        <p class="col-12 m-auto pb-5">
                             L'imagination vient en créant.
                         </p>
                         <!-- ---------- Le Formulaire Nouveau Chapitre ---------- -->
-                        <form id="newChapForm" class="col-6 m-auto">
+                        <form id="newChapForm" class="col-md-9 col-lg-8 col-xl-6 m-auto">
                             <div class="form-group">
                                 <label id="labelTitreChap" for="inputAddress">Titre du chapitre</label>
                                 <input type="text" class="form-control" id="inputTitreChap" placeholder="Le titre de votre chapitre...">
@@ -194,7 +194,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
 
     <!-- Mes fichiers JS -->
-    <script src="../../public/js/admin.js"></script>   
+    <script src="../../public/js/sidebar.js"></script>   
 
 
 
