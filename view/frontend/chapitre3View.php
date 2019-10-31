@@ -27,7 +27,7 @@
                 <br>
                 Quelques secondes plus tard, ils quittaient cet enfer, bénéficiant d’un avantage temporaire : ils se trouvaient dans le bon sens, alors que leurs ennemis devaient effectuer une marche arrière pour les prendre en chasse.<br>
             </p>
-            <img src="../../public/images/chap01Img.png">
+            <img src="../../public/images/chap03Img.png" style="width: 85%;">
             <p>
                 La dernière chose qu’il vit avant de s’engager sur le large boulevard fut le SUV noir opérant un demi-tour, et le corps inerte de Jen baignant dans une mare de sang, illuminé par le néon du restaurant. Une image digne d’un ancien film policier.<br>
                 Sauf qu’ici, il s’agissait de la vraie vie.<br>

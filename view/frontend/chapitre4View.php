@@ -24,7 +24,7 @@
                 En règle générale, il se tenait à l’écart de ses semblables.<br>
                 Bien sûr, à une ou deux reprises il avait dérapé. Comme lors de leur unique nuit passée ensemble. Mais il n’avait pas répété son erreur depuis lors. Si le sexe était offert et que le moment s’y prêtait, il le prenait. Mais il était toujours intransigeant quant à ce qu’il était disposé à donner ou non.<br>
             </p>
-            <img src="../../public/images/chap01Img.png">
+            <img src="../../public/images/chap04Img.png" style="width: 80%;">
             <p>
                 Il n’y avait aucune perte de contrôle, aucune envolée charnelle commune et irraisonnée avec… avec une vierge qui avait desétoiles dans les yeux, pour l’amour du ciel !<br>
                 <br>

@@ -18,7 +18,7 @@
     <div id="champDL" class="input-group mb-3">
         <div class="custom-file">
             <input type="file" class="custom-file-input" id="inputfileDL">
-            <label class="custom-file-label" for="inputfileDL" aria-describedby="inputGroupFileAddon02">../../public/images/chap01Img.png</label>
+            <label class="custom-file-label" for="inputfileDL" aria-describedby="inputGroupFileAddon02">../../public/images/chap05Img.png</label>
         </div>
     </div>
 
@@ -43,7 +43,7 @@ Elle aurait pu en avoir, avait‑il compris au début. Et c’est la raison po
 
 Il pouvait réveiller son image quand il voulait, et l’occulter quand il voulait.
 
-<img src="../../public/images/chap01Img.png">
+<img src="../../public/images/chap05Img.png">
 
 — Es-tu impliqué dans quelque chose de mal ?
 Il y avait dans sa voix une tension qui n’y était pas quelques secondes plus tôt.

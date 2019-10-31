@@ -18,7 +18,7 @@
     <div id="champDL" class="input-group mb-3">
         <div class="custom-file">
             <input type="file" class="custom-file-input" id="inputfileDL">
-            <label class="custom-file-label" for="inputfileDL" aria-describedby="inputGroupFileAddon02">../../public/images/chap01Img.png</label>
+            <label class="custom-file-label" for="inputfileDL" aria-describedby="inputGroupFileAddon02">../../public/images/chap04Img.png</label>
         </div>
     </div>
 
@@ -40,7 +40,7 @@ Elle boucla sa ceinture. Ses mains étaient hésitantes, mais ne tremblaient pas
 En règle générale, il se tenait à l’écart de ses semblables.
 Bien sûr, à une ou deux reprises il avait dérapé. Comme lors de leur unique nuit passée ensemble. Mais il n’avait pas répété son erreur depuis lors. Si le sexe était offert et que le moment s’y prêtait, il le prenait. Mais il était toujours intransigeant quant à ce qu’il était disposé à donner ou non.
 
-<img src="../../public/images/chap01Img.png">
+<img src="../../public/images/chap04Img.png">
 
 Il n’y avait aucune perte de contrôle, aucune envolée charnelle commune et irraisonnée avec… avec une vierge qui avait desétoiles dans les yeux, pour l’amour du ciel !
 

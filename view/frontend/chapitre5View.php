@@ -27,7 +27,7 @@
                 <br>
                 Il pouvait réveiller son image quand il voulait, et l’occulter quand il voulait.<br>
             </p>
-            <img src="../../public/images/chap01Img.png">
+            <img src="../../public/images/chap05Img.png" style="width: 50%;">
             <p>
                 — Es-tu impliqué dans quelque chose de mal ?<br>
                 Il y avait dans sa voix une tension qui n’y était pas quelques secondes plus tôt.<br>

@@ -18,7 +18,7 @@
     <div id="champDL" class="input-group mb-3">
         <div class="custom-file">
             <input type="file" class="custom-file-input" id="inputfileDL">
-            <label class="custom-file-label" for="inputfileDL" aria-describedby="inputGroupFileAddon02">../../public/images/chap01Img.png</label>
+            <label class="custom-file-label" for="inputfileDL" aria-describedby="inputGroupFileAddon02">../../public/images/chap02Img.png</label>
         </div>
     </div>
 
@@ -31,7 +31,7 @@ Reid se renversa contre son dossier et offrit à Jen un franc sourire. Elle éta
 Elle cambra le dos. Ses bonnets D pointèrent encore plus vers lui, et le petit haut brillant qu’elle portait sous son chemisier ouvert se tendit assez pour souligner le dessin de ses tétons.
 Peut‑être que si Lara ne s’était pas trouvée dans la salle, à sept tables de la leur près d’une fenêtre, il aurait été plus émoustillé. Mais elle était là, et cela coupait court à leur petit jeu. Aussi abandonna-t‑il son idée de proposer à Jen de poursuivre leur conversation dans un endroit plus discret.
 
-<img src="../../public/images/chap01Img.png">
+<img src="../../public/images/chap02Img.png">
 
 — Que dirais-tu d’un dessert ? demanda-t‑il.
 En fait, ce n’était qu’une manœuvre sournoise pour gagner du temps, car s’il se levait il risquait d’attirer l’attention de Lara.
