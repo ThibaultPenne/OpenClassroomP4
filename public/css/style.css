@@ -1,10 +1,4 @@
-/*
 
-    Palette de couleur :
-
-
-
-*/
 
 
 /*--------------- - - -  Début du code CSS - - - ---------------*/
@@ -732,7 +726,7 @@ body
                             {
                                 font-family: 'robotoregular', sans-serif;
                                 font-style: italic;
-                                font-size: 20px;
+                                font-size: 17px;
                                 color: #5b5b65;
                                 letter-spacing: 2px;
                                 transition: all 0.3s ease-out;
@@ -762,7 +756,7 @@ body
                               
                                     .previewChap h4
                                         {
-                                            font-size: 17px;
+                                            font-size: 15.5px;
                                         }
                                     .previewChap p
                                         {
@@ -1156,6 +1150,16 @@ ul
                             color: white;
                             background: #dc3545!important;
                         }
+
+
+                #noComment h6
+                    {
+                        font-family: 'robotoregular', sans-serif;
+                        font-style: italic;
+                        font-size: 15px;
+                        color: #696363;
+                        text-align: center;
+                    }
 
             @media (max-width: 575px)
                 {

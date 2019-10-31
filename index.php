@@ -1,5 +1,4 @@
 <?php
 
-
-require('view/frontend/indexVue.php');
+require('controller/controlFrontend.php');
 ?>
