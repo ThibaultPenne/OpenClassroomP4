@@ -7,7 +7,7 @@
         {
             $db = dbConnect();
             // Je récupère les 3 derniers chapitres publiés :
-            $req = $db->query('SELECT numero, titre, texte, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM chapitres WHERE Publié="1" ORDER BY date_creation DESC LIMIT 0, 3');
+            $req = $db->query('SELECT numero, titre, content_text, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM chapitres WHERE publié="1" ORDER BY date_creation DESC LIMIT 0, 3');
 
             return $req;
         }
