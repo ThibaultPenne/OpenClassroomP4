@@ -23,6 +23,3 @@
 <?php require('templateChap.php'); ?>
 
 
-
-
-

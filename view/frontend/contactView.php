@@ -19,7 +19,7 @@
                 <a class="nav-link" href="../../index.php">Accueil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="chapitresVue.php">Chapitres</a>
+                <a class="nav-link" href="chapitresView.php">Chapitres</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="contactView.php">Contact</a>
@@ -27,7 +27,7 @@
         <?php $menu_navbar = ob_get_clean(); ?>
 
         <?php ob_start(); ?>
-            <input id="connexionBtn" type="button" class="btn mb-2" name="valider" value="Se connecter" onclick="window.location.href='../backend/adminVue.php'" />
+            <input id="connexionBtn" type="button" class="btn mb-2" name="valider" value="Se connecter" onclick="window.location.href='../backend/adminView.php'" />
         <?php $menu_navbar_admin = ob_get_clean(); ?>
        
 

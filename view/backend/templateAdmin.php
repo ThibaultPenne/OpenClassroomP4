@@ -43,9 +43,9 @@
                         Admin
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li><a href="adminVue.php">Home</a></li>
-                        <li><a href="chapsAdminVue.php">Chapitres</a></li>
-                        <li><a href="comsAdminVue.php">Commentaires</a></li>
+                        <li><a href="adminView.php">Home</a></li>
+                        <li><a href="chapsAdminView.php">Chapitres</a></li>
+                        <li><a href="comsAdminView.php">Commentaires</a></li>
                     </ul>
                 </li>
                 <li>
@@ -53,7 +53,7 @@
                         <i class="fas fa-book"></i>Blog</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li> <a href="../../index.php">Accueil</a></li>
-                        <li><a href="../frontend/chapitresVue.php">Chapitres</a></li>
+                        <li><a href="../frontend/chapitresView.php">Chapitres</a></li>
                         <li><a href="../frontend/contactView.php">Contact</a></li>
                     </ul>
                 </li>

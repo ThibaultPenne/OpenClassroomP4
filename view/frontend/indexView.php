@@ -19,7 +19,7 @@
                 <a class="nav-link" href="index.php">Accueil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="view/frontend/chapitresVue.php">Chapitres</a>
+                <a class="nav-link" href="view/frontend/chapitresView.php">Chapitres</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="view/frontend/contactView.php">Contact</a>
@@ -27,7 +27,7 @@
         <?php $menu_navbar = ob_get_clean(); ?>
 
         <?php ob_start(); ?>
-            <input id="connexionBtn" type="button" class="btn mb-2" name="valider" value="Se connecter" onclick="window.location.href='view/backend/adminVue.php'" />
+            <input id="connexionBtn" type="button" class="btn mb-2" name="valider" value="Se connecter" onclick="window.location.href='view/backend/adminView.php'" />
         <?php $menu_navbar_admin = ob_get_clean(); ?>
 
 
@@ -60,7 +60,7 @@
                             Jean Forteroche travaille actuellement sur un nouveau roman, "Billet simple pour l'Alaska". Il souhaite innover en le publiant sous formes de chapitres en ligne ici même.
                         </p>
                          <h4>A présent, vous n'avez plus qu'à ...</h4>
-                        <button id="goChapitres" onclick="window.location.href='view/frontend/chapitresVue.php'">Plonger dans l'histoire</button>
+                        <button id="goChapitres" onclick="window.location.href='view/frontend/chapitresView.php'">Plonger dans l'histoire</button>
                     </figcaption>
                 </figure>
 
@@ -128,7 +128,7 @@
 
         <!-- ------------------ L'Apercu des derniers chapitres ---------------- -->
 
-
+        
         <section id="apercuChapitres">
 
             <div id="apercuContenair" class="container">
@@ -139,25 +139,36 @@
                 </div>
                 <div id="apercuPart2">
                     <div id="barreBack" class="row justify-content-md-center">
-                        <div class="col-xs-12 col-md-3 previewChap">
-                            <div onclick="window.location.href='view/frontend/chapitre3View.php'" class="chapNbr">Chapitre 3</div>
-                            <h4>Question de bon sens</h4>
-                            <p>Les lumières de la ville occultaient les étoiles dans le ciel. Le bourdonnement constant de New York emplissait l’air ... </p>
-                        </div>
-                        <div class="col-xs-12 col-md-3 previewChap">
-                            <div onclick="window.location.href='view/frontend/chapitre4View.php'" class="chapNbr">Chapitre 4</div>
-                            <h4>Envolée charnelle</h4>
-                            <p>Il aurait dû riposter, tirer sur ces salauds. S’il les avait touchés, Jen serait toujours en vie, et son étroite porte ...</p>
-                        </div>
-                        <div class="col-xs-12 col-md-3 previewChap">
-                            <div onclick="window.location.href='view/frontend/chapitre5View.php'" class="chapNbr">Chapitre 5</div>
-                            <h4>Une image occultante</h4>
-                            <p>Ne connaissant pas le terrain, Lara fit un ou deux faux pas, mais il ne pouvait pas ralentir pour elle. Il les voulait ...</p>
-                        </div>
+
+                    <!-- Requête SQL -->
+                    <?php
+
+                        while ($donnees = $req->fetch()) 
+                            {
+                            ?>  
+                                <div class="col-xs-12 col-md-3 previewChap">                              
+                                    <div onclick="window.location.href='view/frontend/chapitre3View.php'" class="chapNbr">
+                                        <?php echo htmlspecialchars($donnees['numero']); ?>         
+                                    </div>
+                                    <h4><?php echo htmlspecialchars($donnees['titre']); ?></h4>
+                                    <p><?php echo substr($donnees['texte'], 0, 150) . " ... "; ?></p>                               
+                                </div>
+                            <?php
+                            }
+
+                        $req->closeCursor(); 
+
+                    ?> <!-- Fin de la Requête SQL -->
+
                     </div>
                 </div>
             </div>
         </section>
+        
+
+
+
+        
 
 
 <?php $content = ob_get_clean(); ?>

@@ -9,6 +9,7 @@
         <h4>CHAPITRE 4</h4>
         <h6>Envolée charnelle</h6>
         <hr>
+        <img src="../../public/images/chap04Img.png" style="width: 80%;">
         <div class="chapContent">
             <p>
                 Il aurait dû riposter, tirer sur ces salauds. S’il les avait touchés, Jen serait toujours en vie, et son étroite porte d’accès à la cellule terroriste encore ouverte. S’il les avait blessés, le FBI aurait pu les interroger. S’il les avait tués, leurs empreintes auraient pu être relevées. Il aurait eu des indices, des liens pouvant déboucher sur quelque chose.<br>
@@ -23,9 +24,6 @@
                 Elle boucla sa ceinture. Ses mains étaient hésitantes, mais ne tremblaient pas. Elle avait de bonnes mains. Des mains de travailleuse. Solides. Elle n’était pas une petite fleur fragile. Quelques minutes à peine après avoir échappé à un danger mortel, elle se ressaisissait déjà. Lara Jordan était une dure à cuire. C’était une qualité que Reid avait toujours aimée chez elle. Lui qui ne s’était jamais autorisé à aimer vraiment quelque chose chez quelqu’un…<br>
                 En règle générale, il se tenait à l’écart de ses semblables.<br>
                 Bien sûr, à une ou deux reprises il avait dérapé. Comme lors de leur unique nuit passée ensemble. Mais il n’avait pas répété son erreur depuis lors. Si le sexe était offert et que le moment s’y prêtait, il le prenait. Mais il était toujours intransigeant quant à ce qu’il était disposé à donner ou non.<br>
-            </p>
-            <img src="../../public/images/chap04Img.png" style="width: 80%;">
-            <p>
                 Il n’y avait aucune perte de contrôle, aucune envolée charnelle commune et irraisonnée avec… avec une vierge qui avait desétoiles dans les yeux, pour l’amour du ciel !<br>
                 <br>
                 Il serra les mâchoires. Entre la fusillade qu’il laissait derrière lui et ce souvenir qui refaisait trop vite surface, déclenchant une onde de chaleur dans son ventre, son humeur devenait plus morose à chaque seconde.<br>

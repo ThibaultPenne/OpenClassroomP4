@@ -9,6 +9,7 @@
         <h4>CHAPITRE 3</h4>
         <h6>Question de bon sens</h6>
         <hr>
+        <img src="../../public/images/chap03Img.png" style="width: 85%;">
         <div class="chapContent">
             <p>
                 Les lumières de la ville occultaient les étoiles dans le ciel. Le bourdonnement constant de New York emplissait l’air, composé des bruits conjugués de millions de gens et de voitures. Pour les habitants de la « Grosse Pomme », c’était une symphonie envoûtante. En général, les touristes le trouvaient stimulant et excitant. En ce qui le concernait, ce bourdonnement l’agaçait au plus haut point. Comment entendre ses ennemis approcher avec un tel bruit de fond ?<br>
@@ -26,9 +27,7 @@
                 Enfin, il fut près de son propre véhicule. L’instant d’après, grâce à un double de la clé caché sous l’aile avant, ils se glissèrent à l’intérieur.<br>
                 <br>
                 Quelques secondes plus tard, ils quittaient cet enfer, bénéficiant d’un avantage temporaire : ils se trouvaient dans le bon sens, alors que leurs ennemis devaient effectuer une marche arrière pour les prendre en chasse.<br>
-            </p>
-            <img src="../../public/images/chap03Img.png" style="width: 85%;">
-            <p>
+                <br>
                 La dernière chose qu’il vit avant de s’engager sur le large boulevard fut le SUV noir opérant un demi-tour, et le corps inerte de Jen baignant dans une mare de sang, illuminé par le néon du restaurant. Une image digne d’un ancien film policier.<br>
                 Sauf qu’ici, il s’agissait de la vraie vie.<br>
                 Il jura sourdement.<br>

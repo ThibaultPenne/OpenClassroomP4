@@ -9,14 +9,13 @@
         <h4>CHAPITRE 2</h4>
         <h6>Mouvement brusque</h6>
         <hr>
+        <img src="../../public/images/chap02Img.png" style="width: 50%;">
         <div class="chapContent">
             <p>
                 Reid se renversa contre son dossier et offrit à Jen un franc sourire. Elle était une véritable bombe et le savait. Elle avait l’habitude de sortir avec des hommes dont elle pouvait obtenir exactement ce qu’elle voulait. Si devenir son nouveau petit ami, ou plus, était la condition pour glaner des renseignements utiles sur la cellule dormante sur laquelle il enquêtait, pas de problème. Il avait déjà dû consentir de pires sacrifices. <br>
                 Elle cambra le dos. Ses bonnets D pointèrent encore plus vers lui, et le petit haut brillant qu’elle portait sous son chemisier ouvert se tendit assez pour souligner le dessin de ses tétons.<br>
                 Peut‑être que si Lara ne s’était pas trouvée dans la salle, à sept tables de la leur près d’une fenêtre, il aurait été plus émoustillé. Mais elle était là, et cela coupait court à leur petit jeu. Aussi abandonna-t‑il son idée de proposer à Jen de poursuivre leur conversation dans un endroit plus discret.<br>
-            </p>
-            <img src="../../public/images/chap02Img.png" style="width: 50%;">
-            <p>
+                <br>
                 — Que dirais-tu d’un dessert ? demanda-t‑il.<br>
                 En fait, ce n’était qu’une manœuvre sournoise pour gagner du temps, car s’il se levait il risquait d’attirer l’attention de Lara.<br>
                 Lorsqu’il sentit le pied de Jen remonter le long de sa jambe sous la table, il soupira d’abattement tout en feignant le plaisir. Le cas échéant, il n’hésiterait pas à coucher avec elle si c’était le seul moyen de la faire parler. Le groupe terroriste sur lequel il enquêtait était dans la phase finale de préparation d’un gros coup. Alors qu’ils étaient prêts à passer à l’action, il n’avait toujours aucune idée de ce que c’était ni de l’endroit où ça devait se passer.<br>

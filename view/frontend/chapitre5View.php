@@ -9,6 +9,7 @@
         <h4>CHAPITRE 5</h4>
         <h6>Une image occultante </h6>
         <hr>
+        <img src="../../public/images/chap05Img.png" style="width: 50%;">
         <div class="chapContent">
             <p>
                 Ne connaissant pas le terrain, Lara fit un ou deux faux pas, mais il ne pouvait pas ralentir pour elle. Il les voulait dans son antre, avec ses murs renforcés et son arsenal d’armes à portée de main.<br>
@@ -24,11 +25,8 @@
                 D’un mouvement un peu maladroit, elle croisa les bras sur le devant du gilet de kevlar trop grand pour elle, et qui l’entravait dans ses gestes. La lumière de la lune faisait briller ses lèvres pulpeuses et accentuait la fossette sur sa joue droite.<br>
                 Il pivota vers la fenêtre afin de ne plus l’avoir dans son champ de vision. Elle n’était rien pour lui. Un souvenir torride du passé. Il n’y avait aucune raison pour que le fait de la voir là, sur son canapé, dans sa maison, le perturbe. Elle n’avait aucun pouvoir sur lui.<br>
                 Elle aurait pu en avoir, avait‑il compris au début. Et c’est la raison pour laquelle il avait pris la décision de ne pas revenir en arrière. Jamais. Il avait annihilé son pouvoir sur lui en la réduisant à un simple souvenir, à un fantasme érotique.<br>
-                <br>
                 Il pouvait réveiller son image quand il voulait, et l’occulter quand il voulait.<br>
-            </p>
-            <img src="../../public/images/chap05Img.png" style="width: 50%;">
-            <p>
+                <br>
                 — Es-tu impliqué dans quelque chose de mal ?<br>
                 Il y avait dans sa voix une tension qui n’y était pas quelques secondes plus tôt.<br>
                 Il laissa échapper un petit rire dur.<br>

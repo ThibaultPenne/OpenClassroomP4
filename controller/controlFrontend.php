@@ -1,5 +1,7 @@
 <?php
+require('model/modelFrontend.php');
 
+$req = getChapitres();
 
-require('view/frontend/indexVue.php');
+require('view/frontend/indexView.php');
 ?>
