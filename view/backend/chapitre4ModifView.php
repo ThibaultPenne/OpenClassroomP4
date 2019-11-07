@@ -40,8 +40,6 @@ Elle boucla sa ceinture. Ses mains étaient hésitantes, mais ne tremblaient pas
 En règle générale, il se tenait à l’écart de ses semblables.
 Bien sûr, à une ou deux reprises il avait dérapé. Comme lors de leur unique nuit passée ensemble. Mais il n’avait pas répété son erreur depuis lors. Si le sexe était offert et que le moment s’y prêtait, il le prenait. Mais il était toujours intransigeant quant à ce qu’il était disposé à donner ou non.
 
-<img src="../../public/images/chap04Img.png">
-
 Il n’y avait aucune perte de contrôle, aucune envolée charnelle commune et irraisonnée avec… avec une vierge qui avait desétoiles dans les yeux, pour l’amour du ciel !
 
 Il serra les mâchoires. Entre la fusillade qu’il laissait derrière lui et ce souvenir qui refaisait trop vite surface, déclenchant une onde de chaleur dans son ventre, son humeur devenait plus morose à chaque seconde.

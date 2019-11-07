@@ -12,13 +12,13 @@
 
             <?php ob_start(); ?>
                 <li id="homeLinkLi" class="nav-item">
-                    <a id="homeLink" class="nav-link" href="adminView.php"><i class="fas fa-home mr-2"></i>Home</a>
+                    <a id="homeLink" class="nav-link" href="index.php?action=Admin"><i class="fas fa-home mr-2"></i>Home</a>
                 </li>
                 <li class="nav-item">
-                    <a id="chapLink" class="nav-link" href="chapsAdminView.php"><i class="fas fa-copy mr-2"></i>Chapitres</a>
+                    <a id="chapLink" class="nav-link" href="index.php?action=Admin-chapitres"><i class="fas fa-copy mr-2"></i>Chapitres</a>
                 </li>
                 <li class="nav-item active">
-                    <a id="comLink" class="nav-link" href="comsAdminView.php"><i class="fab fa-speakap mr-2"></i>Commentaires</a>
+                    <a id="comLink" class="nav-link" href="index.php?action=Admin-commentaires"><i class="fab fa-speakap mr-2"></i>Commentaires</a>
                 </li>
             <?php $menuNavbarAdmin = ob_get_clean(); ?>
 
@@ -433,7 +433,7 @@
                                             <tr id="demo09" class="collapse"> 
                                                 <td colspan="7" class="hiddenRow demos">
                                                     <div class="card">
-                                                        Encore moi ! Le personnage secondaire m'intringue tellement ! Merci pour le chapitre !
+                                                        Encore moi ! Le personnage secondaire m'intrigue tellement ! Merci pour le chapitre !
                                                     </div>
                                                 </td>
                                             </tr>
@@ -736,7 +736,7 @@
                                                 <th scope="row">co08</th>
                                                 <td>ch02</td>
                                                 <td class="colByeBye3">Hitler</td>
-                                                <td>15/09/19</td>
+                                                <td>18/09/19</td>
                                                 <td class="colByeBye2">23:22</td>
                                                 <td>Visiteur</td>
                                                 <td>
@@ -768,7 +768,7 @@
                                                 <th scope="row">co04</th>    
                                                 <td>ch01</td>
                                                 <td class="colByeBye3">Eegfzg</td>
-                                                <td>10/09/19</td>
+                                                <td>12/09/19</td>
                                                 <td class="colByeBye2">02:30</td>
                                                 <td>Auto</td>
                                                 <td>

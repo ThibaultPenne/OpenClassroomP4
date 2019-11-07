@@ -12,13 +12,13 @@
 
             <?php ob_start(); ?>
                 <li id="homeLinkLi" class="nav-item">
-                    <a id="homeLink" class="nav-link" href="adminView.php"><i class="fas fa-home mr-2"></i>Home</a>
+                    <a id="homeLink" class="nav-link" href="index.php?action=Admin"><i class="fas fa-home mr-2"></i>Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a id="chapLink" class="nav-link" href="chapsAdminView.php"><i class="fas fa-copy mr-2"></i>Chapitres</a>
+                    <a id="chapLink" class="nav-link" href="index.php?action=Admin-chapitres"><i class="fas fa-copy mr-2"></i>Chapitres</a>
                 </li>
                 <li class="nav-item">
-                    <a id="comLink" class="nav-link" href="comsAdminView.php"><i class="fab fa-speakap mr-2"></i>Commentaires</a>
+                    <a id="comLink" class="nav-link" href="index.php?action=Admin-commentaires"><i class="fab fa-speakap mr-2"></i>Commentaires</a>
                 </li>
             <?php $menuNavbarAdmin = ob_get_clean(); ?>
 

@@ -43,8 +43,6 @@ Elle aurait pu en avoir, avait‑il compris au début. Et c’est la raison po
 
 Il pouvait réveiller son image quand il voulait, et l’occulter quand il voulait.
 
-<img src="../../public/images/chap05Img.png">
-
 — Es-tu impliqué dans quelque chose de mal ?
 Il y avait dans sa voix une tension qui n’y était pas quelques secondes plus tôt.
 Il laissa échapper un petit rire dur.

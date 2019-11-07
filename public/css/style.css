@@ -40,7 +40,16 @@ body
     top: -50px; 
 }
 
-
+#errorText
+    {
+        margin-top: 9%;
+        margin-bottom: 48%;
+        background: #2c2d2f;
+        color: white;
+        border-radius: 5px;
+        padding: 5%;
+        font-size: 18px;
+    }
 
 /*------------------------------------ - - 
 ----------- - - -  Navbar - - - ----------
@@ -154,7 +163,7 @@ body
 
             #navBar button
                 {
-                    margin: auto;
+                    margin-left: auto;
                 }
             #navBar li 
                 {
@@ -420,6 +429,22 @@ body
                     #bioContenair h2
                         {
                             font-size: 30px;
+                        }
+                }
+        #bioContenair h5 /* Sur la page chapitre.php */
+            {
+                text-align: center;
+                font-size: 18px;
+                color: white;
+                margin-top: 1%;
+                font-family: 'robotomedium', sans-serif;
+                letter-spacing: 1px;
+            }
+            @media (max-width: 550px)
+                {
+                    #bioContenair h5
+                        {
+                            font-size: 15px;
                         }
                 }
 
@@ -922,7 +947,6 @@ ul
     /* Le bouton sélécteur de chapitres */
     #chapitresSelectorContenair
         {
-            margin-top: 5%;
             display: block;
         }
         #chapitresSelector
@@ -934,7 +958,7 @@ ul
                 margin: auto;
                 margin-top: 1%;
                 display: block;
-                padding: 1%;
+                padding: 4%;
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
@@ -964,7 +988,7 @@ ul
                 {
                     #chapitresSelector
                         {
-                            padding: 2%;
+                            padding: 4%;
                         }
                 }
             @media (max-width: 550px)
@@ -976,7 +1000,7 @@ ul
                         }
                     #chapitresSelector
                         {
-                            padding: 2%;
+                            padding: 5%;
                             font-size: 15px;
                         }
                     #bio .dropdown-item
@@ -988,6 +1012,144 @@ ul
 
 
     /* Les chapitres */
+
+    #chapsPart1 
+        {
+            margin-top: 5%;
+            padding: 3%;
+        }
+
+    #chapsListImg
+        {
+            text-align: center;
+        }       
+        #chapsListImg img
+            {
+                width: 100%;
+                border-radius: 4px;
+                box-shadow: 8px 8px 20px 0px black;
+                transition: all 0.3s ease-out;
+            }
+            #chapsListImg img:hover
+                {
+                    box-shadow: -8px 8px 20px 0px black;
+                }
+        #chapsListImg h6
+            {
+                font-family: 'robotomedium', sans-serif;
+                font-size: 19px;
+                color: #3d92bb;
+                margin-top: 25px;
+            }
+        #chapsListImg p
+            {
+                font-family: 'robotoregular', sans-serif;
+                font-size: 15px;
+                color: #b5b5b5;
+            }
+
+        @media (max-width: 550px)
+            {
+                #chapsListImg h6
+                    {
+                        font-size: 15px;
+                        margin-top: 20px;
+                    }
+                #chapsListImg p
+                    {
+                        font-size: 13.5px;
+                    }
+            }
+
+
+    /* ---------------- */
+
+    #chapsPart2 
+        {
+            background: #121217;
+            padding: 7%;
+            border-radius: 4px;
+        }
+
+    #chapPreviewFull
+        {
+            background: #17171a;
+            margin-top: 5%;
+            color: white;
+            border-radius: 5px;
+            margin: auto;
+            padding: 5%;
+            margin-bottom: 2%;
+            box-shadow: 8px 8px 23px -8px black;
+            transition: all 0.3s ease-out;
+        }
+        #chapPreviewFull:hover
+            {
+                box-shadow: -8px 8px 23px -8px black;
+            }
+        #chapPreviewFull h4
+            {
+                font-family: 'robotomedium', sans-serif;
+                font-size: 19px;
+                color: #3d92bb;
+            }
+        #chapPreviewFull p
+            {
+                font-family: 'robotoregular', sans-serif;
+                font-size: 16px;
+                color: #b5b5b5;
+                margin-left: 2%;
+            }
+        #chapPreviewFull h5
+            {
+                font-family: 'robotoregular', sans-serif;
+                font-style: italic;
+                font-size: 14px;
+                color: white;
+                text-align: right;
+            }
+        #lireBtn 
+            {
+                background: #3d92bb;
+                margin-top: 2%;
+                width: 100%;
+                border: none;
+                color: white;
+                font-family: 'robotomedium', sans-serif;
+                font-size: 15px;
+                text-decoration: none;
+                box-shadow: 15px 15px 37px -8px black;
+                transition: all 0.3s ease-out;
+            }
+            #lireBtn:hover
+                {
+                    background: white;
+                    color: #3d92bb;
+                    box-shadow: -15px 15px 37px -8px black;
+                }
+
+         @media (max-width: 550px)
+            {
+                 #chapPreviewFull h4
+                    {
+                        font-size: 16px;
+                    }
+                #chapPreviewFull p
+                    {
+                        font-size: 15px;
+                    }
+                #chapPreviewFull h5
+                    {
+                        font-size: 12.5px;
+                    }
+                 #lireBtn
+                    {
+                        font-size: 14px;
+                    }
+            }
+
+
+
 
 
     /* Chapitre 1 */

@@ -5,10 +5,11 @@
 		<meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-		<title><?= $title ?></title>
+		<title><?= $title ?></title> <!-- Variable du Titre de la page -->
 
 		<!-- Mon CSS -->
-		<?= $my_css ?> 
+		<link rel="stylesheet" href="public/css/fonts.css"/> <!-- Polices -->
+    	<link rel="stylesheet" href="public/css/style.css"/> <!-- Main CSS -->  
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -21,7 +22,7 @@
 	
 	<div id="blocPage">
 
-		<!-- ---------------------- La Navbar -------------------------------- -->
+		<!-- ----------- La Navbar ----------- -->
 
 		<!-- Barre de Navigation -->
         <header id="navBar">
@@ -29,9 +30,8 @@
             <nav id="nav" class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
 
-                <a id="navTitre" class="navbar-brand" href="#">
-                    Lecture innovante d'un nouveau roman
-                </a>
+            	<?= $menu_navbar_titre ?> <!-- Variable de la Navbar : Titre -->
+
                 <button class="btn btn-dark d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i> 
                     </button>
@@ -39,7 +39,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav">
 
-                        <?= $menu_navbar ?>
+                        <?= $menu_navbar ?> <!-- Variable de la Navbar : Acceuil / Chapitres / Contact -->
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>                    
                             <form id="menuDropDownNav" class="dropdown-menu p-3">
@@ -51,7 +52,9 @@
                                     <label for="exampleDropdownFormPassword2">Mot de passe</label>
                                     <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="********" name="password">
                                 </div>
-                                <?= $menu_navbar_admin ?>
+
+                                <?= $menu_navbar_admin ?> <!-- Variable de la Navbar : Admin -->
+                                
                             </form>           
                         </li>
                             <!-- Implanter une condition PHP pour rediriger l'admin vers la page d'admin si il rentre les bonnes informations de connexion -->
@@ -63,9 +66,9 @@
 
         </header>
 
-		<?= $content ?>
+		<?= $content ?> <!-- Variable du contenu de la page -->
 
-		<!-- --------------------- Le Footer Contact --------------------------- -->
+		<!-- ----------- Le Footer Contact ----------- -->
 
 
          <!-- Footer Contact -->
@@ -94,7 +97,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
 
     <!-- Mes fichiers JS -->
-    <script src="../../public/js/formValid.js"></script>
+    <script src="public/js/formValid.js"></script>
     
     
 

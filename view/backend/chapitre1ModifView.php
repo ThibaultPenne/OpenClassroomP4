@@ -38,8 +38,6 @@ Il ne mentait pas. Enfin, d’un point de vue technique.
 — Je suis juste l’ami d’un ami, ajouta-t‑il avec un sourire décontracté. Je suis déjà passé par là où tu es. Après c’est plus facile, crois-moi.
 Une musique de Noël passait en sourdine, tandis qu’une odeur de sapin flottait dans la salle. Le long des murs étaient exposées deux bonnes douzaines de compositions ornementales, lauréates d’un concours organisé dans les écoles du quartier à l’occasion des fêtes.
 
-<img src="../../public/images/chap01Img.png">
-
 Tout en faisant semblant d’admirer la décoration, Reid jeta un nouveau regard en direction de Lara. Le visage rayonnant sous les lumières colorées, elle riait avec son compagnon. Ses cheveux étaient maintenant coupés à hauteur de menton, et leurs boucles impossibles dansaient contre ses joues, rehaussant la blancheur crémeuse de son cou dénudé.
 Au fond de lui, il sentit quelque chose se nouer.
 — Je veux me tirer, répliqua Jen en posant sa fourchette. Je veux disparaître. Je ne donnerai le CD que lorsque j’en aurai la garantie. Et je veux de l’argent.

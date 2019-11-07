@@ -8,8 +8,8 @@
         <title><?= $title ?></title> <!-- Onglet -->
 
         <!-- Mon CSS -->
-        <link rel="stylesheet" href="../../public/css/fonts.css"/> <!-- Polices -->
-        <link rel="stylesheet" href="../../public/css/style.css"/> <!-- Main CSS -->  
+        <link rel="stylesheet" href="public/css/fonts.css"/> <!-- Polices -->
+        <link rel="stylesheet" href="public/css/style.css"/> <!-- Main CSS -->  
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -43,18 +43,18 @@
                         Admin
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li><a href="adminView.php">Home</a></li>
-                        <li><a href="chapsAdminView.php">Chapitres</a></li>
-                        <li><a href="comsAdminView.php">Commentaires</a></li>
+                        <li><a href="<?='index.php?action=Admin'?>">Home</a></li>
+                        <li><a href="<?='index.php?action=Admin-chapitres'?>">Chapitres</a></li>
+                        <li><a href="<?='index.php?action=Admin-commentaires'?>">Commentaires</a></li>
                     </ul>
                 </li>
                 <li>
                     <a id="blogDropdown" href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-book"></i>Blog</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li> <a href="../../index.php">Accueil</a></li>
-                        <li><a href="../frontend/chapitresView.php">Chapitres</a></li>
-                        <li><a href="../frontend/contactView.php">Contact</a></li>
+                        <li> <a href="index.php">Accueil</a></li>
+                        <li><a href="<?='index.php?action=Chapitres'?>">Chapitres</a></li>
+                        <li><a href="<?='index.php?action=Contact'?>">Contact</a></li>
                     </ul>
                 </li>
             </ul>
@@ -87,10 +87,10 @@
 
                             <?= $menuNavbarAdmin ?>
                             <li id="decoLinkLi" class="nav-item">
-                                <a id="decoLink" class="nav-link" href="../../index.php">Déconnection</a>
+                                <a id="decoLink" class="nav-link" href="index.php">Déconnection</a>
                             </li>
                             <li class="nav-item d-xs-none d-lg-block">
-                                <img src="../../public/images/miniEye.png" alt="..." class="rounded-pill">
+                                <img src="public/images/miniEye.png" alt="..." class="rounded-pill">
                             </li>
                             <!-- Implanter une condition PHP pour rediriger l'admin vers la page d'acceuil lors d'une déconnexion active -->
                             
@@ -144,7 +144,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
 
     <!-- Mes fichiers JS -->
-    <script src="../../public/js/sidebar.js"></script>  
+    <script src="public/js/sidebar.js"></script>  
 
 
 
