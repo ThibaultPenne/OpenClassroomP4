@@ -36,26 +36,48 @@ try // On essaie de faire des choses..
                                     throw new Exception("Identifiant de chapitre non défini dans l'URL");
                                 }
                     }
-                    elseif ($_GET['action'] == 'Contact')
-                        {
-                            viewContact();
-                        }  
-                    elseif ($_GET['action'] == 'Admin') 
-                        {
-                            viewAdmin();
-                        } 
-                    elseif ($_GET['action'] == 'Admin-chapitres') 
-                        {
-                            viewChapsAdmin();
-                        }
-                    elseif ($_GET['action'] == 'Admin-commentaires') 
-                        {
-                            viewComsAdmin();
-                        }
-                    elseif ($_GET['action'] == 'Admin-nouveau-chapitre') 
-                        {
-                            viewNewChapAdmin();
-                        }
+                elseif ($_GET['action'] == 'Ajout-commentaire') 
+                    {
+                        if (isset($_GET['id']) && $_GET['id'] > 0) 
+                            {
+                                addComment($_GET['id'], $_POST['pseudo'], $_POST['comment']);
+                            }
+                            else 
+                                {
+                                    throw new Exception("Identifiant de chapitre non défini dans l'URL après l'ajout du commentaire");
+                                }
+                    }
+                /*elseif ($_GET['action'] == 'Signal-commentaire') 
+                    {
+                        if (isset($_GET['id']) && $_GET['id'] > 0) 
+                            {
+                                signalComment($_GET['id'], $_POST['idComment']);
+                            }
+                            else 
+                                {
+                                    throw new Exception("Identifiant de chapitre non défini dans l'URL après le signalement du commentaire");
+                                }
+                    }*/
+                elseif ($_GET['action'] == 'Contact')
+                    {
+                        viewContact();
+                    }  
+                elseif ($_GET['action'] == 'Admin') 
+                    {
+                        viewAdmin();
+                    } 
+                elseif ($_GET['action'] == 'Admin-chapitres') 
+                    {
+                        viewChapsAdmin();
+                    }
+                elseif ($_GET['action'] == 'Admin-commentaires') 
+                    {
+                        viewComsAdmin();
+                    }
+                elseif ($_GET['action'] == 'Admin-nouveau-chapitre') 
+                    {
+                        viewNewChapAdmin();
+                    }
                     else
                         {
                             throw new Exception("Action non valide dans l'URL");

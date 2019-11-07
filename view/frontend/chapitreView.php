@@ -64,15 +64,16 @@
             <hr>
 
             <!-- Requête SQL qui récupère un chapitre précis en fonction de son ID -->
+
             <h5>Publié le <?php echo htmlspecialchars($chapter['date_publication_fra']); ?></h5>
             <div id="bioPart2" class="row">
                 <div id="chapitre1" class="col-xs-12 col-lg-10">
                     <h4><?php echo htmlspecialchars($chapter['numero']); ?></h4>
                     <h6><?php echo htmlspecialchars($chapter['titre']); ?></h6>
                     <hr>
-            <?php
-                echo('<img style="width:80%" src="' . $chapter["content_img"] . '">');
-            ?>            
+                    <?php
+                        echo('<img style="width:80%" src="' . $chapter["content_img"] . '">');
+                    ?>            
                     <div class="chapContent">
                         <p>
                             <?php echo nl2br(htmlspecialchars($chapter['content_text'])); ?>
@@ -129,14 +130,17 @@
         <!-- ----------------------------------------- -->
 
         <!-- Partie 2 : Le formulaire -->
-        
+
         <div class="container">
-            <form method="post" id="contenairForm" class="col-sm-12 col-md-9 col-lg-9 col-xl-6 m-auto needs-validation" novalidate>
+
+            <!-- Requête SQL : Ajout de commentaires dans la DB -->
+            
+            <form action="index.php?action=Ajout-commentaire&id=<?= $chapter['id'] ?>" method="post" id="contenairForm" class="col-sm-12 col-md-9 col-lg-9 col-xl-6 m-auto needs-validation" novalidate>
                 <h4>Ajouter un commentaire</h4>
 
                 <div class="form-group">
-                    <label for="inputPseudo">Votre Pseudo</label>
-                    <input type="text" class="form-control" id="inputPseudo" name="inputPseudo" placeholder="8NINE, Blanche Neige, Musashi Miyamoto etc..." required>
+                    <label for="pseudo">Votre Pseudo</label>
+                    <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="8NINE, Blanche Neige, Musashi Miyamoto etc..." required>
                     <div class="valid-tooltip">
                         Oh ça à l'air pas mal !
                     </div>
@@ -146,8 +150,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="commentTextarea">Votre message</label>
-                    <textarea class="form-control" id="commentTextarea" name="commentTextarea" placeholder="Un message est requis" rows="5" required></textarea>
+                    <label for="comment">Votre message</label>
+                    <textarea class="form-control" id="comment" name="comment" placeholder="Un message est requis" rows="5" required></textarea>
                     <div class="valid-tooltip">
                         J'y répond dès que possible !
                     </div>
@@ -156,7 +160,7 @@
                     </div>
                 </div>
                 <div id="btnContenair" class="container">
-                    <button name="submitCommentaire" type="submit" class="btn">Soumettre le commentaire</button>
+                    <input id="submitComment" name="submitCommentaire" type="submit" class="btn" value="Soumettre le commentaire">
                 </div>
                 
             </form>  

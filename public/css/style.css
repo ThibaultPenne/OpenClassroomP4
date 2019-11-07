@@ -43,7 +43,7 @@ body
 #errorText
     {
         margin-top: 9%;
-        margin-bottom: 48%;
+        margin-bottom: 61%;
         background: #2c2d2f;
         color: white;
         border-radius: 5px;
@@ -1379,7 +1379,7 @@ ul
             font-size: 16px;
             font-style: italic;
         }
-    #commentTextarea
+    #comment
         {
             min-height: 100px;
         }
@@ -1388,7 +1388,7 @@ ul
             text-align: center;
             border: none;
         }
-        #contenairForm button
+        #contenairForm button, #submitComment
             {
                 background: #3d92bb;
                 color: white;
@@ -1398,14 +1398,14 @@ ul
                 box-shadow: 15px 15px 37px -8px black;
                 transition: all 0.3s ease-out;
             }
-            #contenairForm button:hover
+            #contenairForm button:hover, #submitComment:hover
                 {
                     background: white;
                     box-shadow: -15px 15px 37px -8px black;
                     color: #3d92bb;
                 }
 
-    #contenairForm input, #commentTextarea
+    #contenairForm input, #comment
         {
             font-family: 'robotoregular', sans-serif;
             font-size: 16px;
@@ -1450,7 +1450,7 @@ ul
                     {
                         font-size: 15px;
                     }
-                #contenairForm input, #commentTextarea
+                #contenairForm input, #comment
                     {
                         font-size: 15px;
                     }

@@ -5,7 +5,7 @@
 
     /* -------------- Frontend -------------- */
 
-    // Fonction qui recupère les 3 derniers chapitres publiés en apercus (page indexView.php) :
+    // Fonction qui recupère les 3 derniers chapitres publiés en apercus (page Accueil) :
     function getPreviewChaps()
         {
             $db = dbConnect();
@@ -14,7 +14,7 @@
             return $previewChaps;
         }
    
-    // Fonction qui recupère tous les chapitres dans une liste (page chapitres.php) :
+    // Fonction qui recupère tous les chapitres dans une liste (page Chapitres) :
     function getChapters()
         {
             $db = dbConnect();
@@ -23,7 +23,7 @@
             return $chapters;
         }
 
-    // Fonction qui recupère tous les numéros des chapitres dans une liste (page chapitre.php) :
+    // Fonction qui recupère tous les numéros des chapitres dans une liste (page Chapitre) :
     function getChaptersList()
         {
             $db = dbConnect();
@@ -32,7 +32,7 @@
             return $chapsList;
         }
 
-    // Fonction qui récupère un chapitre précis en fonction de son ID (page chapitre.php) :
+    // Fonction qui récupère un chapitre précis en fonction de son ID (page Chapitre) :
     function getChapter($idChapitre)
         {
             $db = dbConnect();
@@ -44,7 +44,7 @@
                 throw new Exception("Aucun chapitre ne correspond à l'identifiant '$idChapitre'");
         }
 
-    // Fonction qui récupère les commentaires associés à un ID de chapitre (page chapitre.php) :
+    // Fonction qui récupère les commentaires associés à un ID de chapitre (page Chapitre) :
     function getComments($idChapitre)
         {
             $db = dbConnect();
@@ -54,7 +54,27 @@
             return $comments;
         }
 
+    // Fonction qui ajoute des commentaires dans la DB (page Chapitre) :
+    function postComment($idChapitre, $pseudo, $comment)
+        {
+            $db = dbConnect();
+            $comments = $db->prepare('INSERT INTO commentaires(id_chapitre, pseudo, commentaire, date_commentaire) VALUES(?, ?, ?, NOW())');
+            $affectedLines = $comments->execute(array($idChapitre, $pseudo, $comment));
 
+            return $affectedLines;
+        }
+
+    // Fonction qui ajoute un signalement de commentaire dans la DB (page Chapitre) :
+    /*function postSignalComment ($idChapitre, $idcomment)
+        {
+            $db = dbConnect();
+            $comments = $db->prepare('INSERT INTO commentaires WHERE signalé="1" VALUES(?)');
+            $affectedSignal = $comments->execute(array($idChapitre, $idcomment));
+
+            return $affectedSignal;
+        }*/
+
+        
 
 
 

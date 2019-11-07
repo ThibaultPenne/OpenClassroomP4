@@ -64,7 +64,7 @@
             </figure>
 
             <!-- ---------    Slide 2 - Le Projet    ----------- -->
-            
+
             <figure id="slide2" class="mySlides">
                 <img class="slideshowImg" src="public/images/slide2.png" alt= "...">
                 <figcaption>
@@ -73,7 +73,7 @@
                         Jean Forteroche travaille actuellement sur un nouveau roman, "Billet simple pour l'Alaska". Il souhaite innover en le publiant sous formes de chapitres en ligne ici même.
                     </p>
                      <h4>A présent, vous n'avez plus qu'à ...</h4>
-                    <button id="goChapitres" onclick="window.location.href='view/frontend/chapitresView.php'">Plonger dans l'histoire</button>
+                    <button id="goChapitres" onclick="window.location.href='<?="index.php?action=Chapitres"?>'">Plonger dans l'histoire</button>
                 </figcaption>
             </figure>
 
