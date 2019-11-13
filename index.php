@@ -6,8 +6,6 @@
 
 require('controller/controlFrontend.php');
 
-/* Si action vaut Chapitres, Contact, Admin ou Chapitre, le routeur demande au routeur de diriger le visiteur vers la page correspondante */
-/* Sinon, on vera par défaut la page d'acceuil */
 
 try // On essaie de faire des choses..
     {
@@ -36,6 +34,17 @@ try // On essaie de faire des choses..
                                     throw new Exception("Identifiant de chapitre non défini dans l'URL");
                                 }
                     }
+                elseif ($_GET['action'] == 'Signal-commentaire') 
+                    {
+                        if(isset($_POST['signalComment']))           
+                            {
+                                signalComment($_GET['id'], $_POST['signalComment']);
+                            }
+                            else 
+                                {
+                                    throw new Exception("Identifiant de commentaire non défini dans l'URL après le signalement du commentaire");
+                                }
+                    }
                 elseif ($_GET['action'] == 'Ajout-commentaire') 
                     {
                         if (isset($_GET['id']) && $_GET['id'] > 0) 
@@ -47,25 +56,37 @@ try // On essaie de faire des choses..
                                     throw new Exception("Identifiant de chapitre non défini dans l'URL après l'ajout du commentaire");
                                 }
                     }
-                /*elseif ($_GET['action'] == 'Signal-commentaire') 
-                    {
-                        if (isset($_GET['id']) && $_GET['id'] > 0) 
-                            {
-                                signalComment($_GET['id'], $_POST['idComment']);
-                            }
-                            else 
-                                {
-                                    throw new Exception("Identifiant de chapitre non défini dans l'URL après le signalement du commentaire");
-                                }
-                    }*/
                 elseif ($_GET['action'] == 'Contact')
-                    {
+                    {         
                         viewContact();
                     }  
+                elseif ($_GET['action'] == 'Envoi-message')
+                    {                 
+                        if (isset($_POST['nom']))
+                            {
+                                sendContact($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['titreMessage'], $_POST['message'], $_POST['rgpd']);
+                            }  
+                            else
+                                {
+                                    throw new Exception("Un problème est survenu");
+                                }               
+                    } 
+                elseif ($_GET['action'] == 'Nouveau-formulaire')
+                    {
+                        deleteContact();
+                    } 
                 elseif ($_GET['action'] == 'Admin') 
                     {
-                        viewAdmin();
+                        viewAdmin(); 
                     } 
+                elseif ($_GET['action'] == 'ConnexionAdmin') 
+                    {
+                        connexionAdmin();
+                    }
+                elseif ($_GET['action'] == 'DeconnexionAdmin') 
+                    {
+                        deconnexionAdmin();
+                    }
                 elseif ($_GET['action'] == 'Admin-chapitres') 
                     {
                         viewChapsAdmin();

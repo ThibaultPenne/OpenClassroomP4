@@ -29,14 +29,6 @@
 <?php $menu_navbar = ob_get_clean(); ?>
 
 
-<!-- ---- La Navbar : Admin ---- -->
-<?php ob_start(); ?>
-
-    <input id="connexionBtn" type="button" class="btn mb-2" name="valider" value="Se connecter" onclick="window.location.href='<?="index.php?action=Admin"?>'" />
-
-<?php $menu_navbar_admin = ob_get_clean(); ?>
-
-
 
 <!-- ------------------------ Début de $content ------------------------------ --> 
 

@@ -11,6 +11,7 @@ require('model/modelFrontend.php');
 	// Fonction qui récupère les données SQL puis redirige vers la page Acceuil :
 	function viewPreviewChaps()
 		{
+		    
 		    $previewChaps = getPreviewChaps();
 
 			require 'view/frontend/indexView.php';
@@ -19,6 +20,7 @@ require('model/modelFrontend.php');
 	// Fonction qui récupère les données SQL puis redirige vers la page Chapitres :
 	function viewChapters()
 		{
+		    
 		    $chapters = getChapters();
 
 			require 'view/frontend/chapitresView.php';
@@ -27,11 +29,27 @@ require('model/modelFrontend.php');
 	// Fonction qui récupère les données SQL puis redirige vers la page Chapitre (+ Commentaires) :
 	function viewChapter($idChapitre)
 		{
+		    
 		    $chapsList = getChaptersList();
 		    $chapter = getChapter($idChapitre);
 		    $comments = getComments($idChapitre);
-
+		    
 			require 'view/frontend/chapitreView.php';
+		}
+
+	// Fonction qui enregistre les données dans la DB puis redirige vers la page Chapitre :
+	function signalComment($signalComment)
+		{
+		    $affectedSignal = postSignalComment($signalComment);
+
+		    if ($affectedSignal === false) 
+			    {
+			        throw new Exception('Impossible de signaler le commentaire !');
+			    }
+			    else 
+				    {
+				        viewChapters();
+				    }
 		}
 
 	// Fonction qui enregistre les données dans la DB puis redirige vers la page Chapitre (+ Commentaires) du commentaire en question :
@@ -45,24 +63,49 @@ require('model/modelFrontend.php');
 			    }
 			    else 
 				    {
-				        header('Location: index.php?action=Chapitre&id=' . $idChapitre);
+				        viewChapter($idChapitre);
+
 				    }
 		}
 
-	// Fonction qui enregistre les données dans la DB puis redirige vers la page Contact :
-	/*function signalComment($idChapitre, $idComment)
-		{
-		    $affectedSignal = postComment($idChapitre, $idComment);
-
-			require 'view/frontend/contactView.php';
-		}*/
-
-	// Fonction qui enregistre les données dans la DB puis redirige vers la page Contact :
+	// Fonction qui configure le Cookie utilisateur puis redirige vers la page Contact :
 	function viewContact()
 		{
-		    /* A gérer */
+		    $prenom = null; // par défaut, null pour valeur.
+		    // Enregistrement de la valeur du Cookie utilisateur dans la variable $prénom :
+			if (!empty($_COOKIE['utilisateur']))
+			    {
+			        $prenom = $_COOKIE['utilisateur'];
+			    }   
 
 			require 'view/frontend/contactView.php';
+		}
+
+	// Fonction qui crée le Cookie utilisateur, envoi un message, enregistre les données dans la DB puis redirige vers la page Contact :
+	function sendContact($nom, $prenom, $email, $titreMessage, $message, $rgpd)
+		{  
+		    setcookie('utilisateur', $_POST['prenom']); // Création du Cookie.
+            $prenom = $_POST['prenom'];// Quand je fais un setcookie, je défini direct la valeur de la variable $prenom.
+
+		    $affectedLines_message = sendMessage($nom, $prenom, $email, $titreMessage, $message, $rgpd);
+
+		    if ($affectedLines_message === false) 
+			    {
+			        throw new Exception('Impossible d\'envoyer le message !');
+			    }
+			    else 
+				    {
+				        require 'view/frontend/contactView.php';				        
+				    }
+		}
+
+	// Fonction qui efface le Cookie utilisateur pour qu'il puisse renvoyer un nouveau message sur la page Contact :
+	function deleteContact()
+		{
+		    unset($_COOKIE['utilisateur']); // Détruit la valeur de $_COOKIE pour la suite.
+            setcookie('utilisateur', '', time() -10); // valeur vide et time -10sec.
+
+			viewContact();
 		}
 
 
@@ -71,35 +114,72 @@ require('model/modelFrontend.php');
 
 	/* -------------- Backend -------------- */
 
-	// Fonction qui récupère les données SQL puis redirige vers la page Admin :
+	// Fonction qui redirige vers la page Admin :
 	function viewAdmin()
 		{
-		    /* A gérer */
-
+		    $_SESSION['connecting'] = 1;
+		    connexionForced(); // Empêche la connexion par l'URL.
 			require 'view/backend/adminView.php';
 		}
 
-	// Fonction qui récupère les données SQL puis redirige vers la page Admin-Chapitres :
+	// Fonction qui gère la connexion vers la page Admin :
+	function connexionAdmin()
+        {
+            // Si email et password ont été posté :
+            if (!empty($_POST['email']) AND !empty($_POST['password']))
+                {
+                	// Si email et password sont corrects :
+                    if ($_POST['email'] == "jeanforteroche@contact.com" AND $_POST['password'] == "alaska95")
+                        {
+                            // Alors, je connecte l'utilisateur :
+                            session_start();
+                            // Je stock son état de connexion dans la Session
+                            $_SESSION['connecting'] = 1; // Une valeur autre que null passe l'user à l'état connecté (true).
+                            require 'view/backend/adminView.php';
+                        }
+                        else
+                            {
+                                throw new Exception("Une information que vous avez renseigné n'est pas reconnue.");
+                            }
+                }
+        }	
+
+    // Fonction qui gère la deconnexion de la page Admin :
+	function deconnexionAdmin()
+        {
+            session_start();
+            $_SESSION['connecting'] = 0;
+            unset($_SESSION['connecting']); // Fermeture de la session.
+            viewPreviewChaps();
+        }
+
+	// Fonction qui redirige vers la page Admin-Chapitres :
 	function viewChapsAdmin()
 		{
 		    /* A gérer */
-
+		    session_start();
+		    $_SESSION['connecting'] = 1;
+		    connexionForced(); // Empêche la connexion par l'URL.
 			require 'view/backend/chapsAdminView.php';
 		}
 
-	// Fonction qui récupère les données SQL puis redirige vers la page Admin-Commentaires :
+	// Fonction qui redirige vers la page Admin-Commentaires :
 	function viewComsAdmin()
 		{
 		    /* A gérer */
-
+		    session_start();
+		    $_SESSION['connecting'] = 1;
+		    connexionForced(); // Empêche la connexion par l'URL.
 			require 'view/backend/comsAdminView.php';
 		}
 
-	// Fonction qui récupère les données SQL puis redirige vers la page Admin-New-Chapitre :
+	// Fonction qui redirige vers la page Admin-New-Chapitre :
 	function viewNewChapAdmin()
 		{
 		    /* A gérer */
-
+		    session_start();
+		    $_SESSION['connecting'] = 1;
+		    connexionForced(); // Empêche la connexion par l'URL.
 			require 'view/backend/newChapAdminView.php';
 		}
 

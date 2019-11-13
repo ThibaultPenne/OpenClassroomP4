@@ -86,9 +86,14 @@
                         <ul class="nav navbar-nav">
 
                             <?= $menuNavbarAdmin ?>
+
+                            <!-- Si cette fonction est true (connecté), alors lien vers la deconexion : -->
+                            <?php if (connectingSession()): ?>
                             <li id="decoLinkLi" class="nav-item">
-                                <a id="decoLink" class="nav-link" href="index.php">Déconnection</a>
+                                <a id="decoLink" class="nav-link" href="index.php?action=DeconnexionAdmin">Déconnection</a>
                             </li>
+                            <?php endif; ?>
+
                             <li class="nav-item d-xs-none d-lg-block">
                                 <img src="public/images/miniEye.png" alt="..." class="rounded-pill">
                             </li>

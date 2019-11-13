@@ -1,3 +1,14 @@
+<?php 
+
+/*if (connectingSession()) {
+    $_SESSION['connecting'] = 1;
+}
+else
+{
+    $_SESSION['connecting'] = false;
+}*/
+
+?>
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -41,23 +52,32 @@
 
                         <?= $menu_navbar ?> <!-- Variable de la Navbar : Acceuil / Chapitres / Contact -->
 
+                        <!-- Si cette fonction est true (connecté), alors lien direct : -->
+                        <?php if (connectingSession()): ?>
+                            <li id="decoLinkLi" class="nav-item">
+                                <a id="decoLink" class="nav-link" href="index.php?action=Admin">Jean F. Admin</a>
+                            </li>
+
+                        <!-- Sinon, formulaire de connexion : -->
+                        <?php else: ?>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>                    
-                            <form id="menuDropDownNav" class="dropdown-menu p-3">
+                            <form action="index.php?action=ConnexionAdmin" method="post" id="menuDropDownNav" class="dropdown-menu p-3 needs-validation" novalidate>
                                 <div class="form-group">
-                                    <label for="exampleDropdownFormEmail2">Adresse Email</label>
-                                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@exemple.com" name="email">
+                                    <label for="email">Adresse Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="email@exemple.com" name="email" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleDropdownFormPassword2">Mot de passe</label>
-                                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="********" name="password">
+                                    <label for="password">Mot de passe</label>
+                                    <input type="password" class="form-control" id="password" placeholder="********" name="password" required>
                                 </div>
 
-                                <?= $menu_navbar_admin ?> <!-- Variable de la Navbar : Admin -->
+                                <input id="connexionBtn" type="submit" class="btn mb-2" name="valider" value="Se connecter"/>
                                 
                             </form>           
                         </li>
-                            <!-- Implanter une condition PHP pour rediriger l'admin vers la page d'admin si il rentre les bonnes informations de connexion -->
+
+                        <?php endif; ?>
 
                     </ul>
                 </div>

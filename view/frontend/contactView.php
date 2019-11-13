@@ -29,14 +29,6 @@
 <?php $menu_navbar = ob_get_clean(); ?>
 
 
-<!-- ---- Titre de la page ---- -->
-<?php ob_start(); ?>
-
-    <input id="connexionBtn" type="button" class="btn mb-2" name="valider" value="Se connecter" onclick="window.location.href='<?='index.php?action=Admin'?>'" />
-
-<?php $menu_navbar_admin = ob_get_clean(); ?>
-       
-
 
 <!-- ------------------------ Début de $content ------------------------------ --> 
 
@@ -64,40 +56,51 @@
 
 
     <section id="contactFormContainer" class="container">
-        <form id="contenairForm" class="col-xs-12 col-md-11 col-lg-8 m-auto needs-validation" novalidate>
+
+        <!-- Si la variable prénom existe, alors : Message de validation -->
+        <?php if ($prenom): ?>
+            <div id="messageSend" class="container">
+                <h2><?php echo htmlspecialchars($prenom) . ", " ?>votre message a bien été envoyé.</h2>
+                <h6>L'auteur vous répondra dans les plus bref délais.</h6>
+                <a class="btn mt-2" href="index.php?action=Nouveau-formulaire">Envoyer un nouveau message</a>
+            </div>
+
+        <!-- Sinon : Formulaire d'envoi de message -->
+        <?php else: ?>
+        <form action="index.php?action=Envoi-message" method="post" id="contenairForm" class="col-xs-12 col-md-11 col-lg-8 m-auto needs-validation" novalidate>
 
             <h4>Formulaire de contact</h4>
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputNom">Nom</label>
-                    <input type="name" class="form-control" id="inputNom" placeholder="Nom" required>
+                    <label for="nom">Nom</label>
+                    <input name="nom" type="text" class="form-control" id="inputNom" placeholder="Nom" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputPrenom">Prénom</label>
-                    <input type="name" class="form-control" id="inputPrenom" placeholder="Prénom" required>
+                    <label for="prenom">Prénom</label>
+                    <input name="prenom" type="text" class="form-control" id="inputPrenom" placeholder="Prénom" required>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="inputAddress">Email</label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="exemple@exemple.com" required>
+                <label for="email">Email</label>
+                <input name="email" type="email" class="form-control" id="inputEmail" placeholder="exemple@exemple.com" required>
             </div>
 
             <div class="form-group">
-                <label for="inputAddress2">Titre du message</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Auteur, chapitre, avis personnel, etc..." required>
+                <label for="titreMessage">Titre du message</label>
+                <input name="titreMessage" type="text" class="form-control" id="inputAddress2" placeholder="Auteur, chapitre, avis personnel, etc..." required>
             </div>
 
             <div class="form-group">
-                <label for="contactTextarea">Votre message</label>
-                <textarea id="contactTextarea" class="form-control" aria-label="With textarea" required></textarea>
+                <label for="message">Votre message</label>
+                <textarea name="message" id="contactTextarea" class="form-control" aria-label="With textarea" required></textarea>
             </div>
 
             <div class="form-group">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck" required>
-                    <label class="form-check-label" for="gridCheck">
+                    <input name="rgpd" class="form-check-input" type="checkbox" id="gridCheck" required>
+                    <label class="form-check-label" for="rgpd">
                         Je consens au traitement de mes données personnelles par Jean Forteroche, dans le but de recevoir une réponse par e-mail (selon le RGPD).
                     </label>
                     <div class="invalid-tooltip">
@@ -109,6 +112,7 @@
                 <button type="submit" class="btn mt-3">Envoyez le formulaire</button>
             </div>
         </form>
+        <?php endif; ?>
     </section>
 
 
