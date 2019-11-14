@@ -99,6 +99,25 @@ try // On essaie de faire des choses..
                     {
                         viewNewChapAdmin();
                     }
+                elseif ($_GET['action'] == 'Admin-modif-chapitre') 
+                    {
+                        if (isset($_GET['id'])) /* Vérif de l'id */
+                            {
+                                $idChapitre = intval($_GET['id']); // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
+                                if ($idChapitre != 0)
+                                    {
+                                      viewModifChapAdmin($idChapitre);
+                                    }
+                                    else
+                                        { 
+                                            throw new Exception("Identifiant de chapitre non valide dans l'URL");
+                                        }
+                            }
+                            else
+                                { 
+                                    throw new Exception("Identifiant de chapitre non défini dans l'URL");
+                                }
+                    }
                     else
                         {
                             throw new Exception("Action non valide dans l'URL");

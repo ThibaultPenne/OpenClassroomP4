@@ -160,6 +160,11 @@ require('model/modelFrontend.php');
 		    session_start();
 		    $_SESSION['connecting'] = 1;
 		    connexionForced(); // Empêche la connexion par l'URL.
+
+		    $chaptersAdminEnCours = getChaptersAdmin1();
+		    $chaptersAdminPublie = getChaptersAdmin2();
+		    $chaptersAdminSupprime = getChaptersAdmin3();
+
 			require 'view/backend/chapsAdminView.php';
 		}
 
@@ -181,6 +186,19 @@ require('model/modelFrontend.php');
 		    $_SESSION['connecting'] = 1;
 		    connexionForced(); // Empêche la connexion par l'URL.
 			require 'view/backend/newChapAdminView.php';
+		}
+
+	//
+	function viewModifChapAdmin($idChapitre)
+		{
+			/* A gérer */
+		    session_start();
+		    $_SESSION['connecting'] = 1;
+		    connexionForced(); // Empêche la connexion par l'URL.
+
+		    $chaptersAdminModif = getChapModif($idChapitre);
+		    
+			require 'view/backend/chapModifAdminView.php';
 		}
 
 

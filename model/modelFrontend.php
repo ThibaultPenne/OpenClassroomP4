@@ -114,7 +114,44 @@
                 }
         }
 
-    
+    // Fonction qui recupère tous les chapitres en_cours dans 1 tableau (page Admin-chapitres) :
+    function getChaptersAdmin1()
+        {
+            $db = dbConnect();
+            $chaptersAdminEnCours = $db->query('SELECT id, numero, titre, DATE_FORMAT(date_creation, "%e/%m/%Y") AS date_creation_franc FROM chapitres WHERE en_cours="1" ORDER BY date_creation DESC');
+
+            return $chaptersAdminEnCours;
+        }
+
+    // Fonction qui recupère tous les chapitres publiés dans 1 tableau (page Admin-chapitres) :
+    function getChaptersAdmin2()
+        {
+            $db = dbConnect();
+            $chaptersAdminPublie = $db->query('SELECT id, numero, titre, DATE_FORMAT(date_publication, "%e/%m/%Y") AS date_publication_franc FROM chapitres WHERE publié="1" ORDER BY date_publication DESC');
+
+            return $chaptersAdminPublie;
+        }
+
+    // Fonction qui recupère tous les chapitres supprimés dans 1 tableau (page Admin-chapitres) :
+    function getChaptersAdmin3()
+        {
+            $db = dbConnect();
+            $chaptersAdminSupprime = $db->query('SELECT id, numero, titre, DATE_FORMAT(date_creation, "%e/%m/%Y") AS date_creation_franc FROM chapitres WHERE supprimé="1" ORDER BY date_creation DESC');
+
+            return $chaptersAdminSupprime;
+        }
+
+    // Fonction qui récupère un chapitre précis en fonction de son ID (page Admin-Chap-Modif) :
+    function getChapModif($idChapitre)
+        {
+            $db = dbConnect();
+            $chaptersAdminModif = $db->prepare('SELECT id, numero, titre, content_text, DATE_FORMAT(date_creation, "%e/%m/%Y") AS date_creation_france FROM chapitres WHERE id = ?');
+            $chaptersAdminModif->execute(array($idChapitre));
+            if ($chaptersAdminModif->rowCount() == 1)
+                return $chaptersAdminModif->fetch();  // Accès à la première ligne de résultat
+            else
+                throw new Exception("Aucun chapitre ne correspond à l'identifiant '$idChapitre'");
+        }
 
 
 
@@ -128,7 +165,7 @@
     function dbConnect()
         {
             // Connexion à la base de données
-            $db = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $db = new PDO('mysql:host=db5000212522.hosting-data.io;dbname=dbs207376;charset=utf8', 'dbu209349', '@Azerty95', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
             return $db;
         }
