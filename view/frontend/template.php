@@ -1,12 +1,9 @@
 <?php 
 
-/*if (connectingSession()) {
-    $_SESSION['connecting'] = 1;
-}
-else
-{
-    $_SESSION['connecting'] = false;
-}*/
+if (session_status() === PHP_SESSION_NONE) 
+    {
+        session_start(); // Je l'active.
+    }
 
 ?>
 <!DOCTYPE html>

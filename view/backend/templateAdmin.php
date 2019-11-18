@@ -1,3 +1,11 @@
+<?php 
+
+if (session_status() === PHP_SESSION_NONE) 
+    {
+        session_start(); // Je l'active.
+    }
+
+?>
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -97,7 +105,6 @@
                             <li class="nav-item d-xs-none d-lg-block">
                                 <img src="public/images/miniEye.png" alt="..." class="rounded-pill">
                             </li>
-                            <!-- Implanter une condition PHP pour rediriger l'admin vers la page d'acceuil lors d'une déconnexion active -->
                             
                         </ul>
                     </div>

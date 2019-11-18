@@ -1,6 +1,5 @@
+<?php $title = 'Page d erreur'; ?> <!-- ---- Titre de la page ---- -->
 
-<!-- ---- Titre de la page ---- -->
-<?php $title = 'Page d erreur'; ?>
 
 
 <!-- ---- La Navbar : Titre ---- -->

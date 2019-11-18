@@ -1,10 +1,14 @@
-
-<!-- Le routeur : sélectionne et appelle l'action à réaliser en lui passant les paramètres nécessaires -->
-<!-- Si la requête est incohérente, il signale l'erreur à l'utilisateur -->
-<!-- Autre bénéfice : l'organisation interne du site est totalement masquée à l'utilisateur, puisque seul le fichier index.php est visible dans les URL -->
 <?php
 
-require('controller/controlFrontend.php');
+/*<!-- Le routeur : sélectionne et appelle l'action à réaliser en lui passant les paramètres nécessaires -->
+<!-- Si la requête est incohérente, il signale l'erreur à l'utilisateur -->
+<!-- Autre bénéfice : l'organisation interne du site est totalement masquée à l'utilisateur, puisque seul le fichier index.php est visible dans les URL -->*/
+
+
+require('controller/ctrl-Frontend.php');
+require('controller/ctrl-Backend.php');
+require('controller/ctrl-Error.php');
+require('controller/ctrl-Authentification.php');
 
 
 try // On essaie de faire des choses..
@@ -97,6 +101,7 @@ try // On essaie de faire des choses..
                     } 
                 elseif ($_GET['action'] == 'Admin') 
                     {
+                        connexionForced();
                         viewAdmin(); 
                     } 
                 elseif ($_GET['action'] == 'ConnexionAdmin') 
@@ -109,14 +114,17 @@ try // On essaie de faire des choses..
                     }
                 elseif ($_GET['action'] == 'Admin-chapitres') 
                     {
+                        connexionForced();
                         viewChapsAdmin();
                     }
                 elseif ($_GET['action'] == 'Admin-commentaires') 
                     {
+                        connexionForced();
                         viewComsAdmin();
                     }
                 elseif ($_GET['action'] == 'Admin-nouveau-chapitre') 
                     {
+                        connexionForced();
                         viewNewChapAdmin();
                     }
                 elseif ($_GET['action'] == 'Admin-modif-chapitre') 
@@ -126,6 +134,7 @@ try // On essaie de faire des choses..
                                 $idChapitre = intval($_GET['idChapitre']); // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
                                 if ($idChapitre != 0)
                                     {
+                                      connexionForced();
                                       viewModifChapAdmin($idChapitre);
                                     }
                                     else

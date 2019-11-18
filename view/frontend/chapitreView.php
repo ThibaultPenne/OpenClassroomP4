@@ -1,6 +1,4 @@
-
-<!-- ---- Titre de la page ---- -->
-<?php $title = 'Lecture de chapitre'; ?>
+<?php $title = 'Lecture de chapitre'; ?> <!-- ---- Titre de la page ---- -->
 
 
 <!-- ---- La Navbar : Menu déroulant de tous les Chapitres publiés ---- -->

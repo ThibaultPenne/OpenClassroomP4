@@ -1,6 +1,4 @@
-
-<!-- ---- Titre de la page ---- -->
-<?php $title = 'Les chapitres'; ?>
+<?php $title = 'Les chapitres'; ?> <!-- ---- Titre de la page ---- -->
 
 
 <!-- ---- La Navbar : Titre ---- -->

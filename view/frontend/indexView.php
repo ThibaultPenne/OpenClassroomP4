@@ -1,6 +1,4 @@
-
-<!-- ---- Titre de la page ---- -->
-<?php $title = 'Billet simple pour l Alaska'; ?>
+<?php $title = 'Billet simple pour l Alaska'; ?> <!-- ---- Titre de la page ---- -->
 
 
 <!-- ---- La Navbar : Titre ---- -->
@@ -153,7 +151,7 @@
                 <?php while ($data = $previewChaps->fetch()): ?>  
 
                     <div class="col-xs-12 col-md-3 previewChap">    
-                        <div class="chapNbr" onclick="window.location.href='<?= "index.php?action=Chapitre&idChapitre=" . $data["id"] ?>'"><?php echo htmlspecialchars($data['numero']); ?>         
+                        <div class="chapNbr" onclick="window.location.href='<?= "index.php?action=Chapitre&idChapitre=" . $data["id_chapitre"] ?>'"><?php echo htmlspecialchars($data['numero']); ?>         
                         </div>
                         <h4><?php echo htmlspecialchars($data['titre']); ?></h4>
                         <p><?php echo substr($data['content_text'], 0, 150) . " ... "; ?></p>

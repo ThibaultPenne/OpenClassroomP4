@@ -1,6 +1,4 @@
-
-<!-- ---- Titre de la page ---- -->
-<?php $title = 'Contact'; ?>
+<?php $title = 'Contact'; ?> <!-- ---- Titre de la page ---- -->
 
      
 <!-- ---- Titre de la page ---- -->
