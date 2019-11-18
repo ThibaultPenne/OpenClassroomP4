@@ -80,7 +80,7 @@
 	                            </div>
 	                            <div class="col-4">
 	                                <h5>Publié le <?php echo htmlspecialchars($data['date_publication_fra']); ?></h5>
-	                                <input id="lireBtn" type="button" class="btn btn-info" value="Lire" onclick="window.location.href='<?= "index.php?action=Chapitre&id=" . $data["id"] ?>'">
+	                                <input id="lireBtn" type="button" class="btn btn-info" value="Lire" onclick="window.location.href='<?= "index.php?action=Chapitre&idChapitre=" . $data["id_chapitre"] ?>'">
 	                            </div>
 	    					</div>
 	                    </div>

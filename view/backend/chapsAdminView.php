@@ -93,8 +93,8 @@
                                     <!-- Requête SQL : Récupération de tous les chapitres -->
                                     <?php while ($data = $chaptersAdminEnCours->fetch()): ?>  
 
-                                    <tr id="ch06" class="tabGroup1">
-                                        <th scope="row"><?php echo htmlspecialchars($data['id']); ?></th>
+                                    <tr id="ch02" class="tabGroup1">
+                                        <th scope="row"><?php echo htmlspecialchars($data['id_chapitre']); ?></th>
                                         <td class="colByeBye"><?php echo htmlspecialchars($data['numero']); ?></td>  
                                         <td><?php echo htmlspecialchars($data['titre']); ?></td>
                                         <td><?php echo htmlspecialchars($data['date_creation_franc']); ?></td>
@@ -106,7 +106,7 @@
                                                     </button>
                                                     <div class="dropdown-menu">
                                                         <a class="dropdown-item" href="#">Publier</a>
-                                                        <a class="dropdown-item" href="<?= "index.php?action=Admin-modif-chapitre&id=" . $data["id"] ?>">Modifier</a>
+                                                        <a class="dropdown-item" href="<?= "index.php?action=Admin-modif-chapitre&idChapitre=" . $data["id_chapitre"] ?>">Modifier</a>
                                                         <a class="dropdown-item" href="#">Supprimer</a>
                                                         <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                     </div>
@@ -152,8 +152,8 @@
                                     <!-- Requête SQL : Récupération de tous les chapitres -->
                                     <?php while ($data = $chaptersAdminPublie->fetch()): ?>  
 
-                                    <tr id="ch06" class="tabGroup1">
-                                        <th scope="row"><?php echo htmlspecialchars($data['id']); ?></th>
+                                    <tr id="ch04" class="tabGroup1">
+                                        <th scope="row"><?php echo htmlspecialchars($data['id_chapitre']); ?></th>
                                         <td class="colByeBye"><?php echo htmlspecialchars($data['numero']); ?></td>  
                                         <td><?php echo htmlspecialchars($data['titre']); ?></td>
                                         <td><?php echo htmlspecialchars($data['date_publication_franc']); ?></td>
@@ -164,8 +164,8 @@
                                                         <i class="fas fa-arrow-alt-circle-down"></i>
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">Publier</a>
-                                                        <a class="dropdown-item" href="<?= "index.php?action=Admin-modif-chapitre&id=" . $data["id"] ?>">Modifier</a>
+                                                        <a class="dropdown-item" href="<?= "index.php?action=Chapitre&idChapitre=" . $data["id_chapitre"] ?>">Lire</a>
+                                                        <a class="dropdown-item" href="<?= "index.php?action=Admin-modif-chapitre&idChapitre=" . $data["id_chapitre"] ?>">Modifier</a>
                                                         <a class="dropdown-item" href="#">Supprimer</a>
                                                         <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                     </div>
@@ -213,7 +213,7 @@
                                     <?php while ($data = $chaptersAdminSupprime->fetch()): ?>  
 
                                     <tr id="ch06" class="tabGroup1">
-                                        <th scope="row"><?php echo htmlspecialchars($data['id']); ?></th>
+                                        <th scope="row"><?php echo htmlspecialchars($data['id_chapitre']); ?></th>
                                         <td class="colByeBye"><?php echo htmlspecialchars($data['numero']); ?></td>  
                                         <td><?php echo htmlspecialchars($data['titre']); ?></td>
                                         <td><?php echo htmlspecialchars($data['date_creation_franc']); ?></td>
@@ -224,9 +224,7 @@
                                                         <i class="fas fa-arrow-alt-circle-down"></i>
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">Publier</a>
-                                                        <a class="dropdown-item" href="<?= "index.php?action=Admin-modif-chapitre&id=" . $data["id"] ?>">Modifier</a>
-                                                        <a class="dropdown-item" href="#">Supprimer</a>
+                                                        <a class="dropdown-item" href="#">Restaurer</a>
                                                         <a class="dropdown-item" href="#">Supprimer définitivement</a>
                                                     </div>
                                                 </div>

@@ -17,9 +17,9 @@ try // On essaie de faire des choses..
                     }              
                 elseif ($_GET['action'] == 'Chapitre')
                     {
-                        if (isset($_GET['id'])) /* Vérif de l'id */
+                        if (isset($_GET['idChapitre'])) /* Vérif de l'id */
                             {
-                                $idChapitre = intval($_GET['id']); // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
+                                $idChapitre = intval($_GET['idChapitre']); // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
                                 if ($idChapitre != 0)
                                     {
                                       viewChapter($idChapitre);
@@ -36,15 +36,35 @@ try // On essaie de faire des choses..
                     }
                 elseif ($_GET['action'] == 'Signal-commentaire') 
                     {
-                        if(isset($_POST['signalComment']))           
+                        if(isset($_GET['idComment']) && $_GET['idComment'] > 0) 
                             {
-                                signalComment($_GET['id'], $_POST['signalComment']);
+                                signalComment($_GET['idChapitre'], $_GET['idComment'], $_POST['signal']);
                             }
                             else 
                                 {
                                     throw new Exception("Identifiant de commentaire non défini dans l'URL après le signalement du commentaire");
                                 }
                     }
+                elseif ($_GET['action'] == 'RetourChap')
+                    {
+                        if (isset($_GET['idChapitre'])) /* Vérif de l'id */
+                            {
+                                $idChapitre = intval($_GET['idChapitre']); // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
+                                if ($idChapitre != 0)
+                                    {
+                                      deleteSignal($idChapitre);
+                                    }
+                                    else
+                                        { 
+                                            throw new Exception("Identifiant de chapitre non valide dans l'URL");
+                                        }
+                            }
+                            else
+                                { 
+                                    throw new Exception("Identifiant de chapitre non défini dans l'URL");
+                                }
+                        
+                    } 
                 elseif ($_GET['action'] == 'Ajout-commentaire') 
                     {
                         if (isset($_GET['id']) && $_GET['id'] > 0) 
@@ -101,9 +121,9 @@ try // On essaie de faire des choses..
                     }
                 elseif ($_GET['action'] == 'Admin-modif-chapitre') 
                     {
-                        if (isset($_GET['id'])) /* Vérif de l'id */
+                        if (isset($_GET['idChapitre'])) /* Vérif de l'id */
                             {
-                                $idChapitre = intval($_GET['id']); // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
+                                $idChapitre = intval($_GET['idChapitre']); // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
                                 if ($idChapitre != 0)
                                     {
                                       viewModifChapAdmin($idChapitre);

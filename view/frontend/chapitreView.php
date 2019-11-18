@@ -1,17 +1,3 @@
-<?php 
-$signal_com = null; // par défaut, null pour valeur.
-/*if (!empty($_COOKIE['signalement']))
-    {
-        $signal_com = $_COOKIE['signalement'];
-    }
-if(!empty($_POST['signalComment']))           
-    {
-        setcookie('signalement', $_POST['signalComment']);
-        $signal_com = $_POST['signalComment'];
-    }*/
-?>
-
-
 
 <!-- ---- Titre de la page ---- -->
 <?php $title = 'Lecture de chapitre'; ?>
@@ -29,7 +15,7 @@ if(!empty($_POST['signalComment']))
             <!-- Requête SQL qui recupère tous les numéros des chapitres dans une liste -->
             <?php while ($data = $chapsList->fetch()): ?>  
 
-                <a class="dropdown-item" href="<?= 'index.php?action=Chapitre&id=' . $data['id'] ?>"><?php echo htmlspecialchars($data['numero']); ?></a>
+                <a class="dropdown-item" href="<?= 'index.php?action=Chapitre&idChapitre=' . $data['id_chapitre'] ?>"><?php echo htmlspecialchars($data['numero']); ?></a>
 
             <?php endwhile; ?> <!-- Fin de la Requête SQL -->
 
@@ -67,6 +53,17 @@ if(!empty($_POST['signalComment']))
 
         <div id="bioContenair" class="container">
             <hr>
+
+            <!-- Si la variable signal_com existe, alors : Message de validation -->
+                <?php if ($signal_com): ?>
+                <div id="commentSignalOk" class="container">
+                    <h2>Le commentaire que vous avez sélectionné a bien été signalé !</h2>
+                    <h6>L'auteur va l'analyser de plus près dans les plus bref délais.</h6>
+                    <a class="btn" href="<?='index.php?action=RetourChap&idChapitre=' .$chapter['id_chapitre']?>">Retour sur la page de votre chapitre</a>
+                </div>
+
+                <!-- Sinon : Page Chapitre -->
+                <?php else: ?>
 
             <!-- Requête SQL qui récupère un chapitre précis en fonction de son ID -->
 
@@ -111,6 +108,8 @@ if(!empty($_POST['signalComment']))
             <h2>Les commentaires</h2>
             <div class="row">
 
+                
+
                 <!-- Requête SQL qui récupère les commentaires associés à un ID de chapitre -->
                 <?php while ($data = $comments->fetch()): ?>  
 
@@ -125,19 +124,14 @@ if(!empty($_POST['signalComment']))
                         </div>
                         <p><?php echo nl2br(htmlspecialchars($data['commentaire'])); ?></p>
 
-                    <!-- Si la variable signalComment existe, alors : Message de validation -->
-                    <?php if ($signal_com): ?>
-                    <div class="container">
-                        <span class="badge badge-warning mb-2">Le commentaire à été signalé !</span>
-                    </div>
+                   
 
-                    <!-- Sinon : Formulaire de signalement -->
-                    <?php else: ?>
-                        <form action="<?='index.php?action=Signal-commentaire&id=' .$data['id']?>" method="post" class="col-12 needs-validation" novalidate>
+                    
+                        <form action="<?='index.php?action=Signal-commentaire&idChapitre=' .$data['id_chapitre'] . '&idComment='.$data['id_comment']?>" method="post" class="col-12 needs-validation" novalidate>
                             <div class="row">
                                 <div class="form-check">
-                                    <label class="form-check-label" for="signalComment"></label>
-                                    <input class="form-check-input" type="checkbox" value="" name="signalComment" required>
+                                    <label class="form-check-label" for="signal"></label>
+                                    <input class="form-check-input" type="checkbox" value="" name="signal" required>
                                     <div class="valid-tooltip">
                                         Ce commentaire va être signalé.
                                     </div>
@@ -151,12 +145,20 @@ if(!empty($_POST['signalComment']))
                                 
                             </div>            
                         </form>  
-                    <?php endif; ?>
+                    
                     </div>
 
                 <?php endwhile; ?> <!-- Fin de la Requête SQL -->
+                
 
             </div> <!-- Fin de row -->
+
+             
+
+               
+                   
+                
+
         </div> <!-- Fin de Partie 1 : Les commentaires -->
 
         <!-- ----------------------------------------- -->
@@ -167,7 +169,7 @@ if(!empty($_POST['signalComment']))
 
             <!-- Requête SQL : Ajout de commentaires dans la DB -->
             
-            <form action="index.php?action=Ajout-commentaire&id=<?= $chapter['id'] ?>" method="post" id="contenairForm" class="col-sm-12 col-md-9 col-lg-9 col-xl-6 m-auto needs-validation" novalidate>
+            <form action="index.php?action=Ajout-commentaire&id=<?= $chapter['id_chapitre'] ?>" method="post" id="contenairForm" class="col-sm-12 col-md-9 col-lg-9 col-xl-6 m-auto needs-validation" novalidate>
                 <h4>Ajouter un commentaire</h4>
 
                 <div class="form-group">
@@ -198,7 +200,11 @@ if(!empty($_POST['signalComment']))
             </form>  
         </div> <!-- Fin de Partie 2 : Le formulaire -->  
 
+    <?php endif; ?>
+
     </section> <!-- Fin de la section Commentaires -->
+
+
 
     <!-- ---- End ---- -->
 

@@ -29,7 +29,13 @@ require('model/modelFrontend.php');
 	// Fonction qui récupère les données SQL puis redirige vers la page Chapitre (+ Commentaires) :
 	function viewChapter($idChapitre)
 		{
-		    
+		    $signal_com = null; // par défaut, null pour valeur.
+		    // Enregistrement de la valeur du Cookie signalement dans la variable $signal_com :
+			if (!empty($_COOKIE['signalement']))
+			    {
+			        $signal_com = $_COOKIE['signalement'];
+			    }   
+
 		    $chapsList = getChaptersList();
 		    $chapter = getChapter($idChapitre);
 		    $comments = getComments($idChapitre);
@@ -37,20 +43,33 @@ require('model/modelFrontend.php');
 			require 'view/frontend/chapitreView.php';
 		}
 
-	// Fonction qui enregistre les données dans la DB puis redirige vers la page Chapitre :
-	function signalComment($signalComment)
+	// Fonction qui créele Cookie signalement, enregistre le signal dans la DB puis redirige vers la page Chapitre (en mode signalement validé + Bouton de retour) :
+	function signalComment($idChapitre, $signal)
 		{
-		    $affectedSignal = postSignalComment($signalComment);
+		    setcookie('signalement', 'signalOK'); // Création du Cookie.
+            $signal_com = 'signalOK';// Quand je fais un setcookie, je défini direct la valeur de la variable $signal_com.
 
-		    if ($affectedSignal === false) 
+		    $commentSignal = postSignalComment($idChapitre, $signal);
+
+		    if ($commentSignal === false) 
 			    {
 			        throw new Exception('Impossible de signaler le commentaire !');
 			    }
 			    else 
 				    {
-				        viewChapters();
+				        header('Location: index.php?action=Chapitre&idChapitre=' . $idChapitre);
+						exit;
 				    }
 		}
+
+	// Fonction qui efface le Cookie signalement puis redirige vers la page chapitre en question :
+	function deleteSignal($idChapitre)
+	{
+		unset($_COOKIE['signalement']); // Détruit la valeur de $_COOKIE pour la suite.
+        setcookie('signalement', '', time() -10); // valeur vide et time -10sec.
+
+		viewChapter($idChapitre);
+	}
 
 	// Fonction qui enregistre les données dans la DB puis redirige vers la page Chapitre (+ Commentaires) du commentaire en question :
 	function addComment($idChapitre, $pseudo, $comment)
@@ -81,7 +100,7 @@ require('model/modelFrontend.php');
 			require 'view/frontend/contactView.php';
 		}
 
-	// Fonction qui crée le Cookie utilisateur, envoi un message, enregistre les données dans la DB puis redirige vers la page Contact :
+	// Fonction qui crée le Cookie utilisateur, envoi un message, enregistre les données dans la DB puis redirige vers la page Contact (en mode message envoyé + Bouton de retour) :
 	function sendContact($nom, $prenom, $email, $titreMessage, $message, $rgpd)
 		{  
 		    setcookie('utilisateur', $_POST['prenom']); // Création du Cookie.
@@ -119,6 +138,10 @@ require('model/modelFrontend.php');
 		{
 		    $_SESSION['connecting'] = 1;
 		    connexionForced(); // Empêche la connexion par l'URL.
+
+		    $chaptersAdminLast = getChaptersAdmin0();
+		    $commentsAdminLast = getCommentsAdmin0();
+		    
 			require 'view/backend/adminView.php';
 		}
 
@@ -135,7 +158,7 @@ require('model/modelFrontend.php');
                             session_start();
                             // Je stock son état de connexion dans la Session
                             $_SESSION['connecting'] = 1; // Une valeur autre que null passe l'user à l'état connecté (true).
-                            require 'view/backend/adminView.php';
+                            viewAdmin();
                         }
                         else
                             {
@@ -175,6 +198,12 @@ require('model/modelFrontend.php');
 		    session_start();
 		    $_SESSION['connecting'] = 1;
 		    connexionForced(); // Empêche la connexion par l'URL.
+
+		    $commentsAdminEnCours = getCommentsAdmin1();
+		    $commentsAdminValide = getCommentsAdmin2();
+		    $commentsAdminSupprime = getCommentsAdmin3();
+
+
 			require 'view/backend/comsAdminView.php';
 		}
 
@@ -197,7 +226,7 @@ require('model/modelFrontend.php');
 		    connexionForced(); // Empêche la connexion par l'URL.
 
 		    $chaptersAdminModif = getChapModif($idChapitre);
-		    
+
 			require 'view/backend/chapModifAdminView.php';
 		}
 

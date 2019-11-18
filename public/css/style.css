@@ -24,6 +24,7 @@
 body
 {
     overflow-x: hidden;
+    background-color: #5f6894!important;
 }
 
 #blocPage /* Toute la page HTML */
@@ -1507,6 +1508,42 @@ ul
             }
 
 
+
+    #commentSignalOk
+        {
+            text-align: center;
+            margin-top: 5%;
+        }
+    #commentSignalOk h2 
+        {
+            font-family: 'robotomedium', sans-serif;
+            color: white;
+            font-size: 2rem;
+        }
+    #commentSignalOk h6
+        {
+            font-family: 'robotomedium', sans-serif;
+            color: #69696f;
+            font-size: 1rem;
+        }
+    #commentSignalOk a
+        {
+            font-family: 'robotomedium', sans-serif;
+            cursor: pointer;
+            margin-top: 6%;
+            margin-bottom: 25%;
+            background-color: #3d92bb;
+            color: white;
+            width: 240px;
+            box-shadow: 6px 6px 20px -8px black;
+            transition: all 0.3s ease-out;
+        }
+        #commentSignalOk a:hover
+            {
+                background-color: white;
+                color: #3d92bb;
+                box-shadow: -6px 6px 20px -8px black;
+            }
 
 
 

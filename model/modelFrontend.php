@@ -9,7 +9,7 @@
     function getPreviewChaps()
         {
             $db = dbConnect();
-            $previewChaps = $db->query('SELECT id, numero, titre, content_text, DATE_FORMAT(date_creation, "%d/%m/%Y à %Hh%imin%ss") AS date_creation_fr FROM chapitres WHERE publié="1" ORDER BY date_creation DESC LIMIT 0, 3');
+            $previewChaps = $db->query('SELECT id_chapitre, numero, titre, content_text, DATE_FORMAT(date_creation, "%d/%m/%Y à %Hh%imin%ss") AS date_creation_fr FROM chapitres WHERE publié="1" ORDER BY date_creation DESC LIMIT 0, 3');
 
             return $previewChaps;
         }
@@ -18,7 +18,7 @@
     function getChapters()
         {
             $db = dbConnect();
-            $chapters = $db->query('SELECT id, numero, titre, DATE_FORMAT(date_publication, "%e/%m/%Y") AS date_publication_fra FROM chapitres WHERE publié="1" ORDER BY date_publication DESC');
+            $chapters = $db->query('SELECT id_chapitre, numero, titre, DATE_FORMAT(date_publication, "%e/%m/%Y") AS date_publication_fra FROM chapitres WHERE publié="1" ORDER BY date_publication DESC');
 
             return $chapters;
         }
@@ -27,7 +27,7 @@
     function getChaptersList()
         {
             $db = dbConnect();
-            $chapsList = $db->query('SELECT id, numero, DATE_FORMAT(date_publication, "%d/%m/%Y à %Hh%imin%ss") AS date_publication_fr FROM chapitres WHERE publié="1" ORDER BY date_publication DESC');
+            $chapsList = $db->query('SELECT id_chapitre, numero, DATE_FORMAT(date_publication, "%d/%m/%Y à %Hh%imin%ss") AS date_publication_fr FROM chapitres WHERE publié="1" ORDER BY date_publication DESC');
 
             return $chapsList;
         }
@@ -36,7 +36,7 @@
     function getChapter($idChapitre)
         {
             $db = dbConnect();
-            $chapter = $db->prepare('SELECT id, numero, titre, content_text, content_img, date_publication, DATE_FORMAT(date_publication, "%e-%m-%Y") AS date_publication_fra FROM chapitres WHERE id = ?');
+            $chapter = $db->prepare('SELECT id_chapitre, numero, titre, content_text, content_img, date_publication, DATE_FORMAT(date_publication, "%e-%m-%Y") AS date_publication_fra FROM chapitres WHERE id_chapitre = ?');
             $chapter->execute(array($idChapitre));
             if ($chapter->rowCount() == 1)
                 return $chapter->fetch();  // Accès à la première ligne de résultat
@@ -48,20 +48,20 @@
     function getComments($idChapitre)
         {
             $db = dbConnect();
-            $comments = $db->prepare('SELECT id, id_chapitre, pseudo, commentaire, signal_com, date_commentaire, DATE_FORMAT(date_commentaire, "%e-%m-%Y à %Hh%i") AS date_commentaire_fra FROM commentaires WHERE id_chapitre = ? AND supprime = 0 ORDER BY date_commentaire DESC');
+            $comments = $db->prepare('SELECT id_comment, id_chapitre, pseudo, commentaire, signal_com, date_commentaire, DATE_FORMAT(date_commentaire, "%e-%m-%Y à %Hh%i") AS date_commentaire_fra FROM commentaires WHERE id_chapitre = ? AND supprime = 0 ORDER BY date_commentaire DESC');
             $comments->execute(array($idChapitre));
 
             return $comments;
         }
 
     // Fonction qui modifie un signalement de commentaire dans la DB (page Chapitre) :
-    function postSignalComment ($signalComment)
+    function postSignalComment($idChapitre, $signal)
         {
             $db = dbConnect();
-            $comments = $db->prepare('UPDATE commentaires SET signal_com = "on" WHERE id = ?');
-            $affectedSignal = $comments->execute(array($signalComment));
+            $comments = $db->prepare('UPDATE commentaires SET signal_com = "oui" WHERE id_chapitre = ? AND id_comment = ?');
+            $commentSignal = $comments->execute(array($idChapitre, $signal));
 
-            return $affectedSignal;
+            return $commentSignal;
         }
 
     // Fonction qui ajoute des commentaires dans la DB (page Chapitre) :
@@ -114,11 +114,34 @@
                 }
         }
 
+    /* Page Admin Home */
+
+    // Fonction qui recupère tous les 3 derniers chapitres publiés dans 1 tableau (page Admin) :
+    function getChaptersAdmin0()
+        {
+            $db = dbConnect();
+            $chaptersAdminLast = $db->query('SELECT id_chapitre, numero, titre, DATE_FORMAT(date_publication, "%e/%m/%Y") AS date_publication_franc FROM chapitres WHERE publié="1" ORDER BY date_publication DESC LIMIT 0, 3');
+
+            return $chaptersAdminLast;
+        }
+
+    // Fonction qui recupère tous les 3 derniers commentaires en_cours dans 1 tableau (page Admin) :
+    function getCommentsAdmin0()
+        {
+            $db = dbConnect();
+            $commentsAdminLast = $db->query('SELECT id_comment, id_chapitre, pseudo, DATE_FORMAT(date_commentaire, "%e/%m/%Y") AS date_commentaire_franc FROM commentaires WHERE en_cours="1" ORDER BY date_commentaire DESC LIMIT 0, 3');
+
+            return $commentsAdminLast;
+        }
+
+
+    /* Page Admin Chapitres */
+
     // Fonction qui recupère tous les chapitres en_cours dans 1 tableau (page Admin-chapitres) :
     function getChaptersAdmin1()
         {
             $db = dbConnect();
-            $chaptersAdminEnCours = $db->query('SELECT id, numero, titre, DATE_FORMAT(date_creation, "%e/%m/%Y") AS date_creation_franc FROM chapitres WHERE en_cours="1" ORDER BY date_creation DESC');
+            $chaptersAdminEnCours = $db->query('SELECT id_chapitre, numero, titre, DATE_FORMAT(date_creation, "%e/%m/%Y") AS date_creation_franc FROM chapitres WHERE en_cours="1" ORDER BY date_creation DESC');
 
             return $chaptersAdminEnCours;
         }
@@ -127,7 +150,7 @@
     function getChaptersAdmin2()
         {
             $db = dbConnect();
-            $chaptersAdminPublie = $db->query('SELECT id, numero, titre, DATE_FORMAT(date_publication, "%e/%m/%Y") AS date_publication_franc FROM chapitres WHERE publié="1" ORDER BY date_publication DESC');
+            $chaptersAdminPublie = $db->query('SELECT id_chapitre, numero, titre, DATE_FORMAT(date_publication, "%e/%m/%Y") AS date_publication_franc FROM chapitres WHERE publié="1" ORDER BY date_publication DESC');
 
             return $chaptersAdminPublie;
         }
@@ -136,21 +159,54 @@
     function getChaptersAdmin3()
         {
             $db = dbConnect();
-            $chaptersAdminSupprime = $db->query('SELECT id, numero, titre, DATE_FORMAT(date_creation, "%e/%m/%Y") AS date_creation_franc FROM chapitres WHERE supprimé="1" ORDER BY date_creation DESC');
+            $chaptersAdminSupprime = $db->query('SELECT id_chapitre, numero, titre, DATE_FORMAT(date_creation, "%e/%m/%Y") AS date_creation_franc FROM chapitres WHERE supprimé="1" ORDER BY date_creation DESC');
 
             return $chaptersAdminSupprime;
         }
+
+
+    /* Page Admin Modif Chapitre */
 
     // Fonction qui récupère un chapitre précis en fonction de son ID (page Admin-Chap-Modif) :
     function getChapModif($idChapitre)
         {
             $db = dbConnect();
-            $chaptersAdminModif = $db->prepare('SELECT id, numero, titre, content_text, DATE_FORMAT(date_creation, "%e/%m/%Y") AS date_creation_france FROM chapitres WHERE id = ?');
+            $chaptersAdminModif = $db->prepare('SELECT id_chapitre, numero, titre, content_text, DATE_FORMAT(date_creation, "%e/%m/%Y") AS date_creation_france FROM chapitres WHERE id_chapitre = ?');
             $chaptersAdminModif->execute(array($idChapitre));
             if ($chaptersAdminModif->rowCount() == 1)
                 return $chaptersAdminModif->fetch();  // Accès à la première ligne de résultat
             else
                 throw new Exception("Aucun chapitre ne correspond à l'identifiant '$idChapitre'");
+        }
+
+
+    /* Page Admin Commentaires */
+
+    // Fonction qui recupère tous les commentaires en_cours dans 1 tableau (page Admin-commentaires) :
+    function getCommentsAdmin1()
+        {
+            $db = dbConnect();
+            $commentsAdminEnCours = $db->query('SELECT id_comment, id_chapitre, pseudo, commentaire, signal_com, DATE_FORMAT(date_commentaire, "le %e/%m/%Y à %Hh%i") AS date_commentaire_franc FROM commentaires WHERE en_cours="1" ORDER BY date_commentaire DESC');
+
+            return $commentsAdminEnCours;
+        }
+
+    // Fonction qui recupère tous les commentaires validés dans 1 tableau (page Admin-commentaires) :
+    function getCommentsAdmin2()
+        {
+            $db = dbConnect();
+            $commentsAdminValide = $db->query('SELECT id_comment, id_chapitre, pseudo, commentaire, signal_com, DATE_FORMAT(date_commentaire, "le %e/%m/%Y à %Hh%i") AS date_commentaire_franc FROM commentaires WHERE valide="1" ORDER BY date_commentaire DESC');
+
+            return $commentsAdminValide;
+        }
+
+    // Fonction qui recupère tous les commentaires supprimés dans 1 tableau (page Admin-commentaires) :
+    function getCommentsAdmin3()
+        {
+            $db = dbConnect();
+            $commentsAdminSupprime = $db->query('SELECT id_comment, id_chapitre, pseudo, commentaire, signal_com, DATE_FORMAT(date_commentaire, "le %e/%m/%Y à %Hh%i") AS date_commentaire_franc FROM commentaires WHERE supprime="1" ORDER BY date_commentaire DESC');
+
+            return $commentsAdminSupprime;
         }
 
 
@@ -165,7 +221,7 @@
     function dbConnect()
         {
             // Connexion à la base de données
-            $db = new PDO('mysql:host=db5000212522.hosting-data.io;dbname=dbs207376;charset=utf8', 'dbu209349', '@Azerty95', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $db = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
             return $db;
         }
