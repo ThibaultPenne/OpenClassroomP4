@@ -38,10 +38,9 @@
             <div id="dashboardTitle" class="py-5 m-auto">
                 <h1 class="">Le traitement des chapitres</h1>
                 <p class="col-md-8 col-lg-6 m-auto pb-5">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. 
+                    Ici, vous avez accès à vos chapitres en cours d'écriture, vos chapitres publiés sur le Blog, ainsi que vos chapitres supprimés.<br>
+                    <br>
+                    Cliquez sur le lien ci-dessous pour créer un nouveau chapitre :
                 </p>
                 <a id="newChapBtn" href="index.php?action=Admin-nouveau-chapitre">
                     + Nouveau chapitre
@@ -104,10 +103,10 @@
                                                         <i class="fas fa-arrow-alt-circle-down"></i>
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">Publier</a>
+                                                        <a class="dropdown-item" href="<?= "index.php?action=PublishChap&idChapitre=" . $data["id_chapitre"] ?>">Publier</a>
                                                         <a class="dropdown-item" href="<?= "index.php?action=Admin-modif-chapitre&idChapitre=" . $data["id_chapitre"] ?>">Modifier</a>
-                                                        <a class="dropdown-item" href="#">Supprimer</a>
-                                                        <a class="dropdown-item" href="#">Supprimer définitivement</a>
+                                                        <a class="dropdown-item" href="<?= "index.php?action=DeleteChap&idChapitre=" . $data["id_chapitre"] ?>">Supprimer</a>
+                                                        <a class="dropdown-item" href="<?= "index.php?action=DeleteFullChap&idChapitre=" . $data["id_chapitre"] ?>">Supprimer définitivement</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -165,8 +164,8 @@
                                                     <div class="dropdown-menu">
                                                         <a class="dropdown-item" href="<?= "index.php?action=Chapitre&idChapitre=" . $data["id_chapitre"] ?>">Lire</a>
                                                         <a class="dropdown-item" href="<?= "index.php?action=Admin-modif-chapitre&idChapitre=" . $data["id_chapitre"] ?>">Modifier</a>
-                                                        <a class="dropdown-item" href="#">Supprimer</a>
-                                                        <a class="dropdown-item" href="#">Supprimer définitivement</a>
+                                                        <a class="dropdown-item" href="<?= "index.php?action=DeleteChap&idChapitre=" . $data["id_chapitre"] ?>">Supprimer</a>
+                                                        <a class="dropdown-item" href="<?= "index.php?action=DeleteFullChap&idChapitre=" . $data["id_chapitre"] ?>">Supprimer définitivement</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -193,7 +192,10 @@
                     <div class="collapse colapse-forms" id="collapseCorbeille">
                         <div class="card-body">
                             <span class="badge badge-danger mb-2">Chapitres supprimés</span>
-                            <span id="deleteAllBtn" type="button" class="badge badge-danger ml-3 mb-2">Vider tout le tableau</span>
+                            <span id="deleteAllBtn" type="button" class="badge badge-danger ml-3 mb-2">
+                                
+                                <a class="" href="<?= "index.php?action=DeleteChaptersTab" ?>">Vider tout le tableau</a>
+                            </span>
                             <table id="table03" class="table">
                                 <thead>
                                     <tr class="trHead">
@@ -223,8 +225,8 @@
                                                         <i class="fas fa-arrow-alt-circle-down"></i>
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">Restaurer</a>
-                                                        <a class="dropdown-item" href="#">Supprimer définitivement</a>
+                                                        <a class="dropdown-item" href="<?= "index.php?action=RestoreChap&idChapitre=" . $data["id_chapitre"] ?>">Restaurer</a>
+                                                        <a class="dropdown-item" href="<?= "index.php?action=DeleteFullChap&idChapitre=" . $data["id_chapitre"] ?>">Supprimer définitivement</a>
                                                     </div>
                                                 </div>
                                             </div>

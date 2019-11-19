@@ -65,6 +65,91 @@ require('model/AdminModifChapManager.php');
 			require 'view/backend/chapsAdminView.php';
 		}
 
+	// Fonction qui permet la publication de chapitre puis redirige vers la page Admin-Chapitres :
+	function publishChapter($idChapitre)
+		{
+	    	$adminChapterManager = new AdminChapterManager();
+			$publishChapter = $adminChapterManager->publishChapterAdmin($idChapitre);
+
+		    if ($publishChapter === false) 
+			    {
+			        throw new Exception('...');
+			    }
+			    else 
+				    {
+				        header('Location: index.php?action=Admin-chapitres');
+						exit;
+				    }
+		}
+
+	// Fonction qui permet la suppression de chapitre puis redirige vers la page Admin-Chapitres :
+	function deleteChapter($idChapitre)
+		{
+	    	$adminChapterManager = new AdminChapterManager();
+			$deleteChapter = $adminChapterManager->deleteChapterAdmin($idChapitre);
+
+		    if ($deleteChapter === false) 
+			    {
+			        throw new Exception('...');
+			    }
+			    else 
+				    {
+				        header('Location: index.php?action=Admin-chapitres');
+						exit;
+				    }
+		}
+
+	// Fonction qui permet la restauration de chapitre puis redirige vers la page Admin-Chapitres :
+	function restoreChapter($idChapitre)
+		{
+	    	$adminChapterManager = new AdminChapterManager();
+			$restoreChapter = $adminChapterManager->restoreChapterAdmin($idChapitre);
+
+		    if ($restoreChapter === false) 
+			    {
+			        throw new Exception('...');
+			    }
+			    else 
+				    {
+				        header('Location: index.php?action=Admin-chapitres');
+						exit;
+				    }
+		}
+
+	// Fonction qui permet la suppression (de la DB) de chapitre puis redirige vers la page Admin-Chapitres :
+	function deleteFullChapter($idChapitre)
+		{
+	    	$adminChapterManager = new AdminChapterManager();
+			$deleteFullChapter = $adminChapterManager->deleteFullChapterAdmin($idChapitre);
+
+		    if ($deleteFullChapter === false) 
+			    {
+			        throw new Exception('...');
+			    }
+			    else 
+				    {
+				        header('Location: index.php?action=Admin-chapitres');
+						exit;
+				    }
+		}
+
+	// Fonction qui permet la suppresion des chapitres supprimés puis redirige vers la page Admin-Chapitres :
+	function deleteChaptersTab()
+		{
+	    	$adminChapterManager = new AdminChapterManager();
+			$deleteChaptersTab = $adminChapterManager->deleteChaptersTabAdmin();
+
+		    if ($deleteChaptersTab === false) 
+			    {
+			        throw new Exception('...');
+			    }
+			    else 
+				    {
+				        header('Location: index.php?action=Admin-chapitres');
+						exit;
+				    }
+		}
+
 	// Fonction qui redirige vers la page Admin-Commentaires :
 	function viewComsAdmin()
 		{

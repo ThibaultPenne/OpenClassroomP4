@@ -117,6 +117,63 @@ try // On essaie de faire des choses..
                         connexionForced();
                         viewChapsAdmin();
                     }
+                elseif ($_GET['action'] == 'PublishChap') 
+                    {
+                        if(isset($_GET['idChapitre']) && $_GET['idChapitre'] > 0) 
+                            {
+                                connexionForced();
+                                $idChapitre = $_GET['idChapitre'];
+                                publishChapter($idChapitre);
+                            }
+                            else 
+                                {
+                                    throw new Exception("Identifiant du chapitre à supprimé non valide");
+                                }
+                    }
+                elseif ($_GET['action'] == 'DeleteChap') 
+                    {
+                        if(isset($_GET['idChapitre']) && $_GET['idChapitre'] > 0) 
+                            {
+                                connexionForced();
+                                $idChapitre = $_GET['idChapitre'];
+                                deleteChapter($idChapitre);
+                            }
+                            else 
+                                {
+                                    throw new Exception("Identifiant du chapitre à supprimé non valide");
+                                }
+                    }
+                elseif ($_GET['action'] == 'RestoreChap') 
+                    {
+                        if(isset($_GET['idChapitre']) && $_GET['idChapitre'] > 0) 
+                            {
+                                connexionForced();
+                                $idChapitre = $_GET['idChapitre'];
+                                restoreChapter($idChapitre);
+                            }
+                            else 
+                                {
+                                    throw new Exception("Identifiant du chapitre à supprimé non valide");
+                                }
+                    }
+                elseif ($_GET['action'] == 'DeleteFullChap') 
+                    {
+                        if(isset($_GET['idChapitre']) && $_GET['idChapitre'] > 0) 
+                            {
+                                connexionForced();
+                                $idChapitre = $_GET['idChapitre'];
+                                deleteFullChapter($idChapitre);
+                            }
+                            else 
+                                {
+                                    throw new Exception("Identifiant du chapitre à supprimé non valide");
+                                }
+                    }
+                elseif ($_GET['action'] == 'DeleteChaptersTab') 
+                    {
+                        connexionForced();
+                        deleteChaptersTab();
+                    }
                 elseif ($_GET['action'] == 'Admin-commentaires') 
                     {
                         connexionForced();
