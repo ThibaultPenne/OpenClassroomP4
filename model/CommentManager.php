@@ -9,7 +9,7 @@ class CommentManager extends Manager
         public function getComments($idChapitre)
             {
                 $db = $this->dbConnect();
-                $comments = $db->prepare('SELECT id_comment, id_chapitre, pseudo, commentaire, signal_com, date_commentaire, DATE_FORMAT(date_commentaire, "%e-%m-%Y à %Hh%i") AS date_commentaire_fra FROM commentaires WHERE id_chapitre = ? AND supprime = 0 ORDER BY date_commentaire DESC');
+                $comments = $db->prepare('SELECT id_comment, id_chapitre, pseudo, commentaire, signal_com, date_commentaire, DATE_FORMAT(date_commentaire, "%e-%m-%Y à %Hh%i") AS date_commentaire_fra FROM commentaires WHERE id_chapitre = ? AND statut != 2 ORDER BY date_commentaire DESC');
                 $comments->execute(array($idChapitre));
 
                 return $comments;
@@ -19,7 +19,7 @@ class CommentManager extends Manager
         public function postSignalComment($idChapitre, $signal)
             {
                 $db = $this->dbConnect();
-                $comments = $db->prepare('UPDATE commentaires SET signal_com = "oui" WHERE id_chapitre = ? AND id_comment = ?');
+                $comments = $db->prepare('UPDATE commentaires SET signal_com = "oui", statut = 0 WHERE id_chapitre = ? AND id_comment = ?');
                 $commentSignal = $comments->execute(array($idChapitre, $signal));
 
                 return $commentSignal;

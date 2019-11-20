@@ -65,6 +65,9 @@ require('model/AdminModifChapManager.php');
 			require 'view/backend/chapsAdminView.php';
 		}
 
+
+	/* ------------ Publier / Supprimer / Restaurer les Chapitres ------------ */
+
 	// Fonction qui permet la publication de chapitre puis redirige vers la page Admin-Chapitres :
 	function publishChapter($idChapitre)
 		{
@@ -149,6 +152,98 @@ require('model/AdminModifChapManager.php');
 						exit;
 				    }
 		}
+
+
+	/* ------------ Valider / Supprimer / Restaurer les Commentaires ------------ */
+
+	// Fonction qui permet la validation de commentaire puis redirige vers la page Admin-Commentaires :
+	function validComment($idComment)
+		{
+	    	$adminCommentManager = new AdminCommentManager();
+			$validComment = $adminCommentManager->validCommentAdmin($idComment);
+
+		    if ($validComment === false) 
+			    {
+			        throw new Exception('...');
+			    }
+			    else 
+				    {
+				        header('Location: index.php?action=Admin-commentaires');
+						exit;
+				    }
+		}
+
+	// Fonction qui permet la supression de commentaire puis redirige vers la page Admin-Commentaires :
+	function deleteComment($idComment)
+		{
+	    	$adminCommentManager = new AdminCommentManager();
+			$deleteComment = $adminCommentManager->deleteCommentAdmin($idComment);
+
+		    if ($deleteComment === false) 
+			    {
+			        throw new Exception('...');
+			    }
+			    else 
+				    {
+				        header('Location: index.php?action=Admin-commentaires');
+						exit;
+				    }
+		}
+
+	// Fonction qui permet la restauration de commentaire puis redirige vers la page Admin-Commentaires :
+	function restoreComment($idComment)
+		{
+	    	$adminCommentManager = new AdminCommentManager();
+			$restoreComment = $adminCommentManager->restoreCommentAdmin($idComment);
+
+		    if ($restoreComment === false) 
+			    {
+			        throw new Exception('...');
+			    }
+			    else 
+				    {
+				        header('Location: index.php?action=Admin-commentaires');
+						exit;
+				    }
+		}
+
+	// Fonction qui permet la suppression (de la DB) de commentaire puis redirige vers la page Admin-Commentaires :
+	function deleteFullComment($idComment)
+		{
+	    	$adminCommentManager = new AdminCommentManager();
+			$deleteFullChapter = $adminCommentManager->deleteFullCommentAdmin($idComment);
+
+		    if ($deleteFullChapter === false) 
+			    {
+			        throw new Exception('...');
+			    }
+			    else 
+				    {
+				        header('Location: index.php?action=Admin-commentaires');
+						exit;
+				    }
+		}
+
+	// Fonction qui permet la suppression (de la DB) de tous les coms supprimés puis redirige vers la page Admin-Commentaires :
+	function deleteCommentTab()
+		{
+	    	$adminCommentManager = new AdminCommentManager();
+			$deleteCommentTab = $adminCommentManager->deleteCommentTabAdmin();
+
+		    if ($deleteCommentTab === false) 
+			    {
+			        throw new Exception('...');
+			    }
+			    else 
+				    {
+				        header('Location: index.php?action=Admin-commentaires');
+						exit;
+				    }
+		}
+
+
+
+
 
 	// Fonction qui redirige vers la page Admin-Commentaires :
 	function viewComsAdmin()

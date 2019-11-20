@@ -33,10 +33,12 @@
 
             <div id="dashboardTitle" class="py-5 m-auto">
                 <h1 class="">Le traitement des commentaires</h1>
-                <p class="col-md-8 col-lg-6 m-auto pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. </p>
+                <p class="col-md-8 col-lg-6 m-auto pb-5">
+                    Ici, vous avez accès aux commentaires postés sur votre Blog.
+                    Ils sont en attente de traitement jusqu'à ce que vous choisissiez de les valider ou de les supprimer.<br>
+                    <br>
+                    Un commentaire signalé revient automatiquement dans le tableau des commentaires en attente.
+                </p>
             </div>
 
             <!-- ---------- Les 3 Tableaux ---------- -->
@@ -97,9 +99,9 @@
                                                         <i class="fas fa-arrow-alt-circle-down"></i>
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">Valider</a>
-                                                        <a class="dropdown-item" href="#">Supprimer du Blog</a>
-                                                        <a class="dropdown-item" href="#">Supprimer définitivement</a>
+                                                        <a class="dropdown-item" href="<?= "index.php?action=ValidComment&idComment=" . $data["id_comment"] ?>">Valider</a>
+                                                        <a class="dropdown-item" href="<?= "index.php?action=DeleteComment&idComment=" . $data["id_comment"] ?>">Supprimer du Blog</a>
+                                                        <a class="dropdown-item" href="<?= "index.php?action=DeleteFullComment&idComment=" . $data["id_comment"] ?>">Supprimer définitivement</a>
                                                     </div>
                                                 </div>
                                                 
@@ -165,8 +167,8 @@
                                                         <i class="fas fa-arrow-alt-circle-down"></i>
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">Supprimer du Blog</a>
-                                                        <a class="dropdown-item" href="#">Supprimer définitivement</a>
+                                                        <a class="dropdown-item" href="<?= "index.php?action=DeleteComment&idComment=" . $data["id_comment"] ?>">Supprimer du Blog</a>
+                                                        <a class="dropdown-item" href="<?= "index.php?action=DeleteFullComment&idComment=" . $data["id_comment"] ?>">Supprimer définitivement</a>
                                                     </div>
                                                 </div>
                                                 
@@ -201,7 +203,9 @@
                     <div class="collapse colapse-forms" id="collapseCorbeille">
                         <div class="card-body">
                             <span class="badge badge-danger mb-2">Commentaires supprimés</span>
-                            <span id="deleteAllBtn" type="button" class="badge badge-danger ml-3 mb-2">Vider tout le tableau</span>
+                            <span id="deleteAllBtn" type="button" class="badge badge-danger ml-3 mb-2">
+                                <a class="" href="<?= "index.php?action=DeleteCommentTab" ?>">Vider tout le tableau</a>
+                            </span>
                             <table id="table003" class="table">
                                 <thead>
                                     <tr class="trHead">
@@ -233,8 +237,8 @@
                                                         <i class="fas fa-arrow-alt-circle-down"></i>
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">Restaurer</a>
-                                                        <a class="dropdown-item" href="#">Supprimer définitivement</a>
+                                                        <a class="dropdown-item" href="<?= "index.php?action=RestoreComment&idComment=" . $data["id_comment"] ?>">Restaurer</a>
+                                                        <a class="dropdown-item" href="<?= "index.php?action=DeleteFullComment&idComment=" . $data["id_comment"] ?>">Supprimer définitivement</a>
                                                     </div>
                                                 </div>
                                                 

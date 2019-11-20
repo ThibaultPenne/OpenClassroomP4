@@ -179,6 +179,63 @@ try // On essaie de faire des choses..
                         connexionForced();
                         viewComsAdmin();
                     }
+                elseif ($_GET['action'] == 'ValidComment') 
+                    {
+                        if(isset($_GET['idComment']) && $_GET['idComment'] > 0) 
+                            {
+                                connexionForced();
+                                $idComment = $_GET['idComment'];
+                                validComment($idComment);
+                            }
+                            else 
+                                {
+                                    throw new Exception("Identifiant du chapitre à supprimé non valide");
+                                }
+                    }
+                elseif ($_GET['action'] == 'DeleteComment') 
+                    {
+                        if(isset($_GET['idComment']) && $_GET['idComment'] > 0) 
+                            {
+                                connexionForced();
+                                $idComment = $_GET['idComment'];
+                                deleteComment($idComment);
+                            }
+                            else 
+                                {
+                                    throw new Exception("Identifiant du chapitre à supprimé non valide");
+                                }
+                    }
+                elseif ($_GET['action'] == 'RestoreComment') 
+                    {
+                        if(isset($_GET['idComment']) && $_GET['idComment'] > 0) 
+                            {
+                                connexionForced();
+                                $idComment = $_GET['idComment'];
+                                restoreComment($idComment);
+                            }
+                            else 
+                                {
+                                    throw new Exception("Identifiant du chapitre à supprimé non valide");
+                                }
+                    }
+                elseif ($_GET['action'] == 'DeleteFullComment') 
+                    {
+                        if(isset($_GET['idComment']) && $_GET['idComment'] > 0) 
+                            {
+                                connexionForced();
+                                $idComment = $_GET['idComment'];
+                                deleteFullComment($idComment);
+                            }
+                            else 
+                                {
+                                    throw new Exception("Identifiant du chapitre à supprimé non valide");
+                                }
+                    }
+                elseif ($_GET['action'] == 'DeleteCommentTab') 
+                    {
+                        connexionForced();
+                        deleteCommentTab();
+                    }
                 elseif ($_GET['action'] == 'Admin-nouveau-chapitre') 
                     {
                         connexionForced();
