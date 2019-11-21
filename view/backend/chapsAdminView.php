@@ -57,15 +57,15 @@
 
                     <!-- ------------- Menu des Tableaux -------------- -->
 
-                    <div class="row menu-traitement m-auto">    
+                    <div class="row menu-traitement m-auto">
                         <button class="mx-4 my-1 btn btn-warning tables-admin-btns" type="button" data-toggle="collapse" data-target="#collapseEnCours" aria-expanded="false" aria-controls="collapseEnCours">
-                            En cours
+                            <input value="En cours"/>
                         </button>
                         <button class="mx-4 my-1 btn btn-success tables-admin-btns" type="button" data-toggle="collapse" data-target="#collapseEnLigne" aria-expanded="false" aria-controls="collapseEnLigne">
-                            Publiés
+                            <input value="Publiés"/>
                         </button>
                         <button class="mx-4 my-1 btn btn-danger tables-admin-btns" type="button" data-toggle="collapse" data-target="#collapseCorbeille" aria-expanded="false" aria-controls="collapseExample">
-                            Corbeille
+                            <input value="Corbeille"/>
                         </button>
                     </div>
 

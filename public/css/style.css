@@ -2682,7 +2682,7 @@ a[data-toggle="collapse"]
             text-align: center;
             display: block;
         }
-        #tablesAdminContenair .menu-traitement button, #tablesAdminContenair .menu-traitement a
+        #tablesAdminContenair .menu-traitement a
             {
                 width: 150px;
             }
@@ -2709,22 +2709,29 @@ a[data-toggle="collapse"]
 
         #tablesAdminContenair .tables-admin-btns
             {
-                color: white;
                 border: none;
                 box-shadow: 5px 5px 10px -5px black;
                 transition: all 0.3s ease-out;
                 margin-bottom: 1%;
-                font-family: 'robotomedium', sans-serif;
-                font-size: 15px;
-                cursor: pointer;
                 padding: 1%;
                 border-radius: 5px;
+                cursor: pointer;
             }
             #tablesAdminContenair .tables-admin-btns:hover
                 {
-                    color: white;
                     box-shadow: -5px 5px 10px -5px black;
                 }
+                #tablesAdminContenair .tables-admin-btns input
+                    {
+                        color: white;
+                        background: none;
+                        border: none;
+                        transition: all 0.3s ease-out;
+                        font-family: 'robotomedium', sans-serif;
+                        font-size: 15px;
+                        text-align: center;
+                        cursor: pointer;
+                    }
 
         #tablesAdminContenair .colapse-forms
             {

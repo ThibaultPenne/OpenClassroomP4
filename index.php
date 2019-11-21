@@ -15,10 +15,12 @@ try // On essaie de faire des choses..
     {
         if (isset($_GET['action'])) 
             {
+                // Page Chapitres :
                 if ($_GET['action'] == 'Chapitres') /* Vérif de l'action */
                     {
                         viewChapters();
-                    }              
+                    }     
+                // Page Chapitre :         
                 elseif ($_GET['action'] == 'Chapitre')
                     {
                         if (isset($_GET['idChapitre'])) /* Vérif de l'id */
@@ -80,6 +82,7 @@ try // On essaie de faire des choses..
                                     throw new Exception("Identifiant de chapitre non défini dans l'URL après l'ajout du commentaire");
                                 }
                     }
+                // Page Contact :
                 elseif ($_GET['action'] == 'Contact')
                     {         
                         viewContact();
@@ -99,6 +102,7 @@ try // On essaie de faire des choses..
                     {
                         deleteContact();
                     } 
+                // Page Admin Home :
                 elseif ($_GET['action'] == 'Admin') 
                     {
                         connexionForced();
@@ -112,6 +116,7 @@ try // On essaie de faire des choses..
                     {
                         deconnexionAdmin();
                     }
+                // Page Admin Chapitres :
                 elseif ($_GET['action'] == 'Admin-chapitres') 
                     {
                         connexionForced();
@@ -174,6 +179,7 @@ try // On essaie de faire des choses..
                         connexionForced();
                         deleteChaptersTab();
                     }
+                // Page Admin Commentaires :
                 elseif ($_GET['action'] == 'Admin-commentaires') 
                     {
                         connexionForced();
@@ -236,11 +242,13 @@ try // On essaie de faire des choses..
                         connexionForced();
                         deleteCommentTab();
                     }
+                // Page Admin New Chapitre :
                 elseif ($_GET['action'] == 'Admin-nouveau-chapitre') 
                     {
                         connexionForced();
                         viewNewChapAdmin();
                     }
+                // Page Admin Modif Chapitre :
                 elseif ($_GET['action'] == 'Admin-modif-chapitre') 
                     {
                         if (isset($_GET['idChapitre'])) /* Vérif de l'id */
@@ -259,6 +267,21 @@ try // On essaie de faire des choses..
                             else
                                 { 
                                     throw new Exception("Identifiant de chapitre non défini dans l'URL");
+                                }
+                    }
+                elseif ($_GET['action'] == 'RecModifChapter') 
+                    {
+                        if(!empty($_POST['titreChapitre']) AND !empty($_POST['texteChapitre']))
+                            {
+                                connexionForced();
+                                $idChapitre = $_GET['idChapitre'];
+                                $titreChapitre = htmlspecialchars($_POST['titreChapitre']);
+                                $texteChapitre = htmlspecialchars($_POST['texteChapitre']);
+                                recModifChapter($titreChapitre, $texteChapitre, $idChapitre);
+                            }
+                            else 
+                                {
+                                    throw new Exception("Identifiant du chapitre à enregistrer non valide");
                                 }
                     }
                     else

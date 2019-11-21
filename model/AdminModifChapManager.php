@@ -17,6 +17,17 @@ class AdminModifChapManager extends Manager
                     throw new Exception("Aucun chapitre ne correspond à l'identifiant '$idChapitre'");
             }
 
+        // Fonction qui enregistre le chapitre modifié (pages Admin-Chap-Modif) :
+        public function recModifChapterAdmin($titreChapitre, $texteChapitre, $idChapitre)
+            {
+                $db = $this->dbConnect();
+                $chapter = $db->prepare('UPDATE chapitres SET titre = ?, statut = 0, content_text = ? WHERE id_chapitre = ?');
+                $recModifChapter = $chapter->execute(array($titreChapitre, $texteChapitre, $idChapitre));
+
+                return $recModifChapter;  
+            }
+
+
     }
 
 

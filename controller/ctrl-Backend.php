@@ -9,7 +9,8 @@ require('model/AdminCommentManager.php');
 require('model/AdminModifChapManager.php');
 
 
-
+	/* ------------ Session et Connexion à l'Admin ------------ */
+	
 	// Fonction qui redirige vers la page Admin :
 	function viewAdmin()
 		{
@@ -54,6 +55,11 @@ require('model/AdminModifChapManager.php');
 			exit;
         }
 
+	
+
+
+	/* ------------ Publier / Supprimer / Restaurer les Chapitres ------------ */
+
 	// Fonction qui redirige vers la page Admin-Chapitres :
 	function viewChapsAdmin()
 		{
@@ -64,9 +70,6 @@ require('model/AdminModifChapManager.php');
 
 			require 'view/backend/chapsAdminView.php';
 		}
-
-
-	/* ------------ Publier / Supprimer / Restaurer les Chapitres ------------ */
 
 	// Fonction qui permet la publication de chapitre puis redirige vers la page Admin-Chapitres :
 	function publishChapter($idChapitre)
@@ -155,6 +158,17 @@ require('model/AdminModifChapManager.php');
 
 
 	/* ------------ Valider / Supprimer / Restaurer les Commentaires ------------ */
+
+	// Fonction qui redirige vers la page Admin-Commentaires :
+	function viewComsAdmin()
+		{
+		    $adminCommentManager = new AdminCommentManager();
+		    $commentsAdminEnCours = $adminCommentManager->getCommentsAdmin1();
+		    $commentsAdminValide = $adminCommentManager->getCommentsAdmin2();
+		    $commentsAdminSupprime = $adminCommentManager->getCommentsAdmin3();
+
+			require 'view/backend/comsAdminView.php';
+		}
 
 	// Fonction qui permet la validation de commentaire puis redirige vers la page Admin-Commentaires :
 	function validComment($idComment)
@@ -245,24 +259,7 @@ require('model/AdminModifChapManager.php');
 
 
 
-	// Fonction qui redirige vers la page Admin-Commentaires :
-	function viewComsAdmin()
-		{
-		    $adminCommentManager = new AdminCommentManager();
-		    $commentsAdminEnCours = $adminCommentManager->getCommentsAdmin1();
-		    $commentsAdminValide = $adminCommentManager->getCommentsAdmin2();
-		    $commentsAdminSupprime = $adminCommentManager->getCommentsAdmin3();
-
-			require 'view/backend/comsAdminView.php';
-		}
-
-	// Fonction qui redirige vers la page Admin-New-Chapitre :
-	function viewNewChapAdmin()
-		{
-		    /* A gérer */
-
-			require 'view/backend/newChapAdminView.php';
-		}
+	/* ------------ Admin-Modif-Chapitre : Rec / Publish / Delete ------------ */
 
 	// Fonction qui redirige vers la page de modification du Chapitre choisi :
 	function viewModifChapAdmin($idChapitre)
@@ -272,6 +269,48 @@ require('model/AdminModifChapManager.php');
 
 			require 'view/backend/chapModifAdminView.php';
 		}
+
+	//  Fonction qui après enregistrement des données, modifie le statut du Chapitre :
+	function recModifChapter($titreChapitre, $texteChapitre, $idChapitre)
+		{
+	    	$adminModifChapManager = new AdminModifChapManager();
+			$recModifChapter = $adminModifChapManager->recModifChapterAdmin($titreChapitre, $texteChapitre, $idChapitre);
+
+			if (isset($_POST['recInput']))
+				{
+					restoreChapter($idChapitre);
+				}
+			if (isset($_POST['publishInput']))
+				{
+					publishChapter($idChapitre);
+				}
+			if (isset($_POST['deleteInput']))
+				{
+					deleteChapter($idChapitre);
+				}
+		}
+
+
+
+
+
+
+
+	/* ------------ Admin-New-Chapitre ------------ */
+
+	// Fonction qui redirige vers la page Admin-New-Chapitre :
+	function viewNewChapAdmin()
+		{
+		    /* A gérer */
+
+			require 'view/backend/newChapAdminView.php';
+		}
+
+
+
+
+
+
 
 
 
