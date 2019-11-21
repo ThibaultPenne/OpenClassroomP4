@@ -248,6 +248,21 @@ try // On essaie de faire des choses..
                         connexionForced();
                         viewNewChapAdmin();
                     }
+                elseif ($_GET['action'] == 'RecNewChapter')
+                    {                 
+                        if (isset($_POST['titreChapitre']))
+                            {
+                                connexionForced();
+                                $numeroChapitre = htmlspecialchars($_POST['numeroChapitre']);
+                                $titreChapitre = htmlspecialchars($_POST['titreChapitre']);
+                                $texteChapitre = htmlspecialchars($_POST['texteChapitre']);
+                                recNewChapter($idChapitre, $numeroChapitre, $titreChapitre, $texteChapitre);
+                            }  
+                            else
+                                {
+                                    throw new Exception("Un problème est survenu lors de la création du chapitre");
+                                }               
+                    } 
                 // Page Admin Modif Chapitre :
                 elseif ($_GET['action'] == 'Admin-modif-chapitre') 
                     {

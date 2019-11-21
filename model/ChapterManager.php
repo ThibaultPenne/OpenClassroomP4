@@ -18,7 +18,7 @@ class ChapterManager extends Manager
         public function getChapters()
             {
                 $db = $this->dbConnect();
-                $chapters = $db->query('SELECT id_chapitre, numero, titre, DATE_FORMAT(date_publication, "%e/%m/%Y") AS date_publication_fra FROM chapitres WHERE statut="1" ORDER BY date_publication DESC');
+                $chapters = $db->query('SELECT id_chapitre, numero, titre, DATE_FORMAT(date_publication, "%e/%m/%Y") AS date_publication_fra FROM chapitres WHERE statut="1" ORDER BY numero DESC');
 
                 return $chapters;
             }
@@ -27,7 +27,7 @@ class ChapterManager extends Manager
         public function getChaptersList()
             {
                 $db = $this->dbConnect();
-                $chapsList = $db->query('SELECT id_chapitre, numero, DATE_FORMAT(date_publication, "%d/%m/%Y à %Hh%imin%ss") AS date_publication_fr FROM chapitres WHERE statut="1" ORDER BY date_publication DESC');
+                $chapsList = $db->query('SELECT id_chapitre, numero, DATE_FORMAT(date_publication, "%d/%m/%Y à %Hh%imin%ss") AS date_publication_fr FROM chapitres WHERE statut="1" ORDER BY numero DESC');
 
                 return $chapsList;
             }

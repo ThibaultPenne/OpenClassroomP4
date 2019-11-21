@@ -21,11 +21,22 @@ class AdminModifChapManager extends Manager
         public function recModifChapterAdmin($titreChapitre, $texteChapitre, $idChapitre)
             {
                 $db = $this->dbConnect();
-                $chapter = $db->prepare('UPDATE chapitres SET titre = ?, statut = 0, content_text = ? WHERE id_chapitre = ?');
+                $chapter = $db->prepare('UPDATE chapitres SET titre = ?, content_text = ? WHERE id_chapitre = ?');
                 $recModifChapter = $chapter->execute(array($titreChapitre, $texteChapitre, $idChapitre));
 
                 return $recModifChapter;  
             }
+
+        // Fonction qui enregistre le nouveau chapitre (pages Admin-New-Chap) :
+        public function recNewChapterAdmin($idChapitre, $numeroChapitre, $titreChapitre, $texteChapitre)
+            {
+                $db = $this->dbConnect();
+                $chapter = $db->prepare('INSERT INTO chapitres(id_chapitre, numero, titre, content_text, date_creation) VALUES(?, ?, ?, ?, NOW())');
+                $recNewChapter = $chapter->execute(array($idChapitre, $numeroChapitre, $titreChapitre, $texteChapitre));
+
+                return $recNewChapter;   
+            }
+
 
 
     }

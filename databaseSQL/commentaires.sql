@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  mer. 20 nov. 2019 à 10:52
+-- Généré le :  jeu. 21 nov. 2019 à 19:05
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.3.7
 
@@ -60,8 +60,7 @@ INSERT INTO `commentaires` (`id_comment`, `id_chapitre`, `pseudo`, `commentaire`
 (17, 5, 'Kevin', 'Euu encore une histoire de merde écrite par un conard de merde...', '2019-10-04 19:14:32', 'oui', 0),
 (18, 5, 'Senku', '5e chapitre, toujours fidèle au poste et ce n\'est pas prêt de changer ! Incroyable, merci pour ce chapitre !', '2019-10-04 20:32:11', 'non', 0),
 (19, 5, 'Byakuya', 'Je reste pour par par un peu plus reservé que Senku mais j\'attend la suite avec impatience.', '2019-10-05 10:30:49', 'non', 0),
-(20, 5, 'Senku', 'Hahaaaa ne t\'inquiète pas Byakuya, on va surement bientôt comprendre le pourquoi du comment !', '2019-10-05 15:10:07', 'non', 0),
-(53, 1, '8NINE', 'first com ', '2019-11-20 11:50:20', 'non', 0);
+(20, 5, 'Senku', 'Hahaaaa ne t\'inquiète pas Byakuya, on va surement bientôt comprendre le pourquoi du comment !', '2019-10-05 15:10:07', 'non', 0);
 
 --
 -- Index pour les tables déchargées
@@ -81,7 +80,7 @@ ALTER TABLE `commentaires`
 -- AUTO_INCREMENT pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
-  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

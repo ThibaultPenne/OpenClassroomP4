@@ -3095,7 +3095,7 @@ tr .card
             box-shadow: -5px 5px 23px -8px black;
         }
 
-#labelTitreChap
+#labelTitreChap, #labelNbrChap
     {
         font-family: 'robotomedium', sans-serif;
         font-size: 16px;
@@ -3104,7 +3104,7 @@ tr .card
         font-style: italic;
     }
 
-#champDL label, #inputTitreChap
+#champDL label, #inputTitreChap, #inputNbrChap
     {
         font-family: 'robotoregular', sans-serif;
         font-size: 15px;
@@ -3150,11 +3150,11 @@ tr .card
                     {
                         font-size: 25px;
                     }
-                #labelTitreChap
+                #labelTitreChap, #labelNbrChap
                     {
                         font-size: 15px;
                     }
-                #champDL label, #inputTitreChap
+                #champDL label, #inputTitreChap, #inputNbrChap
                     {
                         font-size: 14px;
                     }

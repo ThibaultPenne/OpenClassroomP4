@@ -1,28 +1,24 @@
 <?php $title = 'Modification de chapitre'; ?>
 
 
-<!-- --------------------------- -->
+
+<!-- ---------- La NavBar ---------- -->
+
+<?php ob_start(); ?>
+    <li id="homeLinkLi" class="nav-item">
+        <a id="homeLink" class="nav-link" href="index.php?action=Admin"><i class="fas fa-home mr-2"></i>Home</a>
+    </li>
+    <li class="nav-item active">
+        <a id="chapLink" class="nav-link" href="index.php?action=Admin-chapitres"><i class="fas fa-copy mr-2"></i>Chapitres</a>
+    </li>
+    <li class="nav-item">
+        <a id="comLink" class="nav-link" href="index.php?action=Admin-commentaires"><i class="fab fa-speakap mr-2"></i>Commentaires</a>
+    </li>
+<?php $menuNavbarAdmin = ob_get_clean(); ?>
 
 
 
-
-
-            <!-- ---------- La NavBar ---------- -->
-
-            <?php ob_start(); ?>
-                <li id="homeLinkLi" class="nav-item">
-                    <a id="homeLink" class="nav-link" href="index.php?action=Admin"><i class="fas fa-home mr-2"></i>Home</a>
-                </li>
-                <li class="nav-item active">
-                    <a id="chapLink" class="nav-link" href="index.php?action=Admin-chapitres"><i class="fas fa-copy mr-2"></i>Chapitres</a>
-                </li>
-                <li class="nav-item">
-                    <a id="comLink" class="nav-link" href="index.php?action=Admin-commentaires"><i class="fab fa-speakap mr-2"></i>Commentaires</a>
-                </li>
-            <?php $menuNavbarAdmin = ob_get_clean(); ?>
-
-
-
+<!-- ------------------------ Début de $content ------------------------------ --> 
 
 <?php ob_start(); ?>
 
@@ -54,6 +50,10 @@
 
                 <!-- ---------- Le Titre ---------- -->
                 <div id="newChapForm" class="col-md-9 col-lg-8 col-xl-6 m-auto">
+                    <div class="form-group">
+                        <label id="labelNbrChap" for="inputAddress">Numéro du chapitre</label>
+                        <input name="numeroChapitre" type="text" class="form-control" id="inputNbrChap" value="<?php echo htmlspecialchars($chaptersAdminModif['numero']); ?>" required>
+                    </div>
                     <div class="form-group">
                         <label id="labelTitreChap" for="inputAddress">Titre du Chapitre</label>
                         <input name="titreChapitre" type="text" class="form-control" id="inputTitreChap" value="<?php echo htmlspecialchars($chaptersAdminModif['titre']); ?>">

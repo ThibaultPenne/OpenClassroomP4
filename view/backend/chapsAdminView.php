@@ -2,7 +2,6 @@
 
 
 
-
 <!-- ---------- La NavBar ---------- -->
 
 <?php ob_start(); ?>
@@ -16,9 +15,6 @@
         <a id="comLink" class="nav-link" href="index.php?action=Admin-commentaires"><i class="fab fa-speakap mr-2"></i>Commentaires</a>
     </li>
 <?php $menuNavbarAdmin = ob_get_clean(); ?>
-
-
-
 
 
 

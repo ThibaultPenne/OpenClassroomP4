@@ -306,6 +306,23 @@ require('model/AdminModifChapManager.php');
 			require 'view/backend/newChapAdminView.php';
 		}
 
+	// Fonction qui redirige vers la page Admin-New-Chapitre :
+	function recNewChapter($idChapitre, $numeroChapitre, $titreChapitre, $texteChapitre)
+		{
+	    	$adminModifChapManager = new AdminModifChapManager();
+			$recNewChapter = $adminModifChapManager->recNewChapterAdmin($idChapitre, $numeroChapitre, $titreChapitre, $texteChapitre);
+
+			if (isset($_POST['recInput']))
+				{
+					restoreChapter($idChapitre);
+				}
+			if (isset($_POST['byeInput']))
+				{
+					header('Location: index.php?action=Admin-chapitres');
+					exit;
+				}
+		}
+
 
 
 

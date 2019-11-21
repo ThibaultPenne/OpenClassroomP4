@@ -27,7 +27,7 @@ class AdminChapterManager extends Manager
         public function getChaptersAdmin2()
             {
                 $db = $this->dbConnect();
-                $chaptersAdminPublie = $db->query('SELECT id_chapitre, numero, titre, DATE_FORMAT(date_publication, "%e/%m/%Y") AS date_publication_franc FROM chapitres WHERE statut="1" ORDER BY date_publication DESC');
+                $chaptersAdminPublie = $db->query('SELECT id_chapitre, numero, titre, DATE_FORMAT(date_publication, "%e/%m/%Y") AS date_publication_franc FROM chapitres WHERE statut="1" ORDER BY date_creation DESC');
 
                 return $chaptersAdminPublie;
             }
