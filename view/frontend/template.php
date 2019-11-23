@@ -1,10 +1,8 @@
 <?php 
-
 if (session_status() === PHP_SESSION_NONE) 
     {
         session_start(); // Je l'active.
     }
-
 ?>
 <!DOCTYPE html>
 
@@ -50,7 +48,7 @@ if (session_status() === PHP_SESSION_NONE)
                         <?= $menu_navbar ?> <!-- Variable de la Navbar : Acceuil / Chapitres / Contact -->
 
                         <!-- Si cette fonction est true (connecté), alors lien direct : -->
-                        <?php if (connectingSession()): ?>
+                        <?php if(connectingSession()) : ?>
                             <li id="decoLinkLi" class="nav-item">
                                 <a id="decoLink" class="nav-link" href="index.php?action=Admin">Jean F. Admin</a>
                             </li>

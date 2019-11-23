@@ -5,10 +5,10 @@
 <!-- Autre bénéfice : l'organisation interne du site est totalement masquée à l'utilisateur, puisque seul le fichier index.php est visible dans les URL -->*/
 
 
+require('controller/ctrl-Authentification.php');
 require('controller/ctrl-Frontend.php');
 require('controller/ctrl-Backend.php');
 require('controller/ctrl-Error.php');
-require('controller/ctrl-Authentification.php');
 
 
 try // On essaie de faire des choses..
@@ -250,17 +250,14 @@ try // On essaie de faire des choses..
                     }
                 elseif ($_GET['action'] == 'RecNewChapter')
                     {                 
-                        if (isset($_POST['titreChapitre']))
+                        if (!empty($_POST['titreChapitre']) AND !empty($_POST['numeroChapitre']))
                             {
                                 connexionForced();
-                                $numeroChapitre = htmlspecialchars($_POST['numeroChapitre']);
-                                $titreChapitre = htmlspecialchars($_POST['titreChapitre']);
-                                $texteChapitre = htmlspecialchars($_POST['texteChapitre']);
-                                recNewChapter($idChapitre, $numeroChapitre, $titreChapitre, $texteChapitre);
+                                recWithImg();
                             }  
                             else
                                 {
-                                    throw new Exception("Un problème est survenu lors de la création du chapitre");
+                                    throw new Exception("Veuillez remplir au moins le titre et le numéro du Chapitre pour pouvoir l'enregistrer.");
                                 }               
                     } 
                 // Page Admin Modif Chapitre :
@@ -281,7 +278,7 @@ try // On essaie de faire des choses..
                             }
                             else
                                 { 
-                                    throw new Exception("Identifiant de chapitre non défini dans l'URL");
+                                    throw new Exception("Identifiant de chapitre non défini dans l'URL.");
                                 }
                     }
                 elseif ($_GET['action'] == 'RecModifChapter') 
@@ -289,14 +286,11 @@ try // On essaie de faire des choses..
                         if(!empty($_POST['titreChapitre']) AND !empty($_POST['texteChapitre']))
                             {
                                 connexionForced();
-                                $idChapitre = $_GET['idChapitre'];
-                                $titreChapitre = htmlspecialchars($_POST['titreChapitre']);
-                                $texteChapitre = htmlspecialchars($_POST['texteChapitre']);
-                                recModifChapter($titreChapitre, $texteChapitre, $idChapitre);
+                                recModifWithImg();    
                             }
                             else 
                                 {
-                                    throw new Exception("Identifiant du chapitre à enregistrer non valide");
+                                    throw new Exception("Veuillez remplir au moins le titre et le numéro du Chapitre.");
                                 }
                     }
                     else

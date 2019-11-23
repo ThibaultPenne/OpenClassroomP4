@@ -96,7 +96,7 @@ if (session_status() === PHP_SESSION_NONE)
                             <?= $menuNavbarAdmin ?>
 
                             <!-- Si cette fonction est true (connecté), alors lien vers la deconexion : -->
-                            <?php if (connectingSession()): ?>
+                            <?php if(connectingSession()): ?>
                             <li id="decoLinkLi" class="nav-item">
                                 <a id="decoLink" class="nav-link" href="index.php?action=DeconnexionAdmin">Déconnection</a>
                             </li>

@@ -3095,7 +3095,7 @@ tr .card
             box-shadow: -5px 5px 23px -8px black;
         }
 
-#labelTitreChap, #labelNbrChap
+#labelTitreChap, #labelNbrChap, #labelImageChap, #labelNameDestChap
     {
         font-family: 'robotomedium', sans-serif;
         font-size: 16px;
@@ -3104,24 +3104,44 @@ tr .card
         font-style: italic;
     }
 
-#champDL label, #inputTitreChap, #inputNbrChap
+#champDL label, #inputTitreChap, #inputNbrChap, #imgDestChapitre, #imgNameChapitre
     {
         font-family: 'robotoregular', sans-serif;
         font-size: 15px;
     }
     #champDL label
         {
-            
+            font-family: 'robotoregular', sans-serif;
+             font-size: 15px;
         }
 
-#champDL label::after
+#inputImageChap
     {
-        content: "Choisir";
+        font-family: 'robotoregular', sans-serif;
+        font-size: 15px;
+        border-radius: 5px;
+        background-color: #3d92bb;
+        width: 100%;
     }
 
 #newChapTextArea
     {
         min-height: 400px;
+    }
+
+#imgTypesMessage
+    {
+        font-family: 'robotomedium', sans-serif;
+        font-size: 14px;
+        color: #b34f5c;
+    }
+
+#imgModifView 
+    {
+        background-color: #383442;
+        padding: 5%;
+        border-radius: 5px;
+        text-align: center;
     }
 
 
@@ -3150,11 +3170,11 @@ tr .card
                     {
                         font-size: 25px;
                     }
-                #labelTitreChap, #labelNbrChap
+                #labelTitreChap, #labelNbrChap, #labelImageChap, #labelNameDestChap
                     {
                         font-size: 15px;
                     }
-                #champDL label, #inputTitreChap, #inputNbrChap
+                #champDL label, #inputTitreChap, #inputNbrChap, #imgDestChapitre, #imgNameChapitre
                     {
                         font-size: 14px;
                     }

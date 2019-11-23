@@ -31,19 +31,19 @@
 
             <!-- ---------- Le Titre ---------- -->
 
-            <div id="dashboardTitle" class="pt-5 pb-3 m-auto">
+            <div id="dashboardTitle" class="pt-5 pb-1 m-auto">
 
                 <!-- Requête SQL qui récupère un chapitre précis en fonction de son ID -->
 
                 <h1 class=""><?php echo htmlspecialchars($chaptersAdminModif['numero']); ?></h1>
-                <p class="col-12 m-auto pb-5">
+                <p class="col-12 m-auto pb-4">
                     crée le <?php echo htmlspecialchars($chaptersAdminModif['date_creation_france']); ?>
                 </p> 
             </div>
 
             <!-- ---------- Le Formulaire de création ---------- -->
 
-            <form id="formCreationChapter" method="POST" action="<?= 'index.php?action=RecModifChapter&idChapitre=' . $chaptersAdminModif['id_chapitre']?>">
+            <form id="formCreationChapter" method="POST" action="<?= 'index.php?action=RecModifChapter&idChapitre=' . $chaptersAdminModif['id_chapitre']?>" class="needs-validation" enctype="multipart/form-data" novalidate>
 
 
                 
@@ -60,11 +60,30 @@
                     </div>
 
                     <!-- ---------- L'Image ---------- -->
-                    <div id="champDL" class="input-group mb-3">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputfileDL">
-                            <label class="custom-file-label" for="inputfileDL" aria-describedby="inputGroupFileAddon02">../../public/images/chap01Img.png</label>
+                    <?php if (!empty($chaptersAdminModif["img_dest"])):?>  
+                    <div id="imgModifView" class="form-group">
+                        <p>
+                            <?php echo('<img style="width:80%" src="' . $chaptersAdminModif["img_dest"] . '">'); ?>        
+                        </p>
+                        <div class="form-group">
+                            <label id="labelNameDestChap" for="inputAddress">Nom et adresse de l'image</label>
+                            <input name="imgNameChapitre" type="text" class="form-control" id="imgNameChapitre" value="<?php echo htmlspecialchars($chaptersAdminModif['img_name']); ?>" readonly>
+                            <input name="imgDestChapitre" type="text" class="form-control mt-2" id="imgDestChapitre" value="<?php echo htmlspecialchars($chaptersAdminModif['img_dest']); ?>" readonly>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label id="labelImageChap" for="inputAddress">Remplacer l'image</label>
+                        <input name="imageChapitre" type="file" class="" id="inputImageChap" value="<?php echo($chaptersAdminModif['img_name']); ?>" required>
+                    </div>
+                    
+                    <?php else: ?>
+                    <div class="form-group">
+                        <label id="labelImageChap" for="inputAddress">Télécharger une image</label>
+                        <input name="imageChapitre" type="file" class="" id="inputImageChap" value="<?php echo($chaptersAdminModif['img_name']); ?>" required>
+                    </div>
+                    <?php endif; ?>
+                    <div id="imgTypesMessage" class="contenair mt-3">
+                        <p>(Ne seront téléchargées que les images de types: .png, .PNG, .jpg, .JPG, .jpeg, .JPEG)</p>
                     </div>
                 </div>
 
@@ -86,7 +105,7 @@
                                     <!-- ---------- Le Texte ---------- -->
                                     <div class="form-group">
                                         <div class="input-group">  
-                                        <textarea name="texteChapitre" id="newChapTextArea" class="form-control" aria-label="With textarea">
+                                        <textarea name="texteChapitre" id="newChapTextArea" class="form-control" aria-label="With textarea" placeholder="Il n'y a plus qu'à s'y mettre !">
 <?php echo htmlspecialchars($chaptersAdminModif['content_text']); ?>
                                         </textarea>
                                         </div>

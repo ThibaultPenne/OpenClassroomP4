@@ -9,7 +9,8 @@ require('model/AdminCommentManager.php');
 require('model/AdminModifChapManager.php');
 
 
-	/* ------------ Session et Connexion à l'Admin ------------ */
+
+	/* ------------ Admin Home ------------ */
 	
 	// Fonction qui redirige vers la page Admin :
 	function viewAdmin()
@@ -23,39 +24,7 @@ require('model/AdminModifChapManager.php');
 			require 'view/backend/adminView.php';
 		}
 
-	// Fonction qui gère la connexion vers la page Admin :
-	function connexionAdmin()
-        {
-            // Si email et password ont été posté :
-            if (!empty($_POST['email']) AND !empty($_POST['password']))
-                {
-                	// Si email et password sont corrects :
-                    if ($_POST['email'] == "jeanforteroche@contact.com" AND $_POST['password'] == "alaska95")
-                        {
-                            // Alors, je connecte l'utilisateur :
-                            session_start();
-                            // Je stock son état de connexion dans la Session
-                            $_SESSION['connecting'] = 1; // Une valeur autre que null passe l'user à l'état connecté (true).
 
-                            header('Location: index.php?action=Admin');
-                        }
-                        else
-                            {
-                                throw new Exception("Une information que vous avez renseigné n'est pas reconnue.");
-                            }
-                }
-        }	
-
-    // Fonction qui gère la deconnexion de la page Admin :
-	function deconnexionAdmin()
-        {
-            session_start();
-            unset($_SESSION['connecting']); // Fermeture de la session.
-            header('Location: index.php');
-			exit;
-        }
-
-	
 
 
 	/* ------------ Publier / Supprimer / Restaurer les Chapitres ------------ */
@@ -271,10 +240,10 @@ require('model/AdminModifChapManager.php');
 		}
 
 	//  Fonction qui après enregistrement des données, modifie le statut du Chapitre :
-	function recModifChapter($titreChapitre, $texteChapitre, $idChapitre)
+	function recModifChapter($numeroChapitre, $titreChapitre, $texteChapitre, $imageNameChapitre, $imageDestChapitre, $idChapitre)
 		{
 	    	$adminModifChapManager = new AdminModifChapManager();
-			$recModifChapter = $adminModifChapManager->recModifChapterAdmin($titreChapitre, $texteChapitre, $idChapitre);
+			$recModifChapter = $adminModifChapManager->recModifChapterAdmin($numeroChapitre, $titreChapitre, $texteChapitre, $imageNameChapitre, $imageDestChapitre, $idChapitre);
 
 			if (isset($_POST['recInput']))
 				{
@@ -288,6 +257,51 @@ require('model/AdminModifChapManager.php');
 				{
 					deleteChapter($idChapitre);
 				}
+		}
+
+	// Fonction qui configure la modification du chapitre avec ajout d'une image :
+	function recModifWithImg()
+		{
+		    $imageNameChapitre = $_FILES['imageChapitre']['name'];
+	    	$file_extension = strrchr($imageNameChapitre, ".");
+
+	    	$file_tmp_name = $_FILES['imageChapitre']['tmp_name'];
+	    	$imageDestChapitre = 'public/images/' . $imageNameChapitre;
+
+	    	$extensions_autorisees = array(".png", ".PNG", ".jpg", ".JPG", ".jpeg", ".JPEG");
+
+	    	if (in_array($file_extension, $extensions_autorisees)) 
+		    	{
+		    		if (move_uploaded_file($file_tmp_name, $imageDestChapitre)) 
+			    		{
+			    			$idChapitre = $_GET['idChapitre'];
+			    			$numeroChapitre = htmlspecialchars($_POST['numeroChapitre']);
+		                    $titreChapitre = htmlspecialchars($_POST['titreChapitre']);
+		                    $texteChapitre = htmlspecialchars($_POST['texteChapitre']);
+		                    recModifChapter($numeroChapitre, $titreChapitre, $texteChapitre, $imageNameChapitre, $imageDestChapitre, $idChapitre);
+			    		}
+			    		else
+			    			{
+			    				throw new Exception("Une erreur est survenue lors de l'envoi de l'image.");
+			    			}
+		    	}
+		    	else
+	    			{
+	    				recModifWithoutImg();
+	    			}    
+		}
+
+	// Fonction qui configure modification du chapitre sans ajout image :
+	function recModifWithoutImg()
+		{	   
+			$imageNameChapitre = htmlspecialchars($_POST['imgNameChapitre']);
+			$imageDestChapitre = htmlspecialchars($_POST['imgDestChapitre']);
+
+			$idChapitre = $_GET['idChapitre'];
+			$numeroChapitre = htmlspecialchars($_POST['numeroChapitre']);
+			$titreChapitre = htmlspecialchars($_POST['titreChapitre']);
+			$texteChapitre = htmlspecialchars($_POST['texteChapitre']);
+			recModifChapter($numeroChapitre, $titreChapitre, $texteChapitre, $imageNameChapitre, $imageDestChapitre, $idChapitre);	    	
 		}
 
 
@@ -306,11 +320,11 @@ require('model/AdminModifChapManager.php');
 			require 'view/backend/newChapAdminView.php';
 		}
 
-	// Fonction qui redirige vers la page Admin-New-Chapitre :
-	function recNewChapter($idChapitre, $numeroChapitre, $titreChapitre, $texteChapitre)
+	// Fonction qui enregistre le nouveau chapitre et redirige vers la page Admin-New-Chapitre :
+	function recNewChapter($idChapitre, $numeroChapitre, $titreChapitre, $texteChapitre, $imageNameChapitre, $imageDestChapitre)
 		{
 	    	$adminModifChapManager = new AdminModifChapManager();
-			$recNewChapter = $adminModifChapManager->recNewChapterAdmin($idChapitre, $numeroChapitre, $titreChapitre, $texteChapitre);
+			$recNewChapter = $adminModifChapManager->recNewChapterAdmin($idChapitre, $numeroChapitre, $titreChapitre, $texteChapitre, $imageNameChapitre, $imageDestChapitre);
 
 			if (isset($_POST['recInput']))
 				{
@@ -322,6 +336,51 @@ require('model/AdminModifChapManager.php');
 					exit;
 				}
 		}
+
+	// Fonction qui configure l'enregistrement du chapitre avec une image :
+	function recWithImg()
+		{
+		    $imageNameChapitre = $_FILES['imageChapitre']['name'];
+	    	$file_extension = strrchr($imageNameChapitre, ".");
+
+	    	$file_tmp_name = $_FILES['imageChapitre']['tmp_name'];
+	    	$imageDestChapitre = 'public/images/' . $imageNameChapitre;
+
+	    	$extensions_autorisees = array(".png", ".PNG", ".jpg", ".JPG", ".jpeg", ".JPEG");
+
+	    	if (in_array($file_extension, $extensions_autorisees)) 
+		    	{
+		    		if (move_uploaded_file($file_tmp_name, $imageDestChapitre)) 
+			    		{
+			    			$numeroChapitre = htmlspecialchars($_POST['numeroChapitre']);
+		                    $titreChapitre = htmlspecialchars($_POST['titreChapitre']);
+		                    $texteChapitre = htmlspecialchars($_POST['texteChapitre']);
+		                    recNewChapter($idChapitre, $numeroChapitre, $titreChapitre, $texteChapitre, $imageNameChapitre, $imageDestChapitre);
+			    		}
+			    		else
+			    			{
+			    				throw new Exception("Une erreur est survenue lors de l'envoi de l'image.");
+			    			}
+		    	}
+		    	else
+	    			{
+	    				recWithoutImg();
+	    			}    
+		}
+
+	// Fonction qui configure l'enregistrement du chapitre sans image :
+	function recWithoutImg()
+		{	   
+			$imageNameChapitre = null;
+			$imageDestChapitre = null;
+
+			$numeroChapitre = htmlspecialchars($_POST['numeroChapitre']);
+			$titreChapitre = htmlspecialchars($_POST['titreChapitre']);
+			$texteChapitre = htmlspecialchars($_POST['texteChapitre']);
+			recNewChapter($idChapitre, $numeroChapitre, $titreChapitre, $texteChapitre, $imageNameChapitre, $imageDestChapitre);	    	
+		}
+
+
 
 
 

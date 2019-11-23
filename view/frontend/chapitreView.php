@@ -72,7 +72,7 @@
                     <h6><?php echo htmlspecialchars($chapter['titre']); ?></h6>
                     <hr>
                     <?php
-                        echo('<img style="width:80%" src="' . $chapter["content_img"] . '">');
+                        echo('<img style="width:80%" src="' . $chapter["img_dest"] . '">');
                     ?>            
                     <div class="chapContent">
                         <p>

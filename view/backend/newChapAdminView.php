@@ -31,10 +31,10 @@
 
             <!-- ---------- Le Titre ---------- -->
 
-            <div id="dashboardTitle" class="pt-5 pb-3 m-auto">
+            <div id="dashboardTitle" class="pt-5 pb-1 m-auto">
 
                 <h1 class="">Ecriture d'un nouveau chapitre</h1>
-                <p class="col-12 m-auto pb-5">
+                <p class="col-12 m-auto pb-4">
                     L'imagination vient en créant.
                 </p> 
             </div>
@@ -42,14 +42,14 @@
 
             <!-- ---------- Le Formulaire de création ---------- -->
 
-            <form id="formCreationChapter" method="POST" action="index.php?action=RecNewChapter" class="needs-validation" novalidate>
+            <form id="formCreationChapter" method="POST" action="index.php?action=RecNewChapter" class="needs-validation" enctype="multipart/form-data" novalidate>
 
 
                 <!-- ---------- Le Titre ---------- -->
                 <div id="newChapForm" class="col-md-9 col-lg-8 col-xl-6 m-auto">
                     <div class="form-group">
                         <label id="labelNbrChap" for="inputAddress">Numéro du chapitre</label>
-                        <input name="numeroChapitre" type="text" class="form-control" id="inputNbrChap" placeholder="Le numéro de votre chapitre..." required>
+                        <input name="numeroChapitre" type="text" class="form-control" id="inputNbrChap" placeholder="Chapitre 1..." required>
                     </div>
                     <div class="form-group">
                         <label id="labelTitreChap" for="inputAddress">Titre du chapitre</label>
@@ -57,10 +57,11 @@
                     </div>
 
                     <!-- ---------- L'Image ---------- -->
-                    <div id="champDL" class="input-group mb-3">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputfileDL">
-                            <label class="custom-file-label" for="inputfileDL" aria-describedby="inputGroupFileAddon02">Télécharger une image</label>
+                    <div class="form-group">
+                        <label id="labelImageChap" for="inputAddress">Télécharger une image</label>
+                        <input name="imageChapitre" type="file" class="" id="inputImageChap" value="L'image de votre chapitre..." required>
+                        <div id="imgTypesMessage" class="contenair mt-3">
+                            <p>(Ne seront téléchargées que les images de types: .png, .PNG, .jpg, .JPG, .jpeg, .JPEG)</p>
                         </div>
                     </div>
                 </div>      
@@ -83,9 +84,7 @@
                                     <!-- ---------- Le Texte ---------- -->
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <textarea name="texteChapitre" id="newChapTextArea" class="form-control" aria-label="With textarea" required>
-                                                Il n'y a plus qu'à s'y mettre !
-                                            </textarea>
+                                            <textarea name="texteChapitre" id="newChapTextArea" class="form-control" aria-label="With textarea" placeholder="Il n'y a plus qu'à s'y mettre !" required></textarea>
                                         </div>
                                     </div>
                                 </p>
