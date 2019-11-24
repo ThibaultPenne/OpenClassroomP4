@@ -283,7 +283,7 @@ try // On essaie de faire des choses..
                     }
                 elseif ($_GET['action'] == 'RecModifChapter') 
                     {
-                        if(!empty($_POST['titreChapitre']) AND !empty($_POST['texteChapitre']))
+                        if(!empty($_POST['titreChapitre']) AND !empty($_POST['numeroChapitre']))
                             {
                                 connexionForced();
                                 recModifWithImg();    

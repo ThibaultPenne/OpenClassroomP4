@@ -79,12 +79,10 @@
                         <div class="card col-sm-12 col-md-11 col-lg-11 col-xl-11 m-auto">  
                             <div class="card-body">
                                 <p class="card-text">
-                                    Ici se trouveront tous les composants de l'interface WYSIWYG basée sur TinyMCE
-                                    <br>
                                     <!-- ---------- Le Texte ---------- -->
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <textarea name="texteChapitre" id="newChapTextArea" class="form-control" aria-label="With textarea" placeholder="Il n'y a plus qu'à s'y mettre !" required></textarea>
+                                            <textarea name="texteChapitre" id="newChapTextArea" class="form-control" aria-label="With textarea" required></textarea>
                                         </div>
                                     </div>
                                 </p>

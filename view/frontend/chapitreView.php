@@ -76,7 +76,7 @@
                     ?>            
                     <div class="chapContent">
                         <p>
-                            <?php echo nl2br(htmlspecialchars($chapter['content_text'])); ?>
+                            <?php echo nl2br($chapter['content_text']); ?>
                         </p>
                     </div>   
                 </div>
