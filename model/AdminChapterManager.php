@@ -7,7 +7,7 @@ class AdminChapterManager extends Manager
 
         // Fonction qui recupère tous les 3 derniers chapitres publiés dans 1 tableau (page Admin) :
         public function getChaptersAdmin0()
-            {
+            {   
                 $db = $this->dbConnect();
                 $chaptersAdminLast = $db->query('SELECT id_chapitre, numero, titre, DATE_FORMAT(date_publication, "%e/%m/%Y") AS date_publication_franc FROM chapitres WHERE statut="1" ORDER BY date_publication DESC LIMIT 0, 3');
 

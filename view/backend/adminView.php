@@ -1,3 +1,7 @@
+<?php
+$userTotal = nombresVues();
+$userLive = getUserNbr();
+?>
 <?php $title = 'Tableau de bord'; ?>
 
 
@@ -122,6 +126,25 @@
 
                     <!-- ------------- -->
 
+                    <!-- Row 0 = Le bouton de rafraichissement -->
+                    <div class="row">
+                        <div class="col-7 m-auto">                
+                            <div id="refreshDashBtn" class="card">
+                                <div class="card-body">
+                                    <form action="" method="post">
+                                        <input type="" name="return">
+                                    <button type="submit" class="btn" onclick="window.location.href='index.php?action=Chapitres'">
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        Rafraichir le Tableau de bord
+                                    </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ------------- -->
+
                     <!-- 1ère row = Les Stats Visiteurs -->
                     <!-- Contient 3 colonnes -->
                     <div class="row">
@@ -135,7 +158,9 @@
                                     <div class="row no-gutters">
                                         <div class="col">
                                             <div id="visite1Txt" class="visite-txt">VISITE(S) (live)</div>
-                                            <div id="visite1Nbr" class="visite-nbr">2</div>
+                                            <div id="visite1Nbr" class="visite-nbr">
+                                                <?= $userLive ?>    
+                                            </div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-street-view"></i>
@@ -153,7 +178,7 @@
                                 <div class="card-body">
                                     <div class="row no-gutters">
                                         <div class="col">
-                                            <div id="visite2Txt" class="visite-txt">VISITES (week)</div>
+                                            <div id="visite2Txt" class="visite-txt">VISITES (mois)</div>
                                             <div id="visite2Nbr" class="visite-nbr">19</div>
                                         </div>
                                         <div class="col-auto">
@@ -173,7 +198,7 @@
                                     <div class="row no-gutters">
                                         <div class="col">
                                             <div id="visite3Txt" class="visite-txt">VISITES (total)</div>
-                                            <div id="visite3Nbr" class="visite-nbr">125</div>
+                                            <div id="visite3Nbr" class="visite-nbr"><?= $userTotal ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-user-plus"></i>

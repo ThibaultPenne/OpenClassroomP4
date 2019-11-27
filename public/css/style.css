@@ -60,7 +60,7 @@ body
         margin-top: 15%;
         margin-bottom: 13%;
     }
-    
+
 /* Fin du Test */
 
 /*------------------------------------ - - 
@@ -2302,7 +2302,43 @@ a[data-toggle="collapse"]
         }
 
     
-
+    /* Bouton de rafraichissment du Dashboard */
+    #refreshDashBtn
+        {
+            background-color: #0f1113;
+            margin-bottom: 9%;
+            box-shadow: 10px 10px 13px -13px black!important;
+            transition: all 0.3s ease-out;
+        }
+        #refreshDashBtn:hover
+            {
+                background-color: #171b1d;
+                box-shadow: -10px 10px 13px -13px black!important;
+            }
+        #refreshDashBtn .card-body
+            {
+                text-align: center;
+                padding: 3%;
+            }
+        #refreshDashBtn input
+            {
+                display: none;
+            }
+        #refreshDashBtn button
+            {
+                color: white;
+                background-color: #2d3238;
+                padding: 3%;
+                font-family: 'robotomedium', sans-serif;
+                font-size: 15px;
+                box-shadow: 6px 6px 13px -9px black;
+                transition: all 0.3s ease-out;
+            }
+            #refreshDashBtn button:hover
+                {
+                    background-color: #3c92bb;
+                    box-shadow: 6px 6px 13px -9px black;
+                }
 
     /* 1ère Principale colonne = Les stats */
 
@@ -3140,6 +3176,58 @@ tr .card
         text-align: center;
     }
 
+#tablesAdminContenair .card
+    {
+        background-color: #181819;
+    }
+
+#tablesAdminContenair .card-body 
+    {
+        padding: 0;
+    }
+
+#tablesAdminContenair .card-body .tox-tinymce
+    {
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+    }
+
+.tox:not([dir=rtl]) .tox-statusbar__branding /* Marque TinyMCE */
+    {
+        display: none;
+    }
+    
+#tablesAdminContenair .card-body .tox-toolbar
+    {
+        background-color: #4496C2;
+    }
+
+#tablesAdminContenair .card-body .tox-toolbar button, #tablesAdminContenair .card-body .tox-toolbar .tox-tbtn svg
+    {
+        fill: white!important;
+        color: white!important;
+    }
+
+#tablesAdminContenair .card-body .tox-toolbar .tox-tbtn:hover:not(.tox-tbtn--disabled), #tablesAdminContenair .card-body .tox-toolbar .tox-tbtn--enabled
+    {
+        background: #2d5279;
+    }
+
+#tablesAdminContenair .card-body .tox-statusbar
+    {
+        background: #385869;
+        color: white;
+    }
+
+#tablesAdminContenair .card-body .tox-statusbar__path-item, #tablesAdminContenair .card-body .tox-statusbar__resize-handle svg
+    {
+        font-family: 'robotomedium', sans-serif;
+        letter-spacing: 1px;
+        font-size: 13px;
+        color: white;
+        fill: #a9d2e0;
+    }
 
         /* --------- Responsive --------- */
 

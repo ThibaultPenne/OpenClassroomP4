@@ -8,6 +8,7 @@
 require('controller/ctrl-Authentification.php');
 require('controller/ctrl-Frontend.php');
 require('controller/ctrl-Backend.php');
+require('controller/ctrl-VisitesCount.php');
 require('controller/ctrl-Error.php');
 
 
@@ -19,7 +20,14 @@ try // On essaie de faire des choses..
                 if ($_GET['action'] == 'Chapitres') /* Vérif de l'action */
                     {
                         viewChapters();
-                    }     
+
+                        // Rafraichissment et redirection vers le Dashboard.
+                        if(isset($_GET['return'])) 
+                            {
+                                viewAdmin();
+                            }
+                    }       
+
                 // Page Chapitre :         
                 elseif ($_GET['action'] == 'Chapitre')
                     {
@@ -106,7 +114,7 @@ try // On essaie de faire des choses..
                 elseif ($_GET['action'] == 'Admin') 
                     {
                         connexionForced();
-                        viewAdmin(); 
+                        viewAdmin();
                     } 
                 elseif ($_GET['action'] == 'ConnexionAdmin') 
                     {
@@ -301,6 +309,7 @@ try // On essaie de faire des choses..
         else // aucune action définie : affichage de l'accueil par défaut
             {
                 viewPreviewChaps(); 
+                ajouterVue();
             }
     }        
 

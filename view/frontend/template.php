@@ -3,6 +3,8 @@ if (session_status() === PHP_SESSION_NONE)
     {
         session_start(); // Je l'active.
     }
+
+visitesLive();
 ?>
 <!DOCTYPE html>
 
@@ -90,6 +92,7 @@ if (session_status() === PHP_SESSION_NONE)
         <footer id="theEnd">
             <div id="theEndContenair" class="container">
                 <p>Billet simple pour l'Alaska - JEAN FORTEROCHE - COPYRIGHT © 2019</p>
+                <div><?php echo $sessionDeleteTime;?></div>
             </div>
         </footer> <!-- Fin du footer Contact -->
 
