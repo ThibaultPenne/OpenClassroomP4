@@ -50,7 +50,7 @@ class VisitesCountManager extends Manager
         public function deleteMyIpManager()
             {
                 $db = $this->dbConnect();
-                $deleteMyIp = $db->query('DELETE FROM online WHERE user_ip = "2a01:cb00:212:d400:719c:e072:14f3:3a36"');
+                $deleteMyIp = $db->query('DELETE FROM online WHERE user_ip = "2a01:cb00:212:d400:d46c:291d:4a16:b594"');
 
                 return $deleteMyIp;
             }

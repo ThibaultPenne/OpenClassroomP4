@@ -10,6 +10,7 @@ require('controller/ctrl-Frontend.php');
 require('controller/ctrl-Backend.php');
 require('controller/ctrl-VisitesCount.php');
 require('controller/ctrl-Error.php');
+require('controller/ctrl-Dashboard.php');
 
 
 try // On essaie de faire des choses..

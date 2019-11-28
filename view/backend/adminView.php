@@ -1,6 +1,30 @@
 <?php
-$userTotal = nombresVues();
+
+// Les variables visiteurs.
 $userLive = getUserNbr();
+$userTotal = nombresVues();
+
+// Les variables chapitres.
+$enCoursChapNbr = get_enCoursChapNbr();
+$publishChapNbr = get_publishChapNbr();
+$deleteChapNbr = get_deleteChapNbr();
+$publishChapPct = get_publishChapPct($publishChapNbr);
+$enCoursChapPct = get_enCoursChapPct($enCoursChapNbr);
+
+// Les variables commentaires.
+$enCoursComNbr = get_enCoursComNbr();
+$validComNbr = get_validComNbr();
+$deleteComNbr = get_deleteComNbr();
+$signalComNbr = get_signalComNbr();
+$allComNbr = get_allComNbr();
+$validComPct = get_validComPct($validComNbr, $allComNbr);
+$signalComPct = get_signalComPct($signalComNbr, $allComNbr);
+$deleteComPct = get_deleteComPct($deleteComNbr, $allComNbr);
+$enCoursComPct = get_enCoursComPct($enCoursComNbr, $allComNbr);
+
+// La variable commentaire-visiteur.
+$userCommentPct = ($allComNbr / $userTotal) * 100;
+
 ?>
 <?php $title = 'Tableau de bord'; ?>
 
@@ -70,39 +94,51 @@ $userLive = getUserNbr();
                         </div>
                         <div class="card-body">
                             <h4>
-                                1 chapitre en cours d'écriture
-                                <span class="float-right">1%</span>
+                                <?= $enCoursChapNbr ?> chapitre<?= $enCoursChapNbr > 1 ? 's' : '' ?> en cours d'écriture
+                                <span class="float-right"><?= round($enCoursChapPct) ?> %</span>
                             </h4>
                             <div class="progress mb-4">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 1%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                <?php if ($enCoursChapPct < 100):?>
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: <?= $enCoursChapPct ?>%" aria-valuemin="0" aria-valuemax="100"></div>
+                                <?php else: ?>
+                                <div class="progress-bar bg-success" role="progressbar" style="width: <?= $enCoursChapPct ?>%" aria-valuemin="0" aria-valuemax="100"></div>
+                                <?php endif ?>
+
                             </div>
                             <h4>
-                                4 commentaires en attente de traitement
-                                <span class="float-right">1 %</span>
+                                <?= $enCoursComNbr ?> commentaire<?= $enCoursComNbr > 1 ? 's' : '' ?> en attente de traitement
+                                <span class="float-right"><?= round($enCoursComPct) ?> %</span>
                             </h4>
                             <div class="progress mb-4">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 1%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                <?php if ($enCoursComPct < 100):?>
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: <?= $enCoursComPct ?>%"></div>
+                                <?php else: ?>
+                                <div class="progress-bar bg-success" role="progressbar" style="width: <?= $enCoursComPct ?>%"></div>
+                                <?php endif ?>
+
                             </div>
                             <h4>
-                                Taux des commentaires remontés par des visteurs
-                                <span class="float-right">15 %</span>
-                            </h4>
-                            <div class="comms-progress progress mb-4">
-                            <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <h4>
-                                Taux de suppression des commentaires
-                                <span class="float-right">20 %</span>
-                            </h4>
-                            <div class="comms-progress progress mb-4">
-                                <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <h4>
-                                Taux des visiteurs qui commentent
-                                <span class="float-right">16 %</span>
+                                Taux des visiteurs qui commentent (<?= $allComNbr ?> sur <?= $userTotal ?>)
+                                <span class="float-right"><?= round($userCommentPct) ?> %</span>
                             </h4>
                             <div class="visites-progress progress mb-4">
-                                <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar" role="progressbar" style="width: <?= $userCommentPct ?>%"></div>
+                            </div>
+                            <h4>
+                                Taux des commentaires remontés par des visteurs (<?= $signalComNbr ?> sur <?= $allComNbr ?>)
+                                <span class="float-right"><?= round($signalComPct) ?> %</span>
+                            </h4>
+                            <div class="visites-progress progress mb-4">
+                                <div class="progress-bar" role="progressbar" style="width: <?= $signalComPct ?>%"></div>
+                            </div>
+                            <h4>
+                                Taux de suppression des commentaires (<?= $deleteComNbr ?> sur <?= $allComNbr ?>)
+                                <span class="float-right"><?= round($deleteComPct) ?> %</span>
+                            </h4>
+                            <div class="comms-progress progress mb-4">
+                                <div class="progress-bar" role="progressbar" style="width: <?= $deleteComPct ?>%"></div>
                             </div>
                         </div>
                     </div>               
@@ -157,7 +193,7 @@ $userLive = getUserNbr();
                                 <div class="card-body">
                                     <div class="row no-gutters">
                                         <div class="col">
-                                            <div id="visite1Txt" class="visite-txt">VISITE(S) (live)</div>
+                                            <div id="visite1Txt" class="visite-txt">VISITE<?= $userLive > 1 ? 'S' : '' ?> (live)</div>
                                             <div id="visite1Nbr" class="visite-nbr">
                                                 <?= $userLive ?>    
                                             </div>
@@ -243,11 +279,11 @@ $userLive = getUserNbr();
                                             <div id="card2Txt" class="">Taux de publication</div>
                                             <div id="card2Nbr" class="row no-gutters">
                                                 <div class="col-auto">
-                                                    <div class="mb-0 mr-3">84%</div>
+                                                    <div class="mb-0 mr-3"><?= round($publishChapPct) ?>%</div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar" role="progressbar" style="width: 84%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        <div class="progress-bar" role="progressbar" style="width: <?= $publishChapPct ?>%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -259,7 +295,7 @@ $userLive = getUserNbr();
                             <!-- Color 2 = En cours -->
                             <div id="color2" class="card color-card">
                                 <div class="card-body">
-                                    1 chapitre à traiter
+                                    <?= $enCoursChapNbr ?> chapitre<?= $enCoursChapNbr > 1 ? 's' : '' ?> à traiter
                                     <div class="small-txt">En cours</div>
                                 </div>
                             </div>
@@ -267,7 +303,7 @@ $userLive = getUserNbr();
                             <!-- Color 1 = Validé -->
                             <div id="color1" class="card color-card">
                                 <div class="card-body">
-                                    5 chapitres publiés
+                                    <?= $publishChapNbr ?> chapitre<?= $publishChapNbr > 1 ? 's' : '' ?> publié<?= $publishChapNbr > 1 ? 's' : '' ?>
                                     <div class="small-txt">Sur le Blog</div>
                                 </div>
                             </div>
@@ -275,7 +311,7 @@ $userLive = getUserNbr();
                             <!-- Color 3 = Supprimé -->
                             <div id="color3" class="card color-card">
                                 <div class="card-body">
-                                    0 chapitre(s) supprimé(s)
+                                    <?= $deleteChapNbr ?> chapitre<?= $deleteChapNbr > 1 ? 's' : '' ?> supprimé<?= $deleteChapNbr > 1 ? 's' : '' ?>
                                     <div class="small-txt">Corbeille</div>
                                 </div>
                             </div>
@@ -311,11 +347,11 @@ $userLive = getUserNbr();
                                             <div id="card4Txt" class="">Taux de validation</div>
                                             <div id="card4Nbr" class="row no-gutters">
                                                 <div class="col-auto">
-                                                    <div class="mb-0 mr-3">60%</div>
+                                                    <div class="mb-0 mr-3"><?= round($validComPct) ?>%</div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        <div class="progress-bar" role="progressbar" style="width: <?= $validComPct ?>%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -327,7 +363,7 @@ $userLive = getUserNbr();
                             <!-- Color 5 = En cours -->
                             <div id="color5" class="card color-card">
                                 <div class="card-body">
-                                    4 commentaires à traiter
+                                    <?= $enCoursComNbr ?> commentaire<?= $publishChapNbr > 1 ? 's' : '' ?> à traiter
                                     <div class="small-txt">En cours</div>
                                 </div>
                             </div>
@@ -335,7 +371,7 @@ $userLive = getUserNbr();
                             <!-- Color 4 = Validé -->
                             <div id="color4" class="card color-card">
                                 <div class="card-body">
-                                    12 commentaires validés
+                                    <?= $validComNbr ?> commentaire<?= $validComNbr > 1 ? 's' : '' ?> validé<?= $validComNbr > 1 ? 's' : '' ?>
                                     <div class="small-txt">Sur le Blog</div>
                                 </div>
                             </div> 
@@ -343,7 +379,7 @@ $userLive = getUserNbr();
                             <!-- Color 6 = Supprimé -->
                             <div id="color6" class="card color-card">
                                 <div class="card-body">
-                                    4 commentaires supprimés
+                                    <?= $deleteComNbr ?> commentaire<?= $deleteComNbr > 1 ? 's' : '' ?> supprimé<?= $deleteComNbr > 1 ? 's' : '' ?>
                                     <div class="small-txt">Corbeille</div>
                                 </div>
                             </div>
