@@ -44,7 +44,7 @@
             <!-- ---------    Slide 1 - Introduction    ----------- -->
 
             <figure id="slide1" class="mySlides">
-                <img class="slideshowImg" src="public/images/slide1.png" alt= "...">
+                <img class="slideshowImg" src="public/images/slide1.png" alt= "road">
                 <figcaption>
                     <h2>Billet simple pour l'Alaska</h2>
                     <p>
@@ -56,7 +56,7 @@
             <!-- ---------    Slide 2 - Le Projet    ----------- -->
 
             <figure id="slide2" class="mySlides">
-                <img class="slideshowImg" src="public/images/slide2.png" alt= "...">
+                <img class="slideshowImg" src="public/images/slide2.png" alt= "road forest">
                 <figcaption>
                     <h2>Le Projet</h2>
                     <p>
@@ -90,7 +90,7 @@
             <h2>Jean Forteroche</h2>
             <div id="bioPart1">
                 <h3>A propos</h3>
-                <img src="public/images/jean1.png">
+                <img src="public/images/jean1.png" alt= "Jean Forteroche eye">
                 <p>
                   Portrait original de l'acteur, l'auteur, l'aventurier, le passionné... mais avant tout de l'homme derrière l'histoire.  
                 </p>
@@ -118,7 +118,7 @@
                     </p>
                 </div>
                 <div id="bio2Img" class="col-lg-5">
-                    <img src="public/images/jean2.png" class="img-responsive center-block">
+                    <img src="public/images/jean2.png" class="img-responsive center-block" alt= "Jean Forteroche portrait">
                 </div>
             </div>
         </div>
@@ -142,7 +142,7 @@
             <hr>
             <h2>Les derniers chapitres</h2>
             <div id="apercuPart1">
-                <img src="public/images/lastChapter.png">
+                <img src="public/images/lastChapter.png" alt= "Mountain view">
             </div>
             <div id="apercuPart2">
                 <div id="barreBack" class="row justify-content-md-center">
@@ -154,7 +154,7 @@
                         <div class="chapNbr" onclick="window.location.href='<?= "index.php?action=Chapitre&idChapitre=" . $data["id_chapitre"] ?>'"><?php echo htmlspecialchars($data['numero']); ?>         
                         </div>
                         <h4><?php echo htmlspecialchars($data['titre']); ?></h4>
-                        <p><?php echo substr($data['content_text'], 0, 150) . " ... "; ?></p>
+                        <p><?php echo htmlspecialchars(substr($data['content_text'], 0, 150)) . " ... "; ?></p>
                     </div>
 
                 <?php endwhile; ?> <!-- Fin de la Requête SQL -->

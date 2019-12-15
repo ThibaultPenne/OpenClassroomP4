@@ -51,11 +51,11 @@
                 <!-- ---------- Le Titre ---------- -->
                 <div id="newChapForm" class="col-md-9 col-lg-8 col-xl-6 m-auto">
                     <div class="form-group">
-                        <label id="labelNbrChap" for="inputAddress">Numéro du chapitre</label>
+                        <label id="labelNbrChap" for="inputNbrChap">Numéro du chapitre</label>
                         <input name="numeroChapitre" type="text" class="form-control" id="inputNbrChap" value="<?php echo htmlspecialchars($chaptersAdminModif['numero']); ?>" required>
                     </div>
                     <div class="form-group">
-                        <label id="labelTitreChap" for="inputAddress">Titre du Chapitre</label>
+                        <label id="labelTitreChap" for="inputTitreChap">Titre du Chapitre</label>
                         <input name="titreChapitre" type="text" class="form-control" id="inputTitreChap" value="<?php echo htmlspecialchars($chaptersAdminModif['titre']); ?>">
                     </div>
 
@@ -63,23 +63,23 @@
                     <?php if (!empty($chaptersAdminModif["img_dest"])):?>  
                     <div id="imgModifView" class="form-group">
                         <p>
-                            <?php echo('<img style="width:80%" src="' . $chaptersAdminModif["img_dest"] . '">'); ?>        
+                            <?php echo('<img style="width:80%" alt="..." src="' . $chaptersAdminModif["img_dest"] . '">'); ?>        
                         </p>
                         <div class="form-group">
-                            <label id="labelNameDestChap" for="inputAddress">Nom et adresse de l'image</label>
+                            <label id="labelNameDestChap" for="imgNameChapitre">Nom et adresse de l'image</label>
                             <input name="imgNameChapitre" type="text" class="form-control" id="imgNameChapitre" value="<?php echo htmlspecialchars($chaptersAdminModif['img_name']); ?>" readonly>
                             <input name="imgDestChapitre" type="text" class="form-control mt-2" id="imgDestChapitre" value="<?php echo htmlspecialchars($chaptersAdminModif['img_dest']); ?>" readonly>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label id="labelImageChap" for="inputAddress">Remplacer l'image</label>
-                        <input name="imageChapitre" type="file" class="" id="inputImageChap" value="<?php echo($chaptersAdminModif['img_name']); ?>" required>
+                        <label id="labelImageChap" for="inputImageChap">Remplacer l'image</label>
+                        <input name="imageChapitre" type="file" class="" id="inputImageChap" required>
                     </div>
                     
                     <?php else: ?>
                     <div class="form-group">
-                        <label id="labelImageChap" for="inputAddress">Télécharger une image</label>
-                        <input name="imageChapitre" type="file" class="" id="inputImageChap" value="<?php echo($chaptersAdminModif['img_name']); ?>" required>
+                        <label id="labelImageChap" for="inputImageChap">Télécharger une image</label>
+                        <input name="imageChapitre" type="file" class="" id="inputImageChap" required>
                     </div>
                     <?php endif; ?>
                     <div id="imgTypesMessage" class="contenair mt-3">
@@ -99,16 +99,14 @@
 
                         <div class="card col-sm-12 col-md-11 col-lg-11 col-xl-11 m-auto">  
                             <div class="card-body">
-                                <p class="card-text">
-                                    <!-- ---------- Le Texte ---------- -->
-                                    <div class="form-group">
-                                        <div class="input-group">  
-                                        <textarea name="texteChapitre" id="newChapTextArea" class="form-control" aria-label="With textarea" placeholder="Il n'y a plus qu'à s'y mettre !">
-<?php echo nl2br($chaptersAdminModif['content_text']); ?>
-                                        </textarea>
-                                        </div>
+                                <!-- ---------- Le Texte ---------- -->
+                                <div class="form-group">
+                                    <div class="input-group">  
+                                    <textarea name="texteChapitre" id="newChapTextArea" class="form-control" aria-label="With textarea" placeholder="Il n'y a plus qu'à s'y mettre !">
+<?php echo nl2br(htmlspecialchars($chaptersAdminModif['content_text'])); ?>
+                                    </textarea>
                                     </div>
-                                </p>
+                                </div>
                             </div>
                         </div>
 
@@ -116,15 +114,15 @@
 
 
                         <div class="row menu-traitement py-4"> 
-                            <button class="mx-4 my-1 btn btn-primary tables-admin-btns" type="button">
+                            <div class="mx-4 my-1 btn btn-primary tables-admin-btns">
                                 <input name="recInput" type="submit" value="Enregistrer"/>
-                            </button>
-                            <button class="mx-4 my-1 btn btn-success tables-admin-btns" type="button">
+                            </div>
+                            <div class="mx-4 my-1 btn btn-success tables-admin-btns">
                                 <input name="publishInput" type="submit" value="Publier"/>
-                            </button>
-                            <button class="mx-4 my-1 btn btn-danger tables-admin-btns" type="button">
+                            </div>
+                            <div class="mx-4 my-1 btn btn-danger tables-admin-btns">
                                 <input name="deleteInput" type="submit" value="Supprimer"/>
-                            </button>
+                            </div>
                         </div>
 
                         <!-- ----------------------------------- -->

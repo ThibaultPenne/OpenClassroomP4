@@ -34,9 +34,6 @@ require('model/VisitesCountManager.php');
 		}
 
 
-	/* ------------ Visites du Mois ------------ */
-
-
 
 	/* ------------ Visites Live ------------ */
 

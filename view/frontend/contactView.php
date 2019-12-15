@@ -72,32 +72,32 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="nom">Nom</label>
-                    <input name="nom" type="text" class="form-control" id="inputNom" placeholder="Nom" required>
+                    <input name="nom" type="text" class="form-control" id="nom" placeholder="Nom" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="prenom">Prénom</label>
-                    <input name="prenom" type="text" class="form-control" id="inputPrenom" placeholder="Prénom" required>
+                    <input name="prenom" type="text" class="form-control" id="prenom" placeholder="Prénom" required>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="email">Email</label>
-                <input name="email" type="email" class="form-control" id="inputEmail" placeholder="exemple@exemple.com" required>
+                <label for="emailForm">Email</label>
+                <input name="emailForm" type="email" class="form-control" id="emailForm" placeholder="exemple@exemple.com" required>
             </div>
 
             <div class="form-group">
                 <label for="titreMessage">Titre du message</label>
-                <input name="titreMessage" type="text" class="form-control" id="inputAddress2" placeholder="Auteur, chapitre, avis personnel, etc..." required>
+                <input name="titreMessage" type="text" class="form-control" id="titreMessage" placeholder="Auteur, chapitre, avis personnel, etc..." required>
             </div>
 
             <div class="form-group">
                 <label for="message">Votre message</label>
-                <textarea name="message" id="contactTextarea" class="form-control" aria-label="With textarea" required></textarea>
+                <textarea name="message" id="message" class="form-control" aria-label="With textarea" required></textarea>
             </div>
 
             <div class="form-group">
                 <div class="form-check">
-                    <input name="rgpd" class="form-check-input" type="checkbox" id="gridCheck" required>
+                    <input name="rgpd" class="form-check-input" type="checkbox" id="rgpd" required>
                     <label class="form-check-label" for="rgpd">
                         Je consens au traitement de mes données personnelles par Jean Forteroche, dans le but de recevoir une réponse par e-mail (selon le RGPD).
                     </label>

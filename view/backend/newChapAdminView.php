@@ -48,18 +48,18 @@
                 <!-- ---------- Le Titre ---------- -->
                 <div id="newChapForm" class="col-md-9 col-lg-8 col-xl-6 m-auto">
                     <div class="form-group">
-                        <label id="labelNbrChap" for="inputAddress">Numéro du chapitre</label>
+                        <label id="labelNbrChap" for="inputNbrChap">Numéro du chapitre</label>
                         <input name="numeroChapitre" type="text" class="form-control" id="inputNbrChap" placeholder="Chapitre 1..." required>
                     </div>
                     <div class="form-group">
-                        <label id="labelTitreChap" for="inputAddress">Titre du chapitre</label>
+                        <label id="labelTitreChap" for="inputTitreChap">Titre du chapitre</label>
                         <input name="titreChapitre" type="text" class="form-control" id="inputTitreChap" placeholder="Le titre de votre chapitre..." required>
                     </div>
 
                     <!-- ---------- L'Image ---------- -->
                     <div class="form-group">
-                        <label id="labelImageChap" for="inputAddress">Télécharger une image</label>
-                        <input name="imageChapitre" type="file" class="" id="inputImageChap" value="L'image de votre chapitre..." required>
+                        <label id="labelImageChap" for="inputImageChap">Télécharger une image</label>
+                        <input name="imageChapitre" type="file" id="inputImageChap" required>
                         <div id="imgTypesMessage" class="contenair mt-3">
                             <p>(Ne seront téléchargées que les images de types: .png, .PNG, .jpg, .JPG, .jpeg, .JPEG)</p>
                         </div>
@@ -78,26 +78,24 @@
 
                         <div class="card col-sm-12 col-md-11 col-lg-11 col-xl-11 m-auto">  
                             <div class="card-body">
-                                <p class="card-text">
-                                    <!-- ---------- Le Texte ---------- -->
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <textarea name="texteChapitre" id="newChapTextArea" class="form-control" aria-label="With textarea" required></textarea>
-                                        </div>
+                                <!-- ---------- Le Texte ---------- -->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <textarea name="texteChapitre" id="newChapTextArea" class="form-control" aria-label="With textarea" required></textarea>
                                     </div>
-                                </p>
+                                </div>
                             </div>
                         </div>
 
                         <!-- ------------- Boutons du nouveau Chapitre -------------- -->
 
                         <div class="row menu-traitement py-4">    
-                            <button class="mx-4 my-1 btn btn-primary tables-admin-btns" type="button">
+                            <div class="mx-4 my-1 btn btn-primary tables-admin-btns">
                                 <input name="recInput" type="submit" value="Enregistrer"/>
-                            </button>
-                            <button class="mx-4 my-1 btn btn-danger tables-admin-btns" type="button">
+                            </div>
+                            <div class="mx-4 my-1 btn btn-danger tables-admin-btns">
                                 <input name="byeInput" type="submit" value="Annuler"/>
-                            </button>
+                            </div>
                         </div>
 
                         <!-- ----------------------------------- -->

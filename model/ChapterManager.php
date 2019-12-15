@@ -36,7 +36,7 @@ class ChapterManager extends Manager
         public function getChapter($idChapitre)
             {
                 $db = $this->dbConnect();
-                $chapter = $db->prepare('SELECT id_chapitre, numero, titre, content_text, img_dest, date_publication, DATE_FORMAT(date_publication, "%e-%m-%Y") AS date_publication_fra FROM chapitres WHERE id_chapitre = ?');
+                $chapter = $db->prepare('SELECT id_chapitre, numero, titre, content_text, img_dest, date_publication, DATE_FORMAT(date_publication, "%e-%m-%Y") AS date_publication_fra FROM chapitres WHERE id_chapitre = ? AND statut="1"');
                 $chapter->execute(array($idChapitre));
                 if ($chapter->rowCount() == 1)
                     return $chapter->fetch();  // Accès à la première ligne de résultat

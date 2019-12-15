@@ -1,9 +1,4 @@
-<?php 
-if (session_status() === PHP_SESSION_NONE) 
-    {
-        session_start(); // Je l'active.
-    }
-
+<?php
 visitesLive();
 ?>
 <!DOCTYPE html>
@@ -50,30 +45,25 @@ visitesLive();
                         <?= $menu_navbar ?> <!-- Variable de la Navbar : Acceuil / Chapitres / Contact -->
 
                         <!-- Si cette fonction est true (connecté), alors lien direct : -->
-                        <?php if(connectingSession()) : ?>
+                        <?php if(connectingSession()): ?>
                             <li id="decoLinkLi" class="nav-item">
                                 <a id="decoLink" class="nav-link" href="index.php?action=Admin">Jean F. Admin</a>
                             </li>
-
-                        <!-- Sinon, formulaire de connexion : -->
                         <?php else: ?>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>                    
-                            <form action="index.php?action=ConnexionAdmin" method="post" id="menuDropDownNav" class="dropdown-menu p-3 needs-validation" novalidate>
-                                <div class="form-group">
-                                    <label for="email">Adresse Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="email@exemple.com" name="email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Mot de passe</label>
-                                    <input type="password" class="form-control" id="password" placeholder="********" name="password" required>
-                                </div>
-
-                                <input id="connexionBtn" type="submit" class="btn mb-2" name="valider" value="Se connecter"/>
-                                
-                            </form>           
-                        </li>
-
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
+                                <form action="index.php?action=ConnexionAdmin" method="post" id="menuDropDownNav" class="dropdown-menu p-3 needs-validation" novalidate>
+                                    <div class="form-group">
+                                        <label for="email">Adresse Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="email@exemple.com" name="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Mot de passe</label>
+                                        <input type="password" class="form-control" id="password" placeholder="********" name="password" required>
+                                    </div>
+                                    <input id="connexionBtn" type="submit" class="btn mb-2" name="valider" value="Se connecter"/>
+                                </form>           
+                            </li>
                         <?php endif; ?>
 
                     </ul>
@@ -92,7 +82,6 @@ visitesLive();
         <footer id="theEnd">
             <div id="theEndContenair" class="container">
                 <p>Billet simple pour l'Alaska - JEAN FORTEROCHE - COPYRIGHT © 2019</p>
-                <div><?php echo $sessionDeleteTime;?></div>
             </div>
         </footer> <!-- Fin du footer Contact -->
 

@@ -20,6 +20,7 @@ try // On essaie de faire des choses..
                 // Page Chapitres :
                 if ($_GET['action'] == 'Chapitres') /* Vérif de l'action */
                     {
+                        connectingSession();
                         viewChapters();
 
                         // Rafraichissment et redirection vers le Dashboard.
@@ -37,6 +38,7 @@ try // On essaie de faire des choses..
                                 $idChapitre = intval($_GET['idChapitre']); // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
                                 if ($idChapitre != 0)
                                     {
+                                      connectingSession();
                                       viewChapter($idChapitre);
                                     }
                                     else
@@ -53,6 +55,7 @@ try // On essaie de faire des choses..
                     {
                         if(isset($_GET['idComment']) && $_GET['idComment'] > 0) 
                             {
+                                connectingSession();
                                 signalComment($_GET['idChapitre'], $_GET['idComment'], $_POST['signal']);
                             }
                             else 
@@ -84,6 +87,7 @@ try // On essaie de faire des choses..
                     {
                         if (isset($_GET['id']) && $_GET['id'] > 0) 
                             {
+                                connectingSession();
                                 addComment($_GET['id'], $_POST['pseudo'], $_POST['comment']);
                             }
                             else 
@@ -94,13 +98,15 @@ try // On essaie de faire des choses..
                 // Page Contact :
                 elseif ($_GET['action'] == 'Contact')
                     {         
+                        connectingSession();
                         viewContact();
-                    }  
+                    }
                 elseif ($_GET['action'] == 'Envoi-message')
                     {                 
                         if (isset($_POST['nom']))
                             {
-                                sendContact($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['titreMessage'], $_POST['message'], $_POST['rgpd']);
+                                connectingSession();
+                                sendContact($_POST['nom'], $_POST['prenom'], $_POST['emailForm'], $_POST['titreMessage'], $_POST['message'], $_POST['rgpd']);
                             }  
                             else
                                 {
@@ -109,6 +115,7 @@ try // On essaie de faire des choses..
                     } 
                 elseif ($_GET['action'] == 'Nouveau-formulaire')
                     {
+                        connectingSession();
                         deleteContact();
                     } 
                 // Page Admin Home :
@@ -309,6 +316,7 @@ try // On essaie de faire des choses..
             }           
         else // aucune action définie : affichage de l'accueil par défaut
             {
+                connectingSession();
                 viewPreviewChaps(); 
                 ajouterVue();
             }

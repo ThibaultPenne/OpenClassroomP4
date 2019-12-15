@@ -55,13 +55,13 @@
 
                     <div class="row menu-traitement m-auto">
                         <button class="mx-4 my-1 btn btn-warning tables-admin-btns" type="button" data-toggle="collapse" data-target="#collapseEnCours" aria-expanded="false" aria-controls="collapseEnCours">
-                            <input value="En cours"/>
+                            En cours
                         </button>
                         <button class="mx-4 my-1 btn btn-success tables-admin-btns" type="button" data-toggle="collapse" data-target="#collapseEnLigne" aria-expanded="false" aria-controls="collapseEnLigne">
-                            <input value="Publiés"/>
+                            Publiés
                         </button>
-                        <button class="mx-4 my-1 btn btn-danger tables-admin-btns" type="button" data-toggle="collapse" data-target="#collapseCorbeille" aria-expanded="false" aria-controls="collapseExample">
-                            <input value="Corbeille"/>
+                        <button class="mx-4 my-1 btn btn-danger tables-admin-btns" type="button" data-toggle="collapse" data-target="#collapseCorbeille" aria-expanded="false" aria-controls="collapseCorbeille">
+                            Corbeille
                         </button>
                     </div>
 
@@ -87,7 +87,7 @@
                                     <!-- Requête SQL : Récupération de tous les chapitres -->
                                     <?php while ($data = $chaptersAdminEnCours->fetch()): ?>  
 
-                                    <tr id="ch02" class="tabGroup1">
+                                    <tr class="tabGroup1">
                                         <th scope="row"><?php echo htmlspecialchars($data['id_chapitre']); ?></th>
                                         <td class="colByeBye"><?php echo htmlspecialchars($data['numero']); ?></td>  
                                         <td><?php echo htmlspecialchars($data['titre']); ?></td>
@@ -146,7 +146,7 @@
                                     <!-- Requête SQL : Récupération de tous les chapitres -->
                                     <?php while ($data = $chaptersAdminPublie->fetch()): ?>  
 
-                                    <tr id="ch04" class="tabGroup1">
+                                    <tr class="tabGroup1">
                                         <th scope="row"><?php echo htmlspecialchars($data['id_chapitre']); ?></th>
                                         <td class="colByeBye"><?php echo htmlspecialchars($data['numero']); ?></td>  
                                         <td><?php echo htmlspecialchars($data['titre']); ?></td>
@@ -188,7 +188,7 @@
                     <div class="collapse colapse-forms" id="collapseCorbeille">
                         <div class="card-body">
                             <span class="badge badge-danger mb-2">Chapitres supprimés</span>
-                            <span id="deleteAllBtn" type="button" class="badge badge-danger ml-3 mb-2">
+                            <span id="deleteAllBtn" class="badge badge-danger ml-3 mb-2">
                                 
                                 <a class="" href="<?= "index.php?action=DeleteChaptersTab" ?>">Vider tout le tableau</a>
                             </span>
@@ -209,7 +209,7 @@
                                     <!-- Requête SQL : Récupération de tous les chapitres -->
                                     <?php while ($data = $chaptersAdminSupprime->fetch()): ?>  
 
-                                    <tr id="ch06" class="tabGroup1">
+                                    <tr class="tabGroup1">
                                         <th scope="row"><?php echo htmlspecialchars($data['id_chapitre']); ?></th>
                                         <td class="colByeBye"><?php echo htmlspecialchars($data['numero']); ?></td>  
                                         <td><?php echo htmlspecialchars($data['titre']); ?></td>

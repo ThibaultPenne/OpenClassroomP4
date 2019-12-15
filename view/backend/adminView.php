@@ -127,7 +127,7 @@ $userCommentPct = ($allComNbr / $userTotal) * 100;
                             <div class="progress-bar" role="progressbar" style="width: <?= $userCommentPct ?>%"></div>
                             </div>
                             <h4>
-                                Taux des commentaires remontés par des visteurs (<?= $signalComNbr ?> sur <?= $allComNbr ?>)
+                                Taux des commentaires signalés par des visteurs (<?= $signalComNbr ?> sur <?= $allComNbr ?>)
                                 <span class="float-right"><?= round($signalComPct) ?> %</span>
                             </h4>
                             <div class="visites-progress progress mb-4">
@@ -162,25 +162,6 @@ $userCommentPct = ($allComNbr / $userTotal) * 100;
 
                     <!-- ------------- -->
 
-                    <!-- Row 0 = Le bouton de rafraichissement -->
-                    <div class="row">
-                        <div class="col-7 m-auto">                
-                            <div id="refreshDashBtn" class="card">
-                                <div class="card-body">
-                                    <form action="" method="post">
-                                        <input type="" name="return">
-                                    <button type="submit" class="btn" onclick="window.location.href='index.php?action=Chapitres'">
-                                        <i class="fas fa-arrow-alt-circle-right"></i>
-                                        Rafraichir le Tableau de bord
-                                    </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ------------- -->
-
                     <!-- 1ère row = Les Stats Visiteurs -->
                     <!-- Contient 3 colonnes -->
                     <div class="row">
@@ -188,7 +169,23 @@ $userCommentPct = ($allComNbr / $userTotal) * 100;
                         <!-- ----- -->
 
                         <!-- Colonne 1 = Visite 1 -->   
-                        <div class="col-xl-4 col-md-4 mb-4">                
+                        <div class="col-xl-4 col-md-4 mb-4">  
+                            <div id="refreshDashBtn" class="card">
+                                <div class="card-body">
+                                    <form method="post">
+                                        <button type="submit" class="btn" onclick="window.location.href='index.php?action=Chapitres'">
+                                            <i class="fas fa-arrow-alt-circle-right"></i>
+                                            Rafraichir le Tableau de bord
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ----- -->
+
+                        <!-- Colonne 2 = Visite 2 -->   
+                        <div class="col-xl-4 col-md-4 mb-4">                     
                             <div id="visite1" class="card">
                                 <div class="card-body">
                                     <div class="row no-gutters">
@@ -200,25 +197,6 @@ $userCommentPct = ($allComNbr / $userTotal) * 100;
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-street-view"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- ----- -->
-
-                        <!-- Colonne 2 = Visite 2 -->   
-                        <div class="col-xl-4 col-md-4 mb-4">                     
-                            <div id="visite2" class="card">
-                                <div class="card-body">
-                                    <div class="row no-gutters">
-                                        <div class="col">
-                                            <div id="visite2Txt" class="visite-txt">VISITES (mois)</div>
-                                            <div id="visite2Nbr" class="visite-nbr">19</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-user-plus"></i>
                                         </div>
                                     </div>
                                 </div>

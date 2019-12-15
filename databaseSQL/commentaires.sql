@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.6.6deb4
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:8889
--- Généré le :  jeu. 21 nov. 2019 à 19:05
--- Version du serveur :  5.7.26
--- Version de PHP :  7.3.7
+-- Client :  db5000212522.hosting-data.io
+-- Généré le :  Dim 15 Décembre 2019 à 03:25
+-- Version du serveur :  5.7.28-log
+-- Version de PHP :  7.0.33-0+deb9u6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `test`
+-- Base de données :  `dbs207376`
 --
 
 -- --------------------------------------------------------
@@ -34,10 +34,10 @@ CREATE TABLE `commentaires` (
   `date_commentaire` datetime NOT NULL,
   `signal_com` varchar(3) NOT NULL DEFAULT 'non',
   `statut` int(11) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `commentaires`
+-- Contenu de la table `commentaires`
 --
 
 INSERT INTO `commentaires` (`id_comment`, `id_chapitre`, `pseudo`, `commentaire`, `date_commentaire`, `signal_com`, `statut`) VALUES
@@ -58,12 +58,12 @@ INSERT INTO `commentaires` (`id_comment`, `id_chapitre`, `pseudo`, `commentaire`
 (15, 4, 'Asta', 'Jean Forteroche épouse moi !', '2019-09-28 19:10:39', 'non', 1),
 (16, 4, 'Gros fessier', 'Je me sens seule dans mon lit ce soir, rejoignez moi sur seuledansmonlit.com ...', '2019-09-29 02:20:07', 'oui', 2),
 (17, 5, 'Kevin', 'Euu encore une histoire de merde écrite par un conard de merde...', '2019-10-04 19:14:32', 'oui', 0),
-(18, 5, 'Senku', '5e chapitre, toujours fidèle au poste et ce n\'est pas prêt de changer ! Incroyable, merci pour ce chapitre !', '2019-10-04 20:32:11', 'non', 0),
+(18, 5, 'Senku', '5e chapitre, toujours fidèle au poste et ce n\'est pas prêt de changer ! Incroyable, merci pour ce chapitre !', '2019-10-04 20:32:11', 'oui', 0),
 (19, 5, 'Byakuya', 'Je reste pour par par un peu plus reservé que Senku mais j\'attend la suite avec impatience.', '2019-10-05 10:30:49', 'non', 0),
 (20, 5, 'Senku', 'Hahaaaa ne t\'inquiète pas Byakuya, on va surement bientôt comprendre le pourquoi du comment !', '2019-10-05 15:10:07', 'non', 0);
 
 --
--- Index pour les tables déchargées
+-- Index pour les tables exportées
 --
 
 --
@@ -73,15 +73,14 @@ ALTER TABLE `commentaires`
   ADD PRIMARY KEY (`id_comment`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT pour les tables exportées
 --
 
 --
 -- AUTO_INCREMENT pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
-  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
-
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

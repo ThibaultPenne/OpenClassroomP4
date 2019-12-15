@@ -23,36 +23,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `contact`
+-- Structure de la table `online`
 --
 
-CREATE TABLE `contact` (
+CREATE TABLE `online` (
   `id` int(11) NOT NULL,
-  `nom` varchar(90) NOT NULL,
-  `prenom` varchar(90) NOT NULL,
-  `email` varchar(90) NOT NULL,
-  `date_message` datetime DEFAULT NULL,
-  `titre_message` varchar(90) DEFAULT NULL,
-  `message` text,
-  `rgpd` varchar(3) DEFAULT 'off'
+  `time_sess` int(11) NOT NULL,
+  `user_ip` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Contenu de la table `contact`
---
-
-INSERT INTO `contact` (`id`, `nom`, `prenom`, `email`, `date_message`, `titre_message`, `message`, `rgpd`) VALUES
-(1, 'Forteroche', 'Jean', 'jeanforteroche@contact.com', NULL, NULL, NULL, 'off'),
-(2, 'Penne', 'Thibault', 'thibault.penne@gmail.com', '2019-10-01 00:00:00', 'Publication ', 'Bonjour, je voulais savoir si vous comptiez publié ce livre en librairie ?', 'on');
 
 --
 -- Index pour les tables exportées
 --
 
 --
--- Index pour la table `contact`
+-- Index pour la table `online`
 --
-ALTER TABLE `contact`
+ALTER TABLE `online`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -60,10 +47,10 @@ ALTER TABLE `contact`
 --
 
 --
--- AUTO_INCREMENT pour la table `contact`
+-- AUTO_INCREMENT pour la table `online`
 --
-ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+ALTER TABLE `online`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=359;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

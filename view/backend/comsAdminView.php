@@ -51,14 +51,14 @@
                     <!-- ------------- Menu des Tableaux -------------- -->
 
                     <div class="row menu-traitement m-auto">
-                        <button class="mx-4 my-1 btn btn-warning tables-admin-btns" type="button" data-toggle="collapse" data-target="#collapseEnCours" aria-expanded="false" aria-controls="collapseEnCours">
-                            <input value="En attente"/>
+                        <button class="mx-4 my-1 btn btn-warning tables-admin-btns" type="button" data-toggle="collapse" data-target="#collapseEnCours" aria-expanded="false">
+                            En attente
                         </button>
-                        <button class="mx-4 my-1 btn btn-success tables-admin-btns" type="button" data-toggle="collapse" data-target="#collapseEnLigne" aria-expanded="false" aria-controls="collapseEnLigne">
-                            <input value="Validés"/>
+                        <button class="mx-4 my-1 btn btn-success tables-admin-btns" type="button" data-toggle="collapse" data-target="#collapseEnLigne" aria-expanded="false">
+                            Validés
                         </button>
-                        <button class="mx-4 my-1 btn btn-danger tables-admin-btns" type="button" data-toggle="collapse" data-target="#collapseCorbeille" aria-expanded="false" aria-controls="collapseExample">
-                            <input value="Corbeille"/>
+                        <button class="mx-4 my-1 btn btn-danger tables-admin-btns" type="button" data-toggle="collapse" data-target="#collapseCorbeille" aria-expanded="false">
+                            Corbeille
                         </button>
                     </div>
 
@@ -85,7 +85,7 @@
                                     <!-- Requête SQL : Récupération de tous les chapitres -->
                                     <?php while ($data = $commentsAdminEnCours->fetch()): ?>  
 
-                                    <tr id="co10" class="tabGroup1 tabGroups" data-toggle="collapse" data-target="#demo10" data-parent="#table001">
+                                    <tr class="tabGroup1 tabGroups" data-toggle="collapse" data-target=".demo10">
                                         <th scope="row"><?php echo htmlspecialchars($data['id_comment']); ?></th>    
                                         <td><?php echo htmlspecialchars($data['id_chapitre']); ?></td>
                                         <td class="colByeBye3"><?php echo htmlspecialchars($data['pseudo']); ?></td>
@@ -108,8 +108,8 @@
                                         </td>                                        
                                     </tr>
                                     <!-- Ligne cachée -->
-                                    <tr id="demo10" class="collapse"> 
-                                        <td colspan="7" class="hiddenRow demos">
+                                    <tr class="collapse demo10"> 
+                                        <td colspan="6" class="hiddenRow demos">
                                             <div class="card">
                                                 <?php echo nl2br(htmlspecialchars($data['commentaire'])); ?>
                                             </div>
@@ -153,7 +153,7 @@
                                     <!-- Requête SQL : Récupération de tous les chapitres -->
                                     <?php while ($data = $commentsAdminValide->fetch()): ?>  
 
-                                    <tr id="co12" class="tabGroup1 tabGroups" data-toggle="collapse" data-target="#demo12" data-parent="#table001">
+                                    <tr class="tabGroup1 tabGroups" data-toggle="collapse" data-target=".demo12">
                                         <th scope="row"><?php echo htmlspecialchars($data['id_comment']); ?></th>    
                                         <td><?php echo htmlspecialchars($data['id_chapitre']); ?></td>
                                         <td class="colByeBye3"><?php echo htmlspecialchars($data['pseudo']); ?></td>
@@ -175,8 +175,8 @@
                                         </td>                                        
                                     </tr>
                                     <!-- Ligne cachée -->
-                                    <tr id="demo12" class="collapse"> 
-                                        <td colspan="7" class="hiddenRow demos">
+                                    <tr class="collapse demo12"> 
+                                        <td colspan="6" class="hiddenRow demos">
                                             <div class="card">
                                                 <?php echo nl2br(htmlspecialchars($data['commentaire'])); ?>
                                             </div>
@@ -202,7 +202,7 @@
                     <div class="collapse colapse-forms" id="collapseCorbeille">
                         <div class="card-body">
                             <span class="badge badge-danger mb-2">Commentaires supprimés</span>
-                            <span id="deleteAllBtn" type="button" class="badge badge-danger ml-3 mb-2">
+                            <span id="deleteAllBtn" class="badge badge-danger ml-3 mb-2">
                                 <a class="" href="<?= "index.php?action=DeleteCommentTab" ?>">Vider tout le tableau</a>
                             </span>
                             <table id="table003" class="table">
@@ -223,7 +223,7 @@
                                     <!-- Requête SQL : Récupération de tous les chapitres -->
                                     <?php while ($data = $commentsAdminSupprime->fetch()): ?>  
 
-                                    <tr id="co20" class="tabGroup1 tabGroups" data-toggle="collapse" data-target="#demo20" data-parent="#table001">
+                                    <tr class="tabGroup1 tabGroups" data-toggle="collapse" data-target=".demo20">
                                         <th scope="row"><?php echo htmlspecialchars($data['id_comment']); ?></th>    
                                         <td><?php echo htmlspecialchars($data['id_chapitre']); ?></td>
                                         <td class="colByeBye3"><?php echo htmlspecialchars($data['pseudo']); ?></td>
@@ -245,8 +245,8 @@
                                         </td>                                        
                                     </tr>
                                     <!-- Ligne cachée -->
-                                    <tr id="demo20" class="collapse"> 
-                                        <td colspan="7" class="hiddenRow demos">
+                                    <tr class="collapse demo20"> 
+                                        <td colspan="6" class="hiddenRow demos">
                                             <div class="card">
                                                 <?php echo nl2br(htmlspecialchars($data['commentaire'])); ?>
                                             </div>
