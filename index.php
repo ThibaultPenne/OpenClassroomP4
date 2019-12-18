@@ -20,7 +20,7 @@ try // On essaie de faire des choses..
                 // Page Chapitres :
                 if ($_GET['action'] == 'Chapitres') /* Vérif de l'action */
                     {
-                        connectingSession();
+                        connectingSession(); // Active la session si connecté
                         viewChapters();
 
                         // Rafraichissment et redirection vers le Dashboard.
@@ -65,9 +65,9 @@ try // On essaie de faire des choses..
                     }
                 elseif ($_GET['action'] == 'RetourChap')
                     {
-                        if (isset($_GET['idChapitre'])) /* Vérif de l'id */
+                        if (isset($_GET['idChapitre'])) 
                             {
-                                $idChapitre = intval($_GET['idChapitre']); // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
+                                $idChapitre = intval($_GET['idChapitre']); 
                                 if ($idChapitre != 0)
                                     {
                                       deleteSignal($idChapitre);
@@ -95,6 +95,7 @@ try // On essaie de faire des choses..
                                     throw new Exception("Identifiant de chapitre non défini dans l'URL après l'ajout du commentaire");
                                 }
                     }
+
                 // Page Contact :
                 elseif ($_GET['action'] == 'Contact')
                     {         
@@ -118,6 +119,7 @@ try // On essaie de faire des choses..
                         connectingSession();
                         deleteContact();
                     } 
+                    
                 // Page Admin Home :
                 elseif ($_GET['action'] == 'Admin') 
                     {

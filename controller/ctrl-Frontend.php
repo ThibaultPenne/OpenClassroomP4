@@ -1,6 +1,7 @@
 <?php
 
-/* Controleur qui gère les fonctions de redirection des pages du Blog et récupère les données de la DB dans les models Frontend (Blog) */
+/* Controleur qui gère les fonctions de redirection des pages du Blog et gère la DB grâce aux models Frontend (Blog) */
+/* Il appele des fonctions situées à l'intérieur d'objets (des fonctions membres) = POO */
 
 
 // Chargement des classes :
@@ -13,8 +14,8 @@ require('model/ContactManager.php');
 	// Fonction qui récupère les données SQL puis redirige vers la page Acceuil :
 	function viewPreviewChaps()
 		{
-		    $chapterManager = new ChapterManager();
-		    $previewChaps = $chapterManager->getPreviewChaps();
+		    $chapterManager = new ChapterManager(); // Création d'un objet à partir d'une classe (model)
+		    $previewChaps = $chapterManager->getPreviewChaps(); // Appel d'une fonction de cet objet
 
 			require 'view/frontend/indexView.php';
 		}
@@ -31,11 +32,11 @@ require('model/ContactManager.php');
 	// Fonction qui récupère les données SQL puis redirige vers la page Chapitre (+ Commentaires) :
 	function viewChapter($idChapitre)
 		{
-		    $signal_com = null; // par défaut, null pour valeur.
-		    // Enregistrement de la valeur du Cookie signalement dans la variable $signal_com :
+		    $signal_com = null; // null = page chap (sinon, page coment signalé)
+		    // Si $_COOKIE['signalement']) n'est pas vide
 			if (!empty($_COOKIE['signalement']))
 			    {
-			        $signal_com = $_COOKIE['signalement'];
+			        $signal_com = $_COOKIE['signalement']; // Enregistrement de la valeur du Cookie signalement dans la variable $signal_com
 			    }   
 
 			$chapterManager = new ChapterManager();
@@ -48,11 +49,11 @@ require('model/ContactManager.php');
 			require 'view/frontend/chapitreView.php';
 		}
 
-	// Fonction qui créele Cookie signalement, enregistre le signal dans la DB puis redirige vers la page Chapitre (en mode signalement validé + Bouton de retour) :
+	// Fonction qui crée le Cookie signalement, enregistre le signal dans la DB puis redirige vers la page Chapitre (en mode signalement validé + Bouton de retour) :
 	function signalComment($idChapitre, $signal)
 		{
-		    setcookie('signalement', 'signalOK'); // Création du Cookie.
-            $signal_com = 'signalOK';// Quand je fais un setcookie, je défini direct la valeur de la variable $signal_com.
+		    setcookie('signalement', 'signalOK'); // Création et configuration du Cookie signalement.
+            $signal_com = 'signalOK'; // La valeur de la variable $signal_com = la valeur du setcookie.
 
             $commentManager = new CommentManager();
 		    $commentSignal = $commentManager->postSignalComment($idChapitre, $signal);
@@ -63,6 +64,7 @@ require('model/ContactManager.php');
 			    }
 			    else 
 				    {
+				        // $_GET['idComment'] à bien été récupéré dans l'url mais je ne l'affiche pas.
 				        header('Location: index.php?action=Chapitre&idChapitre=' . $idChapitre);
 						exit;
 				    }
@@ -90,18 +92,17 @@ require('model/ContactManager.php');
 			    else 
 				    {
 				        viewChapter($idChapitre);
-
 				    }
 		}
 
 	// Fonction qui configure le Cookie utilisateur puis redirige vers la page Contact :
 	function viewContact()
 		{
-		    $prenom = null; // par défaut, null pour valeur.
-		    // Enregistrement de la valeur du Cookie utilisateur dans la variable $prénom :
+		    $prenom = null; // null = page contact (sinon, page message envoyé)
+		    // Si $_COOKIE['utilisateur']) n'est pas vide
 			if (!empty($_COOKIE['utilisateur']))
 			    {
-			        $prenom = $_COOKIE['utilisateur'];
+			        $prenom = $_COOKIE['utilisateur']; // Enregistrement de la valeur du Cookie utilisateur dans la variable $prénom
 			    }   
 
 			require 'view/frontend/contactView.php';
@@ -110,8 +111,8 @@ require('model/ContactManager.php');
 	// Fonction qui crée le Cookie utilisateur, envoi un message, enregistre les données dans la DB puis redirige vers la page Contact (en mode message envoyé + Bouton de retour) :
 	function sendContact($nom, $prenom, $email, $titreMessage, $message, $rgpd)
 		{  
-		    setcookie('utilisateur', $_POST['prenom']); // Création du Cookie.
-            $prenom = $_POST['prenom'];// Quand je fais un setcookie, je défini direct la valeur de la variable $prenom.
+		    setcookie('utilisateur', $_POST['prenom']); // Création et configuration du Cookie utilisateur.
+            $prenom = $_POST['prenom']; // La valeur de la variable $prenom = la valeur du setcookie.
 
 		    $contactManager = new ContactManager();
 		    $affectedLines_message = $contactManager->sendMessage($nom, $prenom, $email, $titreMessage, $message, $rgpd);

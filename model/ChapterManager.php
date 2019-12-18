@@ -2,7 +2,7 @@
 
 require_once('model/Manager.php');
 
-class ChapterManager extends Manager
+class ChapterManager extends Manager // Hérite de la classe Manager.
     {
 
         // Fonction qui recupère les 3 derniers chapitres publiés en apercus (page Accueil) :
@@ -39,7 +39,7 @@ class ChapterManager extends Manager
                 $chapter = $db->prepare('SELECT id_chapitre, numero, titre, content_text, img_dest, date_publication, DATE_FORMAT(date_publication, "%e-%m-%Y") AS date_publication_fra FROM chapitres WHERE id_chapitre = ? AND statut="1"');
                 $chapter->execute(array($idChapitre));
                 if ($chapter->rowCount() == 1)
-                    return $chapter->fetch();  // Accès à la première ligne de résultat
+                    return $chapter->fetch();  // Accès à la première ligne de résultat (fetch = va chercher)
                 else
                     throw new Exception("Aucun chapitre ne correspond à l'identifiant '$idChapitre'");
             }

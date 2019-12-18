@@ -1,24 +1,26 @@
 <?php
 
-/* Controleur qui ... Dashboard DB ... Admin Home. */
+/* Controleur qui gère les stats de la page Admin Home et récupère les données de la DB dans le model DashboardManager */
+/* Il appele des fonctions situées à l'intérieur d'objets (des fonctions membres) = POO */
 
 
-// Chargement des classes :
+
+// Chargement de la classe :
 require('model/DashboardManager.php');
 
 
 
 	/* ------------ Les Chapitres ------------ */
 	
-	// Fonction qui ...
+	// Fonction qui récupère le nombre de chapitres en cours d'écriture :
 	function get_enCoursChapNbr()
 		{
-			$dashboardManager = new DashboardManager();
-			$enCoursChapNbr = $dashboardManager->enCoursChapNbrManager();
+			$dashboardManager = new DashboardManager(); // Création d'un objet à partir d'une classe (model)
+			$enCoursChapNbr = $dashboardManager->enCoursChapNbrManager(); // Appel d'une fonction de cet objet
 			return $enCoursChapNbr;
 		}
 
-	// Fonction qui ...
+	// Fonction qui récupère le nombre de chapitres publiés :
 	function get_publishChapNbr()
 		{
 			$dashboardManager = new DashboardManager();
@@ -26,7 +28,7 @@ require('model/DashboardManager.php');
 			return $publishChapNbr;
 		}
 
-	// Fonction qui ...
+	// Fonction qui récupère le nombre de chapitres supprimés :
 	function get_deleteChapNbr()
 		{
 			$dashboardManager = new DashboardManager();
@@ -34,7 +36,7 @@ require('model/DashboardManager.php');
 			return $deleteChapNbr;
 		}
 
-	// Fonction qui ...
+	// Fonction qui récupère le nombre de tous les chapitres et calcul le % de publication de chapitre :
 	function get_publishChapPct($publishChapNbr)
 		{
 			$dashboardManager = new DashboardManager();
@@ -45,18 +47,21 @@ require('model/DashboardManager.php');
 			return $publishChapPct;
 		}
 
-	// Fonction qui ...
+	// Fonction qui récupère le nombre de tous les chapitres et calcul le % de chapitre restant à publier :
 	function get_enCoursChapPct($enCoursChapNbr)
 		{
 			$dashboardManager = new DashboardManager();
 			$allChapNbr = $dashboardManager->allChapNbrManager();
 
+			// Si au moins 1 chapitre est en cours d'écriture.
 			if ($enCoursChapNbr > 0) 
 				{
+					// 100 - ... pour que quand il n'y a plus de chapitre en cours, on atteigne 100% et non pas 0%.
 					$enCoursChapPct = 100 - (($enCoursChapNbr / $allChapNbr) * 100);
 				}
 				else
 					{
+						// 100 % quand aucun chapitre n'est en cours d'écriture.
 						$enCoursChapPct = 100;
 					}
 
@@ -66,7 +71,7 @@ require('model/DashboardManager.php');
 
 	/* ------------ Les Commentaires ------------ */
 	
-	// Fonction qui ...
+	// Fonction qui récupère le nombre de commentaires en attente de validation :
 	function get_enCoursComNbr()
 		{
 			$dashboardManager = new DashboardManager();
@@ -74,7 +79,7 @@ require('model/DashboardManager.php');
 			return $enCoursComNbr;
 		}
 
-	// Fonction qui ...
+	// Fonction qui récupère le nombre de commentaires validés :
 	function get_validComNbr()
 		{
 			$dashboardManager = new DashboardManager();
@@ -82,7 +87,7 @@ require('model/DashboardManager.php');
 			return $validComNbr;
 		}
 
-	// Fonction qui ...
+	// Fonction qui récupère le nombre de commentaires supprimés :
 	function get_deleteComNbr()
 		{
 			$dashboardManager = new DashboardManager();
@@ -90,7 +95,7 @@ require('model/DashboardManager.php');
 			return $deleteComNbr;
 		}
 
-	// Fonction qui ...
+	// Fonction qui récupère le nombre de commentaires signalés :
 	function get_signalComNbr()
 		{
 			$dashboardManager = new DashboardManager();
@@ -98,7 +103,7 @@ require('model/DashboardManager.php');
 			return $signalComNbr;
 		}
 
-	// Fonction qui ...
+	// Fonction qui récupère le nombre de tous les commentaires :
 	function get_allComNbr()
 		{
 			$dashboardManager = new DashboardManager();
@@ -106,7 +111,7 @@ require('model/DashboardManager.php');
 			return $allComNbr;
 		}
 
-	// Fonction qui ...
+	// Fonction qui calcul le % de commentaires validés :
 	function get_validComPct($validComNbr, $allComNbr)
 		{
 			get_allComNbr();
@@ -116,7 +121,7 @@ require('model/DashboardManager.php');
 			return $validComPct;
 		}
 
-	// Fonction qui ...
+	// Fonction qui calcul le % de commentaires signalés :
 	function get_signalComPct($signalComNbr, $allComNbr)
 		{
 			get_allComNbr();
@@ -126,7 +131,7 @@ require('model/DashboardManager.php');
 			return $signalComPct;
 		}
 
-	// Fonction qui ...
+	// Fonction qui calcul le % de commentaires supprimés :
 	function get_deleteComPct($deleteComNbr, $allComNbr)
 		{
 			get_allComNbr();
@@ -136,38 +141,25 @@ require('model/DashboardManager.php');
 			return $deletelComPct;
 		}
 
-	// Fonction qui ...
+	// Fonction qui calcul le % de commentaires restant à traiter :
 	function get_enCoursComPct($enCoursComNbr, $allComNbr)
 		{
 			get_allComNbr();
 
+			// Si au moins 1 commentaire est en cours de traitement.
 			if ($enCoursComNbr > 0) 
 				{
+					// 100 - ... pour que quand il n'y a plus de commentaire en cours, on atteigne 100% et non pas 0%.
 					$enCoursComPct = 100 - (($enCoursComNbr / $allComNbr) * 100);
 				}
 				else
 					{
+						// 100 % quand aucun commentaire n'est en cours de traitement.
 						$enCoursComPct = 100;
 					}
 					
 			return $enCoursComPct;
 		}
 
-	// Fonction qui ...
-	function get_userComPct($userTotal, $allComNbr)
-		{
-			get_allComNbr();
-
-			if ($allComNbr > 0) 
-				{
-					$userCommentPct = 100 - (($allComNbr / $userTotal) * 100);
-				}
-				else
-					{
-						$userCommentPct = 100;
-					}
-					
-			return $userCommentPct;
-		}
 
 

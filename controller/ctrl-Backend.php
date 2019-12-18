@@ -1,6 +1,7 @@
 <?php
 
-/* Controleur qui gère les fonctions de redirection des pages Admin et récupère les données de la DB dans les models Backend (Admin) */
+/* Controleur qui gère les fonctions de redirection des pages Admin et gère la DB grâce aux models Backend (Admin) */
+/* Il appele des fonctions situées à l'intérieur d'objets (des fonctions membres) = POO */
 
 
 // Chargement des classes :
@@ -12,11 +13,11 @@ require('model/AdminModifChapManager.php');
 
 	/* ------------ Admin Home ------------ */
 	
-	// Fonction qui redirige vers la page Admin :
+	// Fonction qui récupère les données SQL puis redirige vers la page Admin :
 	function viewAdmin()
 		{
-		    $adminChapterManager = new AdminChapterManager();
-		    $chaptersAdminLast = $adminChapterManager->getChaptersAdmin0();
+		    $adminChapterManager = new AdminChapterManager(); // Création d'un objet à partir d'une classe (model)
+		    $chaptersAdminLast = $adminChapterManager->getChaptersAdmin0(); // Appel d'une fonction de cet objet
 
 		    $adminCommentManager = new AdminCommentManager();
 		    $commentsAdminLast = $adminCommentManager->getCommentsAdmin0();
@@ -27,9 +28,9 @@ require('model/AdminModifChapManager.php');
 
 
 
-	/* ------------ Publier / Supprimer / Restaurer les Chapitres ------------ */
+	/* ------------ Chapitres : Publier / Supprimer / Restaurer ------------ */
 
-	// Fonction qui redirige vers la page Admin-Chapitres :
+	// Fonction qui récupère les données SQL dans 3 tables puis redirige vers la page Admin-Chapitres :
 	function viewChapsAdmin()
 		{
 		    $adminChapterManager = new AdminChapterManager();
@@ -126,7 +127,7 @@ require('model/AdminModifChapManager.php');
 		}
 
 
-	/* ------------ Valider / Supprimer / Restaurer les Commentaires ------------ */
+	/* ------------ Commentaires : Valider / Supprimer / Restaurer ------------ */
 
 	// Fonction qui redirige vers la page Admin-Commentaires :
 	function viewComsAdmin()
@@ -247,33 +248,36 @@ require('model/AdminModifChapManager.php');
 
 			if (isset($_POST['recInput']))
 				{
-					restoreChapter($idChapitre);
+					restoreChapter($idChapitre); // Statut 0 = Brouillon.
 				}
 			if (isset($_POST['publishInput']))
 				{
-					publishChapter($idChapitre);
+					publishChapter($idChapitre); // Statut 1 = Publié.
 				}
 			if (isset($_POST['deleteInput']))
 				{
-					deleteChapter($idChapitre);
+					deleteChapter($idChapitre); // Statut 2 = Corbeille.
 				}
 		}
 
 	// Fonction qui configure la modification du chapitre avec ajout d'une image :
 	function recModifWithImg()
 		{
-		    $imageNameChapitre = $_FILES['imageChapitre']['name'];
-	    	$file_extension = strrchr($imageNameChapitre, ".");
+		    $imageNameChapitre = $_FILES['imageChapitre']['name']; // Nom du fichier envoyé dans l'input imageChapitre.
+	    	$file_extension = strrchr($imageNameChapitre, "."); // Affiche ce qui se trouve à partir du "." après le nom du fichier (l'extention).
 
-	    	$file_tmp_name = $_FILES['imageChapitre']['tmp_name'];
-	    	$imageDestChapitre = 'public/images/' . $imageNameChapitre;
+	    	$file_tmp_name = $_FILES['imageChapitre']['tmp_name']; // Nom du repertoire temporaire du fichier envoyé dans l'input imageChapitre.
+	    	$imageDestChapitre = 'public/images/' . $imageNameChapitre; // Repertoire de destination du fichier envoyé.
 
-	    	$extensions_autorisees = array(".png", ".PNG", ".jpg", ".JPG", ".jpeg", ".JPEG");
+	    	$extensions_autorisees = array(".png", ".PNG", ".jpg", ".JPG", ".jpeg", ".JPEG"); // Tableau des extensions autorisées au DL.
 
+	    	// Je vérifie grâce à la fonction in_array, si le fichier DL à une extension autorisée dans le tableau ou non.
 	    	if (in_array($file_extension, $extensions_autorisees)) 
 		    	{
+		    		// Envoi du fichier du repertoire temporaire à sa destination finale.
 		    		if (move_uploaded_file($file_tmp_name, $imageDestChapitre)) 
 			    		{
+			    			// Enregistrement du chapitre avec l'image.
 			    			$idChapitre = $_GET['idChapitre'];
 			    			$numeroChapitre = html_entity_decode($_POST['numeroChapitre']);
 		                    $titreChapitre = html_entity_decode($_POST['titreChapitre']);
@@ -285,8 +289,10 @@ require('model/AdminModifChapManager.php');
 			    				throw new Exception("Une erreur est survenue lors de l'envoi de l'image.");
 			    			}
 		    	}
+		    	// Si l'extension n'est pas autorisé ou si on ne DL pas de fichier.
 		    	else
 	    			{
+	    				// Enregistrement du chapitre sans l'image.
 	    				recModifWithoutImg();
 	    			}    
 		}
@@ -294,8 +300,8 @@ require('model/AdminModifChapManager.php');
 	// Fonction qui configure modification du chapitre sans ajout image :
 	function recModifWithoutImg()
 		{	   
-			$imageNameChapitre = html_entity_decode($_POST['imgNameChapitre']);
-			$imageDestChapitre = html_entity_decode($_POST['imgDestChapitre']);
+			$imageNameChapitre = html_entity_decode($_POST['imgNameChapitre']); // null si vide.
+			$imageDestChapitre = html_entity_decode($_POST['imgDestChapitre']); // null si vide.
 
 			$idChapitre = $_GET['idChapitre'];
 			$numeroChapitre = html_entity_decode($_POST['numeroChapitre']);
@@ -315,12 +321,10 @@ require('model/AdminModifChapManager.php');
 	// Fonction qui redirige vers la page Admin-New-Chapitre :
 	function viewNewChapAdmin()
 		{
-		    /* A gérer */
-
-			require 'view/backend/newChapAdminView.php';
+		    require 'view/backend/newChapAdminView.php';
 		}
 
-	// Fonction qui enregistre le nouveau chapitre et redirige vers la page Admin-New-Chapitre :
+	// Fonction qui enregistre le nouveau chapitre et redirige vers la page Admin-Chapitres :
 	function recNewChapter($idChapitre, $numeroChapitre, $titreChapitre, $texteChapitre, $imageNameChapitre, $imageDestChapitre)
 		{
 	    	$adminModifChapManager = new AdminModifChapManager();
@@ -328,11 +332,11 @@ require('model/AdminModifChapManager.php');
 
 			if (isset($_POST['recInput']))
 				{
-					restoreChapter($idChapitre);
+					restoreChapter($idChapitre); // Statut 0 = Brouillon.
 				}
 			if (isset($_POST['byeInput']))
 				{
-					header('Location: index.php?action=Admin-chapitres');
+					header('Location: index.php?action=Admin-chapitres'); // Abandon.
 					exit;
 				}
 		}
@@ -340,11 +344,11 @@ require('model/AdminModifChapManager.php');
 	// Fonction qui configure l'enregistrement du chapitre avec une image :
 	function recWithImg()
 		{
-		    $imageNameChapitre = $_FILES['imageChapitre']['name'];
-	    	$file_extension = strrchr($imageNameChapitre, ".");
+		    $imageNameChapitre = $_FILES['imageChapitre']['name']; // Nom du fichier envoyé dans l'input imageChapitre.
+	    	$file_extension = strrchr($imageNameChapitre, "."); // Affiche ce qui se trouve à partir du "." après le nom du fichier (l'extention).
 
-	    	$file_tmp_name = $_FILES['imageChapitre']['tmp_name'];
-	    	$imageDestChapitre = 'public/images/' . $imageNameChapitre;
+	    	$file_tmp_name = $_FILES['imageChapitre']['tmp_name']; // Nom du repertoire temporaire du fichier envoyé dans l'input imageChapitre.
+	    	$imageDestChapitre = 'public/images/' . $imageNameChapitre; // Nom du repertoire temporaire du fichier envoyé dans l'input imageChapitre.
 
 	    	$extensions_autorisees = array(".png", ".PNG", ".jpg", ".JPG", ".jpeg", ".JPEG");
 

@@ -5,13 +5,13 @@ require_once('model/Manager.php');
 class VisitesCountManager extends Manager
     {
 
-        // Fonction qui recupère l'ip de l'user.
+        // Fonction qui recupère l'ip de l'user si elle existe.
         public function getIpManager($ipUser)
             {
                 $db = $this->dbConnect();
                 $getIp = $db->prepare('SELECT * FROM online WHERE user_ip = ?');
                 $getIp->execute(array($ipUser));
-                $ipExist = $getIp->rowCount();
+                $ipExist = $getIp->rowCount(); // Pour compter le nbr d'entrée qu'il y a avec cette requête. 0 = dehors, 1 = dedans.
 
                 return $ipExist; 
             }
@@ -36,7 +36,7 @@ class VisitesCountManager extends Manager
                 return $updateIp;
             }
 
-        // Fonction qui supprime la ligne concernée (après les 15s d'inactivité).
+        // Fonction qui supprime la ligne concernée (après les 5min d'inactivité).
         public function deleteIpManager($sessionDeleteTime)
             {
                 $db = $this->dbConnect();
@@ -50,7 +50,7 @@ class VisitesCountManager extends Manager
         public function deleteMyIpManager()
             {
                 $db = $this->dbConnect();
-                $deleteMyIp = $db->query('DELETE FROM online WHERE user_ip = "2a01:cb00:212:d400:5010:226a:8ef2:dbbe"');
+                $deleteMyIp = $db->query('DELETE FROM online WHERE user_ip = "2a01:cb00:212:d400:a087:a7f4:d10b:c32f"');
 
                 return $deleteMyIp;
             }

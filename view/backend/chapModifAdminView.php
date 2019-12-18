@@ -43,10 +43,10 @@
 
             <!-- ---------- Le Formulaire de création ---------- -->
 
+            <!-- enctype obligatoire pour DL pouvoir DL un fichier -->
             <form id="formCreationChapter" method="POST" action="<?= 'index.php?action=RecModifChapter&idChapitre=' . $chaptersAdminModif['id_chapitre']?>" class="needs-validation" enctype="multipart/form-data" novalidate>
 
-
-                
+   
 
                 <!-- ---------- Le Titre ---------- -->
                 <div id="newChapForm" class="col-md-9 col-lg-8 col-xl-6 m-auto">

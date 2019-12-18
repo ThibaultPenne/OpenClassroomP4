@@ -15,7 +15,7 @@
             return !empty($_SESSION['connecting']); // false si vide (empty), true avec n'importe quelle valeur (true = connecté = connnecting)
         }
 
-    // Fonction qui force la connexion de l'utilisateur
+    // Fonction qui force la connexion de l'utilisateur sur les pages admins
     function connexionForced()
         {
             if(!connectingSession())  // Si l'utilisateur n'est pas connecté 
@@ -24,17 +24,16 @@
                 }
         }
 
-    // Fonction qui gère la connexion vers la page Admin
+    // Fonction qui gère la connexion vers la page Admin Home
     function connexionAdmin()
         {
-            // isset(). Cette fonction teste si une variable existe. Nous allons nous en servir pour afficher un message spécifique si le nom ou le prénom sont absents.
-            // Si email et password sont corrects(isset($_POST['nom']))
+            // Si email et password sont corrects
             if ($_POST['email'] == "jeanforteroche@contact.com" AND $_POST['password'] == "alaska95")
                 {
-                    // Alors, je connecte l'utilisateur
+                    // Alors, j'active la session
                     session_start();
-                    // Je stock son état de connexion dans la Session
-                    $_SESSION['connecting'] = "yes"; // Une valeur autre que null = true
+                    // Et je stock son état de connexion dans la variable $_SESSION['connecting'] (avec ne valeur autre que null = true)
+                    $_SESSION['connecting'] = "yes";
                     header('Location: index.php?action=Admin');
                 }
                 else

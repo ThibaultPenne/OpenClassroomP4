@@ -10,7 +10,7 @@
         </button>
         <div id="chapDropDownMenu" class="dropdown-menu">
 
-            <!-- Requête SQL qui recupère tous les numéros des chapitres dans une liste -->
+            <!-- Requête SQL qui recupère tous les numéros des chapitres dans une liste de liens -->
             <?php while ($data = $chapsList->fetch()): ?>  
 
                 <a class="dropdown-item" href="<?= 'index.php?action=Chapitre&idChapitre=' . $data['id_chapitre'] ?>"><?php echo htmlspecialchars($data['numero']); ?></a>
@@ -53,15 +53,15 @@
             <hr>
 
             <!-- Si la variable signal_com existe, alors : Message de validation -->
-                <?php if ($signal_com): ?>
-                <div id="commentSignalOk" class="container">
-                    <h2>Le commentaire que vous avez sélectionné a bien été signalé !</h2>
-                    <h6>L'auteur va l'analyser de plus près dans les plus bref délais.</h6>
-                    <a class="btn" href="<?='index.php?action=RetourChap&idChapitre=' .$chapter['id_chapitre']?>">Retour sur la page de votre chapitre</a>
-                </div>
+            <?php if ($signal_com): ?>
+            <div id="commentSignalOk" class="container">
+                <h2>Le commentaire que vous avez sélectionné a bien été signalé !</h2>
+                <h6>L'auteur va l'analyser de plus près dans les plus bref délais.</h6>
+                <a class="btn" href="<?='index.php?action=RetourChap&idChapitre=' .$chapter['id_chapitre']?>">Retour sur la page de votre chapitre</a>
+            </div>
 
-                <!-- Sinon : Page Chapitre -->
-                <?php else: ?>
+            <!-- Sinon : Page Chapitre -->
+            <?php else: ?>
 
             <!-- Requête SQL qui récupère un chapitre précis en fonction de son ID -->
 
@@ -121,9 +121,8 @@
                             </div>
                         </div>
                         <p><?php echo nl2br(htmlspecialchars($data['commentaire'])); ?></p>
-
-                   
-
+               
+                        <!-- Formulaire de signalement du commentaire séléctionné -->
                     
                         <form action="<?='index.php?action=Signal-commentaire&idChapitre=' .$data['id_chapitre'] . '&idComment='.$data['id_comment']?>" method="post" class="col-12 needs-validation" novalidate>
                             <div class="row">
@@ -150,15 +149,11 @@
 
             </div> <!-- Fin de row -->
 
-             
-
-               
-                   
-                
-
         </div> <!-- Fin de Partie 1 : Les commentaires -->
 
+
         <!-- ----------------------------------------- -->
+
 
         <!-- Partie 2 : Le formulaire -->
 
