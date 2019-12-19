@@ -279,9 +279,9 @@ require('model/AdminModifChapManager.php');
 			    		{
 			    			// Enregistrement du chapitre avec l'image.
 			    			$idChapitre = $_GET['idChapitre'];
-			    			$numeroChapitre = html_entity_decode($_POST['numeroChapitre']);
-		                    $titreChapitre = html_entity_decode($_POST['titreChapitre']);
-		                    $texteChapitre = html_entity_decode($_POST['texteChapitre']);
+			    			$numeroChapitre = $_POST['numeroChapitre'];
+		                    $titreChapitre = $_POST['titreChapitre'];
+		                    $texteChapitre = $_POST['texteChapitre'];
 		                    recModifChapter($numeroChapitre, $titreChapitre, $texteChapitre, $imageNameChapitre, $imageDestChapitre, $idChapitre);
 			    		}
 			    		else
@@ -300,13 +300,13 @@ require('model/AdminModifChapManager.php');
 	// Fonction qui configure modification du chapitre sans ajout image :
 	function recModifWithoutImg()
 		{	   
-			$imageNameChapitre = html_entity_decode($_POST['imgNameChapitre']); // null si vide.
-			$imageDestChapitre = html_entity_decode($_POST['imgDestChapitre']); // null si vide.
+			$imageNameChapitre = $_POST['imgNameChapitre']; // null si vide.
+			$imageDestChapitre = $_POST['imgDestChapitre']; // null si vide.
 
 			$idChapitre = $_GET['idChapitre'];
-			$numeroChapitre = html_entity_decode($_POST['numeroChapitre']);
-			$titreChapitre = html_entity_decode($_POST['titreChapitre']);
-			$texteChapitre = html_entity_decode($_POST['texteChapitre']);
+			$numeroChapitre = $_POST['numeroChapitre'];
+			$titreChapitre = $_POST['titreChapitre'];
+			$texteChapitre = $_POST['texteChapitre'];
 			recModifChapter($numeroChapitre, $titreChapitre, $texteChapitre, $imageNameChapitre, $imageDestChapitre, $idChapitre);	    	
 		}
 
@@ -356,9 +356,9 @@ require('model/AdminModifChapManager.php');
 		    	{
 		    		if (move_uploaded_file($file_tmp_name, $imageDestChapitre)) 
 			    		{
-			    			$numeroChapitre = html_entity_decode($_POST['numeroChapitre']);
-		                    $titreChapitre = html_entity_decode($_POST['titreChapitre']);
-		                    $texteChapitre = html_entity_decode($_POST['texteChapitre']);
+			    			$numeroChapitre = $_POST['numeroChapitre'];
+		                    $titreChapitre = $_POST['titreChapitre'];
+		                    $texteChapitre = $_POST['texteChapitre'];
 		                    recNewChapter($idChapitre, $numeroChapitre, $titreChapitre, $texteChapitre, $imageNameChapitre, $imageDestChapitre);
 			    		}
 			    		else
@@ -378,9 +378,9 @@ require('model/AdminModifChapManager.php');
 			$imageNameChapitre = null;
 			$imageDestChapitre = null;
 
-			$numeroChapitre = html_entity_decode($_POST['numeroChapitre']);
-			$titreChapitre = html_entity_decode($_POST['titreChapitre']);
-			$texteChapitre = html_entity_decode($_POST['texteChapitre']);
+			$numeroChapitre = $_POST['numeroChapitre'];
+			$titreChapitre = $_POST['titreChapitre'];
+			$texteChapitre = $_POST['texteChapitre'];
 			recNewChapter($idChapitre, $numeroChapitre, $titreChapitre, $texteChapitre, $imageNameChapitre, $imageDestChapitre);	    	
 		}
 

@@ -103,7 +103,7 @@
                                 <div class="form-group">
                                     <div class="input-group">  
                                     <textarea name="texteChapitre" id="newChapTextArea" class="form-control" aria-label="With textarea" placeholder="Il n'y a plus qu'à s'y mettre !">
-<?php echo nl2br(htmlspecialchars($chaptersAdminModif['content_text'])); ?>
+<?php echo ($chaptersAdminModif['content_text']); ?>
                                     </textarea>
                                     </div>
                                 </div>

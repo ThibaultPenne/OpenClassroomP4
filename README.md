@@ -3,4 +3,8 @@ Mon histoire polaire :
 un projet réalisé par Thibault Penne.
 
 
-http://monhistoirepolaire.fr/
+site web :
+https://monhistoirepolaire.fr
+
+GitHub :
+https://github.com/ThibaultPenne/OpenClassroomP4

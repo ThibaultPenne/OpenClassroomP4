@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  db5000212522.hosting-data.io
--- Généré le :  Dim 15 Décembre 2019 à 03:25
+-- Généré le :  Jeu 19 Décembre 2019 à 16:04
 -- Version du serveur :  5.7.28-log
 -- Version de PHP :  7.0.33-0+deb9u6
 
@@ -43,7 +43,9 @@ CREATE TABLE `contact` (
 
 INSERT INTO `contact` (`id`, `nom`, `prenom`, `email`, `date_message`, `titre_message`, `message`, `rgpd`) VALUES
 (1, 'Forteroche', 'Jean', 'jeanforteroche@contact.com', NULL, NULL, NULL, 'off'),
-(2, 'Penne', 'Thibault', 'thibault.penne@gmail.com', '2019-10-01 00:00:00', 'Publication ', 'Bonjour, je voulais savoir si vous comptiez publié ce livre en librairie ?', 'on');
+(2, 'Penne', 'Thibault', 'thibault.penne@gmail.com', '2019-10-01 00:00:00', 'Publication ', 'Bonjour, je voulais savoir si vous comptiez publié ce livre en librairie ?', 'on'),
+(62, 'Penne', 'Thibault', 'thibault.penne@gmail.com', '2019-12-17 23:05:50', 'Auteur', 'Heyyyyyyyyy cool ?', 'on'),
+(63, 'Penne', 'Thibault', 'thibault.penne@gmail.com', '2019-12-19 15:41:02', 'Auteur', 'khg', 'on');
 
 --
 -- Index pour les tables exportées
@@ -63,7 +65,7 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT pour la table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
